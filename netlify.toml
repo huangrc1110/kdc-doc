@@ -1,0 +1,7 @@
+[build]
+  command = "sh build_doc.sh"
+  publish = "docs/_build/html"
+
+[build.environment]
+  PYTHON_VERSION = "3.10"
+
