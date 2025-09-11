@@ -1,5 +1,5 @@
 [build]
-  command = "sh build_doc.sh"
+  command = "bash build_doc.sh"
   publish = "docs/_build/html"
 
 [build.environment]
