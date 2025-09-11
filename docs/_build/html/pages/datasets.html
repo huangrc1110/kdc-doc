@@ -1,0 +1,752 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>数据集介绍 &mdash; 赛事手册  文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7d86a446"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="仿真赛事" href="simulation.html" />
+    <link rel="prev" title="任务介绍" href="tasks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            赛事手册
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks.html">任务介绍</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">数据集介绍</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rosbag">rosbag 数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">rosbag 话题说明</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cam-x-color-image-raw-compressed">/cam_x/color/image_raw/compressed 相机彩色图像数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-h-depth-image-raw-compressed">/cam_h/depth/image_raw/compressed 头部相机深度图像数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-x-depth-image-rect-raw-compressed">/cam_x/depth/image_rect_raw/compressed 左腕、右腕相机深度图像数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kuavo-arm-traj">/kuavo_arm_traj 手臂运动控制</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gripper-command">/gripper/command 夹抓控制（仅限仿真数据）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gripper-state">/gripper/state 夹抓状态（仅限仿真数据）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#control-robot-hand-position">/control_robot_hand_position 灵巧手控制（仅限真机数据）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dexhand-state">/dexhand/state 灵巧手的状态（仅限真机数据）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#control-robot-leju-claw">/control_robot_leju_claw 夹抓控制（仅限真机数据）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#leju-claw-state">/leju_claw_state 获取机器人夹爪（二指爪）状态（仅限真机数据）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sensors-data-raw">/sensors_data_raw 传感器数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joint-cmd">/joint_cmd 所有关节的控制指令</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cmd-pose-world-4">/cmd_pose_world 机器人位置指令（仅限任务4）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lerobot">lerobot 数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rosbag-lerobot">rosbag 转 Lerobot 格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">lerobot数据目录结构说明</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="simulation.html">仿真赛事</a></li>
+<li class="toctree-l1"><a class="reference internal" href="real.html">真机赛事</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">赛事手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">数据集介绍</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="kuavo-dataset">
+<span id="id1"></span><h1>数据集介绍<a class="headerlink" href="#kuavo-dataset" title="Link to this heading"></a></h1>
+<dl class="simple">
+<dt>当前工业场景下，机器人多模态数据集存在三大痛点：</dt><dd><ol class="arabic simple">
+<li><p>任务单一性：多数数据集仅覆盖单一任务，缺乏多任务协同的复杂场景；</p></li>
+<li><p>模态割裂：常见数据集未实现视觉、传感器、控制信号的多模态同步；</p></li>
+<li><p>工业适配不足：实验室环境数据与工业真实场景存在性能与鲁棒性差距。</p></li>
+</ol>
+</dd>
+</dl>
+<p>本次大赛发布首个面向真实工业场景、覆盖多任务的大规模机器人多模态数据集，填补了工业领域机器人具身智能研究的空白。数据集聚焦实际工业操作链路中的关键能力，包含4个核心任务（单任务样本量均超1万条），总体数据规模超过40,000条，累计时长突破100小时，为模仿学习、视觉-语言-动作模型（VLA / RT 系列方向）、策略迁移与泛化评测提供坚实基础。</p>
+<dl class="simple">
+<dt>本赛事通过数据集特性设计，为参赛者提供以下优势：</dt><dd><ul class="simple">
+<li><p>零预处理开发：标准化hdf5/lerobot格式可直接用于训练，降低算法验证门槛；</p></li>
+<li><p>全栈研究支持：rosbag格式保留原始信号，支持从底层特征提取到上层策略优化的全链路创新；</p></li>
+<li><p>快速迭代能力：Baseline代码与文档覆盖主流算法，参赛者可聚焦核心算法改进；</p></li>
+<li><p>工业落地潜力：数据集直指工业场景痛点，研究成果可直接迁移至生产环境。</p></li>
+</ul>
+</dd>
+</dl>
+<p>现在在赛事网站上面下载的数据为模拟器使用的rosbag包，同时 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> 仓库中提供了rosbag转lerobot工具。下面对rosbag和lerobot两种格式数据进行介绍：</p>
+<section id="rosbag">
+<h2>rosbag 数据<a class="headerlink" href="#rosbag" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>rosbag 话题说明<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<section id="cam-x-color-image-raw-compressed">
+<h4>/cam_x/color/image_raw/compressed 相机彩色图像数据<a class="headerlink" href="#cam-x-color-image-raw-compressed" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>功能描述</dt><dd><p>/cam_x/color/image_raw/compressed 话题用于提供相机的原始彩色图像的压缩图像数据，其中，x 为 h、l 或 r，分别表示头部、左腕或右腕相机。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息类型</dt><dd><p>类型: sensor_msgs/CompressedImage</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
+<li><p>header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息</p></li>
+<li><p>format (string): 图像编码格式</p></li>
+<li><p>data (uint8[]): 图像数据</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="cam-h-depth-image-raw-compressed">
+<h4>/cam_h/depth/image_raw/compressed 头部相机深度图像数据<a class="headerlink" href="#cam-h-depth-image-raw-compressed" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>功能描述</dt><dd><p>/cam_h/depth/image_raw/compressed 话题用于提供头部相机的原始深度图像经过压缩后的图像数据。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息类型</dt><dd><p>类型: sensor_msgs/CompressedImage</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
+<li><p>header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息</p></li>
+<li><p>format (string): 图像编码格式</p></li>
+<li><p>data (uint8[]): 图像数据</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="cam-x-depth-image-rect-raw-compressed">
+<h4>/cam_x/depth/image_rect_raw/compressed 左腕、右腕相机深度图像数据<a class="headerlink" href="#cam-x-depth-image-rect-raw-compressed" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>功能描述</dt><dd><p>/cam_x/depth/image_rect_raw 话题用于提供左腕或右腕相机的原始深度图像经过校正、压缩后的图像数据，其中，x 为 l 或 r，分别表示左腕或右腕相机。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息类型</dt><dd><p>类型: sensor_msgs/CompressedImage</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
+<li><p>header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息</p></li>
+<li><p>format (string): 图像编码格式</p></li>
+<li><p>data (uint8[]): 图像数据</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="kuavo-arm-traj">
+<h4>/kuavo_arm_traj 手臂运动控制<a class="headerlink" href="#kuavo-arm-traj" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>功能描述</dt><dd><p>/kuavo_arm_traj 话题用于控制机器人手臂运动，通过发布手臂目标关节位置来实现手臂的精确控制</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息类型</dt><dd><p>类型: sensor_msgs/JointState</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
+<li><p>header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息</p></li>
+<li><p>name (list of string): 关节名称列表，假设有 14 个关节，名称为 &quot;arm_joint_1&quot; 到 &quot;arm_joint_14&quot;。</p></li>
+<li><p>position (list of float): 当前关节位置列表。数据结构跟下面 sensors_data_raw 12-25条相同</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="gripper-command">
+<h4>/gripper/command 夹抓控制（仅限仿真数据）<a class="headerlink" href="#gripper-command" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>功能描述</dt><dd><p>/gripper/command 话题用于控制仿真中机器人双手(手指)的运动。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>话题类型</dt><dd><p>类型: sensor_msgs/JointState</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
+<li><p>header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息</p></li>
+<li><p>position (list of float): 数组长度为2, 数据为左夹爪和右夹爪的目标位置, 每个元素的取值范围为[0, 255], 0 为张开，255 为闭合。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="gripper-state">
+<h4>/gripper/state 夹抓状态（仅限仿真数据）<a class="headerlink" href="#gripper-state" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>功能描述</dt><dd><p>/gripper/state 话题用于获取仿真中机器人双手(手指)的运动状态。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>话题类型</dt><dd><p>类型: sensor_msgs/JointState</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
+<li><p>header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息</p></li>
+<li><p>position (list of float): 数组长度为2, 数据为左夹爪和右夹爪的位置, 每个元素的取值范围为[0, 0.8], 0 为张开，0.8 为闭合。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="control-robot-hand-position">
+<h4>/control_robot_hand_position 灵巧手控制（仅限真机数据）<a class="headerlink" href="#control-robot-hand-position" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>功能描述</dt><dd><p>/control_robot_hand_position 话题用于控制机器人双手(手指)的运动，通过发布手指目标关节位置来实现手部的精确控制。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>话题类型</dt><dd><p>类型: kuavo_msgs/robotHandPosition</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
+<li><p>left_hand_position (list of float): 左手位置，包含6个元素，每个元素的取值范围为[0, 100], 0 为张开，100 为闭合。</p></li>
+<li><p>right_hand_position (list of float): 右手位置，包含6个元素，每个元素的取值范围为[0, 100], 0 为张开，100 为闭合。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="dexhand-state">
+<h4>/dexhand/state 灵巧手的状态（仅限真机数据）<a class="headerlink" href="#dexhand-state" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>话题描述</dt><dd><p>发布灵巧手的状态数据.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息类型</dt><dd><p>类型: sensor_msgs/JointState</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
+<li><p>name (list of string): 关节名称数组, 包含12个关节名称:</p></li>
+<li><p>position (list of float): 关节位置数组, 长度为12, 前6个为左手关节位置, 后6个为右手关节位置</p></li>
+<li><p>velocity (list of float): 关节速度数组, 长度为12, 前6个为左手关节速度, 后6个为右手关节速度</p></li>
+<li><p>effort (list of float): 关节电流数组, 长度为12, 前6个为左手关节电流, 后6个为右手关节电流</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="control-robot-leju-claw">
+<h4>/control_robot_leju_claw 夹抓控制（仅限真机数据）<a class="headerlink" href="#control-robot-leju-claw" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>功能描述</dt><dd><p>/control_robot_leju_claw 话题用于机器人夹爪（二指爪）的控制。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>话题类型</dt><dd><p>类型: kuavo_msgs/controlLejuClaw</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
+<li><p>name (list of string): 数组长度为2, 数据为&quot;left_claw&quot;, &quot;right_claw&quot;</p></li>
+<li><p>position (list of float): 数组长度为2, 数据为左夹爪和右夹爪的目标位置, 每个元素的取值范围为[0, 100], 0 为张开，100 为闭合。</p></li>
+<li><p>velocity (list of float): 数组长度为2, 夹爪目标速度值, 0 ~ 100, 不填写时默认为50</p></li>
+<li><p>effort (list of float): 数组长度为2, 夹爪目标电流, 单位 A, 不填写时默认为 1.0A</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="leju-claw-state">
+<h4>/leju_claw_state 获取机器人夹爪（二指爪）状态（仅限真机数据）<a class="headerlink" href="#leju-claw-state" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ol class="arabic">
+<li><dl class="simple">
+<dt>服务描述</dt><dd><p>/leju_claw_state话题用于发布机器人夹爪（二指爪）的状态，位置，速度，力矩等信息。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>服务消息类型</dt><dd><p>kuavo_msgs/lejuClawState</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>消息字段</dt><dd><ul>
+<li><p>state： 数据类型 int8[]；二指夹爪的状态, 数组长度为2, 第一个为左夹爪, 第二个为右夹爪</p></li>
+<li><p>data： 数据类型 kuavo_msgs/endEffectorData；二指夹爪的位置, 速度, 力距等信息</p></li>
+<li><p>state 状态值含义:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>-1 : Error, 表示有执行时有错误</p></li>
+<li><p>0 : Unknown, 初始化时默认的状态</p></li>
+<li><p>1 : Moving, 表示夹爪正在执行, 移动中</p></li>
+<li><p>2 : Reached, 表示夹爪已经执行到达期望的位置</p></li>
+<li><p>3 : Grabbed, 表示夹爪抓取到物品</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>关于 data 字段中 kuavo_msgs/endEffectorData的消息在/control_robot_leju_claw部分有介绍。</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="sensors-data-raw">
+<h4>/sensors_data_raw 传感器数据<a class="headerlink" href="#sensors-data-raw" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ol class="arabic">
+<li><dl class="simple">
+<dt>话题描述</dt><dd><p>话题用于发布实物机器人或仿真器的传感器原始数据，包括关节数据、IMU数据和末端执行器数据。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息类型</dt><dd><p>类型: kuavo_msgs/sensorsData</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
+<li><p>sensor_time (time): 时间戳</p></li>
+<li><p>joint_data (kuavo_msgs/jointData): 关节数据: 位置、速度、加速度、电流</p></li>
+<li><p>imu_data (kuavo_msgs/imuData): 包含陀螺仪、加速度计、自由加速度、四元数</p></li>
+<li><p>end_effector_data (kuavo_msgs/endEffectorData): 末端数据，暂未使用.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>关节数据说明</dt><dd><ul>
+<li><p>数据顺序</p>
+<blockquote>
+<div><ul>
+<li><p>前 12 个数据为下肢电机数据:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0~5 为左下肢数据 (l_leg_roll, l_leg_yaw, l_leg_pitch, l_knee, l_foot_pitch, l_foot_roll)</p></li>
+<li><p>6~11 为右下肢数据 (r_leg_roll, r_leg_yaw, r_leg_pitch, r_knee, r_foot_pitch, r_foot_roll)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>接着 14 个数据为手臂电机数据:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>12~18 左臂电机数据 (&quot;l_arm_pitch&quot;, &quot;l_arm_roll&quot;, &quot;l_arm_yaw&quot;, &quot;l_forearm_pitch&quot;, &quot;l_hand_yaw&quot;, &quot;l_hand_pitch&quot;, &quot;l_hand_roll&quot;)</p></li>
+<li><p>19~25 为右臂电机数据 (&quot;r_arm_pitch&quot;, &quot;r_arm_roll&quot;, &quot;r_arm_yaw&quot;, &quot;r_forearm_pitch&quot;, &quot;r_hand_yaw&quot;, &quot;r_hand_pitch&quot;, &quot;r_hand_roll&quot;)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>最后 2 个为头部电机数据: head_yaw 和 head_pitch</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>单位:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>位置: 弧度 (radian)</p></li>
+<li><p>速度: 弧度每秒 (radian/s)</p></li>
+<li><p>加速度: 弧度每平方秒 (radian/s²)</p></li>
+<li><p>电流: 安培 (A)</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>IMU 数据说明</dt><dd><ul class="simple">
+<li><p>gyro: 陀螺仪的角速度，单位弧度每秒（rad/s）</p></li>
+<li><p>acc: 加速度计的加速度，单位米每平方秒（m/s²）</p></li>
+<li><p>quat: IMU的姿态（orientation）</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="joint-cmd">
+<h4>/joint_cmd 所有关节的控制指令<a class="headerlink" href="#joint-cmd" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>话题描述</dt><dd><p>话题用于发布全身所有关节的控制指令</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息类型</dt><dd><p>类型: kuavo_msgs/jointCmd</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
+<li><p>header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息</p></li>
+<li><p>joint_q (list of float): 关节位置, 单位(radian)</p></li>
+<li><p>joint_v (list of float): 关节速度, 单位(radian/s)</p></li>
+<li><p>tau (list of float): 关节扭矩, 单位(N·m)</p></li>
+<li><p>tau_max (list of float): 最大关节扭矩, 单位(N·m)</p></li>
+<li><p>tau_ratio (list of float): 扭矩系数</p></li>
+<li><p>joint_kp (list of float): kp 参数</p></li>
+<li><p>joint_kd (list of float): kd 参数</p></li>
+<li><p>control_modes (list of int): 关节对应的控制模式，0为Torque 控制模式, 1为Velocity 控制模式, 2为Position 控制模式</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="cmd-pose-world-4">
+<h4>/cmd_pose_world 机器人位置指令（仅限任务4）<a class="headerlink" href="#cmd-pose-world-4" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>话题描述</dt><dd><p>话题用于发布机器人位置指令</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息类型</dt><dd><p>类型: geometry_msgs/Twist</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
+<li><p>linear.x (float): 基于世界坐标系的 x 方向值，单位为米 (m)。</p></li>
+<li><p>linear.y (float): 基于世界坐标系的 y 方向值，单位为米 (m)。</p></li>
+<li><p>linear.z (float): 基于世界坐标系的 z 方向值，单位为米 (m)。</p></li>
+<li><p>angular.x (float): 基于世界坐标系的 x 方向旋转角度，单位为弧度 (radian)。</p></li>
+<li><p>angular.y (float): 基于世界坐标系的 y 方向旋转角度，单位为弧度 (radian)。</p></li>
+<li><p>angular.z (float): 基于世界坐标系的 z 方向旋转角度，单位为弧度 (radian)。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</section>
+</section>
+</section>
+<section id="lerobot">
+<h2>lerobot 数据<a class="headerlink" href="#lerobot" title="Link to this heading"></a></h2>
+<section id="rosbag-lerobot">
+<h3>rosbag 转 Lerobot 格式<a class="headerlink" href="#rosbag-lerobot" title="Link to this heading"></a></h3>
+<p>参考 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> 仓库的教程将 Kuavo 原生 rosbag 数据转换为 Lerobot 框架可用的 parquet 格式：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>kuavo_data/CvtRosbag2Lerobot.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--config-path<span class="o">=</span>../configs/data/<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--config-name<span class="o">=</span>KuavoRosbag2Lerobot.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>rosbag.rosbag_dir<span class="o">=</span>/path/to/rosbag<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>rosbag.lerobot_dir<span class="o">=</span>/path/to/lerobot_data
+</pre></div>
+</div>
+<p>说明：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>rosbag.rosbag_dir：原始 rosbag 数据路径</p></li>
+<li><p>rosbag.lerobot_dir：转换后的lerobot-parquet 数据保存路径，通常会在此目录下创建一个名为lerobot的子文件夹</p></li>
+<li><p>configs/data/KuavoRosbag2Lerobot.yaml：请查看并根据需要选择启用的相机及是否使用深度图像等</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id4">
+<h3>lerobot数据目录结构说明<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>执行脚本后，会生成标准lerobot格式数据集。目录结构如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>output_dir/
+    ├── data/
+    │   └── chunk-000/
+    │       ├── episode_000000.parquet  # 转换后的数据，包含所有指定转换的数据特征
+    │       ├── episode_000001.parquet
+    │       └── ...
+    ├── meta/
+    │   ├── episodes.jsonl  # 每个 episode 的时长
+    │   ├── info.json       # data/ 下各 parquet 的特征信息
+    │   └── tasks.jsonl     # 当前任务名称
+    └── images/
+        ├── observation.images.color.head_cam_h/
+        │   ├── episode_000000/
+        │   │   ├── frame_000000.png
+        │   │   └── frame_000001.png
+        │   └── ...
+        ├── observation.images.color.wrist_cam_l/
+        └── observation.images.color.wrist_cam_r/
+</pre></div>
+</div>
+<p>info.json 文件中记录了当前所有可用的数据特征的格式。主要可用特征如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;features&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;observation.state&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 机器人状态，包括14个手臂关节状态和2个末端执行器状态，顺序如 names 中所示</span>
+            <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;float32&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="mi">16</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;motors&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;zarm_l1_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_l2_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_l3_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_l4_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_l5_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_l6_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_l7_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;left_claw&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_r1_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_r2_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_r3_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_r4_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_r5_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_r6_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_r7_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;right_claw&quot;</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 动作数据，包含14个手臂关节动作和2个末端执行器动作，顺序如 names 中所示</span>
+            <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;float32&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="mi">16</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;motors&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;zarm_l1_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_l2_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_l3_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_l4_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_l5_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_l6_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_l7_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;left_claw&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_r1_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_r2_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_r3_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_r4_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_r5_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_r6_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;zarm_r7_link&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;right_claw&quot;</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;observation.images.head_cam_h&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 头部相机RGB图像数据</span>
+            <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="mi">3</span><span class="p">,</span>
+                <span class="mi">480</span><span class="p">,</span>
+                <span class="mi">640</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;channels&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;height&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;width&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;observation.depth_h&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 头部相机深度图像数据</span>
+            <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;uint16&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="mi">1</span><span class="p">,</span>
+                <span class="mi">480</span><span class="p">,</span>
+                <span class="mi">640</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;channels&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;height&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;width&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;observation.images.wrist_cam_l&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 左腕相机RGB图像数据</span>
+            <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="mi">3</span><span class="p">,</span>
+                <span class="mi">480</span><span class="p">,</span>
+                <span class="mi">640</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;channels&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;height&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;width&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;observation.depth_l&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 左腕相机深度图像数据</span>
+            <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;uint16&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="mi">1</span><span class="p">,</span>
+                <span class="mi">480</span><span class="p">,</span>
+                <span class="mi">640</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;channels&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;height&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;width&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;observation.images.wrist_cam_r&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 右腕相机RGB图像数据</span>
+            <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="mi">3</span><span class="p">,</span>
+                <span class="mi">480</span><span class="p">,</span>
+                <span class="mi">640</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;channels&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;height&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;width&quot;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+        <span class="s2">&quot;observation.depth_r&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 右腕相机深度图像数据</span>
+            <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;uint16&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="mi">1</span><span class="p">,</span>
+                <span class="mi">480</span><span class="p">,</span>
+                <span class="mi">640</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;channels&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;height&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;width&quot;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="tasks.html" class="btn btn-neutral float-left" title="任务介绍" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="simulation.html" class="btn btn-neutral float-right" title="仿真赛事" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 乐聚机器人，2025。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
