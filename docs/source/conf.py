@@ -19,6 +19,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.napoleon",
     'sphinx_markdown_builder',
+    'sphinxcontrib.video',
 ]
 exclude_patterns = []
 
