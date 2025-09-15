@@ -55,8 +55,7 @@
 
    pages/tasks
    pages/datasets
-   pages/simulation
-   pages/real
+   pages/submit
    pages/installation
 
 
