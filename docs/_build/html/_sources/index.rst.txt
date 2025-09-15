@@ -38,20 +38,33 @@
 
   <p></p>
 
-本文档为《第一届具身智能操作任务挑战赛&创业启航营》参赛软件使用文档，主要涵盖本次赛事软件使用的相关内容。有关比赛规则、重要日期等通用信息，请参阅 `比赛官网 <https://tianchi.aliyun.com/competition/entrance/532415>`_ 。
+
 
 
 .. image:: https://kuavo.lejurobot.com/manual/assets/images/kuavo_4pro-cf84d43f1c370666c6e810d2807ae3e4.png
 
-开源协议
-========
-本赛事依照 `MIT 许可证 <https://opensource.org/licenses/MIT>`_ 进行开源。
+
+本文档为 "第一届具身智能操作任务挑战赛&创业启航营" 参赛使用说明文档，主要涵盖本次赛事的数据、基准代码、仿真模拟器等使用的相关内容。有关比赛规则、重要日期等通用信息，请参阅 `比赛官网 <https://tianchi.aliyun.com/competition/entrance/532415>`_ 。
+
+
+
 
 .. toctree::
-   :hidden:
-   
-   pages/installation
+   :maxdepth: 1
+   :caption: 文档内容
+
    pages/tasks
    pages/datasets
    pages/simulation
    pages/real
+   pages/installation
+
+
+加入讨论群：
+========
+为方便大家讨论和解决问题，我们组织了技术同学建了一个 `QQ群 <./_static/images/qq_team.jpg>`_ ，请点击链接扫码入群。
+
+
+开源协议
+========
+本赛事依照 `MIT 许可证 <https://opensource.org/licenses/MIT>`_ 进行开源。

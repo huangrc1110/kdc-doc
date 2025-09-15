@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+PYTHON_BIN=$(command -v python)
 
-python -m pip install -U pip
-python -m pip install -r requirements.txt
+"$PYTHON_BIN" -m pip install -U pip
+"$PYTHON_BIN" -m pip install -r requirements.txt
 
 
 rm -rf docs/_build

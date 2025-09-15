@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "赛事手册"
-copyright = '乐聚机器人，2025'
+copyright = '2025, 乐聚机器人'
 author = 'lejurobot'
 
 # -- General configuration ---------------------------------------------------
