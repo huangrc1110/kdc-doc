@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<html class="writer-html5" lang="zh-CN">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -13,9 +13,9 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=7d86a446"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=babeb00e"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
       <script src="../_static/translations.js?v=beaddf03"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
@@ -75,6 +75,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="submit.html">提交说明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">赛事资源使用指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">常见问题&amp;回答</a></li>
 </ul>
 
         </div>
@@ -101,14 +102,14 @@
            <div itemprop="articleBody">
              
   <section id="kuavo-dataset">
-<span id="id1"></span><h1>数据说明<a class="headerlink" href="#kuavo-dataset" title="Link to this heading"></a></h1>
+<span id="id1"></span><h1>数据说明<a class="headerlink" href="#kuavo-dataset" title="此标题的永久链接"></a></h1>
 <p>为最大程度保留原始数据中的信息，本次赛事统一采用 <strong>rosbag</strong> 包作为数据格式。参赛者可自由利用 rosbag 中提供的多源传感器数据进行模型训练。参考 HuggingFace 开源的 <a class="reference external" href="https://github.com/huggingface/lerobot">lerobot</a> 项目，赛事方同时提供了将 Kuavo 机器人 rosbag 数据转换为 Lerobot 数据集格式的工具，其中包含 <em>深度相机</em> 等多模态数据。具体实现可参阅赛事主办方发布的 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> 仓库中的数据转换脚本。数据格式的具体细节如下：</p>
 <section id="rosbag">
-<h2>rosbag 数据<a class="headerlink" href="#rosbag" title="Link to this heading"></a></h2>
+<h2>rosbag 数据<a class="headerlink" href="#rosbag" title="此标题的永久链接"></a></h2>
 <section id="id2">
-<h3>rosbag 话题说明<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<h3>rosbag 话题说明<a class="headerlink" href="#id2" title="此标题的永久链接"></a></h3>
 <section id="cam-x-color-image-raw-compressed">
-<h4>/cam_x/color/image_raw/compressed 相机彩色图像数据<a class="headerlink" href="#cam-x-color-image-raw-compressed" title="Link to this heading"></a></h4>
+<h4>/cam_x/color/image_raw/compressed 相机彩色图像数据<a class="headerlink" href="#cam-x-color-image-raw-compressed" title="此标题的永久链接"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -134,7 +135,7 @@
 </div></blockquote>
 </section>
 <section id="cam-h-depth-image-raw-compressed">
-<h4>/cam_h/depth/image_raw/compressed 头部相机深度图像数据<a class="headerlink" href="#cam-h-depth-image-raw-compressed" title="Link to this heading"></a></h4>
+<h4>/cam_h/depth/image_raw/compressed 头部相机深度图像数据<a class="headerlink" href="#cam-h-depth-image-raw-compressed" title="此标题的永久链接"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -160,7 +161,7 @@
 </div></blockquote>
 </section>
 <section id="cam-x-depth-image-rect-raw-compressed">
-<h4>/cam_x/depth/image_rect_raw/compressed 左腕、右腕相机深度图像数据<a class="headerlink" href="#cam-x-depth-image-rect-raw-compressed" title="Link to this heading"></a></h4>
+<h4>/cam_x/depth/image_rect_raw/compressed 左腕、右腕相机深度图像数据<a class="headerlink" href="#cam-x-depth-image-rect-raw-compressed" title="此标题的永久链接"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -186,7 +187,7 @@
 </div></blockquote>
 </section>
 <section id="kuavo-arm-traj">
-<h4>/kuavo_arm_traj 手臂运动控制<a class="headerlink" href="#kuavo-arm-traj" title="Link to this heading"></a></h4>
+<h4>/kuavo_arm_traj 手臂运动控制<a class="headerlink" href="#kuavo-arm-traj" title="此标题的永久链接"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -202,7 +203,7 @@
 <li><dl class="simple">
 <dt>消息字段</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息</p></li>
-<li><p>name (list of string): 关节名称列表，假设有 14 个关节，名称为 &quot;arm_joint_1&quot; 到 &quot;arm_joint_14&quot;。</p></li>
+<li><p>name (list of string): 关节名称列表，假设有 14 个关节，名称为 “arm_joint_1” 到 “arm_joint_14”。</p></li>
 <li><p>position (list of float): 当前关节位置列表。数据结构跟下面 sensors_data_raw 12-25条相同</p></li>
 </ul>
 </dd>
@@ -212,7 +213,7 @@
 </div></blockquote>
 </section>
 <section id="gripper-command">
-<h4>/gripper/command 夹抓控制（仅限仿真数据）<a class="headerlink" href="#gripper-command" title="Link to this heading"></a></h4>
+<h4>/gripper/command 夹抓控制（仅限仿真数据）<a class="headerlink" href="#gripper-command" title="此标题的永久链接"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -237,7 +238,7 @@
 </div></blockquote>
 </section>
 <section id="gripper-state">
-<h4>/gripper/state 夹抓状态（仅限仿真数据）<a class="headerlink" href="#gripper-state" title="Link to this heading"></a></h4>
+<h4>/gripper/state 夹抓状态（仅限仿真数据）<a class="headerlink" href="#gripper-state" title="此标题的永久链接"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -262,7 +263,7 @@
 </div></blockquote>
 </section>
 <section id="control-robot-hand-position">
-<h4>/control_robot_hand_position 灵巧手控制（仅限真机数据）<a class="headerlink" href="#control-robot-hand-position" title="Link to this heading"></a></h4>
+<h4>/control_robot_hand_position 灵巧手控制（仅限真机数据）<a class="headerlink" href="#control-robot-hand-position" title="此标题的永久链接"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -287,7 +288,7 @@
 </div></blockquote>
 </section>
 <section id="dexhand-state">
-<h4>/dexhand/state 灵巧手的状态（仅限真机数据）<a class="headerlink" href="#dexhand-state" title="Link to this heading"></a></h4>
+<h4>/dexhand/state 灵巧手的状态（仅限真机数据）<a class="headerlink" href="#dexhand-state" title="此标题的永久链接"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -314,7 +315,7 @@
 </div></blockquote>
 </section>
 <section id="control-robot-leju-claw">
-<h4>/control_robot_leju_claw 夹抓控制（仅限真机数据）<a class="headerlink" href="#control-robot-leju-claw" title="Link to this heading"></a></h4>
+<h4>/control_robot_leju_claw 夹抓控制（仅限真机数据）<a class="headerlink" href="#control-robot-leju-claw" title="此标题的永久链接"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -329,7 +330,7 @@
 </li>
 <li><dl class="simple">
 <dt>消息字段</dt><dd><ul class="simple">
-<li><p>name (list of string): 数组长度为2, 数据为&quot;left_claw&quot;, &quot;right_claw&quot;</p></li>
+<li><p>name (list of string): 数组长度为2, 数据为”left_claw”, “right_claw”</p></li>
 <li><p>position (list of float): 数组长度为2, 数据为左夹爪和右夹爪的目标位置, 每个元素的取值范围为[0, 100], 0 为张开，100 为闭合。</p></li>
 <li><p>velocity (list of float): 数组长度为2, 夹爪目标速度值, 0 ~ 100, 不填写时默认为50</p></li>
 <li><p>effort (list of float): 数组长度为2, 夹爪目标电流, 单位 A, 不填写时默认为 1.0A</p></li>
@@ -341,7 +342,7 @@
 </div></blockquote>
 </section>
 <section id="leju-claw-state">
-<h4>/leju_claw_state 获取机器人夹爪（二指爪）状态（仅限真机数据）<a class="headerlink" href="#leju-claw-state" title="Link to this heading"></a></h4>
+<h4>/leju_claw_state 获取机器人夹爪（二指爪）状态（仅限真机数据）<a class="headerlink" href="#leju-claw-state" title="此标题的永久链接"></a></h4>
 <blockquote>
 <div><ol class="arabic">
 <li><dl class="simple">
@@ -378,7 +379,7 @@
 </div></blockquote>
 </section>
 <section id="sensors-data-raw">
-<h4>/sensors_data_raw 传感器数据<a class="headerlink" href="#sensors-data-raw" title="Link to this heading"></a></h4>
+<h4>/sensors_data_raw 传感器数据<a class="headerlink" href="#sensors-data-raw" title="此标题的永久链接"></a></h4>
 <blockquote>
 <div><ol class="arabic">
 <li><dl class="simple">
@@ -417,8 +418,8 @@
 <li><p>接着 14 个数据为手臂电机数据:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>12~18 左臂电机数据 (&quot;l_arm_pitch&quot;, &quot;l_arm_roll&quot;, &quot;l_arm_yaw&quot;, &quot;l_forearm_pitch&quot;, &quot;l_hand_yaw&quot;, &quot;l_hand_pitch&quot;, &quot;l_hand_roll&quot;)</p></li>
-<li><p>19~25 为右臂电机数据 (&quot;r_arm_pitch&quot;, &quot;r_arm_roll&quot;, &quot;r_arm_yaw&quot;, &quot;r_forearm_pitch&quot;, &quot;r_hand_yaw&quot;, &quot;r_hand_pitch&quot;, &quot;r_hand_roll&quot;)</p></li>
+<li><p>12~18 左臂电机数据 (“l_arm_pitch”, “l_arm_roll”, “l_arm_yaw”, “l_forearm_pitch”, “l_hand_yaw”, “l_hand_pitch”, “l_hand_roll”)</p></li>
+<li><p>19~25 为右臂电机数据 (“r_arm_pitch”, “r_arm_roll”, “r_arm_yaw”, “r_forearm_pitch”, “r_hand_yaw”, “r_hand_pitch”, “r_hand_roll”)</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -453,7 +454,7 @@
 </div></blockquote>
 </section>
 <section id="joint-cmd">
-<h4>/joint_cmd 所有关节的控制指令<a class="headerlink" href="#joint-cmd" title="Link to this heading"></a></h4>
+<h4>/joint_cmd 所有关节的控制指令<a class="headerlink" href="#joint-cmd" title="此标题的永久链接"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -485,7 +486,7 @@
 </div></blockquote>
 </section>
 <section id="cmd-pose-world-4">
-<h4>/cmd_pose_world 机器人位置指令（仅限任务4）<a class="headerlink" href="#cmd-pose-world-4" title="Link to this heading"></a></h4>
+<h4>/cmd_pose_world 机器人位置指令（仅限任务4）<a class="headerlink" href="#cmd-pose-world-4" title="此标题的永久链接"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -516,9 +517,9 @@
 </section>
 </section>
 <section id="id3">
-<h2>lerobot 数据<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<h2>lerobot 数据<a class="headerlink" href="#id3" title="此标题的永久链接"></a></h2>
 <section id="rosbag-lerobot">
-<h3>rosbag 转 Lerobot 格式<a class="headerlink" href="#rosbag-lerobot" title="Link to this heading"></a></h3>
+<h3>rosbag 转 Lerobot 格式<a class="headerlink" href="#rosbag-lerobot" title="此标题的永久链接"></a></h3>
 <p>参考 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> 仓库的教程将 Kuavo 原生 rosbag 数据转换为 Lerobot 框架可用的 parquet 格式：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>kuavo_data/CvtRosbag2Lerobot.py<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--config-path<span class="o">=</span>../configs/data/<span class="w"> </span><span class="se">\</span>
@@ -537,7 +538,7 @@
 </div></blockquote>
 </section>
 <section id="id5">
-<h3>lerobot数据目录结构说明<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<h3>lerobot数据目录结构说明<a class="headerlink" href="#id5" title="此标题的永久链接"></a></h3>
 <p>执行脚本后，会生成标准lerobot格式数据集。目录结构如下：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>output_dir/
     ├── data/
@@ -711,7 +712,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2025, 乐聚机器人。</p>
+    <p>&#169; 版权所有 2025, 乐聚机器人.</p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 

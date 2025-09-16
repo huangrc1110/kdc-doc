@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<html class="writer-html5" lang="zh-CN">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -13,13 +13,14 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=7d86a446"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=babeb00e"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
       <script src="../_static/translations.js?v=beaddf03"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="常见问题&amp;回答" href="faq.html" />
     <link rel="prev" title="提交说明" href="submit.html" /> 
 </head>
 
@@ -47,7 +48,13 @@
 <li class="toctree-l1"><a class="reference internal" href="tasks.html">任务说明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">数据说明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="submit.html">提交说明</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">赛事资源使用指南</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">赛事资源使用指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1. 数据集下载</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">2. 安装 kuavo_data_challenge 仓库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">3. 安装 kuavo-ros-opensource 仓库</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">常见问题&amp;回答</a></li>
 </ul>
 
         </div>
@@ -74,34 +81,207 @@
            <div itemprop="articleBody">
              
   <section id="installation">
-<span id="id1"></span><h1>赛事资源使用指南<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
+<span id="id1"></span><h1>赛事资源使用指南<a class="headerlink" href="#installation" title="此标题的永久链接"></a></h1>
 <p>为确保比赛过程顺利，我们提供了数据下载、基准代码、模拟器环境等相关资源，供参赛者使用。以下是步骤说明及相关链接：</p>
-<ol class="arabic">
-<li><p>数据集下载</p>
-<div class="admonition note">
-<p class="admonition-title">备注</p>
-<p>参赛者需登录 <a class="reference external" href="https://tianchi.aliyun.com/competition/entrance/532415">比赛官网</a> ，在“数据集”页面下载所需的数据集。</p>
-</div>
-</li>
-<li><p>安装 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> 仓库（此仓库用于数据转换、模型训练、模型部署），使用 git 获取最新的代码仓库（main 分支）：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo_data_challenge.git
+<section id="id2">
+<h2>1. 数据集下载<a class="headerlink" href="#id2" title="此标题的永久链接"></a></h2>
+<blockquote>
+<div><p>数据集下载需要使用阿里云对象存储 OSS，说明如下。</p>
+<ol class="loweralpha">
+<li><p>ossutil 下载与安装</p>
+<ul>
+<li><p>Linux/macOS 一键安装（推荐）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>-v<span class="w"> </span><span class="p">;</span><span class="w"> </span>curl<span class="w"> </span>https://gosspublic.alicdn.com/ossutil/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">注解</p>
+<p>安装过程中需要解压工具（unzip 或 7z），请提前安装。安装完成后，<code class="docutils literal notranslate"><span class="pre">ossutil</span></code> 将安装到 <code class="docutils literal notranslate"><span class="pre">/usr/bin/</span></code> 目录下。</p>
+</div>
+</li>
+<li><p>下载地址</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 18.0%" />
+<col style="width: 82.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>平台</p></th>
+<th class="head"><p>地址</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Linux x86_64</p></td>
+<td><p><a class="reference external" href="https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-amd64.zip">ossutil-v1.7.19-linux-amd64.zip</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linux x86_32</p></td>
+<td><p><a class="reference external" href="https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-386.zip">ossutil-v1.7.19-linux-386.zip</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Linux arm_64</p></td>
+<td><p><a class="reference external" href="https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-arm64.zip">ossutil-v1.7.19-linux-arm64.zip</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Windows x64</p></td>
+<td><p><a class="reference external" href="https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-windows-amd64.zip">ossutil-v1.7.19-windows-amd64.zip</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Windows x32</p></td>
+<td><p><a class="reference external" href="https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-windows-386.zip">ossutil-v1.7.19-windows-386.zip</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>macOS 64</p></td>
+<td><p><a class="reference external" href="https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-mac-amd64.zip">ossutil-v1.7.19-mac-amd64.zip</a></p></td>
+</tr>
+<tr class="row-even"><td><p>macOS arm_64</p></td>
+<td><p><a class="reference external" href="https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-mac-arm64.zip">ossutil-v1.7.19-mac-arm64.zip</a></p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+<li><p>手动安装方法</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. 下载压缩包（以 Linux x64 为例）</span>
+wget<span class="w"> </span>https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-amd64.zip
+<span class="c1"># 2. 解压</span>
+unzip<span class="w"> </span>ossutil-v1.7.19-linux-amd64.zip
+<span class="c1"># 3. 添加执行权限</span>
+chmod<span class="w"> </span>+x<span class="w"> </span>ossutil
+<span class="c1"># 4. 移动到系统 PATH 目录（可选）</span>
+sudo<span class="w"> </span>mv<span class="w"> </span>ossutil<span class="w"> </span>/usr/local/bin/
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>验证安装</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ossutil
+</pre></div>
+</div>
+<p>如果显示使用选项，则安装成功。若需更新版本，可执行：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ossutil<span class="w"> </span>update
+</pre></div>
+</div>
+</li>
+<li><p>ossutil 配置</p>
+<p>交互式配置（推荐）：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ossutil<span class="w"> </span>config
+</pre></div>
+</div>
+<p>按提示输入：</p>
+<ul class="simple">
+<li><p>配置文件路径：默认为 <code class="docutils literal notranslate"><span class="pre">~/.ossutilconfig</span></code> ，直接回车使用默认路径</p></li>
+<li><p>语言设置：输入 <a href="#id3"><span class="problematic" id="id4">``</span></a>CH``（中文）或 <a href="#id5"><span class="problematic" id="id6">``</span></a>EN``（英文）</p></li>
+<li><p>Endpoint：<code class="docutils literal notranslate"><span class="pre">https://oss-cn-hangzhou.aliyuncs.com</span></code></p></li>
+<li><p>AccessKey ID：<code class="docutils literal notranslate"><span class="pre">LTAI5tJCN2XX2sYt6wWhdvqk</span></code></p></li>
+<li><p>AccessKey Secret：<code class="docutils literal notranslate"><span class="pre">xbROt0HCaQexY2JrLl2UDScvS3qHpj</span></code></p></li>
+</ul>
+<p>遇到 <code class="docutils literal notranslate"><span class="pre">systoken</span></code> 直接回车即可，提示出现的先后顺序可能不同。</p>
+</li>
+<li><p>验证配置与使用</p>
+<ul>
+<li><p>验证配置</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 输出指定桶名下的文件夹（不包含子文件）</span>
+ossutil<span class="w"> </span>ls<span class="w"> </span>oss://kuavo-data-challenge-simdata/<span class="w"> </span>-d
+</pre></div>
+</div>
+<p>若能正常显示存储空间列表，说明配置成功。</p>
+</li>
+<li><p>浏览存储空间内容</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 列出指定存储空间的对象（不包括子目录）</span>
+ossutil<span class="w"> </span>ls<span class="w"> </span>oss://kuavo-data-challenge-simdata/<span class="w"> </span>-d
+<span class="c1"># 递归列出所有对象（包括子目录）</span>
+ossutil<span class="w"> </span>ls<span class="w"> </span>oss://kuavo-data-challenge-simdata/
+<span class="c1"># 递归列出指定前缀的对象（包括子目录）</span>
+ossutil<span class="w"> </span>ls<span class="w"> </span>oss://kuavo-data-challenge-simdata/folder-name/
+</pre></div>
+</div>
+</li>
+<li><p>查看对象信息</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查看单个对象的详细信息</span>
+ossutil<span class="w"> </span>stat<span class="w"> </span>oss://kuavo-data-challenge-simdata/file-name
+<span class="c1"># 查看特定路径对象个数与空间占用</span>
+ossutil<span class="w"> </span>du<span class="w"> </span>oss://kuavo-data-challenge-simdata/file-name
+</pre></div>
+</div>
+</li>
+<li><p>搜索文件</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 按文件名模式搜索 --include</span>
+ossutil<span class="w"> </span>ls<span class="w"> </span>oss://kuavo-data-challenge-simdata/<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.jpg&quot;</span>
+<span class="c1"># 排除特定文件 --exclude</span>
+ossutil<span class="w"> </span>ls<span class="w"> </span>oss://kuavo-data-challenge-simdata/<span class="w"> </span>--exclude<span class="w"> </span><span class="s2">&quot;*.tmp&quot;</span>
+<span class="c1"># 组合使用包含与排除</span>
+ossutil<span class="w"> </span>ls<span class="w"> </span>oss://kuavo-data-challenge-simdata/<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.log&quot;</span><span class="w"> </span>--exclude<span class="w"> </span><span class="s2">&quot;*debug*&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>下载说明</p>
+<ul>
+<li><p>下载单个文件</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 下载文件到当前目录</span>
+ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challenge-simdata/&lt;file-path&gt;/&lt;file-name&gt;<span class="w"> </span>./
+
+<span class="c1"># 下载文件并重命名</span>
+ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challenge-simdata/&lt;file-path&gt;/&lt;file-name&gt;<span class="w"> </span>&lt;local-path&gt;/&lt;local-name&gt;
+
+<span class="c1"># 下载文件到指定目录</span>
+ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challenge-simdata/&lt;file-path&gt;/&lt;file-name&gt;<span class="w"> </span>&lt;local-path&gt;
+</pre></div>
+</div>
+</li>
+<li><p>批量下载文件</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 下载整个目录 -r</span>
+ossutil<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>oss://kuavo-data-challenge-simdata/&lt;file-path&gt;/<span class="w"> </span>&lt;local-path&gt;
+</pre></div>
+</div>
+</li>
+<li><p>断点续传下载</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 启用断点续传（大文件自动启用） -u</span>
+ossutil<span class="w"> </span>cp<span class="w"> </span>-u<span class="w"> </span>oss://kuavo-data-challenge-simdata/large-file.zip<span class="w"> </span>./local-folder/
+ossutil<span class="w"> </span>cp<span class="w"> </span>-u<span class="w"> </span>-r<span class="w"> </span>oss://kuavo-data-challenge-simdata/remote-folder/<span class="w"> </span>./local-folder/
+<span class="c1"># 设置分块个数 -j</span>
+ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challenge-simdata/large-file.zip<span class="w"> </span>./local-folder/<span class="w"> </span>-j<span class="w"> </span><span class="m">5</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>常见问题</p>
+<ul class="simple">
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">-j</span> <span class="pre">10</span></code> 增加并行任务数以提高下载速度</p></li>
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">-u</span></code> 参数启用断点续传</p></li>
+</ul>
+</li>
+<li><p>视频教程</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/instruction.mp4" type="video/mp4"></video></div></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="id7">
+<h2>2. 安装 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> 仓库<a class="headerlink" href="#id7" title="此标题的永久链接"></a></h2>
+<p>此仓库用于数据转换、模型训练、模型部署），使用 git 获取最新的代码仓库（main 分支：</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo_data_challenge.git
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
 <p>详细步骤请参阅其在 GitHub 上的对应 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/README.md">README</a> 文档。</p>
 </div>
-</li>
-<li><p>安装 <a class="reference external" href="https://github.com/LejuRobotics/kuavo-ros-opensource">kuavo-ros-opensource</a> 仓库（此仓库用于运行仿真器），使用 git 获取最新的仿真器仓库（opensource/kuavo-data-challenge 分支）：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>opensource/kuavo-data-challenge<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo-ros-opensource.git
+</div></blockquote>
+</section>
+<section id="id8">
+<h2>3. 安装 <a class="reference external" href="https://github.com/LejuRobotics/kuavo-ros-opensource">kuavo-ros-opensource</a> 仓库<a class="headerlink" href="#id8" title="此标题的永久链接"></a></h2>
+<p>此仓库用于运行仿真器，使用 git 获取最新的仿真器仓库（opensource/kuavo-data-challenge 分支）：</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>opensource/kuavo-data-challenge<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo-ros-opensource.git
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">备注</p>
+<p class="admonition-title">注解</p>
 <p>详细步骤请参阅其在 GitHub 上的对应 <a class="reference external" href="https://github.com/LejuRobotics/kuavo-ros-opensource/blob/opensource/kuavo-data-challenge/readme.md">README</a> 文档。</p>
 </div>
-</li>
-</ol>
+</div></blockquote>
+</section>
 </section>
 
 
@@ -109,12 +289,13 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
         <a href="submit.html" class="btn btn-neutral float-left" title="提交说明" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="faq.html" class="btn btn-neutral float-right" title="常见问题&amp;回答" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2025, 乐聚机器人。</p>
+    <p>&#169; 版权所有 2025, 乐聚机器人.</p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 

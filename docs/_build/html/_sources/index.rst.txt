@@ -57,12 +57,14 @@
    pages/datasets
    pages/submit
    pages/installation
-
+   pages/faq
 
 加入讨论群：
 ========
 为方便大家讨论和解决问题，我们组织了技术同学建了一个 `QQ群 <./_static/images/qq_team.jpg>`_ ，请点击链接扫码入群。
 
+此文档持续更新中...
+=================
 
 开源协议
 ========
