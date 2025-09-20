@@ -174,7 +174,7 @@
          :width: 100%
 
 2. 安装 `kuavo_data_challenge <https://github.com/LejuRobotics/kuavo_data_challenge>`_ 仓库
-==========================================================================================
+===================================================================================================
 此仓库用于数据转换、模型训练、模型部署），使用 git 获取最新的代码仓库（main 分支：  
 
    .. code-block:: bash
@@ -185,7 +185,7 @@
       详细步骤请参阅其在 GitHub 上的对应 `README <https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/README.md>`_ 文档。
 
 3. 安装 `kuavo-ros-opensource <https://github.com/LejuRobotics/kuavo-ros-opensource>`_ 仓库
-==========================================================================================
+====================================================================================================
 此仓库用于运行仿真器，使用 git 获取最新的仿真器仓库（opensource/kuavo-data-challenge 分支）：
 
    .. code-block:: bash
@@ -195,4 +195,7 @@
    .. note::
       详细步骤请参阅其在 GitHub 上的对应 `README <https://github.com/LejuRobotics/kuavo-ros-opensource/blob/opensource/kuavo-data-challenge/readme.md>`_ 文档。
 
-   
+4. 视频教程
+====================================================================================================
+   .. video:: ../_static/videos/demo.mp4
+      :width: 100%

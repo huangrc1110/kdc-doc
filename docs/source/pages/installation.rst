@@ -195,4 +195,7 @@
    .. note::
       详细步骤请参阅其在 GitHub 上的对应 `README <https://github.com/LejuRobotics/kuavo-ros-opensource/blob/opensource/kuavo-data-challenge/readme.md>`_ 文档。
 
-   
+4. 视频教程
+====================================================================================================
+   .. video:: ../_static/videos/demo.mp4
+      :width: 100%
