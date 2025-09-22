@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "赛事手册"
-copyright = '2025, 乐聚机器人'
+copyright = '2016-2025, 乐聚机器人'
 author = 'lejurobot'
 
 # -- General configuration ---------------------------------------------------
@@ -30,6 +30,7 @@ language = 'cn'
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+templates_path = ['_templates']
 
 # Hide the "View page source" link next to breadcrumbs
 html_show_sourcelink = False
