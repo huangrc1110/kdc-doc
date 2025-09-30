@@ -1,8 +1,8 @@
 .. _faq:
 
-**********
+****************
 常见问题&回答
-**********
+****************
 
 Q：我想报名参赛，该如何报名呢？有报名费吗？
     A：报名不需要报名费。进入 阿里云天池-天池大赛-工程开发赛-乐聚机器人第一届具身智能操作任务挑战赛&创业启航营，点击报名参赛，填写个人信息即可报名参赛（Note：若个人参赛，学校/公司可填写无， 报名信息里的团队并不计入统计，创建/加入团队请在报名后操作）
@@ -13,3 +13,48 @@ Q：如何创建/加入队伍呢？
 Q：真机赛如何参与呢？一定需要去现场调试真机吗？
     A：顺利通过初赛（模拟器赛）的筛选的选手和队伍可以进入真机赛，若无法到场调试，我们会安排技术人员在现场调试。
 
+Q：如何申请GPU算力
+	A：相关算力还在申请和协调，一旦有新的算力会给大家同步，建议大家先自己匹配算力
+
+Q：数据集现在有哪些格式的？
+	A：目前上传的数据集全部是原生rosbag文件，选手可以自行使用 ``python kuavo_data/CvtRosbag2Lerobot.py`` 来批量全自动转换成Lerobot Parquet格式，详细请查看 ``kuavo_data_challenge`` 说明文档
+
+Q：数据集需要提前下载好吗？
+	A：最好一次只下载需要训练到的数据集，无需一次把所有的任务的数据集一起下载，下载量会十分庞大
+
+Q：打开仿真器（例如 ``deploy.py`` 脚本）的时候，仿真器打开然后闪退
+	A：确认 ``ROBOT_VERSION`` 是45；确认 ``echo $ROBOT_VERSION`` 是否打印45
+
+	    - 每次重启docker镜像都需要重新 ``export ROBOT_VERSION=45`` ，或者可选加入zshrc里面
+
+Q：同时运行 ``deploy.py`` 和 ``eval_kuavo.sh`` 正常进行仿真器测试时，仿真器正常打开，但测试环节不开始、第一次reset轮后不开始、或者开始后循环reset轮自动闪退
+	A：在运行的 ``eval_kuavo.sh`` ，按照下面顺序注意以下事项：
+
+		- 确认选的是选项8
+		- 按下L键查看log，检查log里面有没有崩溃、缺Python包这种错误（常见为 ``apriltag_ros`` 包缺失），按照提示自行弥补
+		- 确认训练好的权重文件路径是否正确，是否有权限访问
+		- 推荐改要用到的文件夹访问权限，而不是在 ``eval_kuavo.sh`` 前面加 ``sudo`` （容易出问题）
+		- 重新配置 ``eval_kuavo.sh`` 运行的Python环境
+		- 在某些慢一些的系统上面，可能需要改等待仿真起来那个位置（~348行）的 ``time.sleep`` ，可能需要调长一些
+
+Q：仿真器 ``catkin build`` 的时候找不到模块报错，如找不到 ``humanoid_interface`` 
+	A：检查以下事项：
+
+        - 请确认运行 ``catkin build`` 之前先 ``source installed/setup.zsh`` 
+        - 请勿使用 ``catkin clean`` ，会丢失关键包裹，用了请麻烦重新pull整个库
+        - 重新pull整个库
+
+Q：仿真器 ``catkin build`` 的时候报错 ``failed to make symbolic link .../../*.so``
+	A：使用Windows来 ``git clone`` 这个库会导致symbolic link丢失
+
+        - 使用Ubuntu环境来执行 ``git clone/pull`` 
+
+Q：仿真器很卡
+	A：检查以下事项：
+    
+        - 确认使用了 ``run_with_gpu.sh`` 正确使用CUDA加速
+        - 确认docker是否正确使用了CUDA
+        - 推荐不要使用WSL（Windows Subsystem for Linux），CUDA加速有问题，要是使用这个请在QQ群里面看看能不能找到解决方案
+
+Q：仿真器运行 ``deploy.py`` 完全没有仿真页面
+	A：确认没有残骸没完全杀死的ROS进程，可重启电脑试试

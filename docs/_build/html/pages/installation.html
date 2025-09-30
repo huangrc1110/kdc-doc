@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="常见问题&amp;回答" href="faq.html" />
-    <link rel="prev" title="提交说明" href="submit.html" /> 
+    <link rel="next" title="数据说明" href="datasets.html" />
+    <link rel="prev" title="赛事报名" href="signup.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,16 +46,18 @@
               <p class="caption" role="heading"><span class="caption-text">文档内容</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="tasks.html">任务说明</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datasets.html">数据说明</a></li>
-<li class="toctree-l1"><a class="reference internal" href="submit.html">提交说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signup.html">赛事报名</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">赛事资源使用指南</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">1. 数据集下载</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">2. 安装 kuavo_data_challenge 仓库</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">3. 安装 kuavo-ros-opensource 仓库</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id10">4. 视频教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">2. 安装 kuavo_data_challenge 仓库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">3. 安装 kuavo-ros-opensource 仓库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">4. 视频教程</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">数据说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submit.html">提交说明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">常见问题&amp;回答</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forums.html">赛事论坛</a></li>
 </ul>
 
         </div>
@@ -169,7 +171,7 @@ sudo<span class="w"> </span>mv<span class="w"> </span>ossutil<span class="w"> </
 <p>按提示输入：</p>
 <ul class="simple">
 <li><p>配置文件路径：默认为 <code class="docutils literal notranslate"><span class="pre">~/.ossutilconfig</span></code> ，直接回车使用默认路径</p></li>
-<li><p>语言设置：输入 <a href="#id3"><span class="problematic" id="id4">``</span></a>CH``（中文）或 <a href="#id5"><span class="problematic" id="id6">``</span></a>EN``（英文）</p></li>
+<li><p>语言设置：输入 <code class="docutils literal notranslate"><span class="pre">CH</span></code> （中文）或 <code class="docutils literal notranslate"><span class="pre">EN</span></code> （英文）</p></li>
 <li><p>Endpoint：<code class="docutils literal notranslate"><span class="pre">https://oss-cn-hangzhou.aliyuncs.com</span></code></p></li>
 <li><p>AccessKey ID：<code class="docutils literal notranslate"><span class="pre">LTAI5tJCN2XX2sYt6wWhdvqk</span></code></p></li>
 <li><p>AccessKey Secret：<code class="docutils literal notranslate"><span class="pre">xbROt0HCaQexY2JrLl2UDScvS3qHpj</span></code></p></li>
@@ -257,8 +259,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ol>
 </div></blockquote>
 </section>
-<section id="id7">
-<h2>2. 安装 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> 仓库<a class="headerlink" href="#id7" title="此标题的永久链接"></a></h2>
+<section id="id3">
+<h2>2. 安装 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> 仓库<a class="headerlink" href="#id3" title="此标题的永久链接"></a></h2>
 <p>此仓库用于数据转换、模型训练、模型部署），使用 git 获取最新的代码仓库（main 分支：</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo_data_challenge.git
@@ -270,8 +272,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div>
 </div></blockquote>
 </section>
-<section id="id8">
-<h2>3. 安装 <a class="reference external" href="https://github.com/LejuRobotics/kuavo-ros-opensource">kuavo-ros-opensource</a> 仓库<a class="headerlink" href="#id8" title="此标题的永久链接"></a></h2>
+<section id="id4">
+<h2>3. 安装 <a class="reference external" href="https://github.com/LejuRobotics/kuavo-ros-opensource">kuavo-ros-opensource</a> 仓库<a class="headerlink" href="#id4" title="此标题的永久链接"></a></h2>
 <p>此仓库用于运行仿真器，使用 git 获取最新的仿真器仓库（opensource/kuavo-data-challenge 分支）：</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>opensource/kuavo-data-challenge<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo-ros-opensource.git
@@ -283,8 +285,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div>
 </div></blockquote>
 </section>
-<section id="id10">
-<h2>4. 视频教程<a class="headerlink" href="#id10" title="此标题的永久链接"></a></h2>
+<section id="id6">
+<h2>4. 视频教程<a class="headerlink" href="#id6" title="此标题的永久链接"></a></h2>
 <blockquote>
 <div><div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/demo.mp4" type="video/mp4"></video></div></div></blockquote>
 </section>
@@ -294,8 +296,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
-        <a href="submit.html" class="btn btn-neutral float-left" title="提交说明" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="faq.html" class="btn btn-neutral float-right" title="常见问题&amp;回答" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="signup.html" class="btn btn-neutral float-left" title="赛事报名" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="datasets.html" class="btn btn-neutral float-right" title="数据说明" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

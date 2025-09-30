@@ -1,8 +1,8 @@
 .. _installation:
 
-************
+******************
 赛事资源使用指南
-************
+******************
 
 为确保比赛过程顺利，我们提供了数据下载、基准代码、模拟器环境等相关资源，供参赛者使用。以下是步骤说明及相关链接：
 
@@ -82,7 +82,7 @@
       按提示输入：
 
       - 配置文件路径：默认为 ``~/.ossutilconfig`` ，直接回车使用默认路径
-      - 语言设置：输入 ``CH``（中文）或 ``EN``（英文）
+      - 语言设置：输入 ``CH`` （中文）或 ``EN`` （英文）
       - Endpoint：``https://oss-cn-hangzhou.aliyuncs.com``
       - AccessKey ID：``LTAI5tJCN2XX2sYt6wWhdvqk``
       - AccessKey Secret：``xbROt0HCaQexY2JrLl2UDScvS3qHpj``
