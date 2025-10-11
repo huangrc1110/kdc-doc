@@ -31,6 +31,10 @@ language = 'cn'
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 templates_path = ['_templates']
+html_logo = '_static/images/logo_darken_font.svg'
+html_theme_options = {
+    'logo_only': True,
+}
 
 # Hide the "View page source" link next to breadcrumbs
 html_show_sourcelink = False

@@ -5,11 +5,6 @@
 **********
 
 
-本地模型推理测试
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-参考 `kuavo_data_challenge仓库 main 分支的 readme <https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/README.md>`_ ，进行本地模型推理测试。
-
 代码提交与评测
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

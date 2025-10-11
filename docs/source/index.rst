@@ -6,11 +6,12 @@
 
   <style>.wy-nav-content .document h1:first-of-type{display:none;}</style>
 
-.. raw:: html
+.. .. raw:: html
 
-  <h1 style="text-align:center;margin:0.3em 0 0;">第一届具身智能操作任务挑战赛&创业启航营官方文档</h1>
-  <br>
+..   <h1 style="text-align:center;margin:0.3em 0 0;">第一届具身智能操作任务挑战赛&创业启航营官方文档</h1>
+..   <br>
 
+.. image:: ./_static/images/heading.png
 
 .. raw:: html
 
@@ -46,18 +47,47 @@
 
 本文档为 "第一届具身智能操作任务挑战赛&创业启航营" 参赛使用说明文档，主要涵盖本次赛事的数据、基准代码、仿真模拟器等使用的相关内容。有关比赛规则、重要日期等通用信息，请参阅 `比赛官网 <https://tianchi.aliyun.com/competition/entrance/532415>`_ 。
 
+本赛事支持代码分为基准代码（kuavo_data_challenge 仓库）、仿真器（kuavo-ros-opensource 仓库）两大部分。功能一览如下：
+
+   - 仿真器基于MuJoCo，自带真实的机器人模型，以真实的物理学还原效果
+   - 支持 rosbag 到 Lerobot 的数据转换
+   - IL 模型训练框架（DP, ACT）
+   - 模拟器部署接口以及自动，准确的评分系统
+   - 真机认证和部署接口
 
 
+快速开始
+===================
+.. descriptions here are active
+
+1. :doc:`pages/signup`
+      阿里云天池赛事报名信息
+
+2. :doc:`pages/datasets`
+      训练将用到的数据集详细信息
+
+3. :doc:`pages/installation`
+      赛事基准代码的安装及使用方法
+
+4. :doc:`pages/submit`
+      模型提交详细信息
 
 .. toctree::
    :maxdepth: 1
-   :caption: 文档内容
+   :hidden:
+   :caption: 赛事流程
+
+   pages/signup
+   pages/datasets
+   pages/installation
+   pages/submit
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: 辅助信息
 
    pages/tasks
-   pages/signup
-   pages/installation
-   pages/datasets
-   pages/submit
    pages/faq
    pages/forums
 

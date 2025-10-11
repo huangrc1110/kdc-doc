@@ -12,4 +12,4 @@
 
 QQ讨论群
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-`赛事官方QQ群 <./_static/images/qq_team.jpg>`_
+`赛事官方QQ群 <../_static/images/qq_team.jpg>`_
