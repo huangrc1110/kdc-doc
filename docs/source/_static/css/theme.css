@@ -3652,7 +3652,8 @@ button[disabled] {
   box-shadow: none;
 }
 .btn-link:visited {
-  color: #9b59b6;
+  /* color: #9b59b6; */
+  color: #409ad5;
 }
 .wy-btn-group .btn,
 .wy-control .btn {
@@ -4526,9 +4527,11 @@ a {
 }
 a:hover {
   color: #3091d1;
+  text-decoration: underline;
 }
 a:visited {
-  color: #9b59b6;
+  /* color: #9b59b6; */
+  color: #2980b9;
 }
 html {
   height: 100%;
@@ -4615,7 +4618,7 @@ p {
 }
 h1 {
   /* font-size: 175%; */
-  font-size: 200%
+  font-size: 250%
 }
 .rst-content .toctree-wrapper > p.caption,
 h2 {

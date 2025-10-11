@@ -75,6 +75,14 @@
 .. toctree::
    :maxdepth: 1
    :hidden:
+   :caption: 赛事介绍
+
+   pages/introduction
+   pages/tasks
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
    :caption: 赛事流程
 
    pages/signup
@@ -87,7 +95,6 @@
    :hidden:
    :caption: 辅助信息
 
-   pages/tasks
    pages/faq
    pages/forums
 
