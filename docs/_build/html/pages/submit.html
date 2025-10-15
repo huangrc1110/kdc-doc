@@ -103,16 +103,40 @@
 <ul>
 <li><p>注意事项</p>
 <blockquote>
-<div><ol class="arabic simple">
-<li><p>最终提交的文件为zip压缩包,里面包含两个文件,docker镜像tar文件,run_with_gpu.sh。</p></li>
-<li><p>请各位选手将tar文件和zip压缩包的名字定义为  队伍/个人姓名_task{i}, 若队伍为中文可以用首字母或用个人姓名。例如我的队伍名是乐聚战队,我的姓名是kuavo,此次提交的是任务2,我的tar文件就叫lejuzhandui_task2.tar或者kuavo_task2.tar,最后提交的zip也是一样的名字。需要注意的是,run_with_gpu.sh中需要将IMAGE_NAME和CONTAINER_NAME也改成对应的名字,以免无法运行</p></li>
-<li><p>打包镜像前,一定要注意把kuavo_sim_env.yaml里的配置改好,测试回合数(eval_episodes)为100回合,最大回合步数(max_episode_steps)不超过300(任务一和二)和600(任务三),一般200(任务一和二)和500(任务三)是足够的</p></li>
-<li><p>提交时,一般情况使用提交结果入口即可正常提交。若文件过大导致上传失败（一般超过5G会出现这种情况）,可使用上传超大文件入口。注意上传超大文件里的命令每隔一小时会刷新。</p></li>
+<div><ul class="simple">
+<li><ol class="arabic simple">
+<li><p>最终提交的文件为zip压缩包, 里面包含两个文件, docker镜像tar文件, run_with_gpu.sh</p></li>
 </ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>请各位选手将tar文件和zip压缩包的名字定义为  队伍/个人姓名_task{i}, 若队伍为中文可以用首字母或用个人姓名。例如我的队伍名是乐聚战队,我的姓名是kuavo,此次提交的是任务2,我的tar文件就叫lejuzhandui_task2.tar或者kuavo_task2.tar,最后提交的zip也是一样的名字。需要注意的是,run_with_gpu.sh中需要将IMAGE_NAME和CONTAINER_NAME也改成对应的名字,以免无法运行</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>打包镜像前, 一定要注意把kuavo_sim_env.yaml里的配置改好, 测试回合数(eval_episodes)为100回合,最大回合步数(max_episode_steps)不超过300(任务一和二)和600(任务三), 一般200(任务一和二)和500(任务三)是足够的</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="4">
+<li><p>提交时, 一般情况使用提交结果入口即可正常提交。若文件过大导致上传失败(一般超过5G会出现这种情况), 可使用上传超大文件入口。注意上传超大文件里的命令每隔一小时会刷新</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="5">
+<li><p>提交前，请先确认好已经成功加入队伍(个人选手可以不用)，若提交并获得到成绩后更改队伍或加入队伍，之前的成绩会作废。每队仅需一名选手提交, 请勿重复提交。</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="6">
+<li><p>官方评测系统和本地仓库评测系统类似，各位选手提交前可以先在本地测试自己的模型性能，以便随时修改自己的代码，性能调试后再提交，以免过多浪费其他选手的评测资源。</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="7">
+<li><p>提交后，若评测成功，可以在天池竞赛提交页看到自己的分数，若评测失败，会显示评测失败并显示原因，此时请检查提交的文件是否正确</p></li>
+</ol>
+</li>
+</ul>
 </div></blockquote>
 </li>
 <li><dl>
-<dt>视频教程</dt><dd><div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/submit_instruction.mp4" type="video/mp4"></video></div></dd>
+<dt>视频教程(下载打包过程可快进)</dt><dd><div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/submit_instruction.mp4" type="video/mp4"></video></div></dd>
 </dl>
 </li>
 </ul>
