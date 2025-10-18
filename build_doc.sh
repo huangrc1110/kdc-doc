@@ -9,7 +9,9 @@ PYTHON_BIN=$(command -v python)
 
 rm -rf docs/_build
 mkdir -p docs/_build/html
-sphinx-build -b html -D language=zh_CN docs/source docs/_build/html
+sphinx-build -b html -D language=zh_CN docs/source docs/_build/html/cn
+sphinx-build -b html -D language=en docs/source docs/_build/html/en
+cp docs/source/_static/index.html docs/_build/html
 
 touch docs/_build/html/.nojekyll
 

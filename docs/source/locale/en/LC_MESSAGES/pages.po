@@ -1,0 +1,1377 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016-2025, 乐聚机器人
+# This file is distributed under the same license as the 赛事手册 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 赛事手册 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-17 16:16+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/pages/datasets.rst:5
+msgid "赛事数据"
+msgstr "Datasets"
+
+#: ../../source/pages/datasets.rst:7
+msgid ""
+"为最大程度保留原始数据中的信息，本次赛事统一采用 **rosbag** 包作为数据格式。参赛者可自由利用 rosbag "
+"中提供的多源传感器数据进行模型训练。"
+msgstr "For maximum preservation of the valuable information contained in the original data, all of this competition's datasets are in rosbag format. Competitors can freely use the abundant sources"
+" of sensor data inside the rosbag files for their model training."
+
+#: ../../source/pages/datasets.rst:10
+msgid "数据集下载"
+msgstr "Downloading Datasets"
+
+#: ../../source/pages/datasets.rst:11
+msgid "数据集下载需要使用阿里云对象存储 OSS，说明如下。"
+msgstr "Dataset downloads are all done through the Alibaba Cloud's Object Storage Service (OSS). A guide is as follows:"
+
+#: ../../source/pages/datasets.rst:13
+msgid "ossutil 下载与安装"
+msgstr "Downloading & Installing ossutil"
+
+#: ../../source/pages/datasets.rst:15
+msgid "Linux/macOS 一键安装（推荐）"
+msgstr "Linux/macOS One-click Installation (Recommended)"
+
+#: ../../source/pages/datasets.rst:23
+msgid "安装过程中需要解压工具（unzip 或 7z），请提前安装。安装完成后，``ossutil`` 将安装到 ``/usr/bin/`` 目录下。"
+msgstr "The installation process require a decompression tool (such as unzip or 7zip), please install as needed. ``ossutil`` will be installed under ``/usr/bin/`` by default."
+
+#: ../../source/pages/datasets.rst:25
+msgid "下载地址"
+msgstr "Download Link"
+
+#: ../../source/pages/datasets.rst:31
+msgid "平台"
+msgstr "Platform"
+
+#: ../../source/pages/datasets.rst:32
+msgid "地址"
+msgstr "Address "
+
+#: ../../source/pages/datasets.rst:33
+msgid "Linux x86_64"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:34
+msgid ""
+"`ossutil-v1.7.19-linux-amd64.zip "
+"<https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-"
+"amd64.zip>`__"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:35
+msgid "Linux x86_32"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:36
+msgid ""
+"`ossutil-v1.7.19-linux-386.zip "
+"<https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-386.zip>`__"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:37
+msgid "Linux arm_64"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:38
+msgid ""
+"`ossutil-v1.7.19-linux-arm64.zip "
+"<https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-"
+"arm64.zip>`__"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:39
+msgid "Windows x64"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:40
+msgid ""
+"`ossutil-v1.7.19-windows-amd64.zip "
+"<https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-windows-"
+"amd64.zip>`__"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:41
+msgid "Windows x32"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:42
+msgid ""
+"`ossutil-v1.7.19-windows-386.zip "
+"<https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-windows-386.zip>`__"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:43
+msgid "macOS 64"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:44
+msgid ""
+"`ossutil-v1.7.19-mac-amd64.zip "
+"<https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-mac-"
+"amd64.zip>`__"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:45
+msgid "macOS arm_64"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:46
+msgid ""
+"`ossutil-v1.7.19-mac-arm64.zip "
+"<https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-mac-"
+"arm64.zip>`__"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:49
+msgid "手动安装方法"
+msgstr "Manual Installation Method"
+
+#: ../../source/pages/datasets.rst:62
+msgid "验证安装"
+msgstr "Install Verification"
+
+#: ../../source/pages/datasets.rst:68
+msgid "如果显示使用选项，则安装成功。若需更新版本，可执行："
+msgstr "When it shows the usage help page, it means the installation is successful. If it asks you for an update, perform as needed:"
+
+#: ../../source/pages/datasets.rst:74
+msgid "ossutil 配置"
+msgstr "ossutil Configuration"
+
+#: ../../source/pages/datasets.rst:76
+msgid "交互式配置（推荐）："
+msgstr "Interactive Configuration (Recommended)"
+
+#: ../../source/pages/datasets.rst:82
+msgid "按提示输入："
+msgstr "Enter as prompted: "
+
+#: ../../source/pages/datasets.rst:84
+msgid "配置文件路径：默认为 ``~/.ossutilconfig`` ，直接回车使用默认路径"
+msgstr "Default configuration file path: ``~/.ossutilconfig``, simply press Enter to use the default path"
+
+#: ../../source/pages/datasets.rst:85
+msgid "语言设置：输入 ``CH`` （中文）或 ``EN`` （英文）"
+msgstr "Language settings: Enter ``CH`` for Simplified Chinese, or ``EN`` for English"
+
+#: ../../source/pages/datasets.rst:86
+msgid "Endpoint：``https://oss-cn-hangzhou.aliyuncs.com``"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:87
+msgid "AccessKey ID：``LTAI5tJCN2XX2sYt6wWhdvqk``"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:88
+msgid "AccessKey Secret：``xbROt0HCaQexY2JrLl2UDScvS3qHpj``"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:90
+msgid "遇到 ``systoken`` 直接回车即可，提示出现的先后顺序可能不同。"
+msgstr "When it prompts you for ``stsToken``, don't enter anything and simply press Enter. The order of this appearance may vary on your end."
+
+#: ../../source/pages/datasets.rst:92
+msgid "验证配置与使用"
+msgstr "Testing the Configuration & its Usage"
+
+#: ../../source/pages/datasets.rst:94
+msgid "验证配置"
+msgstr "Testing this configuration"
+
+#: ../../source/pages/datasets.rst:101
+msgid "若能正常显示存储空间列表，说明配置成功。"
+msgstr "If it shows the directory list, it means the configuration is valid."
+
+#: ../../source/pages/datasets.rst:103
+msgid "浏览存储空间内容"
+msgstr "Listing the directory information"
+
+#: ../../source/pages/datasets.rst:114
+msgid "查看对象信息"
+msgstr "Viewing target details"
+
+#: ../../source/pages/datasets.rst:123
+msgid "搜索文件"
+msgstr "File(s) searching"
+
+#: ../../source/pages/datasets.rst:134
+msgid "下载说明"
+msgstr "How to Download Our Data"
+
+#: ../../source/pages/datasets.rst:136
+msgid "下载单个文件"
+msgstr "Downloading an individual file"
+
+#: ../../source/pages/datasets.rst:149
+msgid "批量下载文件"
+msgstr "Downloading a batch of files"
+
+#: ../../source/pages/datasets.rst:156
+msgid "断点续传下载"
+msgstr "Enabling auto-resume after interruption"
+
+#: ../../source/pages/datasets.rst:166
+msgid "常见问题"
+msgstr "Tips"
+
+#: ../../source/pages/datasets.rst:168
+msgid "使用 ``-j 10`` 增加并行任务数以提高下载速度"
+msgstr "Use the ``-j 10`` option to increase # of parallel tasks to increase the downloading speed"
+
+#: ../../source/pages/datasets.rst:169
+msgid "使用 ``-u`` 参数启用断点续传"
+msgstr "Use the ``-u`` option to enable auto-resume when the download is interrupted."
+
+#: ../../source/pages/datasets.rst:171
+msgid "视频教程"
+msgstr "Video Tutorial"
+
+#: ../../source/pages/datasets.rst:178
+msgid "rosbag 数据"
+msgstr "rosbag Data"
+
+#: ../../source/pages/datasets.rst:180
+msgid ""
+"参考 HuggingFace 开源的 `lerobot <https://github.com/huggingface/lerobot>`_ "
+"项目，赛事方同时提供了将 Kuavo 机器人 rosbag 数据转换为 Lerobot 数据集格式的工具，其中包含 *深度相机* "
+"等多模态数据。具体实现可参阅赛事主办方发布的 `kuavo_data_challenge "
+"<https://github.com/LejuRobotics/kuavo_data_challenge>`_ "
+"仓库中的数据转换脚本。数据格式的具体细节如下："
+msgstr "Inspired from the open-sourced `lerobot <https://github.com/huggingface/lerobot>`_ project by HuggingFace, "
+"the host has also prepared an easy-to-use tool that systematically converts the rosbag datasets from our Kuavo robots into Lerobot dataset formats, "
+"including *depth sensor* and other multimodal data. For more details, you may refer to the data conversion scripts from our `kuavo_data_challenge "
+"<https://github.com/LejuRobotics/kuavo_data_challenge>`_ "
+"repository. The exact dataset formats are as follows:"
+
+#: ../../source/pages/datasets.rst:183
+msgid "rosbag 话题说明"
+msgstr "rosbag Topics"
+
+#: ../../source/pages/datasets.rst:186
+msgid "/cam_x/color/image_raw/compressed 相机彩色图像数据"
+msgstr "/cam_x/color/image_raw/compressed Camera RGB Image Data"
+
+#: ../../source/pages/datasets.rst:187 ../../source/pages/datasets.rst:198
+#: ../../source/pages/datasets.rst:209 ../../source/pages/datasets.rst:220
+#: ../../source/pages/datasets.rst:231 ../../source/pages/datasets.rst:241
+#: ../../source/pages/datasets.rst:251 ../../source/pages/datasets.rst:273
+msgid "功能描述"
+msgstr "Description"
+
+#: ../../source/pages/datasets.rst:188
+msgid ""
+"/cam_x/color/image_raw/compressed 话题用于提供相机的原始彩色图像的压缩图像数据，其中，x 为 h、l 或 "
+"r，分别表示头部、左腕或右腕相机。"
+msgstr "This ROS topic is used to provide the post-compression original RGB imaging data from the camera sensors. x here being h, l or r, denoting head, left and right wrist cameras"
+
+#: ../../source/pages/datasets.rst:189 ../../source/pages/datasets.rst:200
+#: ../../source/pages/datasets.rst:211 ../../source/pages/datasets.rst:222
+#: ../../source/pages/datasets.rst:263 ../../source/pages/datasets.rst:306
+#: ../../source/pages/datasets.rst:345 ../../source/pages/datasets.rst:362
+msgid "消息类型"
+msgstr "Message type"
+
+#: ../../source/pages/datasets.rst:190 ../../source/pages/datasets.rst:201
+#: ../../source/pages/datasets.rst:212
+msgid "类型: sensor_msgs/CompressedImage"
+msgstr "Type: sensor_msgs/CompressedImage"
+
+#: ../../source/pages/datasets.rst:194 ../../source/pages/datasets.rst:205
+#: ../../source/pages/datasets.rst:216 ../../source/pages/datasets.rst:227
+#: ../../source/pages/datasets.rst:237 ../../source/pages/datasets.rst:247
+#: ../../source/pages/datasets.rst:257 ../../source/pages/datasets.rst:269
+#: ../../source/pages/datasets.rst:281 ../../source/pages/datasets.rst:300
+#: ../../source/pages/datasets.rst:311 ../../source/pages/datasets.rst:356
+#: ../../source/pages/datasets.rst:370
+msgid "消息字段"
+msgstr "Message body"
+
+#: ../../source/pages/datasets.rst:192 ../../source/pages/datasets.rst:203
+#: ../../source/pages/datasets.rst:214 ../../source/pages/datasets.rst:225
+#: ../../source/pages/datasets.rst:236 ../../source/pages/datasets.rst:246
+#: ../../source/pages/datasets.rst:348
+msgid "header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息"
+msgstr "header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc."
+
+#: ../../source/pages/datasets.rst:193 ../../source/pages/datasets.rst:204
+#: ../../source/pages/datasets.rst:215
+msgid "format (string): 图像编码格式"
+msgstr "format (string): Image encoding format"
+
+#: ../../source/pages/datasets.rst:194 ../../source/pages/datasets.rst:205
+#: ../../source/pages/datasets.rst:216
+msgid "data (uint8[]): 图像数据"
+msgstr "data (uint8[]): Image data"
+
+#: ../../source/pages/datasets.rst:197
+msgid "/cam_h/depth/image_raw/compressed 头部相机深度图像数据"
+msgstr "/cam_h/depth/image_raw/compressed Head camera depth sensor information"
+
+#: ../../source/pages/datasets.rst:199
+msgid "/cam_h/depth/image_raw/compressed 话题用于提供头部相机的原始深度图像经过压缩后的图像数据。"
+msgstr "/cam_h/depth/image_raw/compressed is used to provide the post-compression original depth imaging data from the head camera"
+
+#: ../../source/pages/datasets.rst:208
+msgid "/cam_x/depth/image_rect_raw/compressed 左腕、右腕相机深度图像数据"
+msgstr "/cam_x/depth/image_rect_raw/compressed Left, right wrist camera depth sensor information"
+
+#: ../../source/pages/datasets.rst:210
+msgid ""
+"/cam_x/depth/image_rect_raw 话题用于提供左腕或右腕相机的原始深度图像经过校正、压缩后的图像数据，其中，x 为 l 或 "
+"r，分别表示左腕或右腕相机。"
+msgstr "/cam_x/depth/image_rect_raw is used to provide the post-compression original depth imaging data from camera x, where x is either l (left) or r (right)."
+
+#: ../../source/pages/datasets.rst:219
+msgid "/kuavo_arm_traj 手臂运动控制"
+msgstr "/kuavo_arm_traj Arm trajectory control"
+
+#: ../../source/pages/datasets.rst:221
+msgid "/kuavo_arm_traj 话题用于控制机器人手臂运动，通过发布手臂目标关节位置来实现手臂的精确控制"
+msgstr "/kuavo_arm_traj is used to control the arm trajectories of the robot. It publishes arm target joint positions to control the arms with high precision."
+
+#: ../../source/pages/datasets.rst:223 ../../source/pages/datasets.rst:234
+#: ../../source/pages/datasets.rst:244 ../../source/pages/datasets.rst:264
+msgid "类型: sensor_msgs/JointState"
+msgstr "Type: sensor_msgs/JointState"
+
+#: ../../source/pages/datasets.rst:226
+msgid ""
+"name (list of string): 关节名称列表，假设有 14 个关节，名称为 \"arm_joint_1\" 到 "
+"\"arm_joint_14\"。"
+msgstr "name (list of string): List of the arm joints. When there are 14 joints in total, the names will be from \"arm_joint_1\" to \"arm_joint_14\"."
+
+#: ../../source/pages/datasets.rst:227
+msgid "position (list of float): 当前关节位置列表。数据结构跟下面 sensors_data_raw 12-25条相同"
+msgstr "position (list of float): A list of current arm joint positions. The data structure is similar to items 12-25 of sensor_data_raw below."
+
+#: ../../source/pages/datasets.rst:230
+msgid "/gripper/command 夹抓控制（仅限仿真数据）"
+msgstr "/gripper/command Gripper control (Simulator dataset only)"
+
+#: ../../source/pages/datasets.rst:232
+msgid "/gripper/command 话题用于控制仿真中机器人双手(手指)的运动。"
+msgstr "/gripper/command is used to control the grippers (fingers)' movement in the simulator."
+
+#: ../../source/pages/datasets.rst:233 ../../source/pages/datasets.rst:243
+#: ../../source/pages/datasets.rst:253 ../../source/pages/datasets.rst:275
+msgid "话题类型"
+msgstr "Message type"
+
+#: ../../source/pages/datasets.rst:237
+msgid ""
+"position (list of float): 数组长度为2, 数据为左夹爪和右夹爪的目标位置, 每个元素的取值范围为[0, 255], 0 "
+"为张开，255 为闭合。"
+msgstr "position (list of float): Size 2 array, data being the target positions of the left and right grippers, each element is between [0, 255], where 0 is fully open and 255 is fully shut."
+
+#: ../../source/pages/datasets.rst:240
+msgid "/gripper/state 夹抓状态（仅限仿真数据）"
+msgstr "/gripper/state Gripper state (Simulator dataset only)"
+
+#: ../../source/pages/datasets.rst:242
+msgid "/gripper/state 话题用于获取仿真中机器人双手(手指)的运动状态。"
+msgstr "/gripper/state is used to capture the current movement of the grippers (fingers) in the simulator."
+
+#: ../../source/pages/datasets.rst:247
+msgid ""
+"position (list of float): 数组长度为2, 数据为左夹爪和右夹爪的位置, 每个元素的取值范围为[0, 0.8], 0 "
+"为张开，0.8 为闭合。"
+msgstr "position (list of float): Size 2 array, data being the current positions of the left and right grippers, each element is between [0, 0.8], where 0 is fully open and 0.8 is fully shut"
+
+#: ../../source/pages/datasets.rst:250
+msgid "/control_robot_hand_position 灵巧手控制（仅限真机数据）"
+msgstr "/control_robot_hand_position Dexterous hand position (Real-machine dataset only)"
+
+#: ../../source/pages/datasets.rst:252
+msgid "/control_robot_hand_position 话题用于控制机器人双手(手指)的运动，通过发布手指目标关节位置来实现手部的精确控制。"
+msgstr "/control_robot_hand_position is used to control the movement of both hands. It publishes target joint positions to control the hands with high precision."
+
+#: ../../source/pages/datasets.rst:254
+msgid "类型: kuavo_msgs/robotHandPosition"
+msgstr "Type: kuavo_msgs/robotHandPosition"
+
+#: ../../source/pages/datasets.rst:256
+msgid ""
+"left_hand_position (list of float): 左手位置，包含6个元素，每个元素的取值范围为[0, 100], 0 "
+"为张开，100 为闭合。"
+msgstr "left_hand_position (list of float): Left hand position in a size 6 array, each element is between [0, 100], where 0 "
+"is fully open, 100 is fully closed"
+
+#: ../../source/pages/datasets.rst:257
+msgid ""
+"right_hand_position (list of float): 右手位置，包含6个元素，每个元素的取值范围为[0, 100], 0 "
+"为张开，100 为闭合。"
+msgstr "right_hand_position (list of float): Right hand position in a size 6 array, each element is between [0, 100], where 0 "
+"is fully open, 100 is fully closed"
+
+#: ../../source/pages/datasets.rst:260
+msgid "/dexhand/state 灵巧手的状态（仅限真机数据）"
+msgstr "/dexhand/state Dexterous hand state (Real-machine dataset only)"
+
+#: ../../source/pages/datasets.rst:261 ../../source/pages/datasets.rst:304
+#: ../../source/pages/datasets.rst:343 ../../source/pages/datasets.rst:360
+msgid "话题描述"
+msgstr "Description"
+
+#: ../../source/pages/datasets.rst:262
+msgid "发布灵巧手的状态数据."
+msgstr "Publishes dexterous hands' status"
+
+#: ../../source/pages/datasets.rst:266
+msgid "name (list of string): 关节名称数组, 包含12个关节名称:"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:267
+msgid "position (list of float): 关节位置数组, 长度为12, 前6个为左手关节位置, 后6个为右手关节位置"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:268
+msgid "velocity (list of float): 关节速度数组, 长度为12, 前6个为左手关节速度, 后6个为右手关节速度"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:269
+msgid "effort (list of float): 关节电流数组, 长度为12, 前6个为左手关节电流, 后6个为右手关节电流"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:272
+msgid "/control_robot_leju_claw 夹抓控制（仅限真机数据）"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:274
+msgid "/control_robot_leju_claw 话题用于机器人夹爪（二指爪）的控制。"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:276
+msgid "类型: kuavo_msgs/controlLejuClaw"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:278
+msgid "name (list of string): 数组长度为2, 数据为\"left_claw\", \"right_claw\""
+msgstr ""
+
+#: ../../source/pages/datasets.rst:279
+msgid ""
+"position (list of float): 数组长度为2, 数据为左夹爪和右夹爪的目标位置, 每个元素的取值范围为[0, 100], 0 "
+"为张开，100 为闭合。"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:280
+msgid "velocity (list of float): 数组长度为2, 夹爪目标速度值, 0 ~ 100, 不填写时默认为50"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:281
+msgid "effort (list of float): 数组长度为2, 夹爪目标电流, 单位 A, 不填写时默认为 1.0A"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:284
+msgid "/leju_claw_state 获取机器人夹爪（二指爪）状态（仅限真机数据）"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:285
+msgid "服务描述"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:286
+msgid "/leju_claw_state话题用于发布机器人夹爪（二指爪）的状态，位置，速度，力矩等信息。"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:287
+msgid "服务消息类型"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:288
+msgid "kuavo_msgs/lejuClawState"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:290
+msgid "state： 数据类型 int8[]；二指夹爪的状态, 数组长度为2, 第一个为左夹爪, 第二个为右夹爪"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:291
+msgid "data： 数据类型 kuavo_msgs/endEffectorData；二指夹爪的位置, 速度, 力距等信息"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:292
+msgid "state 状态值含义:"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:294
+msgid "-1 : Error, 表示有执行时有错误"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:295
+msgid "0 : Unknown, 初始化时默认的状态"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:296
+msgid "1 : Moving, 表示夹爪正在执行, 移动中"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:297
+msgid "2 : Reached, 表示夹爪已经执行到达期望的位置"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:298
+msgid "3 : Grabbed, 表示夹爪抓取到物品"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:300
+msgid "关于 data 字段中 kuavo_msgs/endEffectorData的消息在/control_robot_leju_claw部分有介绍。"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:303
+msgid "/sensors_data_raw 传感器数据"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:305
+msgid "话题用于发布实物机器人或仿真器的传感器原始数据，包括关节数据、IMU数据和末端执行器数据。"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:307
+msgid "类型: kuavo_msgs/sensorsData"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:309
+msgid "sensor_time (time): 时间戳"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:310
+msgid "joint_data (kuavo_msgs/jointData): 关节数据: 位置、速度、加速度、电流"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:311
+msgid "imu_data (kuavo_msgs/imuData): 包含陀螺仪、加速度计、自由加速度、四元数"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:312
+msgid "end_effector_data (kuavo_msgs/endEffectorData): 末端数据，暂未使用."
+msgstr ""
+
+#: ../../source/pages/datasets.rst:333
+msgid "关节数据说明"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:314
+msgid "数据顺序"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:316
+msgid "前 12 个数据为下肢电机数据:"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:318
+msgid ""
+"0~5 为左下肢数据 (l_leg_roll, l_leg_yaw, l_leg_pitch, l_knee, l_foot_pitch, "
+"l_foot_roll)"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:319
+msgid ""
+"6~11 为右下肢数据 (r_leg_roll, r_leg_yaw, r_leg_pitch, r_knee, r_foot_pitch, "
+"r_foot_roll)"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:321
+msgid "接着 14 个数据为手臂电机数据:"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:323
+msgid ""
+"12~18 左臂电机数据 (\"l_arm_pitch\", \"l_arm_roll\", \"l_arm_yaw\", "
+"\"l_forearm_pitch\", \"l_hand_yaw\", \"l_hand_pitch\", \"l_hand_roll\")"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:324
+msgid ""
+"19~25 为右臂电机数据 (\"r_arm_pitch\", \"r_arm_roll\", \"r_arm_yaw\", "
+"\"r_forearm_pitch\", \"r_hand_yaw\", \"r_hand_pitch\", \"r_hand_roll\")"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:326
+msgid "最后 2 个为头部电机数据: head_yaw 和 head_pitch"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:328
+msgid "单位:"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:330
+msgid "位置: 弧度 (radian)"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:331
+msgid "速度: 弧度每秒 (radian/s)"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:332
+msgid "加速度: 弧度每平方秒 (radian/s²)"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:333
+msgid "电流: 安培 (A)"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:339
+msgid "IMU 数据说明"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:336
+msgid "gyro: 陀螺仪的角速度，单位弧度每秒（rad/s）"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:337
+msgid "acc: 加速度计的加速度，单位米每平方秒（m/s²）"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:338
+msgid "quat: IMU的姿态（orientation）"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:342
+msgid "/joint_cmd 所有关节的控制指令"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:344
+msgid "话题用于发布全身所有关节的控制指令"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:346
+msgid "类型: kuavo_msgs/jointCmd"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:349
+msgid "joint_q (list of float): 关节位置, 单位(radian)"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:350
+msgid "joint_v (list of float): 关节速度, 单位(radian/s)"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:351
+msgid "tau (list of float): 关节扭矩, 单位(N·m)"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:352
+msgid "tau_max (list of float): 最大关节扭矩, 单位(N·m)"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:353
+msgid "tau_ratio (list of float): 扭矩系数"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:354
+msgid "joint_kp (list of float): kp 参数"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:355
+msgid "joint_kd (list of float): kd 参数"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:356
+msgid ""
+"control_modes (list of int): 关节对应的控制模式，0为Torque 控制模式, 1为Velocity 控制模式, "
+"2为Position 控制模式"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:359
+msgid "/cmd_pose_world 机器人位置指令（仅限任务4）"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:361
+msgid "话题用于发布机器人位置指令"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:363
+msgid "类型: geometry_msgs/Twist"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:365
+msgid "linear.x (float): 基于世界坐标系的 x 方向值，单位为米 (m)。"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:366
+msgid "linear.y (float): 基于世界坐标系的 y 方向值，单位为米 (m)。"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:367
+msgid "linear.z (float): 基于世界坐标系的 z 方向值，单位为米 (m)。"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:368
+msgid "angular.x (float): 基于世界坐标系的 x 方向旋转角度，单位为弧度 (radian)。"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:369
+msgid "angular.y (float): 基于世界坐标系的 y 方向旋转角度，单位为弧度 (radian)。"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:370
+msgid "angular.z (float): 基于世界坐标系的 z 方向旋转角度，单位为弧度 (radian)。"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:373
+msgid "lerobot 数据"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:376
+msgid "rosbag 转 Lerobot 格式"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:378
+msgid ""
+"请先完成安装指南，并参考 `kuavo_data_challenge "
+"<https://github.com/LejuRobotics/kuavo_data_challenge>`_ 仓库的教程将 Kuavo 原生 "
+"rosbag 数据转换为 Lerobot 框架可用的 parquet 格式："
+msgstr ""
+
+#: ../../source/pages/datasets.rst:388
+msgid "说明："
+msgstr ""
+
+#: ../../source/pages/datasets.rst:390
+msgid "rosbag.rosbag_dir：原始 rosbag 数据路径"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:391
+msgid "rosbag.lerobot_dir：转换后的lerobot-parquet 数据保存路径，通常会在此目录下创建一个名为lerobot的子文件夹"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:392
+msgid "configs/data/KuavoRosbag2Lerobot.yaml：请查看并根据需要选择启用的相机及是否使用深度图像等"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:396
+msgid "lerobot数据目录结构说明"
+msgstr ""
+
+#: ../../source/pages/datasets.rst:398
+msgid "执行脚本后，会生成标准lerobot格式数据集。目录结构如下："
+msgstr ""
+
+#: ../../source/pages/datasets.rst:421
+msgid "info.json 文件中记录了当前所有可用的数据特征的格式。主要可用特征如下："
+msgstr ""
+
+#: ../../source/pages/faq.rst:5
+msgid "常见问题&回答"
+msgstr "FAQs"
+
+#: ../../source/pages/faq.rst:8
+msgid "Q：我想报名参赛，该如何报名呢？有报名费吗？"
+msgstr ""
+
+#: ../../source/pages/faq.rst:8
+msgid ""
+"A：报名不需要报名费。进入 "
+"阿里云天池-天池大赛-工程开发赛-乐聚机器人第一届具身智能操作任务挑战赛&创业启航营，点击报名参赛，填写个人信息即可报名参赛（Note：若个人参赛，学校/公司可填写无，"
+" 报名信息里的团队并不计入统计，创建/加入团队请在报名后操作）"
+msgstr ""
+
+#: ../../source/pages/faq.rst:11
+msgid "Q：如何创建/加入队伍呢？"
+msgstr ""
+
+#: ../../source/pages/faq.rst:11
+msgid "A：完成报名后，在比赛页面左侧点击我的团队选项，可以创建队伍/加入队伍，每个队限2-4人。"
+msgstr ""
+
+#: ../../source/pages/faq.rst:14
+msgid "Q：真机赛如何参与呢？一定需要去现场调试真机吗？"
+msgstr ""
+
+#: ../../source/pages/faq.rst:14
+msgid "A：顺利通过初赛（模拟器赛）的筛选的选手和队伍可以进入真机赛，若无法到场调试，我们会安排技术人员在现场调试。"
+msgstr ""
+
+#: ../../source/pages/faq.rst:17
+msgid "Q：如何申请GPU算力"
+msgstr ""
+
+#: ../../source/pages/faq.rst:17
+msgid "A：相关算力还在申请和协调，一旦有新的算力会给大家同步，建议大家先自己匹配算力"
+msgstr ""
+
+#: ../../source/pages/faq.rst:20
+msgid "Q：数据集现在有哪些格式的？"
+msgstr ""
+
+#: ../../source/pages/faq.rst:20
+msgid ""
+"A：目前上传的数据集全部是原生rosbag文件，选手可以自行使用 ``python "
+"kuavo_data/CvtRosbag2Lerobot.py`` 来批量全自动转换成Lerobot Parquet格式，详细请查看 "
+"``kuavo_data_challenge`` 说明文档"
+msgstr ""
+
+#: ../../source/pages/faq.rst:23
+msgid "Q：数据集需要提前下载好吗？"
+msgstr ""
+
+#: ../../source/pages/faq.rst:23
+msgid "A：最好一次只下载需要训练到的数据集，无需一次把所有的任务的数据集一起下载，下载量会十分庞大"
+msgstr ""
+
+#: ../../source/pages/faq.rst:28
+msgid "Q：打开仿真器（例如 ``deploy.py`` 脚本）的时候，仿真器打开然后闪退"
+msgstr ""
+
+#: ../../source/pages/faq.rst:26
+msgid "A：确认 ``ROBOT_VERSION`` 是45；确认 ``echo $ROBOT_VERSION`` 是否打印45"
+msgstr ""
+
+#: ../../source/pages/faq.rst:28
+msgid "每次重启docker镜像都需要重新 ``export ROBOT_VERSION=45`` ，或者可选加入zshrc里面"
+msgstr ""
+
+#: ../../source/pages/faq.rst:38
+msgid ""
+"Q：同时运行 ``deploy.py`` 和 ``eval_kuavo.sh`` "
+"正常进行仿真器测试时，仿真器正常打开，但测试环节不开始、第一次reset轮后不开始、或者开始后循环reset轮自动闪退"
+msgstr ""
+
+#: ../../source/pages/faq.rst:31
+msgid "A：在运行的 ``eval_kuavo.sh`` ，按照下面顺序注意以下事项："
+msgstr ""
+
+#: ../../source/pages/faq.rst:33
+msgid "确认选的是选项8"
+msgstr ""
+
+#: ../../source/pages/faq.rst:34
+msgid "按下L键查看log，检查log里面有没有崩溃、缺Python包这种错误（常见为 ``apriltag_ros`` 包缺失），按照提示自行弥补"
+msgstr ""
+
+#: ../../source/pages/faq.rst:35
+msgid "确认训练好的权重文件路径是否正确，是否有权限访问"
+msgstr ""
+
+#: ../../source/pages/faq.rst:36
+msgid "推荐改要用到的文件夹访问权限，而不是在 ``eval_kuavo.sh`` 前面加 ``sudo`` （容易出问题）"
+msgstr ""
+
+#: ../../source/pages/faq.rst:37
+msgid "重新配置 ``eval_kuavo.sh`` 运行的Python环境"
+msgstr ""
+
+#: ../../source/pages/faq.rst:38
+msgid "在某些慢一些的系统上面，可能需要改等待仿真起来那个位置（~348行）的 ``time.sleep`` ，可能需要调长一些"
+msgstr ""
+
+#: ../../source/pages/faq.rst:45
+msgid "Q：仿真器 ``catkin build`` 的时候找不到模块报错，如找不到 ``humanoid_interface``"
+msgstr ""
+
+#: ../../source/pages/faq.rst:41 ../../source/pages/faq.rst:53
+msgid "A：检查以下事项："
+msgstr ""
+
+#: ../../source/pages/faq.rst:43
+msgid "请确认运行 ``catkin build`` 之前先 ``source installed/setup.zsh``"
+msgstr ""
+
+#: ../../source/pages/faq.rst:44
+msgid "请勿使用 ``catkin clean`` ，会丢失关键包裹，用了请麻烦重新pull整个库"
+msgstr ""
+
+#: ../../source/pages/faq.rst:45
+msgid "重新pull整个库"
+msgstr ""
+
+#: ../../source/pages/faq.rst:50
+msgid "Q：仿真器 ``catkin build`` 的时候报错 ``failed to make symbolic link .../../*.so``"
+msgstr ""
+
+#: ../../source/pages/faq.rst:48
+msgid "A：使用Windows来 ``git clone`` 这个库会导致symbolic link丢失"
+msgstr ""
+
+#: ../../source/pages/faq.rst:50
+msgid "使用Ubuntu环境来执行 ``git clone/pull``"
+msgstr ""
+
+#: ../../source/pages/faq.rst:57
+msgid "Q：仿真器很卡"
+msgstr ""
+
+#: ../../source/pages/faq.rst:55
+msgid "确认使用了 ``run_with_gpu.sh`` 正确使用CUDA加速"
+msgstr ""
+
+#: ../../source/pages/faq.rst:56
+msgid "确认docker是否正确使用了CUDA"
+msgstr ""
+
+#: ../../source/pages/faq.rst:57
+msgid "推荐不要使用WSL（Windows Subsystem for Linux），CUDA加速有问题，要是使用这个请在QQ群里面看看能不能找到解决方案"
+msgstr ""
+
+#: ../../source/pages/faq.rst:59
+msgid "Q：仿真器运行 ``deploy.py`` 完全没有仿真页面"
+msgstr ""
+
+#: ../../source/pages/faq.rst:60
+msgid "A：确认没有残骸没完全杀死的ROS进程，可重启电脑试试"
+msgstr ""
+
+#: ../../source/pages/forums.rst:5
+msgid "赛事论坛"
+msgstr "Forums"
+
+#: ../../source/pages/forums.rst:7
+msgid "赛事官方讨论资源如下："
+msgstr ""
+
+#: ../../source/pages/forums.rst:10
+msgid "阿里天池论坛"
+msgstr ""
+
+#: ../../source/pages/forums.rst:11
+msgid ""
+"`乐聚天池赛事论坛页 "
+"<https://tianchi.aliyun.com/competition/entrance/532415/forum>`_"
+msgstr ""
+
+#: ../../source/pages/forums.rst:14
+msgid "QQ讨论群"
+msgstr ""
+
+#: ../../source/pages/forums.rst:15
+msgid "`赛事官方QQ群 <../_static/images/qq_team.jpg>`_"
+msgstr ""
+
+#: ../../source/pages/installation.rst:5
+msgid "安装训练指南"
+msgstr "Installation & Training"
+
+#: ../../source/pages/installation.rst:7
+msgid "为确保比赛过程顺利，我们提供了数据下载、基准代码、仿真器环境等相关资源，供参赛者使用。以下是步骤说明及相关链接："
+msgstr ""
+
+#: ../../source/pages/installation.rst:10
+msgid ""
+"1. 安装 `kuavo_data_challenge "
+"<https://github.com/LejuRobotics/kuavo_data_challenge>`_ （基准代码）仓库"
+msgstr ""
+
+#: ../../source/pages/installation.rst:11
+msgid "此仓库用于数据转换、模型训练、模型部署，使用 git 获取最新的代码仓库（main 分支）："
+msgstr ""
+
+#: ../../source/pages/installation.rst:18
+msgid ""
+"详细安装及使用步骤请参阅其在 GitHub 上的对应 `README "
+"<https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/README.md>`_"
+" 文档。"
+msgstr ""
+
+#: ../../source/pages/installation.rst:21
+msgid ""
+"2. 安装 `kuavo-ros-opensource <https://github.com/LejuRobotics/kuavo-ros-"
+"opensource>`_ （仿真器环境）仓库"
+msgstr ""
+
+#: ../../source/pages/installation.rst:22
+msgid "此仓库用于运行仿真器，使用 git 获取最新的仿真器仓库（opensource/kuavo-data-challenge 分支）："
+msgstr ""
+
+#: ../../source/pages/installation.rst:29
+msgid ""
+"详细安装及使用步骤请参阅其在 GitHub 上的对应 `README <https://github.com/LejuRobotics"
+"/kuavo-ros-opensource/blob/opensource/kuavo-data-challenge/readme.md>`_ "
+"文档。"
+msgstr ""
+
+#: ../../source/pages/installation.rst:32
+msgid "3. 视频教程"
+msgstr ""
+
+#: ../../source/pages/installation.rst:38
+msgid "4. 本地模型推理测试"
+msgstr ""
+
+#: ../../source/pages/installation.rst:39
+msgid ""
+"参考 `kuavo_data_challenge仓库 main 分支的 readme "
+"<https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/README.md>`_"
+" ，进行本地模型推理测试。"
+msgstr ""
+
+#: ../../source/pages/introduction.rst:5
+msgid "赛事简介"
+msgstr "Competition Introduction"
+
+#: ../../source/pages/introduction.rst:7
+msgid "随着具身智能行业的快速发展，模仿学习、强化学习，决策类大模型等相关智能算法已经取得了显著的理论与应用进展。然而，推进这些算法的实际可用性和鲁棒性仍需依赖在现实世界中的持续交互与反馈过程，且此过程现有众多资源门槛："
+msgstr ""
+
+#: ../../source/pages/introduction.rst:9
+msgid "设备门槛高：高性能机器人设备价格昂贵，动辄数十万甚至数百万元"
+msgstr ""
+
+#: ../../source/pages/introduction.rst:10
+msgid "数据成本高：高质量数据采集需要专业场地、复杂同步系统与人工标注"
+msgstr ""
+
+#: ../../source/pages/introduction.rst:11
+msgid "评测标准缺失：缺乏统一的评测平台，算法难以在真实条件下公平比较"
+msgstr ""
+
+#: ../../source/pages/introduction.rst:13
+msgid "面临重重壁垒，我们这款全新赛事将："
+msgstr ""
+
+#: ../../source/pages/introduction.rst:15
+msgid "首次面向全球开发者开放耗资数千万元打造的真实机器人训练场采集的高质量操作数据"
+msgstr ""
+
+#: ../../source/pages/introduction.rst:16
+msgid "全面开放真实机器人测试平台，支持选手算法的远程部署与评测"
+msgstr ""
+
+#: ../../source/pages/introduction.rst:17
+msgid "提供自研评估系统、标准化任务接口、技术社区支持"
+msgstr ""
+
+#: ../../source/pages/introduction.rst:18
+msgid "针对主赛道和特色赛道，提供数十万奖金和奖励"
+msgstr ""
+
+#: ../../source/pages/introduction.rst:20
+msgid "我们的目标是降低技术门槛，让没有机器人的研究者也能开发、测试、部署真实世界的机器人智能系统，助力具身智能技术从学术走向工程，从想法走向落地。"
+msgstr ""
+
+#: ../../source/pages/signup.rst:5
+msgid "赛事报名"
+msgstr "Signing Up"
+
+#: ../../source/pages/signup.rst:7
+msgid ""
+"本赛事参赛队伍由2–4 "
+"名参赛选手组成。请选手们先报名再组队伍，队伍内所有成员须为报名表单及实名认证信息中的人员。本赛事参赛报名不需要报名费。参赛前请完整阅读天池上面全部规则与要求。"
+msgstr ""
+
+#: ../../source/pages/signup.rst:10
+msgid "报名参赛"
+msgstr ""
+
+#: ../../source/pages/signup.rst:12
+msgid ""
+"打开阿里云天池-天池大赛-工程开发赛-乐聚机器人第一届具身智能操作任务挑战赛&创业启航营，或者使用此链接： `乐聚天池赛事主页 "
+"<https://tianchi.aliyun.com/competition/entrance/532415>`_"
+msgstr ""
+
+#: ../../source/pages/signup.rst:13
+msgid "点击报名参赛，填写个人信息即可报名参赛"
+msgstr ""
+
+#: ../../source/pages/signup.rst:15
+msgid "温馨提示：若个人参赛，学校/公司可填写无， 报名信息里的团队并不计入统计，创建/加入团队请在报名后操作"
+msgstr ""
+
+#: ../../source/pages/signup.rst:18
+msgid "加入讨论群"
+msgstr ""
+
+#: ../../source/pages/signup.rst:19
+msgid ""
+"为方便大家讨论和解决问题，我们组织了技术同学建了一个 `QQ群 <../_static/images/qq_team.jpg>`_ "
+"，请报名完成后尽早点击链接扫码入群。"
+msgstr ""
+
+#: ../../source/pages/submit.rst:5
+msgid "提交说明"
+msgstr "Submission"
+
+#: ../../source/pages/submit.rst:9
+msgid "代码提交与评测"
+msgstr ""
+
+#: ../../source/pages/submit.rst:11
+msgid ""
+"参考 `kuavo_data_challenge仓库 main 分支的 docker/readme "
+"<https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md>`_"
+" ,将环境和代码打包为 docker 镜像提交至 `比赛官网 "
+"<https://tianchi.aliyun.com/competition/entrance/532415>`_ 。"
+msgstr ""
+
+#: ../../source/pages/submit.rst:12
+msgid "评测结果和排行榜将在比赛官网公布。"
+msgstr ""
+
+#: ../../source/pages/submit.rst:14
+msgid "注意事项"
+msgstr ""
+
+#: ../../source/pages/submit.rst:16
+msgid "最终提交的文件为zip压缩包, 里面包含两个文件, docker镜像tar文件, run_with_gpu.sh"
+msgstr ""
+
+#: ../../source/pages/submit.rst:19
+#, python-brace-format
+msgid ""
+"请各位选手将tar文件和zip压缩包的名字定义为  队伍/个人姓名_task{i}, "
+"若队伍为中文可以用首字母或用个人姓名。例如我的队伍名是乐聚战队,我的姓名是kuavo,此次提交的是任务2,我的tar文件就叫lejuzhandui_task2.tar或者kuavo_task2.tar,最后提交的zip也是一样的名字。需要注意的是,run_with_gpu.sh中需要将IMAGE_NAME和CONTAINER_NAME也改成对应的名字,以免无法运行"
+msgstr ""
+
+#: ../../source/pages/submit.rst:22
+msgid ""
+"打包镜像前, 一定要注意把kuavo_sim_env.yaml里的配置改好, "
+"测试回合数(eval_episodes)为100回合,最大回合步数(max_episode_steps)不超过300(任务一和二)和600(任务三),"
+" 一般200(任务一和二)和500(任务三)是足够的"
+msgstr ""
+
+#: ../../source/pages/submit.rst:25
+msgid ""
+"提交时, 一般情况使用提交结果入口即可正常提交。若文件过大导致上传失败(一般超过5G会出现这种情况), "
+"可使用上传超大文件入口。注意上传超大文件里的命令每隔一小时会刷新"
+msgstr ""
+
+#: ../../source/pages/submit.rst:28
+msgid ""
+"提交前，请先确认好已经成功加入队伍(个人选手可以不用)，若提交并获得到成绩后更改队伍或加入队伍，之前的成绩会作废。每队仅需一名选手提交, "
+"请勿重复提交。"
+msgstr ""
+
+#: ../../source/pages/submit.rst:31
+msgid "官方评测系统和本地仓库评测系统类似，各位选手提交前可以先在本地测试自己的模型性能，以便随时修改自己的代码，性能调试后再提交，以免过多浪费其他选手的评测资源。"
+msgstr ""
+
+#: ../../source/pages/submit.rst:34
+msgid "提交后，若评测成功，可以在天池竞赛提交页看到自己的分数，若评测失败，会显示评测失败并显示原因，此时请检查提交的文件是否正确"
+msgstr ""
+
+#: ../../source/pages/submit.rst:39
+msgid "视频教程(下载打包过程可快进)"
+msgstr ""
+
+#: ../../source/pages/submit.rst:42
+msgid "真机赛事敬请等待..."
+msgstr ""
+
+#: ../../source/pages/tasks.rst:5
+msgid "任务说明"
+msgstr "Tasks Description"
+
+#: ../../source/pages/tasks.rst:7
+msgid "本挑战赛以真实双臂人形机器人平台为核心，围绕工业典型场景设计多个具备真实部署价值的操作任务，并针对每个任务采集了大量高质量真实机器人操作数据。为了方便参赛者进行算法开发与验证，熟悉kuavo机器人的数据格式等，主办方提供了与真实机器人平台高度一致的仿真环境，并举行仿真赛。通过仿真模拟评测筛选出算法成熟度高、具备真机测试价值的队伍进入真机赛，并最终在真实机器人平台上进行算法调整与验证。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:11
+msgid "仿真场景四个任务的说明："
+msgstr ""
+
+#: ../../source/pages/tasks.rst:14 ../../source/pages/tasks.rst:101
+msgid "任务1：移动目标抓取"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:16
+msgid "此任务中，机器人左臂将左侧传送带上的物体抓取并放置到桌面指定区域1，右臂再抓取此物体并放置到区域2。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:18
+msgid "其中，环境光照强度，颜色，物体的颜色，在传送带上的位置，区域1与区域2的位置与颜色，均会在一定范围内随机。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:29 ../../source/pages/tasks.rst:51
+msgid "评分标准："
+msgstr ""
+
+#: ../../source/pages/tasks.rst:21
+msgid "成功抓住传送带上物体并放到桌面上指定区域，加30分，保持方向正确，加10分；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:23
+msgid "成功抓住放置到桌面物体并放到最终目标区域，加30分，保持方向正确，加10分；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:25 ../../source/pages/tasks.rst:47
+msgid "在指定时间N秒内完成，加20分，超出N秒，每一秒扣2分。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:27 ../../source/pages/tasks.rst:49
+#: ../../source/pages/tasks.rst:71
+msgid "关于位置和方向的判定："
+msgstr ""
+
+#: ../../source/pages/tasks.rst:29 ../../source/pages/tasks.rst:51
+msgid "物体必须在桌面上，且中心位置必须位于区域色块内才视为位置正确，仅位置成功时才会触发方向正确加分，物体z轴与世界z轴偏差不超过10度视为方向正确。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:36
+msgid "任务2：移动物体称重"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:38
+msgid "此任务中，机器人右臂将正面传送带上的移动物体抓取并放置到桌面的秤(具有一定高度)上，称重后左臂再将物体从秤抓取放置到目标区域。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:40
+msgid "其中，环境光照强度，颜色，物体的颜色，在传送带上的位置，秤与目标区域的位置与颜色，均会在一定范围内随机。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:43
+msgid "成功抓住传送带上物体并放到秤，加30分，保持方向正确，加10分；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:45
+msgid "成功抓住称重后物体并放到最终目标区域，加30分，保持方向正确，加10分；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:58
+msgid "任务3：物体定姿摆放"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:60
+msgid "此任务中，机器人需要将桌面上的三个物体中反面的物体进行翻面并运送到目标区域，正面物体不翻面仅移动到目标区域。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:62
+msgid "其中，三个物体中会有随机的两个物体是反面，一个物体是正面，三个物体的位置会在一定范围内随机。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:73 ../../source/pages/tasks.rst:91
+msgid "评分标准"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:65
+msgid "成功将两个反面物体运送到目标区域，每一个加10分，保持正面朝上，每一个加25分；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:67
+msgid "成功将一个正面物体运送到目标区域，加10分，保持正面朝上，加10分；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:69
+msgid "在指定时间N秒内完成，加10分，超出N秒，每一秒扣1分。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:73
+msgid "物体必须在桌面上，且中心位置必须位于区域内才视为位置正确，仅位置成功时才会触发方向正确加分，物体正面轴(-y)与世界z轴偏差不超过10度视为方向正确。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:80 ../../source/pages/tasks.rst:138
+msgid "任务4：全流程分拣"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:82
+msgid "此任务中，机器人需要先移动到前方货架，右臂抓取物体1，转身并移动到后方货架，将物体1放置于料盘A。再从后方货架移动到前方货架，左臂抓取物体2，返回后方货架并将物体2放置于料盘B。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:84
+msgid "其中，物体1，2的位置，料盘A，B的位置会在一定范围内随机。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:87
+msgid "准确移动到目标区域，每一次加10分，共4次；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:89
+msgid "成功将两个物体放置于指定料盘，每一个加20分；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:91
+msgid "在指定时间N秒内完成，加20分，超出N秒，每一秒扣1分。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:98
+msgid "真实场景四个任务的说明："
+msgstr ""
+
+#: ../../source/pages/tasks.rst:103
+msgid "任务描述：机器人从移动的传送带上抓取物体，放置于桌面后，再将其推送至指定区域内。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:108 ../../source/pages/tasks.rst:121
+#: ../../source/pages/tasks.rst:133 ../../source/pages/tasks.rst:147
+msgid "挑战要点："
+msgstr ""
+
+#: ../../source/pages/tasks.rst:106
+msgid "传送带运动状态下的动态抓取；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:107
+msgid "目标物体位置随机（工作范围内）；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:108
+msgid "机器人初始姿态存在±10cm位置偏移和±10°姿态偏移。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:113
+msgid "任务2：快递袋称重"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:115
+msgid "任务描述：机器人从移动的传送带上拾取快递袋，先放置在电子秤上完成称重，随后再次拾起并放入指定收纳筐中。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:118
+msgid "软包装可形变物体的稳定抓取；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:119
+msgid "目标物体外观特征多样性；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:120
+msgid "精准称重操作要求；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:121
+msgid "双臂协调操作。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:126
+msgid "任务3：日化产品定姿摆放"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:128
+msgid "任务描述：机器人从杂乱摆放的日化瓶中随机拾取一瓶，传递至另一只手后，再按照指定姿态将其摆放在目标位置。瓶身摆放要求：瓶口位于黄色区域外部；瓶身大部分位于黄色区域内部；瓶身标签面朝上。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:131
+msgid "双手协调与物体传递；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:132
+msgid "精确姿态控制；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:133
+msgid "空间约束满足。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:140
+msgid "任务描述：机器人从指定起始点出发，移动至流利架前拾取工件，随后转身移动至放置架，将工件放置在物料筐内指定位置。"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:143
+msgid "全身运动协调；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:144
+msgid "背向操作的空间感知；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:145
+msgid "精准投放控制；"
+msgstr ""
+
+#: ../../source/pages/tasks.rst:146
+msgid "复杂环境适应（±10cm随机偏移）。"
+msgstr ""
+

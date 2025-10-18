@@ -35,6 +35,17 @@ templates_path = ['_templates']
 html_logo = '_static/images/logo.png'
 html_theme_options = {
     'logo_only': True,
+    'version_selector': True,
+    'language_selector': True,
+}
+
+locale_dirs = ['locale/']
+html_context = {
+  'current_version' : "1.0",
+  'versions' : [["1.0", "."]],
+  'current_language': 'cn',
+  'languages': [["cn", "cn"], ["en", "en"]],
+  'DEBUG': True
 }
 
 # Hide the "View page source" link next to breadcrumbs

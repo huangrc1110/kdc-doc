@@ -131,7 +131,10 @@
             {%- if theme_version_selector or theme_language_selector %}
               <div class="switch-menus">
                 <div class="version-switch"></div>
-                <div class="language-switch"></div>
+                <div class="language-switch">
+                  <a href=" ../{%if pagename.split('/')[-1] != pagename%}..{% else %}.{% endif %}/cn/{{ pagename }}.html" style="color: #ffffff !important;">中文</a>
+                  <a href=" ../{%if pagename.split('/')[-1] != pagename%}..{% else %}.{% endif %}/en/{{ pagename }}.html" style="color: #ffffff !important;">English</a>
+                </div>
               </div>
             {%- endif %}
           {%- endif %}

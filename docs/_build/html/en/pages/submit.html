@@ -1,0 +1,201 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submission &mdash; 赛事手册  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=c773721a" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b3ba4146"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <script src="../_static/js/versions.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FAQs" href="faq.html" />
+    <link rel="prev" title="Installation &amp; Training" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="switch-menus">
+                <div class="version-switch"></div>
+                <div class="language-switch">
+                  <a href=" ../../cn/pages/submit.html" style="color: #ffffff !important;">中文</a>
+                  <a href=" ../../en/pages/submit.html" style="color: #ffffff !important;">English</a>
+                </div>
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Competition Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks.html">Tasks Description</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Competition Overview</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="signup.html">Signing Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; Training</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Submission</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">代码提交与评测</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">注意事项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">视频教程(下载打包过程可快进)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">真机赛事敬请等待…</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forums.html">Forums</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">赛事手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Submission</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="submit">
+<span id="id1"></span><h1>Submission<a class="headerlink" href="#submit" title="Permalink to this heading"></a></h1>
+<section id="id2">
+<h2>代码提交与评测<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<p>参考 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md">kuavo_data_challenge仓库 main 分支的 docker/readme</a> ,将环境和代码打包为 docker 镜像提交至 <a class="reference external" href="https://tianchi.aliyun.com/competition/entrance/532415">比赛官网</a> 。</p>
+<p>评测结果和排行榜将在比赛官网公布。</p>
+</section>
+<section id="id4">
+<h2>注意事项<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<p>1. 最终提交的文件为zip压缩包, 里面包含两个文件, docker镜像tar文件, run_with_gpu.sh
+。</p>
+<p>2. 请各位选手将tar文件和zip压缩包的名字定义为  队伍/个人姓名_task{i}, 若队伍为中文可以用首字母或用个人姓名。例如我的队伍名是乐聚战队,我的姓名是kuavo,此次提交的是任务2,我的tar文件就叫lejuzhandui_task2.tar或者kuavo_task2.tar,最后提交的zip也是一样的名字。需要注意的是,run_with_gpu.sh中需要将IMAGE_NAME和CONTAINER_NAME也改成对应的名字,以免无法运行
+。</p>
+<p>3. 打包镜像前, 一定要注意把kuavo_sim_env.yaml里的配置改好, 测试回合数(eval_episodes)为100回合,最大回合步数(max_episode_steps)不超过300(任务一和二)和600(任务三), 一般200(任务一和二)和500(任务三)是足够的
+。</p>
+<p>4. 提交时, 一般情况使用提交结果入口即可正常提交。若文件过大导致上传失败(一般超过5G会出现这种情况), 可使用上传超大文件入口。注意上传超大文件里的命令每隔一小时会刷新
+。</p>
+<p>5. 提交前，请先确认好已经成功加入队伍(个人选手可以不用)，若提交并获得到成绩后更改队伍或加入队伍，之前的成绩会作废。每队仅需一名选手提交, 请勿重复提交
+。</p>
+<p>6. 官方评测系统和本地仓库评测系统类似，各位选手提交前可以先在本地测试自己的模型性能，以便随时修改自己的代码，性能调试后再提交，以免过多浪费其他选手的评测资源
+。</p>
+<p>7. 提交后，若评测成功，可以在天池竞赛提交页看到自己的分数，若评测失败，会显示评测失败并显示原因，此时请检查提交的文件是否正确
+。</p>
+</section>
+<section id="id5">
+<h2>视频教程(下载打包过程可快进)<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/submit_instruction.mp4" type="video/mp4"></video></div></div></blockquote>
+</section>
+<section id="id6">
+<h2>真机赛事敬请等待…<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation &amp; Training" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="faq.html" class="btn btn-neutral float-right" title="FAQs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2016-2025, 乐聚机器人.</p>
+  </div> <div class="footer-copyright">
+  <p>
+    乐聚智能（深圳）股份有限公司<br> 
+    粤ICP备16048266号
+  </p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <!-- Version: 1.0 -->
+    Language
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    
+    <dl>
+      <dt>Languages</dt>
+        
+          <!-- <dd><a href="cn/submit.html">cn</a></dd> -->
+           <dd><a href=" ../../cn/pages/submit.html">cn</a></dd>
+            <!-- 
+            <dd><a href="cn#">cn</a></dd> -->
+        
+          <!-- <dd><a href="en/submit.html">en</a></dd> -->
+           <dd><a href=" ../../en/pages/submit.html">en</a></dd>
+            <!-- 
+            <dd><a href="en#">en</a></dd> -->
+        
+    </dl>
+    
+    
+    <br>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
