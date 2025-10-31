@@ -24,7 +24,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Installation &amp; Training" href="installation.html" />
-    <link rel="prev" title="Signing Up" href="signup.html" /> 
+    <link rel="prev" title="Competition Registration" href="signup.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -61,10 +61,10 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Competition Overview</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="signup.html">Signing Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signup.html">Competition Registration</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Datasets</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">Downloading Datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rosbag">rosbag Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rosbag">Rosbag Data</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id3">rosbag Topics</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#cam-x-color-image-raw-compressed">/cam_x/color/image_raw/compressed Camera RGB Image Data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cam-h-depth-image-raw-compressed">/cam_h/depth/image_raw/compressed Head camera depth sensor information</a></li>
@@ -74,18 +74,18 @@
 <li class="toctree-l4"><a class="reference internal" href="#gripper-state">/gripper/state Gripper state (Simulator dataset only)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#control-robot-hand-position">/control_robot_hand_position Dexterous hand position (Real-machine dataset only)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#dexhand-state">/dexhand/state Dexterous hand state (Real-machine dataset only)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#control-robot-leju-claw">/control_robot_leju_claw 夹抓控制（仅限真机数据）</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#leju-claw-state">/leju_claw_state 获取机器人夹爪（二指爪）状态（仅限真机数据）</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sensors-data-raw">/sensors_data_raw 传感器数据</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#joint-cmd">/joint_cmd 所有关节的控制指令</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmd-pose-world-4">/cmd_pose_world 机器人位置指令（仅限任务4）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#control-robot-leju-claw">/control_robot_leju_claw Claw control data (Real-machine dataset only)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#leju-claw-state">/leju_claw_state Claw states (Real-machine dataset only)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sensors-data-raw">/sensors_data_raw Raw sensor data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joint-cmd">/joint_cmd All joint control commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cmd-pose-world-4">/cmd_pose_world Robot positional commands (Task 4 only)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">lerobot 数据</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#rosbag-lerobot">rosbag 转 Lerobot 格式</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">lerobot数据目录结构说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Lerobot Dataset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rosbag-lerobot">Rosbag to Lerobot Conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Lerobot directory structure</a></li>
 </ul>
 </li>
 </ul>
@@ -299,7 +299,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="rosbag">
-<h2>rosbag Data<a class="headerlink" href="#rosbag" title="Permalink to this heading"></a></h2>
+<h2>Rosbag Data<a class="headerlink" href="#rosbag" title="Permalink to this heading"></a></h2>
 <p>Inspired from the open-sourced <a class="reference external" href="https://github.com/huggingface/lerobot">lerobot</a> project by HuggingFace, the host has also prepared an easy-to-use tool that systematically converts the rosbag datasets from our Kuavo robots into Lerobot dataset formats, including <em>depth sensor</em> and other multimodal data. For more details, you may refer to the data conversion scripts from our <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> repository. The exact dataset formats are as follows:</p>
 <section id="id3">
 <h3>rosbag Topics<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
@@ -498,10 +498,10 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </li>
 <li><dl class="simple">
 <dt>Message body</dt><dd><ul class="simple">
-<li><p>name (list of string): 关节名称数组, 包含12个关节名称:</p></li>
-<li><p>position (list of float): 关节位置数组, 长度为12, 前6个为左手关节位置, 后6个为右手关节位置</p></li>
-<li><p>velocity (list of float): 关节速度数组, 长度为12, 前6个为左手关节速度, 后6个为右手关节速度</p></li>
-<li><p>effort (list of float): 关节电流数组, 长度为12, 前6个为左手关节电流, 后6个为右手关节电流</p></li>
+<li><p>name (list of string): list of joint names, 12 joints in total:</p></li>
+<li><p>position (list of float): List of joint positions, 12 in total, first 6 being left joint positions, later 6 being right joint positions</p></li>
+<li><p>velocity (list of float): List of joint velocities, 12 in total, first 6 being left joint velocities, later 6 being right joint velocities</p></li>
+<li><p>effort (list of float): List of joint (electrical) current, 12 in total, first 6 being left joint current data, later 6 being right joint current data</p></li>
 </ul>
 </dd>
 </dl>
@@ -510,25 +510,25 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="control-robot-leju-claw">
-<h4>/control_robot_leju_claw 夹抓控制（仅限真机数据）<a class="headerlink" href="#control-robot-leju-claw" title="Permalink to this heading"></a></h4>
+<h4>/control_robot_leju_claw Claw control data (Real-machine dataset only)<a class="headerlink" href="#control-robot-leju-claw" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
-<dt>Description</dt><dd><p>/control_robot_leju_claw 话题用于机器人夹爪（二指爪）的控制。</p>
+<dt>Description</dt><dd><p>/control_robot_leju_claw Topic used to control the robot hands (i.e. two-finger claws)</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message type</dt><dd><p>类型: kuavo_msgs/controlLejuClaw</p>
+<dt>Message type</dt><dd><p>Type: kuavo_msgs/controlLejuClaw</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt>Message body</dt><dd><ul class="simple">
-<li><p>name (list of string): 数组长度为2, 数据为”left_claw”, “right_claw”</p></li>
-<li><p>position (list of float): 数组长度为2, 数据为左夹爪和右夹爪的目标位置, 每个元素的取值范围为[0, 100], 0 为张开，100 为闭合。</p></li>
-<li><p>velocity (list of float): 数组长度为2, 夹爪目标速度值, 0 ~ 100, 不填写时默认为50</p></li>
-<li><p>effort (list of float): 数组长度为2, 夹爪目标电流, 单位 A, 不填写时默认为 1.0A</p></li>
+<li><p>name (list of string): Length 2 list, consisting of “left_claw”, “right_claw”</p></li>
+<li><p>position (list of float): Length 2 list, consisting of left and right claw target positions, each element is between [0, 100], where 0 denotes fully open, 100 denotes fully closed</p></li>
+<li><p>velocity (list of float): Length 2 list, target velocities for the claws, again between [0, 100]. Defaults to 50.</p></li>
+<li><p>effort (list of float): Length 2 list, target current for claws, in Amps. Defaults to 1 Amp</p></li>
 </ul>
 </dd>
 </dl>
@@ -537,36 +537,36 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="leju-claw-state">
-<h4>/leju_claw_state 获取机器人夹爪（二指爪）状态（仅限真机数据）<a class="headerlink" href="#leju-claw-state" title="Permalink to this heading"></a></h4>
+<h4>/leju_claw_state Claw states (Real-machine dataset only)<a class="headerlink" href="#leju-claw-state" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic">
 <li><dl class="simple">
-<dt>服务描述</dt><dd><p>/leju_claw_state话题用于发布机器人夹爪（二指爪）的状态，位置，速度，力矩等信息。</p>
+<dt>Description</dt><dd><p>/leju_claw_state topic is used to publish the state, position, velocity and efforts of each of the claws.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>服务消息类型</dt><dd><p>kuavo_msgs/lejuClawState</p>
+<dt>Type</dt><dd><p>kuavo_msgs/lejuClawState</p>
 </dd>
 </dl>
 </li>
 <li><dl>
 <dt>Message body</dt><dd><ul>
-<li><p>state： 数据类型 int8[]；二指夹爪的状态, 数组长度为2, 第一个为左夹爪, 第二个为右夹爪</p></li>
-<li><p>data： 数据类型 kuavo_msgs/endEffectorData；二指夹爪的位置, 速度, 力距等信息</p></li>
-<li><p>state 状态值含义:</p>
+<li><p>state: Data type int8[]; Length 2 list denoting Claw states. First element denotes left claw, the other being right claw.</p></li>
+<li><p>data: Data type kuavo_msgs/endEffectorData; Claw position, velocity and effort</p></li>
+<li><p>state values’ meanings:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>-1 : Error, 表示有执行时有错误</p></li>
-<li><p>0 : Unknown, 初始化时默认的状态</p></li>
-<li><p>1 : Moving, 表示夹爪正在执行, 移动中</p></li>
-<li><p>2 : Reached, 表示夹爪已经执行到达期望的位置</p></li>
-<li><p>3 : Grabbed, 表示夹爪抓取到物品</p></li>
+<li><p>-1: Error, indicating execution error</p></li>
+<li><p>0: Unknown, default status upon initialisation</p></li>
+<li><p>1: Moving, indicating movement of the claws in progress</p></li>
+<li><p>2: Reached, indicating the target positions have been successfully reached</p></li>
+<li><p>3: Grabbed, indicating successful grasp of an item</p></li>
 </ul>
 </div></blockquote>
 </li>
 </ul>
-<p>关于 data 字段中 kuavo_msgs/endEffectorData的消息在/control_robot_leju_claw部分有介绍。</p>
+<p>Please refer to the descriptions in /control_robot_leju_claw for all the kuavo_msgs/endEffectorData messages inside data.</p>
 </dd>
 </dl>
 </li>
@@ -574,61 +574,61 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="sensors-data-raw">
-<h4>/sensors_data_raw 传感器数据<a class="headerlink" href="#sensors-data-raw" title="Permalink to this heading"></a></h4>
+<h4>/sensors_data_raw Raw sensor data<a class="headerlink" href="#sensors-data-raw" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic">
 <li><dl class="simple">
-<dt>Description</dt><dd><p>话题用于发布实物机器人或仿真器的传感器原始数据，包括关节数据、IMU数据和末端执行器数据。</p>
+<dt>Description</dt><dd><p>Topic used to publish all real-robot or simulator raw sensor data, from joint data to IMU data to end effector data</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message type</dt><dd><p>类型: kuavo_msgs/sensorsData</p>
+<dt>Message type</dt><dd><p>Type: kuavo_msgs/sensorsData</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt>Message body</dt><dd><ul class="simple">
-<li><p>sensor_time (time): 时间戳</p></li>
-<li><p>joint_data (kuavo_msgs/jointData): 关节数据: 位置、速度、加速度、电流</p></li>
-<li><p>imu_data (kuavo_msgs/imuData): 包含陀螺仪、加速度计、自由加速度、四元数</p></li>
-<li><p>end_effector_data (kuavo_msgs/endEffectorData): 末端数据，暂未使用.</p></li>
+<li><p>sensor_time (time): Timestamp</p></li>
+<li><p>joint_data (kuavo_msgs/jointData): Joint data: position, velocity, acceleration, current</p></li>
+<li><p>imu_data (kuavo_msgs/imuData): Includes gyroscope, accelerometer, free angular velocity, quarternion</p></li>
+<li><p>end_effector_data (kuavo_msgs/endEffectorData): End effector data, not currently used.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt>关节数据说明</dt><dd><ul>
-<li><p>数据顺序</p>
+<dt>Joint data description</dt><dd><ul>
+<li><p>Order of data</p>
 <blockquote>
 <div><ul>
-<li><p>前 12 个数据为下肢电机数据:</p>
+<li><p>First 12 elements are lower body motor data:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>0~5 为左下肢数据 (l_leg_roll, l_leg_yaw, l_leg_pitch, l_knee, l_foot_pitch, l_foot_roll)</p></li>
-<li><p>6~11 为右下肢数据 (r_leg_roll, r_leg_yaw, r_leg_pitch, r_knee, r_foot_pitch, r_foot_roll)</p></li>
+<li><p>0~5 are left limb data (l_leg_roll, l_leg_yaw, l_leg_pitch, l_knee, l_foot_pitch, l_foot_roll)</p></li>
+<li><p>6~11 are right limb data (r_leg_roll, r_leg_yaw, r_leg_pitch, r_knee, r_foot_pitch, r_foot_roll)</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>接着 14 个数据为手臂电机数据:</p>
+<li><p>The subsequent 14 elements are arm motor data:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>12~18 左臂电机数据 (“l_arm_pitch”, “l_arm_roll”, “l_arm_yaw”, “l_forearm_pitch”, “l_hand_yaw”, “l_hand_pitch”, “l_hand_roll”)</p></li>
-<li><p>19~25 为右臂电机数据 (“r_arm_pitch”, “r_arm_roll”, “r_arm_yaw”, “r_forearm_pitch”, “r_hand_yaw”, “r_hand_pitch”, “r_hand_roll”)</p></li>
+<li><p>12~18 are left arm motor data (“l_arm_pitch”, “l_arm_roll”, “l_arm_yaw”, “l_forearm_pitch”, “l_hand_yaw”, “l_hand_pitch”, “l_hand_roll”)</p></li>
+<li><p>19~25 are right arm motor data (“r_arm_pitch”, “r_arm_roll”, “r_arm_yaw”, “r_forearm_pitch”, “r_hand_yaw”, “r_hand_pitch”, “r_hand_roll”)</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>最后 2 个为头部电机数据: head_yaw 和 head_pitch</p></li>
+<li><p>The last 2 elements are head motor data: head_yaw and head_pitch</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>单位:</p>
+<li><p>Units:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>位置: 弧度 (radian)</p></li>
-<li><p>速度: 弧度每秒 (radian/s)</p></li>
-<li><p>加速度: 弧度每平方秒 (radian/s²)</p></li>
-<li><p>电流: 安培 (A)</p></li>
+<li><p>Positions: radians</p></li>
+<li><p>Speed: radians per second (radian/s)</p></li>
+<li><p>Acceleration: radians per square second (radian/s²)</p></li>
+<li><p>Current: Amperes (A)</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -637,10 +637,10 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>IMU 数据说明</dt><dd><ul class="simple">
-<li><p>gyro: 陀螺仪的角速度，单位弧度每秒（rad/s）</p></li>
-<li><p>acc: 加速度计的加速度，单位米每平方秒（m/s²）</p></li>
-<li><p>quat: IMU的姿态（orientation）</p></li>
+<dt>IMU Data Description</dt><dd><ul class="simple">
+<li><p>gyro: Gyroscope angular velocities, in rad/s</p></li>
+<li><p>acc: Accelerometer acceleration, in m/s²</p></li>
+<li><p>quat” IMU orientation</p></li>
 </ul>
 </dd>
 </dl>
@@ -649,30 +649,30 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="joint-cmd">
-<h4>/joint_cmd 所有关节的控制指令<a class="headerlink" href="#joint-cmd" title="Permalink to this heading"></a></h4>
+<h4>/joint_cmd All joint control commands<a class="headerlink" href="#joint-cmd" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
-<dt>Description</dt><dd><p>话题用于发布全身所有关节的控制指令</p>
+<dt>Description</dt><dd><p>Topic used to publish every joint commands throughout the whole body</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message type</dt><dd><p>类型: kuavo_msgs/jointCmd</p>
+<dt>Message type</dt><dd><p>Type: kuavo_msgs/jointCmd</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt>Message body</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
-<li><p>joint_q (list of float): 关节位置, 单位(radian)</p></li>
-<li><p>joint_v (list of float): 关节速度, 单位(radian/s)</p></li>
-<li><p>tau (list of float): 关节扭矩, 单位(N·m)</p></li>
-<li><p>tau_max (list of float): 最大关节扭矩, 单位(N·m)</p></li>
-<li><p>tau_ratio (list of float): 扭矩系数</p></li>
-<li><p>joint_kp (list of float): kp 参数</p></li>
-<li><p>joint_kd (list of float): kd 参数</p></li>
-<li><p>control_modes (list of int): 关节对应的控制模式，0为Torque 控制模式, 1为Velocity 控制模式, 2为Position 控制模式</p></li>
+<li><p>joint_q (list of float): Joint positions, in radians</p></li>
+<li><p>joint_v (list of float): Joint velocities, in radian/s</p></li>
+<li><p>tau (list of float): Joint torques, in N·m</p></li>
+<li><p>tau_max (list of float): Max joint torques, in N·m</p></li>
+<li><p>tau_ratio (list of float): Torque ratios</p></li>
+<li><p>joint_kp (list of float): kp data</p></li>
+<li><p>joint_kd (list of float): kd data</p></li>
+<li><p>control_modes (list of int): control mode corresponding to each joint, 0 being Torque, 1 being Velocity  and 2 being Positional control modes</p></li>
 </ul>
 </dd>
 </dl>
@@ -681,27 +681,27 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="cmd-pose-world-4">
-<h4>/cmd_pose_world 机器人位置指令（仅限任务4）<a class="headerlink" href="#cmd-pose-world-4" title="Permalink to this heading"></a></h4>
+<h4>/cmd_pose_world Robot positional commands (Task 4 only)<a class="headerlink" href="#cmd-pose-world-4" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
-<dt>Description</dt><dd><p>话题用于发布机器人位置指令</p>
+<dt>Description</dt><dd><p>Topic used to publish robot position commands</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message type</dt><dd><p>类型: geometry_msgs/Twist</p>
+<dt>Message type</dt><dd><p>Type: geometry_msgs/Twist</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt>Message body</dt><dd><ul class="simple">
-<li><p>linear.x (float): 基于世界坐标系的 x 方向值，单位为米 (m)。</p></li>
-<li><p>linear.y (float): 基于世界坐标系的 y 方向值，单位为米 (m)。</p></li>
-<li><p>linear.z (float): 基于世界坐标系的 z 方向值，单位为米 (m)。</p></li>
-<li><p>angular.x (float): 基于世界坐标系的 x 方向旋转角度，单位为弧度 (radian)。</p></li>
-<li><p>angular.y (float): 基于世界坐标系的 y 方向旋转角度，单位为弧度 (radian)。</p></li>
-<li><p>angular.z (float): 基于世界坐标系的 z 方向旋转角度，单位为弧度 (radian)。</p></li>
+<li><p>linear.x (float): x-directional data in world coordinates, in metres</p></li>
+<li><p>linear.y (float): y-directional data in world coordinates, in metres</p></li>
+<li><p>linear.z (float): z-directional data in world coordinates, in metres</p></li>
+<li><p>angular.x (float): x-directional rotation angle in world coordinates, in radians</p></li>
+<li><p>angular.y (float): y-directional rotation angle in world coordinates, in radians</p></li>
+<li><p>angular.z (float): z-directional rotation angle in world coordinates, in radians</p></li>
 </ul>
 </dd>
 </dl>
@@ -712,10 +712,10 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </section>
 </section>
 <section id="id4">
-<h2>lerobot 数据<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<h2>Lerobot Dataset<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <section id="rosbag-lerobot">
-<h3>rosbag 转 Lerobot 格式<a class="headerlink" href="#rosbag-lerobot" title="Permalink to this heading"></a></h3>
-<p>请先完成安装指南，并参考 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> 仓库的教程将 Kuavo 原生 rosbag 数据转换为 Lerobot 框架可用的 parquet 格式：</p>
+<h3>Rosbag to Lerobot Conversion<a class="headerlink" href="#rosbag-lerobot" title="Permalink to this heading"></a></h3>
+<p>Please complete the installation guide first, then refer to the tutorial from the <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> repository to convert Kuavo-native rosbags into Lerobot parquet format:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>kuavo_data/CvtRosbag2Lerobot.py<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--config-path<span class="o">=</span>../configs/data/<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--config-name<span class="o">=</span>KuavoRosbag2Lerobot.yaml<span class="w"> </span><span class="se">\</span>
@@ -723,18 +723,18 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 <span class="w">    </span>rosbag.lerobot_dir<span class="o">=</span>/path/to/lerobot_data
 </pre></div>
 </div>
-<p>说明：</p>
+<p>Description:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>rosbag.rosbag_dir：原始 rosbag 数据路径</p></li>
-<li><p>rosbag.lerobot_dir：转换后的lerobot-parquet 数据保存路径，通常会在此目录下创建一个名为lerobot的子文件夹</p></li>
-<li><p>configs/data/KuavoRosbag2Lerobot.yaml：请查看并根据需要选择启用的相机及是否使用深度图像等</p></li>
+<li><p>rosbag.rosbag_dir: Original rosbag data path</p></li>
+<li><p>rosbag.lerobot_dir：Target lerobot-parquet path after conversion, usually a new folder named lerobot will be created under this directory</p></li>
+<li><p>configs/data/KuavoRosbag2Lerobot.yaml: Please review this configuration file and choose which camera(s) to enable and whether to use depth data, based on your needs</p></li>
 </ul>
 </div></blockquote>
 </section>
 <section id="id6">
-<h3>lerobot数据目录结构说明<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
-<p>执行脚本后，会生成标准lerobot格式数据集。目录结构如下：</p>
+<h3>Lerobot directory structure<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
+<p>After executing the script, a standard Lerobot formatted dataset will be generated. The directory structure is as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>output_dir/
     ├── data/
     │   └── chunk-000/
@@ -755,7 +755,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
         └── observation.images.color.wrist_cam_r/
 </pre></div>
 </div>
-<p>info.json 文件中记录了当前所有可用的数据特征的格式。主要可用特征如下：</p>
+<p>info.json records all available data entries, as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;features&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;observation.state&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 机器人状态，包括14个手臂关节状态和2个末端执行器状态，顺序如 names 中所示</span>
@@ -900,7 +900,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="signup.html" class="btn btn-neutral float-left" title="Signing Up" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="signup.html" class="btn btn-neutral float-left" title="Competition Registration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="installation.html" class="btn btn-neutral float-right" title="Installation &amp; Training" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
