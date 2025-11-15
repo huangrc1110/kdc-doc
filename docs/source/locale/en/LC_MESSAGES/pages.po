@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the 赛事手册 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: 赛事手册 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-17 16:16+0800\n"
+"POT-Creation-Date: 2025-11-15 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -27,8 +26,11 @@ msgstr "Datasets"
 msgid ""
 "为最大程度保留原始数据中的信息，本次赛事统一采用 **rosbag** 包作为数据格式。参赛者可自由利用 rosbag "
 "中提供的多源传感器数据进行模型训练。"
-msgstr "For maximum preservation of the valuable information contained in the original data, all of this competition's datasets are in rosbag format. Competitors can freely use the abundant sources"
-" of sensor data inside the rosbag files for their model training."
+msgstr ""
+"For maximum preservation of the valuable information contained in the "
+"original data, all of this competition's datasets are in rosbag format. "
+"Competitors can freely use the abundant sources of sensor data inside the"
+" rosbag files for their model training."
 
 #: ../../source/pages/datasets.rst:10
 msgid "数据集下载"
@@ -36,7 +38,9 @@ msgstr "Downloading Datasets"
 
 #: ../../source/pages/datasets.rst:11
 msgid "数据集下载需要使用阿里云对象存储 OSS，说明如下。"
-msgstr "Dataset downloads are all done through the Alibaba Cloud's Object Storage Service (OSS). A guide is as follows:"
+msgstr ""
+"Dataset downloads are all done through the Alibaba Cloud's Object Storage"
+" Service (OSS). A guide is as follows:"
 
 #: ../../source/pages/datasets.rst:13
 msgid "ossutil 下载与安装"
@@ -48,7 +52,10 @@ msgstr "Linux/macOS One-click Installation (Recommended)"
 
 #: ../../source/pages/datasets.rst:23
 msgid "安装过程中需要解压工具（unzip 或 7z），请提前安装。安装完成后，``ossutil`` 将安装到 ``/usr/bin/`` 目录下。"
-msgstr "The installation process require a decompression tool (such as unzip or 7zip), please install as needed. ``ossutil`` will be installed under ``/usr/bin/`` by default."
+msgstr ""
+"The installation process require a decompression tool (such as unzip or "
+"7zip), please install as needed. ``ossutil`` will be installed under "
+"``/usr/bin/`` by default."
 
 #: ../../source/pages/datasets.rst:25
 msgid "下载地址"
@@ -147,7 +154,9 @@ msgstr "Install Verification"
 
 #: ../../source/pages/datasets.rst:68
 msgid "如果显示使用选项，则安装成功。若需更新版本，可执行："
-msgstr "When it shows the usage help page, it means the installation is successful. If it asks you for an update, perform as needed:"
+msgstr ""
+"When it shows the usage help page, it means the installation is "
+"successful. If it asks you for an update, perform as needed:"
 
 #: ../../source/pages/datasets.rst:74
 msgid "ossutil 配置"
@@ -163,11 +172,15 @@ msgstr "Enter as prompted: "
 
 #: ../../source/pages/datasets.rst:84
 msgid "配置文件路径：默认为 ``~/.ossutilconfig`` ，直接回车使用默认路径"
-msgstr "Default configuration file path: ``~/.ossutilconfig``, simply press Enter to use the default path"
+msgstr ""
+"Default configuration file path: ``~/.ossutilconfig``, simply press Enter"
+" to use the default path"
 
 #: ../../source/pages/datasets.rst:85
 msgid "语言设置：输入 ``CH`` （中文）或 ``EN`` （英文）"
-msgstr "Language settings: Enter ``CH`` for Simplified Chinese, or ``EN`` for English"
+msgstr ""
+"Language settings: Enter ``CH`` for Simplified Chinese, or ``EN`` for "
+"English"
 
 #: ../../source/pages/datasets.rst:86
 msgid "Endpoint：``https://oss-cn-hangzhou.aliyuncs.com``"
@@ -183,7 +196,9 @@ msgstr ""
 
 #: ../../source/pages/datasets.rst:90
 msgid "遇到 ``systoken`` 直接回车即可，提示出现的先后顺序可能不同。"
-msgstr "When it prompts you for ``stsToken``, don't enter anything and simply press Enter. The order of this appearance may vary on your end."
+msgstr ""
+"When it prompts you for ``stsToken``, don't enter anything and simply "
+"press Enter. The order of this appearance may vary on your end."
 
 #: ../../source/pages/datasets.rst:92
 msgid "验证配置与使用"
@@ -231,11 +246,15 @@ msgstr "Tips"
 
 #: ../../source/pages/datasets.rst:168
 msgid "使用 ``-j 10`` 增加并行任务数以提高下载速度"
-msgstr "Use the ``-j 10`` option to increase # of parallel tasks to increase the downloading speed"
+msgstr ""
+"Use the ``-j 10`` option to increase # of parallel tasks to increase the "
+"downloading speed"
 
 #: ../../source/pages/datasets.rst:169
 msgid "使用 ``-u`` 参数启用断点续传"
-msgstr "Use the ``-u`` option to enable auto-resume when the download is interrupted."
+msgstr ""
+"Use the ``-u`` option to enable auto-resume when the download is "
+"interrupted."
 
 #: ../../source/pages/datasets.rst:171
 msgid "视频教程"
@@ -252,11 +271,15 @@ msgid ""
 "等多模态数据。具体实现可参阅赛事主办方发布的 `kuavo_data_challenge "
 "<https://github.com/LejuRobotics/kuavo_data_challenge>`_ "
 "仓库中的数据转换脚本。数据格式的具体细节如下："
-msgstr "Inspired from the open-sourced `lerobot <https://github.com/huggingface/lerobot>`_ project by HuggingFace, "
-"the host has also prepared an easy-to-use tool that systematically converts the rosbag datasets from our Kuavo robots into Lerobot dataset formats, "
-"including *depth sensor* and other multimodal data. For more details, you may refer to the data conversion scripts from our `kuavo_data_challenge "
-"<https://github.com/LejuRobotics/kuavo_data_challenge>`_ "
-"repository. The exact dataset formats are as follows:"
+msgstr ""
+"Inspired from the open-sourced `lerobot "
+"<https://github.com/huggingface/lerobot>`_ project by HuggingFace, the "
+"host has also prepared an easy-to-use tool that systematically converts "
+"the rosbag datasets from our Kuavo robots into Lerobot dataset formats, "
+"including *depth sensor* and other multimodal data. For more details, you"
+" may refer to the data conversion scripts from our `kuavo_data_challenge "
+"<https://github.com/LejuRobotics/kuavo_data_challenge>`_ repository. The "
+"exact dataset formats are as follows:"
 
 #: ../../source/pages/datasets.rst:183
 msgid "rosbag 话题说明"
@@ -277,7 +300,10 @@ msgstr "Description"
 msgid ""
 "/cam_x/color/image_raw/compressed 话题用于提供相机的原始彩色图像的压缩图像数据，其中，x 为 h、l 或 "
 "r，分别表示头部、左腕或右腕相机。"
-msgstr "This ROS topic is used to provide the post-compression original RGB imaging data from the camera sensors. x here being h, l or r, denoting head, left and right wrist cameras"
+msgstr ""
+"This ROS topic is used to provide the post-compression original RGB "
+"imaging data from the camera sensors. x here being h, l or r, denoting "
+"head, left and right wrist cameras"
 
 #: ../../source/pages/datasets.rst:189 ../../source/pages/datasets.rst:200
 #: ../../source/pages/datasets.rst:211 ../../source/pages/datasets.rst:222
@@ -306,7 +332,9 @@ msgstr "Message body"
 #: ../../source/pages/datasets.rst:236 ../../source/pages/datasets.rst:246
 #: ../../source/pages/datasets.rst:348
 msgid "header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息"
-msgstr "header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc."
+msgstr ""
+"header (std_msgs/Header): Message head; includes timestamp, serial "
+"number, coordinate system identification, etc."
 
 #: ../../source/pages/datasets.rst:193 ../../source/pages/datasets.rst:204
 #: ../../source/pages/datasets.rst:215
@@ -324,17 +352,24 @@ msgstr "/cam_h/depth/image_raw/compressed Head camera depth sensor information"
 
 #: ../../source/pages/datasets.rst:199
 msgid "/cam_h/depth/image_raw/compressed 话题用于提供头部相机的原始深度图像经过压缩后的图像数据。"
-msgstr "/cam_h/depth/image_raw/compressed is used to provide the post-compression original depth imaging data from the head camera"
+msgstr ""
+"/cam_h/depth/image_raw/compressed is used to provide the post-compression"
+" original depth imaging data from the head camera"
 
 #: ../../source/pages/datasets.rst:208
 msgid "/cam_x/depth/image_rect_raw/compressed 左腕、右腕相机深度图像数据"
-msgstr "/cam_x/depth/image_rect_raw/compressed Left, right wrist camera depth sensor information"
+msgstr ""
+"/cam_x/depth/image_rect_raw/compressed Left, right wrist camera depth "
+"sensor information"
 
 #: ../../source/pages/datasets.rst:210
 msgid ""
 "/cam_x/depth/image_rect_raw 话题用于提供左腕或右腕相机的原始深度图像经过校正、压缩后的图像数据，其中，x 为 l 或 "
 "r，分别表示左腕或右腕相机。"
-msgstr "/cam_x/depth/image_rect_raw is used to provide the post-compression original depth imaging data from camera x, where x is either l (left) or r (right)."
+msgstr ""
+"/cam_x/depth/image_rect_raw is used to provide the post-compression "
+"original depth imaging data from camera x, where x is either l (left) or "
+"r (right)."
 
 #: ../../source/pages/datasets.rst:219
 msgid "/kuavo_arm_traj 手臂运动控制"
@@ -342,7 +377,10 @@ msgstr "/kuavo_arm_traj Arm trajectory control"
 
 #: ../../source/pages/datasets.rst:221
 msgid "/kuavo_arm_traj 话题用于控制机器人手臂运动，通过发布手臂目标关节位置来实现手臂的精确控制"
-msgstr "/kuavo_arm_traj is used to control the arm trajectories of the robot. It publishes arm target joint positions to control the arms with high precision."
+msgstr ""
+"/kuavo_arm_traj is used to control the arm trajectories of the robot. It "
+"publishes arm target joint positions to control the arms with high "
+"precision."
 
 #: ../../source/pages/datasets.rst:223 ../../source/pages/datasets.rst:234
 #: ../../source/pages/datasets.rst:244 ../../source/pages/datasets.rst:264
@@ -353,11 +391,15 @@ msgstr "Type: sensor_msgs/JointState"
 msgid ""
 "name (list of string): 关节名称列表，假设有 14 个关节，名称为 \"arm_joint_1\" 到 "
 "\"arm_joint_14\"。"
-msgstr "name (list of string): List of the arm joints. When there are 14 joints in total, the names will be from \"arm_joint_1\" to \"arm_joint_14\"."
+msgstr ""
+"name (list of string): List of the arm joints. When there are 14 joints "
+"in total, the names will be from \"arm_joint_1\" to \"arm_joint_14\"."
 
 #: ../../source/pages/datasets.rst:227
 msgid "position (list of float): 当前关节位置列表。数据结构跟下面 sensors_data_raw 12-25条相同"
-msgstr "position (list of float): A list of current arm joint positions. The data structure is similar to items 12-25 of sensor_data_raw below."
+msgstr ""
+"position (list of float): A list of current arm joint positions. The data"
+" structure is similar to items 12-25 of sensor_data_raw below."
 
 #: ../../source/pages/datasets.rst:230
 msgid "/gripper/command 夹抓控制（仅限仿真数据）"
@@ -365,7 +407,9 @@ msgstr "/gripper/command Gripper control (Simulator dataset only)"
 
 #: ../../source/pages/datasets.rst:232
 msgid "/gripper/command 话题用于控制仿真中机器人双手(手指)的运动。"
-msgstr "/gripper/command is used to control the grippers (fingers)' movement in the simulator."
+msgstr ""
+"/gripper/command is used to control the grippers (fingers)' movement in "
+"the simulator."
 
 #: ../../source/pages/datasets.rst:233 ../../source/pages/datasets.rst:243
 #: ../../source/pages/datasets.rst:253 ../../source/pages/datasets.rst:275
@@ -376,7 +420,10 @@ msgstr "Message type"
 msgid ""
 "position (list of float): 数组长度为2, 数据为左夹爪和右夹爪的目标位置, 每个元素的取值范围为[0, 255], 0 "
 "为张开，255 为闭合。"
-msgstr "position (list of float): Size 2 array, data being the target positions of the left and right grippers, each element is between [0, 255], where 0 is fully open and 255 is fully shut."
+msgstr ""
+"position (list of float): Size 2 array, data being the target positions "
+"of the left and right grippers, each element is between [0, 255], where 0"
+" is fully open and 255 is fully shut."
 
 #: ../../source/pages/datasets.rst:240
 msgid "/gripper/state 夹抓状态（仅限仿真数据）"
@@ -384,21 +431,31 @@ msgstr "/gripper/state Gripper state (Simulator dataset only)"
 
 #: ../../source/pages/datasets.rst:242
 msgid "/gripper/state 话题用于获取仿真中机器人双手(手指)的运动状态。"
-msgstr "/gripper/state is used to capture the current movement of the grippers (fingers) in the simulator."
+msgstr ""
+"/gripper/state is used to capture the current movement of the grippers "
+"(fingers) in the simulator."
 
 #: ../../source/pages/datasets.rst:247
 msgid ""
 "position (list of float): 数组长度为2, 数据为左夹爪和右夹爪的位置, 每个元素的取值范围为[0, 0.8], 0 "
 "为张开，0.8 为闭合。"
-msgstr "position (list of float): Size 2 array, data being the current positions of the left and right grippers, each element is between [0, 0.8], where 0 is fully open and 0.8 is fully shut"
+msgstr ""
+"position (list of float): Size 2 array, data being the current positions "
+"of the left and right grippers, each element is between [0, 0.8], where 0"
+" is fully open and 0.8 is fully shut"
 
 #: ../../source/pages/datasets.rst:250
 msgid "/control_robot_hand_position 灵巧手控制（仅限真机数据）"
-msgstr "/control_robot_hand_position Dexterous hand position (Real-machine dataset only)"
+msgstr ""
+"/control_robot_hand_position Dexterous hand position (Real-machine "
+"dataset only)"
 
 #: ../../source/pages/datasets.rst:252
 msgid "/control_robot_hand_position 话题用于控制机器人双手(手指)的运动，通过发布手指目标关节位置来实现手部的精确控制。"
-msgstr "/control_robot_hand_position is used to control the movement of both hands. It publishes target joint positions to control the hands with high precision."
+msgstr ""
+"/control_robot_hand_position is used to control the movement of both "
+"hands. It publishes target joint positions to control the hands with high"
+" precision."
 
 #: ../../source/pages/datasets.rst:254
 msgid "类型: kuavo_msgs/robotHandPosition"
@@ -408,15 +465,19 @@ msgstr "Type: kuavo_msgs/robotHandPosition"
 msgid ""
 "left_hand_position (list of float): 左手位置，包含6个元素，每个元素的取值范围为[0, 100], 0 "
 "为张开，100 为闭合。"
-msgstr "left_hand_position (list of float): Left hand position in a size 6 array, each element is between [0, 100], where 0 "
-"is fully open, 100 is fully closed"
+msgstr ""
+"left_hand_position (list of float): Left hand position in a size 6 array,"
+" each element is between [0, 100], where 0 is fully open, 100 is fully "
+"closed"
 
 #: ../../source/pages/datasets.rst:257
 msgid ""
 "right_hand_position (list of float): 右手位置，包含6个元素，每个元素的取值范围为[0, 100], 0 "
 "为张开，100 为闭合。"
-msgstr "right_hand_position (list of float): Right hand position in a size 6 array, each element is between [0, 100], where 0 "
-"is fully open, 100 is fully closed"
+msgstr ""
+"right_hand_position (list of float): Right hand position in a size 6 "
+"array, each element is between [0, 100], where 0 is fully open, 100 is "
+"fully closed"
 
 #: ../../source/pages/datasets.rst:260
 msgid "/dexhand/state 灵巧手的状态（仅限真机数据）"
@@ -437,15 +498,22 @@ msgstr "name (list of string): list of joint names, 12 joints in total:"
 
 #: ../../source/pages/datasets.rst:267
 msgid "position (list of float): 关节位置数组, 长度为12, 前6个为左手关节位置, 后6个为右手关节位置"
-msgstr "position (list of float): List of joint positions, 12 in total, first 6 being left joint positions, later 6 being right joint positions"
+msgstr ""
+"position (list of float): List of joint positions, 12 in total, first 6 "
+"being left joint positions, later 6 being right joint positions"
 
 #: ../../source/pages/datasets.rst:268
 msgid "velocity (list of float): 关节速度数组, 长度为12, 前6个为左手关节速度, 后6个为右手关节速度"
-msgstr "velocity (list of float): List of joint velocities, 12 in total, first 6 being left joint velocities, later 6 being right joint velocities"
+msgstr ""
+"velocity (list of float): List of joint velocities, 12 in total, first 6 "
+"being left joint velocities, later 6 being right joint velocities"
 
 #: ../../source/pages/datasets.rst:269
 msgid "effort (list of float): 关节电流数组, 长度为12, 前6个为左手关节电流, 后6个为右手关节电流"
-msgstr "effort (list of float): List of joint (electrical) current, 12 in total, first 6 being left joint current data, later 6 being right joint current data"
+msgstr ""
+"effort (list of float): List of joint (electrical) current, 12 in total, "
+"first 6 being left joint current data, later 6 being right joint current "
+"data"
 
 #: ../../source/pages/datasets.rst:272
 msgid "/control_robot_leju_claw 夹抓控制（仅限真机数据）"
@@ -453,7 +521,9 @@ msgstr "/control_robot_leju_claw Claw control data (Real-machine dataset only)"
 
 #: ../../source/pages/datasets.rst:274
 msgid "/control_robot_leju_claw 话题用于机器人夹爪（二指爪）的控制。"
-msgstr "/control_robot_leju_claw Topic used to control the robot hands (i.e. two-finger claws)"
+msgstr ""
+"/control_robot_leju_claw Topic used to control the robot hands (i.e. two-"
+"finger claws)"
 
 #: ../../source/pages/datasets.rst:276
 msgid "类型: kuavo_msgs/controlLejuClaw"
@@ -461,23 +531,30 @@ msgstr "Type: kuavo_msgs/controlLejuClaw"
 
 #: ../../source/pages/datasets.rst:278
 msgid "name (list of string): 数组长度为2, 数据为\"left_claw\", \"right_claw\""
-msgstr "name (list of string): Length 2 list, consisting of \"left_claw\", \"right_claw\""
+msgstr ""
+"name (list of string): Length 2 list, consisting of \"left_claw\", "
+"\"right_claw\""
 
 #: ../../source/pages/datasets.rst:279
 msgid ""
 "position (list of float): 数组长度为2, 数据为左夹爪和右夹爪的目标位置, 每个元素的取值范围为[0, 100], 0 "
 "为张开，100 为闭合。"
 msgstr ""
-"position (list of float): Length 2 list, consisting of left and right claw target positions, each element is between [0, 100], where 0 "
-"denotes fully open, 100 denotes fully closed"
+"position (list of float): Length 2 list, consisting of left and right "
+"claw target positions, each element is between [0, 100], where 0 denotes "
+"fully open, 100 denotes fully closed"
 
 #: ../../source/pages/datasets.rst:280
 msgid "velocity (list of float): 数组长度为2, 夹爪目标速度值, 0 ~ 100, 不填写时默认为50"
-msgstr "velocity (list of float): Length 2 list, target velocities for the claws, again between [0, 100]. Defaults to 50."
+msgstr ""
+"velocity (list of float): Length 2 list, target velocities for the claws,"
+" again between [0, 100]. Defaults to 50."
 
 #: ../../source/pages/datasets.rst:281
 msgid "effort (list of float): 数组长度为2, 夹爪目标电流, 单位 A, 不填写时默认为 1.0A"
-msgstr "effort (list of float): Length 2 list, target current for claws, in Amps. Defaults to 1 Amp"
+msgstr ""
+"effort (list of float): Length 2 list, target current for claws, in Amps."
+" Defaults to 1 Amp"
 
 #: ../../source/pages/datasets.rst:284
 msgid "/leju_claw_state 获取机器人夹爪（二指爪）状态（仅限真机数据）"
@@ -489,7 +566,9 @@ msgstr "Description"
 
 #: ../../source/pages/datasets.rst:286
 msgid "/leju_claw_state话题用于发布机器人夹爪（二指爪）的状态，位置，速度，力矩等信息。"
-msgstr "/leju_claw_state topic is used to publish the state, position, velocity and efforts of each of the claws."
+msgstr ""
+"/leju_claw_state topic is used to publish the state, position, velocity "
+"and efforts of each of the claws."
 
 #: ../../source/pages/datasets.rst:287
 msgid "服务消息类型"
@@ -501,11 +580,15 @@ msgstr ""
 
 #: ../../source/pages/datasets.rst:290
 msgid "state： 数据类型 int8[]；二指夹爪的状态, 数组长度为2, 第一个为左夹爪, 第二个为右夹爪"
-msgstr "state: Data type int8[]; Length 2 list denoting Claw states. First element denotes left claw, the other being right claw."
+msgstr ""
+"state: Data type int8[]; Length 2 list denoting Claw states. First "
+"element denotes left claw, the other being right claw."
 
 #: ../../source/pages/datasets.rst:291
 msgid "data： 数据类型 kuavo_msgs/endEffectorData；二指夹爪的位置, 速度, 力距等信息"
-msgstr "data: Data type kuavo_msgs/endEffectorData; Claw position, velocity and effort"
+msgstr ""
+"data: Data type kuavo_msgs/endEffectorData; Claw position, velocity and "
+"effort"
 
 #: ../../source/pages/datasets.rst:292
 msgid "state 状态值含义:"
@@ -533,7 +616,9 @@ msgstr "3: Grabbed, indicating successful grasp of an item"
 
 #: ../../source/pages/datasets.rst:300
 msgid "关于 data 字段中 kuavo_msgs/endEffectorData的消息在/control_robot_leju_claw部分有介绍。"
-msgstr "Please refer to the descriptions in /control_robot_leju_claw for all the kuavo_msgs/endEffectorData messages inside data."
+msgstr ""
+"Please refer to the descriptions in /control_robot_leju_claw for all the "
+"kuavo_msgs/endEffectorData messages inside data."
 
 #: ../../source/pages/datasets.rst:303
 msgid "/sensors_data_raw 传感器数据"
@@ -541,7 +626,9 @@ msgstr "/sensors_data_raw Raw sensor data"
 
 #: ../../source/pages/datasets.rst:305
 msgid "话题用于发布实物机器人或仿真器的传感器原始数据，包括关节数据、IMU数据和末端执行器数据。"
-msgstr "Topic used to publish all real-robot or simulator raw sensor data, from joint data to IMU data to end effector data"
+msgstr ""
+"Topic used to publish all real-robot or simulator raw sensor data, from "
+"joint data to IMU data to end effector data"
 
 #: ../../source/pages/datasets.rst:307
 msgid "类型: kuavo_msgs/sensorsData"
@@ -553,15 +640,21 @@ msgstr "sensor_time (time): Timestamp"
 
 #: ../../source/pages/datasets.rst:310
 msgid "joint_data (kuavo_msgs/jointData): 关节数据: 位置、速度、加速度、电流"
-msgstr "joint_data (kuavo_msgs/jointData): Joint data: position, velocity, acceleration, current"
+msgstr ""
+"joint_data (kuavo_msgs/jointData): Joint data: position, velocity, "
+"acceleration, current"
 
 #: ../../source/pages/datasets.rst:311
 msgid "imu_data (kuavo_msgs/imuData): 包含陀螺仪、加速度计、自由加速度、四元数"
-msgstr "imu_data (kuavo_msgs/imuData): Includes gyroscope, accelerometer, free angular velocity, quarternion"
+msgstr ""
+"imu_data (kuavo_msgs/imuData): Includes gyroscope, accelerometer, free "
+"angular velocity, quarternion"
 
 #: ../../source/pages/datasets.rst:312
 msgid "end_effector_data (kuavo_msgs/endEffectorData): 末端数据，暂未使用."
-msgstr "end_effector_data (kuavo_msgs/endEffectorData): End effector data, not currently used."
+msgstr ""
+"end_effector_data (kuavo_msgs/endEffectorData): End effector data, not "
+"currently used."
 
 #: ../../source/pages/datasets.rst:333
 msgid "关节数据说明"
@@ -580,16 +673,16 @@ msgid ""
 "0~5 为左下肢数据 (l_leg_roll, l_leg_yaw, l_leg_pitch, l_knee, l_foot_pitch, "
 "l_foot_roll)"
 msgstr ""
-"0~5 are left limb data (l_leg_roll, l_leg_yaw, l_leg_pitch, l_knee, l_foot_pitch, "
-"l_foot_roll)"
+"0~5 are left limb data (l_leg_roll, l_leg_yaw, l_leg_pitch, l_knee, "
+"l_foot_pitch, l_foot_roll)"
 
 #: ../../source/pages/datasets.rst:319
 msgid ""
 "6~11 为右下肢数据 (r_leg_roll, r_leg_yaw, r_leg_pitch, r_knee, r_foot_pitch, "
 "r_foot_roll)"
 msgstr ""
-"6~11 are right limb data (r_leg_roll, r_leg_yaw, r_leg_pitch, r_knee, r_foot_pitch, "
-"r_foot_roll)"
+"6~11 are right limb data (r_leg_roll, r_leg_yaw, r_leg_pitch, r_knee, "
+"r_foot_pitch, r_foot_roll)"
 
 #: ../../source/pages/datasets.rst:321
 msgid "接着 14 个数据为手臂电机数据:"
@@ -600,16 +693,18 @@ msgid ""
 "12~18 左臂电机数据 (\"l_arm_pitch\", \"l_arm_roll\", \"l_arm_yaw\", "
 "\"l_forearm_pitch\", \"l_hand_yaw\", \"l_hand_pitch\", \"l_hand_roll\")"
 msgstr ""
-"12~18 are left arm motor data (\"l_arm_pitch\", \"l_arm_roll\", \"l_arm_yaw\", "
-"\"l_forearm_pitch\", \"l_hand_yaw\", \"l_hand_pitch\", \"l_hand_roll\")"
+"12~18 are left arm motor data (\"l_arm_pitch\", \"l_arm_roll\", "
+"\"l_arm_yaw\", \"l_forearm_pitch\", \"l_hand_yaw\", \"l_hand_pitch\", "
+"\"l_hand_roll\")"
 
 #: ../../source/pages/datasets.rst:324
 msgid ""
 "19~25 为右臂电机数据 (\"r_arm_pitch\", \"r_arm_roll\", \"r_arm_yaw\", "
 "\"r_forearm_pitch\", \"r_hand_yaw\", \"r_hand_pitch\", \"r_hand_roll\")"
 msgstr ""
-"19~25 are right arm motor data (\"r_arm_pitch\", \"r_arm_roll\", \"r_arm_yaw\", "
-"\"r_forearm_pitch\", \"r_hand_yaw\", \"r_hand_pitch\", \"r_hand_roll\")"
+"19~25 are right arm motor data (\"r_arm_pitch\", \"r_arm_roll\", "
+"\"r_arm_yaw\", \"r_forearm_pitch\", \"r_hand_yaw\", \"r_hand_pitch\", "
+"\"r_hand_roll\")"
 
 #: ../../source/pages/datasets.rst:326
 msgid "最后 2 个为头部电机数据: head_yaw 和 head_pitch"
@@ -649,7 +744,7 @@ msgstr "acc: Accelerometer acceleration, in m/s²"
 
 #: ../../source/pages/datasets.rst:338
 msgid "quat: IMU的姿态（orientation）"
-msgstr "quat" IMU orientation"
+msgstr "quat\" IMU orientation"
 
 #: ../../source/pages/datasets.rst:342
 msgid "/joint_cmd 所有关节的控制指令"
@@ -696,8 +791,8 @@ msgid ""
 "control_modes (list of int): 关节对应的控制模式，0为Torque 控制模式, 1为Velocity 控制模式, "
 "2为Position 控制模式"
 msgstr ""
-"control_modes (list of int): control mode corresponding to each joint, 0 being Torque, 1 being Velocity "
-" and 2 being Positional control modes"
+"control_modes (list of int): control mode corresponding to each joint, 0 "
+"being Torque, 1 being Velocity  and 2 being Positional control modes"
 
 #: ../../source/pages/datasets.rst:359
 msgid "/cmd_pose_world 机器人位置指令（仅限任务4）"
@@ -725,15 +820,21 @@ msgstr "linear.z (float): z-directional data in world coordinates, in metres"
 
 #: ../../source/pages/datasets.rst:368
 msgid "angular.x (float): 基于世界坐标系的 x 方向旋转角度，单位为弧度 (radian)。"
-msgstr "angular.x (float): x-directional rotation angle in world coordinates, in radians"
+msgstr ""
+"angular.x (float): x-directional rotation angle in world coordinates, in "
+"radians"
 
 #: ../../source/pages/datasets.rst:369
 msgid "angular.y (float): 基于世界坐标系的 y 方向旋转角度，单位为弧度 (radian)。"
-msgstr "angular.y (float): y-directional rotation angle in world coordinates, in radians"
+msgstr ""
+"angular.y (float): y-directional rotation angle in world coordinates, in "
+"radians"
 
 #: ../../source/pages/datasets.rst:370
 msgid "angular.z (float): 基于世界坐标系的 z 方向旋转角度，单位为弧度 (radian)。"
-msgstr "angular.z (float): z-directional rotation angle in world coordinates, in radians"
+msgstr ""
+"angular.z (float): z-directional rotation angle in world coordinates, in "
+"radians"
 
 #: ../../source/pages/datasets.rst:373
 msgid "lerobot 数据"
@@ -749,9 +850,10 @@ msgid ""
 "<https://github.com/LejuRobotics/kuavo_data_challenge>`_ 仓库的教程将 Kuavo 原生 "
 "rosbag 数据转换为 Lerobot 框架可用的 parquet 格式："
 msgstr ""
-"Please complete the installation guide first, then refer to the tutorial from the `kuavo_data_challenge "
-"<https://github.com/LejuRobotics/kuavo_data_challenge>`_ repository to convert Kuavo-native "
-"rosbags into Lerobot parquet format:"
+"Please complete the installation guide first, then refer to the tutorial "
+"from the `kuavo_data_challenge "
+"<https://github.com/LejuRobotics/kuavo_data_challenge>`_ repository to "
+"convert Kuavo-native rosbags into Lerobot parquet format:"
 
 #: ../../source/pages/datasets.rst:388
 msgid "说明："
@@ -763,11 +865,16 @@ msgstr "rosbag.rosbag_dir: Original rosbag data path"
 
 #: ../../source/pages/datasets.rst:391
 msgid "rosbag.lerobot_dir：转换后的lerobot-parquet 数据保存路径，通常会在此目录下创建一个名为lerobot的子文件夹"
-msgstr "rosbag.lerobot_dir：Target lerobot-parquet path after conversion, usually a new folder named lerobot will be created under this directory"
+msgstr ""
+"rosbag.lerobot_dir：Target lerobot-parquet path after conversion, usually "
+"a new folder named lerobot will be created under this directory"
 
 #: ../../source/pages/datasets.rst:392
 msgid "configs/data/KuavoRosbag2Lerobot.yaml：请查看并根据需要选择启用的相机及是否使用深度图像等"
-msgstr "configs/data/KuavoRosbag2Lerobot.yaml: Please review this configuration file and choose which camera(s) to enable and whether to use depth data, based on your needs"
+msgstr ""
+"configs/data/KuavoRosbag2Lerobot.yaml: Please review this configuration "
+"file and choose which camera(s) to enable and whether to use depth data, "
+"based on your needs"
 
 #: ../../source/pages/datasets.rst:396
 msgid "lerobot数据目录结构说明"
@@ -775,7 +882,9 @@ msgstr "Lerobot directory structure"
 
 #: ../../source/pages/datasets.rst:398
 msgid "执行脚本后，会生成标准lerobot格式数据集。目录结构如下："
-msgstr "After executing the script, a standard Lerobot formatted dataset will be generated. The directory structure is as follows:"
+msgstr ""
+"After executing the script, a standard Lerobot formatted dataset will be "
+"generated. The directory structure is as follows:"
 
 #: ../../source/pages/datasets.rst:421
 msgid "info.json 文件中记录了当前所有可用的数据特征的格式。主要可用特征如下："
@@ -787,7 +896,9 @@ msgstr "FAQs"
 
 #: ../../source/pages/faq.rst:8
 msgid "Q：我想报名参赛，该如何报名呢？有报名费吗？"
-msgstr "Q: I would like to sign up for this competition, how would I sign up? How much does the signup cost?"
+msgstr ""
+"Q: I would like to sign up for this competition, how would I sign up? How"
+" much does the signup cost?"
 
 #: ../../source/pages/faq.rst:8
 msgid ""
@@ -795,9 +906,13 @@ msgid ""
 "阿里云天池-天池大赛-工程开发赛-乐聚机器人第一届具身智能操作任务挑战赛&创业启航营，点击报名参赛，填写个人信息即可报名参赛（Note：若个人参赛，学校/公司可填写无，"
 " 报名信息里的团队并不计入统计，创建/加入团队请在报名后操作）"
 msgstr ""
-"A: The signup process is free of charge. Go to "
-"Alibaba Cloud - Tianchi Competition - Engineering Development Competition - Leju Robotics REAL; Click Sign Up, fill in your personal information to sign up. (Note: For individual signups, school/company name can be left blank, "
-"Any teams in the signup information are not to be recorded as competition teams. For teaming up for the competition, please do so after everyone's signup have been completed)"
+"A: The signup process is free of charge. Go to Alibaba Cloud - Tianchi "
+"Competition - Engineering Development Competition - Leju Robotics REAL; "
+"Click Sign Up, fill in your personal information to sign up. (Note: For "
+"individual signups, school/company name can be left blank, Any teams in "
+"the signup information are not to be recorded as competition teams. For "
+"teaming up for the competition, please do so after everyone's signup have"
+" been completed)"
 
 #: ../../source/pages/faq.rst:11
 msgid "Q：如何创建/加入队伍呢？"
@@ -805,15 +920,23 @@ msgstr "Q: How do I create/join teams?"
 
 #: ../../source/pages/faq.rst:11
 msgid "A：完成报名后，在比赛页面左侧点击我的团队选项，可以创建队伍/加入队伍，每个队限2-4人。"
-msgstr "A: After signup, click my teams found on the left pane to create/join teams. 2-4 members are allowed within every team."
+msgstr ""
+"A: After signup, click my teams found on the left pane to create/join "
+"teams. 2-4 members are allowed within every team."
 
 #: ../../source/pages/faq.rst:14
 msgid "Q：真机赛如何参与呢？一定需要去现场调试真机吗？"
-msgstr "Q: How do I participate in the real-machine competition? Is this an in-person only event?"
+msgstr ""
+"Q: How do I participate in the real-machine competition? Is this an in-"
+"person only event?"
 
 #: ../../source/pages/faq.rst:14
 msgid "A：顺利通过初赛（模拟器赛）的筛选的选手和队伍可以进入真机赛，若无法到场调试，我们会安排技术人员在现场调试。"
-msgstr "A: All participants/teams passing the first qualification round (simulator round) may participate in the real-machine competition. If for any reason one is unable to partake in-person for testing, we can arrange technical personnel live on-stage to configure for your testing"
+msgstr ""
+"A: All participants/teams passing the first qualification round "
+"(simulator round) may participate in the real-machine competition. If for"
+" any reason one is unable to partake in-person for testing, we can "
+"arrange technical personnel live on-stage to configure for your testing"
 
 #: ../../source/pages/faq.rst:17
 msgid "Q：如何申请GPU算力"
@@ -821,7 +944,10 @@ msgstr "Q: How to apply for GPU compute power assistance?"
 
 #: ../../source/pages/faq.rst:17
 msgid "A：相关算力还在申请和协调，一旦有新的算力会给大家同步，建议大家先自己匹配算力"
-msgstr "A: Relevant assistance resources are still under negotiation for now. We will provide an update as soon as any becomes available. We strongly encourage everyone to equip and utilise their own compute power for now."
+msgstr ""
+"A: Relevant assistance resources are still under negotiation for now. We "
+"will provide an update as soon as any becomes available. We strongly "
+"encourage everyone to equip and utilise their own compute power for now."
 
 #: ../../source/pages/faq.rst:20
 msgid "Q：数据集现在有哪些格式的？"
@@ -833,9 +959,10 @@ msgid ""
 "kuavo_data/CvtRosbag2Lerobot.py`` 来批量全自动转换成Lerobot Parquet格式，详细请查看 "
 "``kuavo_data_challenge`` 说明文档"
 msgstr ""
-"A: Everything uploaded are in native rosbag formats, but participants can freely use ``python "
-"kuavo_data/CvtRosbag2Lerobot.py`` to freely convert such datasets into Lerobot Parquet format en masse. For more details, please consult the "
-"``kuavo_data_challenge`` readme documentation."
+"A: Everything uploaded are in native rosbag formats, but participants can"
+" freely use ``python kuavo_data/CvtRosbag2Lerobot.py`` to freely convert "
+"such datasets into Lerobot Parquet format en masse. For more details, "
+"please consult the ``kuavo_data_challenge`` readme documentation."
 
 #: ../../source/pages/faq.rst:23
 msgid "Q：数据集需要提前下载好吗？"
@@ -843,27 +970,39 @@ msgstr "Q: Does the dataset needs to be downloaded all at once?"
 
 #: ../../source/pages/faq.rst:23
 msgid "A：最好一次只下载需要训练到的数据集，无需一次把所有的任务的数据集一起下载，下载量会十分庞大"
-msgstr "A: We recommend you download only what you'll need during each download. There is no need for you to download everything at once, as such download size is humongous!"
+msgstr ""
+"A: We recommend you download only what you'll need during each download. "
+"There is no need for you to download everything at once, as such download"
+" size is humongous!"
 
 #: ../../source/pages/faq.rst:28
 msgid "Q：打开仿真器（例如 ``deploy.py`` 脚本）的时候，仿真器打开然后闪退"
-msgstr "Q: After opening the simulator (i.e. ``deploy.py``), the simulator opens and immediately disappears."
+msgstr ""
+"Q: After opening the simulator (i.e. ``deploy.py``), the simulator opens "
+"and immediately disappears."
 
 #: ../../source/pages/faq.rst:26
 msgid "A：确认 ``ROBOT_VERSION`` 是45；确认 ``echo $ROBOT_VERSION`` 是否打印45"
-msgstr "A: Please ensure that ``ROBOT_VERSION`` is set to 45. You can check this by ``echo $ROBOT_VERSION`` and see if 45 is correctly printed."
+msgstr ""
+"A: Please ensure that ``ROBOT_VERSION`` is set to 45. You can check this "
+"by ``echo $ROBOT_VERSION`` and see if 45 is correctly printed."
 
 #: ../../source/pages/faq.rst:28
 msgid "每次重启docker镜像都需要重新 ``export ROBOT_VERSION=45`` ，或者可选加入zshrc里面"
-msgstr "Note that after every re-entry into the docker image, you need to rerun ``export ROBOT_VERSION=45``, or you can optionally add this line into the .zshrc file."
+msgstr ""
+"Note that after every re-entry into the docker image, you need to rerun "
+"``export ROBOT_VERSION=45``, or you can optionally add this line into the"
+" .zshrc file."
 
 #: ../../source/pages/faq.rst:38
 msgid ""
 "Q：同时运行 ``deploy.py`` 和 ``eval_kuavo.sh`` "
 "正常进行仿真器测试时，仿真器正常打开，但测试环节不开始、第一次reset轮后不开始、或者开始后循环reset轮自动闪退"
 msgstr ""
-"Q: During simutaneous execution of ``deploy.py`` and ``eval_kuavo.sh`` "
-", the simulator opens successfully, but either the evaluation never begins, never restarts after the first reset round, and/or every round becomes a reset round in an infinite loop"
+"Q: During simutaneous execution of ``deploy.py`` and ``eval_kuavo.sh`` , "
+"the simulator opens successfully, but either the evaluation never begins,"
+" never restarts after the first reset round, and/or every round becomes a"
+" reset round in an infinite loop"
 
 #: ../../source/pages/faq.rst:31
 msgid "A：在运行的 ``eval_kuavo.sh`` ，按照下面顺序注意以下事项："
@@ -875,15 +1014,24 @@ msgstr "Ensure that Option 8 was the one selected"
 
 #: ../../source/pages/faq.rst:34
 msgid "按下L键查看log，检查log里面有没有崩溃、缺Python包这种错误（常见为 ``apriltag_ros`` 包缺失），按照提示自行弥补"
-msgstr "Press L to check the log, ensure that there are no crash messages, potentially indicating missing Python packages (commonly ``apriltag_ros`` may be missing). Install any missing packages as prompted"
+msgstr ""
+"Press L to check the log, ensure that there are no crash messages, "
+"potentially indicating missing Python packages (commonly ``apriltag_ros``"
+" may be missing). Install any missing packages as prompted"
 
 #: ../../source/pages/faq.rst:35
 msgid "确认训练好的权重文件路径是否正确，是否有权限访问"
-msgstr "Ensure that the pretrained weights filepath is correctly set, and that the code has sufficient permissions to access it"
+msgstr ""
+"Ensure that the pretrained weights filepath is correctly set, and that "
+"the code has sufficient permissions to access it"
 
 #: ../../source/pages/faq.rst:36
 msgid "推荐改要用到的文件夹访问权限，而不是在 ``eval_kuavo.sh`` 前面加 ``sudo`` （容易出问题）"
-msgstr "It is highly recommended that you change and grant the permissions of all folders in use with this project. It is not recommended for you to add ``sudo`` in front of ``eval_kuavo.sh`` as it may lead to unexpected errors"
+msgstr ""
+"It is highly recommended that you change and grant the permissions of all"
+" folders in use with this project. It is not recommended for you to add "
+"``sudo`` in front of ``eval_kuavo.sh`` as it may lead to unexpected "
+"errors"
 
 #: ../../source/pages/faq.rst:37
 msgid "重新配置 ``eval_kuavo.sh`` 运行的Python环境"
@@ -891,11 +1039,16 @@ msgstr "Reconfigure the Python environment containing the ``eval_kuavo.sh``"
 
 #: ../../source/pages/faq.rst:38
 msgid "在某些慢一些的系统上面，可能需要改等待仿真起来那个位置（~348行）的 ``time.sleep`` ，可能需要调长一些"
-msgstr "Under some slower systems, it may be necessary for you to wait longer for the simulator to be ready. Change the ``time.sleep`` at approx. Line 348 to a larger value."
+msgstr ""
+"Under some slower systems, it may be necessary for you to wait longer for"
+" the simulator to be ready. Change the ``time.sleep`` at approx. Line 348"
+" to a larger value."
 
 #: ../../source/pages/faq.rst:45
 msgid "Q：仿真器 ``catkin build`` 的时候找不到模块报错，如找不到 ``humanoid_interface``"
-msgstr "Q: When ``catkin build`` ing the simulator, it fails to find necessary modules, such as ``humanoid_interface``"
+msgstr ""
+"Q: When ``catkin build`` ing the simulator, it fails to find necessary "
+"modules, such as ``humanoid_interface``"
 
 #: ../../source/pages/faq.rst:41 ../../source/pages/faq.rst:53
 msgid "A：检查以下事项："
@@ -903,11 +1056,16 @@ msgstr "A: Check the following checklist:"
 
 #: ../../source/pages/faq.rst:43
 msgid "请确认运行 ``catkin build`` 之前先 ``source installed/setup.zsh``"
-msgstr "Please ensure that ``source installed/setup.zsh`` successfully executed prior to ``catkin build``"
+msgstr ""
+"Please ensure that ``source installed/setup.zsh`` successfully executed "
+"prior to ``catkin build``"
 
 #: ../../source/pages/faq.rst:44
 msgid "请勿使用 ``catkin clean`` ，会丢失关键包裹，用了请麻烦重新pull整个库"
-msgstr "Do NOT use ``catkin clean``, as it may erase critical packages. If you accidentally used this, please re-pull the entire repository to start over."
+msgstr ""
+"Do NOT use ``catkin clean``, as it may erase critical packages. If you "
+"accidentally used this, please re-pull the entire repository to start "
+"over."
 
 #: ../../source/pages/faq.rst:45
 msgid "重新pull整个库"
@@ -915,11 +1073,15 @@ msgstr "re-pull the entire repository"
 
 #: ../../source/pages/faq.rst:50
 msgid "Q：仿真器 ``catkin build`` 的时候报错 ``failed to make symbolic link .../../*.so``"
-msgstr "Q: When ``catkin build`` ing the simulator, errors pop up that read ``failed to make symbolic link .../../*.so``"
+msgstr ""
+"Q: When ``catkin build`` ing the simulator, errors pop up that read "
+"``failed to make symbolic link .../../*.so``"
 
 #: ../../source/pages/faq.rst:48
 msgid "A：使用Windows来 ``git clone`` 这个库会导致symbolic link丢失"
-msgstr "A: If you used ``git clone`` inside Windows environment, where symbolic links do not work correctly under Linux, this can occur"
+msgstr ""
+"A: If you used ``git clone`` inside Windows environment, where symbolic "
+"links do not work correctly under Linux, this can occur"
 
 #: ../../source/pages/faq.rst:50
 msgid "使用Ubuntu环境来执行 ``git clone/pull``"
@@ -931,7 +1093,9 @@ msgstr "Q: The simulator is very laggy"
 
 #: ../../source/pages/faq.rst:55
 msgid "确认使用了 ``run_with_gpu.sh`` 正确使用CUDA加速"
-msgstr "Please ensure that ``run_with_gpu.sh`` was used to create the docker container, and that it is using CUDA properly."
+msgstr ""
+"Please ensure that ``run_with_gpu.sh`` was used to create the docker "
+"container, and that it is using CUDA properly."
 
 #: ../../source/pages/faq.rst:56
 msgid "确认docker是否正确使用了CUDA"
@@ -939,15 +1103,23 @@ msgstr "Ensure that docker is correctly using CUDA"
 
 #: ../../source/pages/faq.rst:57
 msgid "推荐不要使用WSL（Windows Subsystem for Linux），CUDA加速有问题，要是使用这个请在QQ群里面看看能不能找到解决方案"
-msgstr "It is not recommended for you to use WSL (Windows Subsystem for Linux) for this project, as it is reported that it has CUDA acceleration issues. If you are under such environment, please see the QQ group chat to see if there are any existing solutions inside the discussion group."
+msgstr ""
+"It is not recommended for you to use WSL (Windows Subsystem for Linux) "
+"for this project, as it is reported that it has CUDA acceleration issues."
+" If you are under such environment, please see the QQ group chat to see "
+"if there are any existing solutions inside the discussion group."
 
 #: ../../source/pages/faq.rst:59
 msgid "Q：仿真器运行 ``deploy.py`` 完全没有仿真页面"
-msgstr "Q: No simulator window showing up after executing ``deploy.py`` for the simulator"
+msgstr ""
+"Q: No simulator window showing up after executing ``deploy.py`` for the "
+"simulator"
 
 #: ../../source/pages/faq.rst:60
 msgid "A：确认没有残骸没完全杀死的ROS进程，可重启电脑试试"
-msgstr "A: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try again"
+msgstr ""
+"A: Please ensure that there are no running ROS processes that are not "
+"killed properly. Restart the computer and try again"
 
 #: ../../source/pages/forums.rst:5
 msgid "赛事论坛"
@@ -991,11 +1163,14 @@ msgid ""
 "<https://github.com/LejuRobotics/kuavo_data_challenge>`_ （基准代码）仓库"
 msgstr ""
 "1. Installing the `kuavo_data_challenge "
-"<https://github.com/LejuRobotics/kuavo_data_challenge>`_ (Baseline code) Repository"
+"<https://github.com/LejuRobotics/kuavo_data_challenge>`_ (Baseline code) "
+"Repository"
 
 #: ../../source/pages/installation.rst:11
 msgid "此仓库用于数据转换、模型训练、模型部署，使用 git 获取最新的代码仓库（main 分支）："
-msgstr "This repository is used for data conversion, model training and model deployment. Use git operation to fetch the latest codebase (main branch):"
+msgstr ""
+"This repository is used for data conversion, model training and model "
+"deployment. Use git operation to fetch the latest codebase (main branch):"
 
 #: ../../source/pages/installation.rst:18
 msgid ""
@@ -1003,7 +1178,8 @@ msgid ""
 "<https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/README.md>`_"
 " 文档。"
 msgstr ""
-"For more details regarding to its installation and usage, please refer to its corresponding `README "
+"For more details regarding to its installation and usage, please refer to"
+" its corresponding `README "
 "<https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/README.md>`_"
 " documentation found on its GitHub page"
 
@@ -1012,12 +1188,14 @@ msgid ""
 "2. 安装 `kuavo-ros-opensource <https://github.com/LejuRobotics/kuavo-ros-"
 "opensource>`_ （仿真器环境）仓库"
 msgstr ""
-"2. Installing the `kuavo-ros-opensource <https://github.com/LejuRobotics/kuavo-ros-"
-"opensource>`_ (Simulator) Repository"
+"2. Installing the `kuavo-ros-opensource <https://github.com/LejuRobotics"
+"/kuavo-ros-opensource>`_ (Simulator) Repository"
 
 #: ../../source/pages/installation.rst:22
 msgid "此仓库用于运行仿真器，使用 git 获取最新的仿真器仓库（opensource/kuavo-data-challenge 分支）："
-msgstr "This repository contains the simulator. Use git operation to fetch the latest codebase (opensource/kuavo-data-challenge branch):"
+msgstr ""
+"This repository contains the simulator. Use git operation to fetch the "
+"latest codebase (opensource/kuavo-data-challenge branch):"
 
 #: ../../source/pages/installation.rst:29
 msgid ""
@@ -1025,9 +1203,10 @@ msgid ""
 "/kuavo-ros-opensource/blob/opensource/kuavo-data-challenge/readme.md>`_ "
 "文档。"
 msgstr ""
-"For more details regarding to its installation and usage, please refer to its corresponding `README <https://github.com/LejuRobotics"
-"/kuavo-ros-opensource/blob/opensource/kuavo-data-challenge/readme.md>`_ "
-" documentation found on its GitHub page"
+"For more details regarding to its installation and usage, please refer to"
+" its corresponding `README <https://github.com/LejuRobotics/kuavo-ros-"
+"opensource/blob/opensource/kuavo-data-challenge/readme.md>`_  "
+"documentation found on its GitHub page"
 
 #: ../../source/pages/installation.rst:32
 msgid "3. 视频教程"
@@ -1053,44 +1232,75 @@ msgstr "Competition Introduction"
 
 #: ../../source/pages/introduction.rst:7
 msgid "随着具身智能行业的快速发展，模仿学习、强化学习，决策类大模型等相关智能算法已经取得了显著的理论与应用进展。然而，推进这些算法的实际可用性和鲁棒性仍需依赖在现实世界中的持续交互与反馈过程，且此过程现有众多资源门槛："
-msgstr "With the rapid development of the embodied intelligence sector, intellegent algorithms related to Imitation Learning (IL) , Reinforcement Learning (RL), and large-scale decision-making models have already achieved substantial advances in theoretical foundations. "
-"However, the push of evolution of algorithms towards practical usability and high robustness still requires continuous real-world interaction and feedback processes, and such process is faced with several resource-straining barriers:"
+msgstr ""
+"With the rapid development of the embodied intelligence sector, "
+"intellegent algorithms related to Imitation Learning (IL) , Reinforcement"
+" Learning (RL), and large-scale decision-making models have already "
+"achieved substantial advances in theoretical foundations. However, the "
+"push of evolution of algorithms towards practical usability and high "
+"robustness still requires continuous real-world interaction and feedback "
+"processes, and such process is faced with several resource-straining "
+"barriers:"
 
 #: ../../source/pages/introduction.rst:9
 msgid "设备门槛高：高性能机器人设备价格昂贵，动辄数十万甚至数百万元"
-msgstr "High cost of entry: High-performance robotics hardware still carry an astronomically expensive price tag, ranging from hundreds of thousands to even millions of Yuan."
+msgstr ""
+"High cost of entry: High-performance robotics hardware still carry an "
+"astronomically expensive price tag, ranging from hundreds of thousands to"
+" even millions of Yuan."
 
 #: ../../source/pages/introduction.rst:10
 msgid "数据成本高：高质量数据采集需要专业场地、复杂同步系统与人工标注"
-msgstr "High dataset production costs: High-quality datasets require complex synchronisation systems and manual annotations on specialised facilities, which incurs high costs and long development cycles"
+msgstr ""
+"High dataset production costs: High-quality datasets require complex "
+"synchronisation systems and manual annotations on specialised facilities,"
+" which incurs high costs and long development cycles"
 
 #: ../../source/pages/introduction.rst:11
 msgid "评测标准缺失：缺乏统一的评测平台，算法难以在真实条件下公平比较"
-msgstr "Lack of a standardised testing platform: There lacks a standardised testing platform, which greatly increases the difficulty of comparing algorithms in a fair manner under real-world conditions."
+msgstr ""
+"Lack of a standardised testing platform: There lacks a standardised "
+"testing platform, which greatly increases the difficulty of comparing "
+"algorithms in a fair manner under real-world conditions."
 
 #: ../../source/pages/introduction.rst:13
 msgid "面临重重壁垒，我们这款全新赛事将："
-msgstr "Being faced with these bottlenecks, this brand-new competition promises the following:"
+msgstr ""
+"Being faced with these bottlenecks, this brand-new competition promises "
+"the following:"
 
 #: ../../source/pages/introduction.rst:15
 msgid "首次面向全球开发者开放耗资数千万元打造的真实机器人训练场采集的高质量操作数据"
-msgstr "First-in-world to release large datasets collected from our fleet of real twin-armed humanoid robots from specialised facilities"
+msgstr ""
+"First-in-world to release large datasets collected from our fleet of real"
+" twin-armed humanoid robots from specialised facilities"
 
 #: ../../source/pages/introduction.rst:16
 msgid "全面开放真实机器人测试平台，支持选手算法的远程部署与评测"
-msgstr "Fully open-sourcing an evaluation platform with real-world robots, along with support for participant's remote deployment and evaluation of their algorithms"
+msgstr ""
+"Fully open-sourcing an evaluation platform with real-world robots, along "
+"with support for participant's remote deployment and evaluation of their "
+"algorithms"
 
 #: ../../source/pages/introduction.rst:17
 msgid "提供自研评估系统、标准化任务接口、技术社区支持"
-msgstr "Provides various self-testing systems developed in-house, with standardised interfaces for all the tasks, as well as a full technical support community."
+msgstr ""
+"Provides various self-testing systems developed in-house, with "
+"standardised interfaces for all the tasks, as well as a full technical "
+"support community."
 
 #: ../../source/pages/introduction.rst:18
 msgid "针对主赛道和特色赛道，提供数十万奖金和奖励"
-msgstr "Provides hundreds of thousands of Yuan in compensation for both our main track and specialty tracks"
+msgstr ""
+"Provides hundreds of thousands of Yuan in compensation for both our main "
+"track and specialty tracks"
 
 #: ../../source/pages/introduction.rst:20
 msgid "我们的目标是降低技术门槛，让没有机器人的研究者也能开发、测试、部署真实世界的机器人智能系统，助力具身智能技术从学术走向工程，从想法走向落地。"
-msgstr "Our goal is to lower the technical barrier of entry, so that every participant can efficiently access their required resources, have a quick onboarding experience, and have easy access to algorithm validations."
+msgstr ""
+"Our goal is to lower the technical barrier of entry, so that every "
+"participant can efficiently access their required resources, have a quick"
+" onboarding experience, and have easy access to algorithm validations."
 
 #: ../../source/pages/signup.rst:5
 msgid "赛事报名"
@@ -1101,9 +1311,12 @@ msgid ""
 "本赛事参赛队伍由2–4 "
 "名参赛选手组成。请选手们先报名再组队伍，队伍内所有成员须为报名表单及实名认证信息中的人员。本赛事参赛报名不需要报名费。参赛前请完整阅读天池上面全部规则与要求。"
 msgstr ""
-"This competition comprises of teams of 2–4 personnel. "
-"Please sign-up for the competition first before forming teams, and all members within all teams are required to be on the signup list and have their identities verified. "
-"There are no costs for signing up for this competition. Please thoroughly read the full rules and requirements laid out on the Tianchi website prior to signing up."
+"This competition comprises of teams of 2–4 personnel. Please sign-up for "
+"the competition first before forming teams, and all members within all "
+"teams are required to be on the signup list and have their identities "
+"verified. There are no costs for signing up for this competition. Please "
+"thoroughly read the full rules and requirements laid out on the Tianchi "
+"website prior to signing up."
 
 #: ../../source/pages/signup.rst:10
 msgid "报名参赛"
@@ -1113,17 +1326,24 @@ msgstr "Signing Up"
 msgid ""
 "打开阿里云天池-天池大赛-工程开发赛-乐聚机器人第一届具身智能操作任务挑战赛&创业启航营，或者使用此链接： `乐聚天池赛事主页 "
 "<https://tianchi.aliyun.com/competition/entrance/532415>`_"
-msgstr "Open the Alibaba Cloud - Tianchi Competition - Engineering Development Competition - Leju Robotics REAL, or use this link provided `here "
+msgstr ""
+"Open the Alibaba Cloud - Tianchi Competition - Engineering Development "
+"Competition - Leju Robotics REAL, or use this link provided `here "
 "<https://tianchi.aliyun.com/competition/entrance/532415>`_"
 
 #: ../../source/pages/signup.rst:13
 msgid "点击报名参赛，填写个人信息即可报名参赛"
-msgstr "Click the sign-up button, fill in your personal information to sign up for this competition"
+msgstr ""
+"Click the sign-up button, fill in your personal information to sign up "
+"for this competition"
 
 #: ../../source/pages/signup.rst:15
 msgid "温馨提示：若个人参赛，学校/公司可填写无， 报名信息里的团队并不计入统计，创建/加入团队请在报名后操作"
-msgstr "Note: For individual signups, school/company name can be left blank, "
-"Any teams in the signup information are not to be recorded as competition teams. For teaming up for the competition, please do so after everyone's signup have been completed"
+msgstr ""
+"Note: For individual signups, school/company name can be left blank, Any "
+"teams in the signup information are not to be recorded as competition "
+"teams. For teaming up for the competition, please do so after everyone's "
+"signup have been completed"
 
 #: ../../source/pages/signup.rst:18
 msgid "加入讨论群"
@@ -1133,8 +1353,11 @@ msgstr "Joining our Discussions Group"
 msgid ""
 "为方便大家讨论和解决问题，我们组织了技术同学建了一个 `QQ群 <../_static/images/qq_team.jpg>`_ "
 "，请报名完成后尽早点击链接扫码入群。"
-msgstr "To facilitate discussion and raising/solving problems and concerns, we have organised a `group chat <../_static/images/qq_team.jpg>`_ "
-" just for our contestants, please scan the QR code to join the chat as soon as possible after registration!"
+msgstr ""
+"To facilitate discussion and raising/solving problems and concerns, we "
+"have organised a `group chat <../_static/images/qq_team.jpg>`_  just for "
+"our contestants, please scan the QR code to join the chat as soon as "
+"possible after registration!"
 
 #: ../../source/pages/submit.rst:5
 msgid "提交说明"
@@ -1142,7 +1365,7 @@ msgstr "Submission"
 
 #: ../../source/pages/submit.rst:9
 msgid "代码提交与评测"
-msgstr ""
+msgstr "Code Submission and Evaluation"
 
 #: ../../source/pages/submit.rst:11
 msgid ""
@@ -1151,60 +1374,104 @@ msgid ""
 " ,将环境和代码打包为 docker 镜像提交至 `比赛官网 "
 "<https://tianchi.aliyun.com/competition/entrance/532415>`_ 。"
 msgstr ""
+"Please refer to the `kuavo_data_challenge main branch docker/readme "
+"<https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md>`_"
+" documentation to pack the environment and codebase into a docker image, "
+"and then submit it through our `competition website "
+"<https://tianchi.aliyun.com/competition/entrance/532415>`_."
 
-#: ../../source/pages/submit.rst:12
+#: ../../source/pages/submit.rst:13
 msgid "评测结果和排行榜将在比赛官网公布。"
 msgstr ""
-
-#: ../../source/pages/submit.rst:14
-msgid "注意事项"
-msgstr ""
+"The official evaluation results and leaderboard will be updated in real-"
+"time on our competition website."
 
 #: ../../source/pages/submit.rst:16
-msgid "最终提交的文件为zip压缩包, 里面包含两个文件, docker镜像tar文件, run_with_gpu.sh"
-msgstr ""
+msgid "注意事项"
+msgstr "Important Notes"
 
-#: ../../source/pages/submit.rst:19
+#: ../../source/pages/submit.rst:18
+msgid "1. 最终提交的文件为zip压缩包, 里面包含两个文件, docker镜像tar文件, run_with_gpu.sh 。"
+msgstr ""
+"The final submission file should be a zip archive, containing two "
+"files: The docker tar image, and the correct run_with_gpu.sh"
+
+#: ../../source/pages/submit.rst:21
 #, python-brace-format
 msgid ""
-"请各位选手将tar文件和zip压缩包的名字定义为  队伍/个人姓名_task{i}, "
+"2. 请各位选手将tar文件和zip压缩包的名字定义为  队伍/个人姓名_task{i}, "
 "若队伍为中文可以用首字母或用个人姓名。例如我的队伍名是乐聚战队,我的姓名是kuavo,此次提交的是任务2,我的tar文件就叫lejuzhandui_task2.tar或者kuavo_task2.tar,最后提交的zip也是一样的名字。需要注意的是,run_with_gpu.sh中需要将IMAGE_NAME和CONTAINER_NAME也改成对应的名字,以免无法运行"
+" 。"
 msgstr ""
+"Please also name your tar and zip filenames as Team/Personal "
+"name_task{i}. Pinyin of the team's name and/or personal names are "
+"accepted. For instance, our team name is Leju Zhandui, and my name is "
+"kuavo, for a submission of Task 2, the tar filename then can be either "
+"lejuzhandui_task2.tar or kuavo_task2.tar, same goes for the zip archive. "
+"Please remember to modify the IMAGE_NAME and CONTAINER_NAME "
+"correspondingly, or else the image will not be found!"
 
-#: ../../source/pages/submit.rst:22
+#: ../../source/pages/submit.rst:24
 msgid ""
-"打包镜像前, 一定要注意把kuavo_sim_env.yaml里的配置改好, "
+"3. 打包镜像前, 一定要注意把kuavo_sim_env.yaml里的配置改好, "
 "测试回合数(eval_episodes)为100回合,最大回合步数(max_episode_steps)不超过300(任务一和二)和600(任务三),"
-" 一般200(任务一和二)和500(任务三)是足够的"
+" 一般200(任务一和二)和500(任务三)是足够的 。"
 msgstr ""
+"Before you export the image, please configure kuavo_sim_env.yaml as "
+"follows: eval_episodes must be 100, max_episode_steps must not exceed 300"
+" for tasks 1 and 2, and 600 for task 3. Typically, 200 for tasks 1 and 2,"
+" and 500 for task 3, are sufficient."
 
-#: ../../source/pages/submit.rst:25
+#: ../../source/pages/submit.rst:27
 msgid ""
-"提交时, 一般情况使用提交结果入口即可正常提交。若文件过大导致上传失败(一般超过5G会出现这种情况), "
-"可使用上传超大文件入口。注意上传超大文件里的命令每隔一小时会刷新"
+"4. 提交时, 一般情况使用提交结果入口即可正常提交。若文件过大导致上传失败(一般超过5G会出现这种情况), "
+"可使用上传超大文件入口。注意上传超大文件里的命令每隔一小时会刷新 。"
 msgstr ""
+"Normal submission is through the regular submission portal. If the file "
+"is too big (over 5GB in size), the upload might fail, in which case there"
+" is an extra-large file submission portal available. Note that its "
+"commands refresh every hour!"
 
-#: ../../source/pages/submit.rst:28
+#: ../../source/pages/submit.rst:30
 msgid ""
-"提交前，请先确认好已经成功加入队伍(个人选手可以不用)，若提交并获得到成绩后更改队伍或加入队伍，之前的成绩会作废。每队仅需一名选手提交, "
-"请勿重复提交。"
+"5. 提交前，请先确认好已经成功加入队伍(个人选手可以不用)，若提交并获得到成绩后更改队伍或加入队伍，之前的成绩会作废。每队仅需一名选手提交, "
+"请勿重复提交 。"
 msgstr ""
+"Before submission, please ensure that your team is properly enrolled "
+"(individual group sized 1 need not perform this operation). If any team "
+"amendments occured after the submission, the prior submissions all become"
+" nullified. Only one submission required per team, do not submit more "
+"than one!"
 
-#: ../../source/pages/submit.rst:31
-msgid "官方评测系统和本地仓库评测系统类似，各位选手提交前可以先在本地测试自己的模型性能，以便随时修改自己的代码，性能调试后再提交，以免过多浪费其他选手的评测资源。"
+#: ../../source/pages/submit.rst:33
+msgid ""
+"6. "
+"官方评测系统和本地仓库评测系统类似，各位选手提交前可以先在本地测试自己的模型性能，以便随时修改自己的代码，性能调试后再提交，以免过多浪费其他选手的评测资源"
+" 。"
 msgstr ""
+"Our official evaluation system is similar to the local testing system, so"
+" all competitors can freely test their models locally and amend codes if "
+"necessary. Please try your best to ensure the functionality of your code "
+"locally prior to submission, as to not overly waste other competitor's "
+"online evaluation resources."
 
-#: ../../source/pages/submit.rst:34
-msgid "提交后，若评测成功，可以在天池竞赛提交页看到自己的分数，若评测失败，会显示评测失败并显示原因，此时请检查提交的文件是否正确"
+#: ../../source/pages/submit.rst:36
+msgid "7. 提交后，若评测成功，可以在天池竞赛提交页看到自己的分数，若评测失败，会显示评测失败并显示原因，此时请检查提交的文件是否正确 。"
 msgstr ""
+"After submission, if the evaluation is successful, you can check your "
+"scores on the Tianchi competition website. If the evaluation failed, a "
+"detailed explaination will be provided, please check your submission "
+"materials"
 
-#: ../../source/pages/submit.rst:39
+#: ../../source/pages/submit.rst:40
 msgid "视频教程(下载打包过程可快进)"
 msgstr ""
+"Video Guide on How to Submit (Please skip the lengthy packing and "
+"downloading processes)"
 
-#: ../../source/pages/submit.rst:42
+#: ../../source/pages/submit.rst:46
 msgid "真机赛事敬请等待..."
-msgstr ""
+msgstr "Real-machine competition details coming soon..."
 
 #: ../../source/pages/tasks.rst:5
 msgid "任务说明"

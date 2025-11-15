@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 赛事手册 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-17 16:16+0800\n"
+"POT-Creation-Date: 2025-11-15 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -132,11 +132,11 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: ../../source/_templates/layout.html:146
+#: ../../source/_templates/layout.html:149
 msgid "Navigation menu"
 msgstr ""
 
-#: ../../source/_templates/layout.html:168
+#: ../../source/_templates/layout.html:171
 msgid "Mobile navigation menu"
 msgstr ""
 
@@ -156,5 +156,13 @@ msgstr ""
 
 #: ../../source/_templates/searchbox.html:4
 msgid "Search docs"
+msgstr ""
+
+#: ../../source/_templates/versions.html:10
+msgid "Languages"
+msgstr ""
+
+#: ../../source/_templates/versions.html:21
+msgid "Versions"
 msgstr ""
 
