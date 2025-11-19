@@ -9,7 +9,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>赛事论坛 &mdash; 赛事手册  文档</title>
+  <title>Forums &mdash; Competition Manual  文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=c773721a" />
 
@@ -24,7 +24,7 @@
     <script src="../_static/js/versions.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="prev" title="常见问题&amp;回答" href="faq.html" /> 
+    <link rel="prev" title="FAQs" href="faq.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,12 +39,28 @@
             
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
-              <div class="switch-menus">
+              <!-- <div class="switch-menus">
                 <div class="version-switch"></div>
                 <div class="language-switch">
                   <a href=" ../../cn/pages/forums.html" style="color: #ffffff !important;">中文</a>
                   <a href=" ../../en/pages/forums.html" style="color: #ffffff !important;">English</a>
                 </div>
+              </div> -->
+              <div class="switch-menus">
+                  <div class="version-switch">
+                      <select id="competitionSelect" onchange="if(this.value) window.location.href=this.value">
+                          <!-- <a href=" ../../..//cn/pages/forums.html" -->
+                          <option value=" ../../../icra/en/pages/forums.html" selected="selected">ICRA 2026 Competition</option>
+                          <option value=" ../../../tianchi/cn/pages/forums.html">Tianchi Competition</option>
+                      </select>
+                      
+                      <!-- <select id="languageSelect">
+                          <option value="en">English</option>
+                          <option value="zh_CN">中文</option>
+                      </select> -->
+                      <!-- <button onclick="switchVersion()">Switch</button> -->
+                      <!-- ::after -->
+                  </div>
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -54,24 +70,24 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
-              <p class="caption" role="heading"><span class="caption-text">赛事介绍</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">赛事简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tasks.html">任务说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Competition Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks.html">Task Description</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">赛事流程</span></p>
+<p class="caption" role="heading"><span class="caption-text">Competition Overview</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="signup.html">赛事报名</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datasets.html">赛事数据</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">安装训练指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="submit.html">提交说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signup.html">Competition Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submit.html">Submission</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">辅助信息</span></p>
+<p class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="faq.html">常见问题&amp;回答</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">赛事论坛</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">阿里天池论坛</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#qq">QQ讨论群</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Forums</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#alibaba-tianchi-discussion-forum">Alibaba Tianchi Discussion Forum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#qq-group-chat">QQ Group Chat</a></li>
 </ul>
 </li>
 </ul>
@@ -82,7 +98,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">赛事手册</a>
+          <a href="../index.html">Competition Manual</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -90,7 +106,7 @@
           <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">赛事论坛</li>
+      <li class="breadcrumb-item active">Forums</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -100,15 +116,15 @@
            <div itemprop="articleBody">
              
   <section id="forums">
-<span id="id1"></span><h1>赛事论坛<a class="headerlink" href="#forums" title="此标题的永久链接"></a></h1>
-<p>赛事官方讨论资源如下：</p>
-<section id="id2">
-<h2>阿里天池论坛<a class="headerlink" href="#id2" title="此标题的永久链接"></a></h2>
-<p><a class="reference external" href="https://tianchi.aliyun.com/competition/entrance/532415/forum">乐聚天池赛事论坛页</a></p>
+<span id="id1"></span><h1>Forums<a class="headerlink" href="#forums" title="此标题的永久链接"></a></h1>
+<p>Our Official Discussion Resources</p>
+<section id="alibaba-tianchi-discussion-forum">
+<h2>Alibaba Tianchi Discussion Forum<a class="headerlink" href="#alibaba-tianchi-discussion-forum" title="此标题的永久链接"></a></h2>
+<p><a class="reference external" href="https://tianchi.aliyun.com/competition/entrance/532415/forum">Leju Tianchi competition discussions page</a></p>
 </section>
-<section id="qq">
-<h2>QQ讨论群<a class="headerlink" href="#qq" title="此标题的永久链接"></a></h2>
-<p><a class="reference external" href="../_static/images/qq_team.jpg">赛事官方QQ群</a></p>
+<section id="qq-group-chat">
+<h2>QQ Group Chat<a class="headerlink" href="#qq-group-chat" title="此标题的永久链接"></a></h2>
+<p><a class="reference external" href="../_static/images/qq_team.jpg">Official QQ group chat &lt;../_static/images/qq_team.jpg&gt;`_`Official QQ group chat</a></p>
 </section>
 </section>
 
@@ -116,13 +132,13 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
-        <a href="faq.html" class="btn btn-neutral float-left" title="常见问题&amp;回答" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="faq.html" class="btn btn-neutral float-left" title="FAQs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2016-2025, 乐聚机器人。</p>
+    <p>&#169; 版权所有 2016-2025, Leju Robot。</p>
   </div> <div class="footer-copyright">
   <p>
     乐聚智能（深圳）股份有限公司<br> 
@@ -147,21 +163,6 @@
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions">
-    
-    <dl>
-      <dt>Languages</dt>
-        
-          <!-- <dd><a href="cn/forums.html">cn</a></dd> -->
-           <dd><a href=" ../../cn/pages/forums.html">cn</a></dd>
-            <!-- 
-            <dd><a href="cn#">cn</a></dd> -->
-        
-          <!-- <dd><a href="en/forums.html">en</a></dd> -->
-           <dd><a href=" ../../en/pages/forums.html">en</a></dd>
-            <!-- 
-            <dd><a href="en#">en</a></dd> -->
-        
-    </dl>
     
     
     <dl>

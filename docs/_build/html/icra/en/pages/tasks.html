@@ -9,7 +9,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tasks Description &mdash; 赛事手册  documentation</title>
+  <title>Task Description &mdash; Competition Manual  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=c773721a" />
 
@@ -39,12 +39,28 @@
             
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
-              <div class="switch-menus">
+              <!-- <div class="switch-menus">
                 <div class="version-switch"></div>
                 <div class="language-switch">
                   <a href=" ../../cn/pages/tasks.html" style="color: #ffffff !important;">中文</a>
                   <a href=" ../../en/pages/tasks.html" style="color: #ffffff !important;">English</a>
                 </div>
+              </div> -->
+              <div class="switch-menus">
+                  <div class="version-switch">
+                      <select id="competitionSelect" onchange="if(this.value) window.location.href=this.value">
+                          <!-- <a href=" ../../..//cn/pages/tasks.html" -->
+                          <option value=" ../../../icra/en/pages/tasks.html" selected="selected">ICRA 2026 Competition</option>
+                          <option value=" ../../../tianchi/cn/pages/tasks.html">Tianchi Competition</option>
+                      </select>
+                      
+                      <!-- <select id="languageSelect">
+                          <option value="en">English</option>
+                          <option value="zh_CN">中文</option>
+                      </select> -->
+                      <!-- <button onclick="switchVersion()">Switch</button> -->
+                      <!-- ::after -->
+                  </div>
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -57,19 +73,17 @@
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Competition Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tasks Description</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">仿真场景四个任务的说明：</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">任务1：移动目标抓取</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">任务2：移动物体称重</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">任务3：物体定姿摆放</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">任务4：全流程分拣</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Task Description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#simulation-task-description">Simulation Task Description</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#task-1-parcel-weighing-task-difficulity-1-0">Task 1: Parcel Weighing - Task Difficulity 1.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-2-part-sorting-task-difficulity-1-5">Task 2: Part Sorting - Task Difficulity 1.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-3-full-cycle-plate-transferral-task-difficulity-2-5">Task 3: Full-cycle Plate Transferral - Task Difficulity 2.5</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">真实场景四个任务的说明：</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id8">任务1：移动目标抓取</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">任务2：快递袋称重</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">任务3：日化产品定姿摆放</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">任务4：全流程分拣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#real-machine-task-description">Real-machine Task Description</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Task 1: Parcel Weighing - Task Difficulity 1.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Task 2: Part Sorting - Task Difficulity 1.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Task 3: Full-cycle Plate Transferral - Task Difficulity 2.5</a></li>
 </ul>
 </li>
 </ul>
@@ -94,7 +108,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">赛事手册</a>
+          <a href="../index.html">Competition Manual</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -102,7 +116,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Tasks Description</li>
+      <li class="breadcrumb-item active">Task Description</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -111,182 +125,122 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="task">
-<span id="id1"></span><h1>Tasks Description<a class="headerlink" href="#task" title="Permalink to this heading"></a></h1>
-<p>本挑战赛以真实双臂人形机器人平台为核心，围绕工业典型场景设计多个具备真实部署价值的操作任务，并针对每个任务采集了大量高质量真实机器人操作数据。为了方便参赛者进行算法开发与验证，熟悉kuavo机器人的数据格式等，主办方提供了与真实机器人平台高度一致的仿真环境，并举行仿真赛。通过仿真模拟评测筛选出算法成熟度高、具备真机测试价值的队伍进入真机赛，并最终在真实机器人平台上进行算法调整与验证。</p>
-<section id="id2">
-<h2>仿真场景四个任务的说明：<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
-<section id="id3">
-<h3>任务1：移动目标抓取<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
-<p>此任务中，机器人左臂将左侧传送带上的物体抓取并放置到桌面指定区域1，右臂再抓取此物体并放置到区域2。</p>
-<p>其中，环境光照强度，颜色，物体的颜色，在传送带上的位置，区域1与区域2的位置与颜色，均会在一定范围内随机。</p>
-<ul>
-<li><dl>
-<dt>评分标准：</dt><dd><ul>
-<li><ol class="loweralpha simple">
-<li><p>成功抓住传送带上物体并放到桌面上指定区域，加30分，保持方向正确，加10分；</p></li>
-</ol>
-</li>
-<li><ol class="loweralpha simple" start="2">
-<li><p>成功抓住放置到桌面物体并放到最终目标区域，加30分，保持方向正确，加10分；</p></li>
-</ol>
-</li>
-<li><ol class="loweralpha simple" start="3">
-<li><p>在指定时间N秒内完成，加20分，超出N秒，每一秒扣2分。</p></li>
-</ol>
-</li>
-<li><p>关于位置和方向的判定：</p>
-<blockquote>
-<div><p>物体必须在桌面上，且中心位置必须位于区域色块内才视为位置正确，仅位置成功时才会触发方向正确加分，物体z轴与世界z轴偏差不超过10度视为方向正确。</p>
-</div></blockquote>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task1.mp4" type="video/mp4"></video></div></section>
-<section id="id4">
-<h3>任务2：移动物体称重<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
-<p>此任务中，机器人右臂将正面传送带上的移动物体抓取并放置到桌面的秤(具有一定高度)上，称重后左臂再将物体从秤抓取放置到目标区域。</p>
-<p>其中，环境光照强度，颜色，物体的颜色，在传送带上的位置，秤与目标区域的位置与颜色，均会在一定范围内随机。</p>
-<ul>
-<li><dl>
-<dt>评分标准：</dt><dd><ul>
-<li><ol class="loweralpha simple">
-<li><p>成功抓住传送带上物体并放到秤，加30分，保持方向正确，加10分；</p></li>
-</ol>
-</li>
-<li><ol class="loweralpha simple" start="2">
-<li><p>成功抓住称重后物体并放到最终目标区域，加30分，保持方向正确，加10分；</p></li>
-</ol>
-</li>
-<li><ol class="loweralpha simple" start="3">
-<li><p>在指定时间N秒内完成，加20分，超出N秒，每一秒扣2分。</p></li>
-</ol>
-</li>
-<li><p>关于位置和方向的判定：</p>
-<blockquote>
-<div><p>物体必须在桌面上，且中心位置必须位于区域色块内才视为位置正确，仅位置成功时才会触发方向正确加分，物体z轴与世界z轴偏差不超过10度视为方向正确。</p>
-</div></blockquote>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task2.mp4" type="video/mp4"></video></div></section>
-<section id="id5">
-<h3>任务3：物体定姿摆放<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
-<p>此任务中，机器人需要将桌面上的三个物体中反面的物体进行翻面并运送到目标区域，正面物体不翻面仅移动到目标区域。</p>
-<p>其中，三个物体中会有随机的两个物体是反面，一个物体是正面，三个物体的位置会在一定范围内随机。</p>
-<ul>
-<li><dl>
-<dt>评分标准</dt><dd><ul>
-<li><ol class="loweralpha simple">
-<li><p>成功将两个反面物体运送到目标区域，每一个加10分，保持正面朝上，每一个加25分；</p></li>
-</ol>
-</li>
-<li><ol class="loweralpha simple" start="2">
-<li><p>成功将一个正面物体运送到目标区域，加10分，保持正面朝上，加10分；</p></li>
-</ol>
-</li>
-<li><ol class="loweralpha simple" start="3">
-<li><p>在指定时间N秒内完成，加10分，超出N秒，每一秒扣1分。</p></li>
-</ol>
-</li>
-<li><p>关于位置和方向的判定：</p>
-<blockquote>
-<div><p>物体必须在桌面上，且中心位置必须位于区域内才视为位置正确，仅位置成功时才会触发方向正确加分，物体正面轴(-y)与世界z轴偏差不超过10度视为方向正确。</p>
-</div></blockquote>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task3.mp4" type="video/mp4"></video></div></section>
-<section id="id6">
-<h3>任务4：全流程分拣<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
-<p>此任务中，机器人需要先移动到前方货架，右臂抓取物体1，转身并移动到后方货架，将物体1放置于料盘A。再从后方货架移动到前方货架，左臂抓取物体2，返回后方货架并将物体2放置于料盘B。</p>
-<p>其中，物体1，2的位置，料盘A，B的位置会在一定范围内随机。</p>
+  <section id="task-description">
+<span id="task"></span><h1>Task Description<a class="headerlink" href="#task-description" title="Permalink to this heading"></a></h1>
+<p>At its core, this competition is based on real dual-arm humanoid robots, with several tasks thoughtfully prepared that are highly representative of typical industrial applications workflow. In addition, a simulation environment that closely resembles the task workflows of the real robot is also provided, along with open access to high-quality task datasets, evaluation scripts, complete execution pipelines, online evaluation servers and ready-to-run baseline code.
+The simulation track is especially designed for competitors to familiarise themselves with the Kuavo robot dataset formats, algorithm development and algorithm testing with our baseline code. It also simulates and selects teams with highly matured algorithms that are highly worthy of real-robot competition in a fair manner.</p>
+<section id="simulation-task-description">
+<h2>Simulation Task Description<a class="headerlink" href="#simulation-task-description" title="Permalink to this heading"></a></h2>
+<section id="task-1-parcel-weighing-task-difficulity-1-0">
+<h3>Task 1: Parcel Weighing - Task Difficulity 1.0<a class="headerlink" href="#task-1-parcel-weighing-task-difficulity-1-0" title="Permalink to this heading"></a></h3>
+<p>In this task, the robot is required to pick up a soft-pouch express parcel from a moving conveyor belt, place it on an electronic scale for weighing, and then transfer it to another conveyor belt.</p>
+<p>Within this task, the lighting/reflection, colours, and the positioning of the parcel and the scale will be randomised within a reasonable range.</p>
+<p>Each task is out of 100 base points as the base task score.</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt>评分标准</dt><dd><ul>
-<li><ol class="loweralpha simple">
-<li><p>准确移动到目标区域，每一次加10分，共4次；</p></li>
+<dt>Scoring standards:</dt><dd><ol class="loweralpha simple">
+<li><p>25 pts for the successful grasp of the object from the conveyor belt</p></li>
+<li><p>25 points for the subsequent correct placement of the object onto its desginated area (the electronic scale)</p></li>
+<li><p>25 pts for picking it up from the scale</p></li>
+<li><p>25 pts for the correct placement/orientation of the object</p></li>
 </ol>
-</li>
-<li><ol class="loweralpha simple" start="2">
-<li><p>成功将两个物体放置于指定料盘，每一个加20分；</p></li>
-</ol>
-</li>
-<li><ol class="loweralpha simple" start="3">
-<li><p>在指定时间N秒内完成，加20分，超出N秒，每一秒扣1分。</p></li>
-</ol>
-</li>
-</ul>
 </dd>
 </dl>
 </li>
 </ul>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task4.mp4" type="video/mp4"></video></div></section>
+<img alt="../_images/task1_sim.png" src="../_images/task1_sim.png" />
 </section>
-<section id="id7">
-<h2>真实场景四个任务的说明：<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
-<section id="id8">
-<h3>任务1：移动目标抓取<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h3>
-<p>任务描述：机器人从移动的传送带上抓取物体，放置于桌面后，再将其推送至指定区域内。</p>
-<dl class="simple">
-<dt>挑战要点：</dt><dd><ul class="simple">
-<li><p>传送带运动状态下的动态抓取；</p></li>
-<li><p>目标物体位置随机（工作范围内）；</p></li>
-<li><p>机器人初始姿态存在±10cm位置偏移和±10°姿态偏移。</p></li>
-</ul>
+<section id="task-2-part-sorting-task-difficulity-1-5">
+<h3>Task 2: Part Sorting - Task Difficulity 1.5<a class="headerlink" href="#task-2-part-sorting-task-difficulity-1-5" title="Permalink to this heading"></a></h3>
+<p>In this task, the robot needs to pick up a component chosen from different categories representative in the industrial setting, lying in a randomised orientation on a moving conveyor belt, and then place the component into the correct sorting bin.</p>
+<p>Within this task, the lighting/reflection, colours, and the positioning of the component and the bins will be randomised within a reasonable range.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Scoring standards:</dt><dd><ol class="loweralpha simple">
+<li><p>50 pts for picking up the component from the conveyor belt</p></li>
+<li><p>50 pts for placing it into the correct bin</p></li>
+<li><p>20 bonus pts for completing it within a specified timeframe. An 1-pt penalty will be applied for every second elapsed outside of this timeframe</p></li>
+</ol>
 </dd>
 </dl>
+</li>
+</ul>
+<img alt="../_images/task2_sim.png" src="../_images/task2_sim.png" />
+</section>
+<section id="task-3-full-cycle-plate-transferral-task-difficulity-2-5">
+<h3>Task 3: Full-cycle Plate Transferral - Task Difficulity 2.5<a class="headerlink" href="#task-3-full-cycle-plate-transferral-task-difficulity-2-5" title="Permalink to this heading"></a></h3>
+<p>In this task, the robot needs to move to a specified location in front of the plate shelf, picks up the plate from the slot indicated by a red light, then turns around and places it into the target container.</p>
+<p>Within this task, the robot will start from a reasonable randomised location, the illumination of the red light is randomised, and the location of the target container is randomised.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Scoring standards:</dt><dd><ol class="loweralpha simple">
+<li><p>25 pts for moving to the correct target area in front of the tray shelf</p></li>
+<li><p>25 pts for the successful pickup of the desginated plate</p></li>
+<li><p>25 pts for moving to the correct area in front of the destination</p></li>
+<li><p>25 pts for successful placement of the tray</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="../_images/task3_sim.png" src="../_images/task3_sim.png" />
+</section>
+</section>
+<section id="real-machine-task-description">
+<h2>Real-machine Task Description<a class="headerlink" href="#real-machine-task-description" title="Permalink to this heading"></a></h2>
+<section id="id1">
+<h3>Task 1: Parcel Weighing - Task Difficulity 1.0<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<p>In this task, the robot is required to pick up a soft-pouch express parcel from a moving conveyor belt, place it on an electronic scale for weighing, and then transfer it to another conveyor belt.</p>
+<p>Within this task, the lighting/reflection, colours, and the positioning of the parcel and the scale will be randomised within a reasonable range.</p>
+<p>Each task is out of 100 base points as the base task score.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Scoring standards:</dt><dd><ol class="loweralpha simple">
+<li><p>25 pts for the successful grasp of the object from the conveyor belt</p></li>
+<li><p>25 points for the subsequent correct placement of the object onto its desginated area (the electronic scale)</p></li>
+<li><p>25 pts for picking it up from the scale</p></li>
+<li><p>25 pts for the correct placement/orientation of the object</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
 <img alt="../_images/task1_real.jpeg" src="../_images/task1_real.jpeg" />
 </section>
-<section id="id9">
-<h3>任务2：快递袋称重<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h3>
-<p>任务描述：机器人从移动的传送带上拾取快递袋，先放置在电子秤上完成称重，随后再次拾起并放入指定收纳筐中。</p>
-<dl class="simple">
-<dt>挑战要点：</dt><dd><ul class="simple">
-<li><p>软包装可形变物体的稳定抓取；</p></li>
-<li><p>目标物体外观特征多样性；</p></li>
-<li><p>精准称重操作要求；</p></li>
-<li><p>双臂协调操作。</p></li>
-</ul>
+<section id="id2">
+<h3>Task 2: Part Sorting - Task Difficulity 1.5<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<p>In this task, the robot needs to pick up a component chosen from different categories representative in the industrial setting, lying in a randomised orientation on a moving conveyor belt, and then place the component into the correct sorting bin.</p>
+<p>Within this task, the lighting/reflection, colours, and the positioning of the component and the bins will be randomised within a reasonable range.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Scoring standards:</dt><dd><ol class="loweralpha simple">
+<li><p>50 pts for picking up the component from the conveyor belt</p></li>
+<li><p>50 pts for placing it into the correct bin</p></li>
+<li><p>20 bonus pts for completing it within a specified timeframe. An 1-pt penalty will be applied for every second elapsed outside of this timeframe</p></li>
+</ol>
 </dd>
 </dl>
+</li>
+</ul>
 <img alt="../_images/task2_real.jpeg" src="../_images/task2_real.jpeg" />
 </section>
-<section id="id10">
-<h3>任务3：日化产品定姿摆放<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h3>
-<p>任务描述：机器人从杂乱摆放的日化瓶中随机拾取一瓶，传递至另一只手后，再按照指定姿态将其摆放在目标位置。瓶身摆放要求：瓶口位于黄色区域外部；瓶身大部分位于黄色区域内部；瓶身标签面朝上。</p>
-<dl class="simple">
-<dt>挑战要点：</dt><dd><ul class="simple">
-<li><p>双手协调与物体传递；</p></li>
-<li><p>精确姿态控制；</p></li>
-<li><p>空间约束满足。</p></li>
-</ul>
+<section id="id3">
+<h3>Task 3: Full-cycle Plate Transferral - Task Difficulity 2.5<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<p>In this task, the robot needs to move to a specified location in front of the plate shelf, picks up the plate from the slot indicated by a red light, then turns around and places it into the target container.</p>
+<p>Within this task, the robot will start from a reasonable randomised location, the illumination of the red light is randomised, and the location of the target container is randomised.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Scoring standards:</dt><dd><ol class="loweralpha simple">
+<li><p>25 pts for moving to the correct target area in front of the tray shelf</p></li>
+<li><p>25 pts for the successful pickup of the desginated plate</p></li>
+<li><p>25 pts for moving to the correct area in front of the destination</p></li>
+<li><p>25 pts for successful placement of the tray</p></li>
+</ol>
 </dd>
 </dl>
+</li>
+</ul>
 <img alt="../_images/task3_real.jpeg" src="../_images/task3_real.jpeg" />
-</section>
-<section id="id11">
-<h3>任务4：全流程分拣<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h3>
-<p>任务描述：机器人从指定起始点出发，移动至流利架前拾取工件，随后转身移动至放置架，将工件放置在物料筐内指定位置。</p>
-<dl class="simple">
-<dt>挑战要点：</dt><dd><ul class="simple">
-<li><p>全身运动协调；</p></li>
-<li><p>背向操作的空间感知；</p></li>
-<li><p>精准投放控制；</p></li>
-<li><p>复杂环境适应（±10cm随机偏移）。</p></li>
-</ul>
-</dd>
-</dl>
-<img alt="../_images/task4_real.jpeg" src="../_images/task4_real.jpeg" />
 </section>
 </section>
 </section>
@@ -302,7 +256,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2016-2025, 乐聚机器人.</p>
+    <p>&#169; Copyright 2016-2025, Leju Robot.</p>
   </div> <div class="footer-copyright">
   <p>
     乐聚智能（深圳）股份有限公司<br> 
@@ -327,21 +281,6 @@
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions">
-    
-    <dl>
-      <dt>Languages</dt>
-        
-          <!-- <dd><a href="cn/tasks.html">cn</a></dd> -->
-           <dd><a href=" ../../cn/pages/tasks.html">cn</a></dd>
-            <!-- 
-            <dd><a href="cn#">cn</a></dd> -->
-        
-          <!-- <dd><a href="en/tasks.html">en</a></dd> -->
-           <dd><a href=" ../../en/pages/tasks.html">en</a></dd>
-            <!-- 
-            <dd><a href="en#">en</a></dd> -->
-        
-    </dl>
     
     
     <dl>

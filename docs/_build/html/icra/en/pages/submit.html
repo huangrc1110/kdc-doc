@@ -9,7 +9,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Submission &mdash; 赛事手册  documentation</title>
+  <title>Submission &mdash; Competition Manual  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=c773721a" />
 
@@ -39,12 +39,28 @@
             
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
-              <div class="switch-menus">
+              <!-- <div class="switch-menus">
                 <div class="version-switch"></div>
                 <div class="language-switch">
                   <a href=" ../../cn/pages/submit.html" style="color: #ffffff !important;">中文</a>
                   <a href=" ../../en/pages/submit.html" style="color: #ffffff !important;">English</a>
                 </div>
+              </div> -->
+              <div class="switch-menus">
+                  <div class="version-switch">
+                      <select id="competitionSelect" onchange="if(this.value) window.location.href=this.value">
+                          <!-- <a href=" ../../..//cn/pages/submit.html" -->
+                          <option value=" ../../../icra/en/pages/submit.html" selected="selected">ICRA 2026 Competition</option>
+                          <option value=" ../../../tianchi/cn/pages/submit.html">Tianchi Competition</option>
+                      </select>
+                      
+                      <!-- <select id="languageSelect">
+                          <option value="en">English</option>
+                          <option value="zh_CN">中文</option>
+                      </select> -->
+                      <!-- <button onclick="switchVersion()">Switch</button> -->
+                      <!-- ::after -->
+                  </div>
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -57,7 +73,7 @@
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Competition Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tasks.html">Tasks Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks.html">Task Description</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Competition Overview</span></p>
 <ul class="current">
@@ -65,10 +81,10 @@
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; Training</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Submission</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Code Submission and Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">Important Notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">Video Guide on How to Submit (Please skip the lengthy packing and downloading processes)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">Real-machine competition details coming soon…</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-submission-and-evaluation">Code Submission and Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#important-notes">Important Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#video-guide-on-how-to-submit-please-skip-the-lengthy-packing-and-downloading-processes">Video Guide on How to Submit (Please skip the lengthy packing and downloading processes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#real-machine-competition-details-coming-soon">Real-machine competition details coming soon…</a></li>
 </ul>
 </li>
 </ul>
@@ -84,7 +100,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">赛事手册</a>
+          <a href="../index.html">Competition Manual</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -101,30 +117,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="submit">
-<span id="id1"></span><h1>Submission<a class="headerlink" href="#submit" title="Permalink to this heading"></a></h1>
-<section id="id2">
-<h2>Code Submission and Evaluation<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+  <section id="submission">
+<span id="submit"></span><h1>Submission<a class="headerlink" href="#submission" title="Permalink to this heading"></a></h1>
+<section id="code-submission-and-evaluation">
+<h2>Code Submission and Evaluation<a class="headerlink" href="#code-submission-and-evaluation" title="Permalink to this heading"></a></h2>
 <p>Please refer to the <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md">kuavo_data_challenge main branch docker/readme</a> documentation to pack the environment and codebase into a docker image, and then submit it through our <a class="reference external" href="https://tianchi.aliyun.com/competition/entrance/532415">competition website</a>.</p>
 <p>The official evaluation results and leaderboard will be updated in real-time on our competition website.</p>
 </section>
-<section id="id4">
-<h2>Important Notes<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
-<p>The final submission file should be a zip archive, containing two files: The docker tar image, and the correct run_with_gpu.sh</p>
-<p>Please also name your tar and zip filenames as Team/Personal name_task{i}. Pinyin of the team’s name and/or personal names are accepted. For instance, our team name is Leju Zhandui, and my name is kuavo, for a submission of Task 2, the tar filename then can be either lejuzhandui_task2.tar or kuavo_task2.tar, same goes for the zip archive. Please remember to modify the IMAGE_NAME and CONTAINER_NAME correspondingly, or else the image will not be found!</p>
-<p>Before you export the image, please configure kuavo_sim_env.yaml as follows: eval_episodes must be 100, max_episode_steps must not exceed 300 for tasks 1 and 2, and 600 for task 3. Typically, 200 for tasks 1 and 2, and 500 for task 3, are sufficient.</p>
-<p>Normal submission is through the regular submission portal. If the file is too big (over 5GB in size), the upload might fail, in which case there is an extra-large file submission portal available. Note that its commands refresh every hour!</p>
-<p>Before submission, please ensure that your team is properly enrolled (individual group sized 1 need not perform this operation). If any team amendments occured after the submission, the prior submissions all become nullified. Only one submission required per team, do not submit more than one!</p>
-<p>Our official evaluation system is similar to the local testing system, so all competitors can freely test their models locally and amend codes if necessary. Please try your best to ensure the functionality of your code locally prior to submission, as to not overly waste other competitor’s online evaluation resources.</p>
-<p>After submission, if the evaluation is successful, you can check your scores on the Tianchi competition website. If the evaluation failed, a detailed explaination will be provided, please check your submission materials</p>
+<section id="important-notes">
+<h2>Important Notes<a class="headerlink" href="#important-notes" title="Permalink to this heading"></a></h2>
+<p>1. 最终提交的文件为zip压缩包, 里面包含两个文件, docker镜像tar文件, run_with_gpu.sh
+。</p>
+<p>2. 请各位选手将tar文件和zip压缩包的名字定义为  队伍/个人姓名_task{i}, 若队伍为中文可以用首字母或用个人姓名。例如我的队伍名是乐聚战队,我的姓名是kuavo,此次提交的是任务2,我的tar文件就叫lejuzhandui_task2.tar或者kuavo_task2.tar,最后提交的zip也是一样的名字。需要注意的是,run_with_gpu.sh中需要将IMAGE_NAME和CONTAINER_NAME也改成对应的名字,以免无法运行
+。</p>
+<p>3. 打包镜像前, 一定要注意把kuavo_sim_env.yaml里的配置改好, 测试回合数(eval_episodes)为100回合,最大回合步数(max_episode_steps)不超过300(任务一和二)和600(任务三), 一般200(任务一和二)和500(任务三)是足够的
+。</p>
+<p>4. 提交时, 一般情况使用提交结果入口即可正常提交。若文件过大导致上传失败(一般超过5G会出现这种情况), 可使用上传超大文件入口。注意上传超大文件里的命令每隔一小时会刷新
+。</p>
+<p>5. 提交前，请先确认好已经成功加入队伍(个人选手可以不用)，若提交并获得到成绩后更改队伍或加入队伍，之前的成绩会作废。每队仅需一名选手提交, 请勿重复提交
+。</p>
+<p>6. 官方评测系统和本地仓库评测系统类似，各位选手提交前可以先在本地测试自己的模型性能，以便随时修改自己的代码，性能调试后再提交，以免过多浪费其他选手的评测资源
+。</p>
+<p>7. 提交后，若评测成功，可以在天池竞赛提交页看到自己的分数，若评测失败，会显示评测失败并显示原因，此时请检查提交的文件是否正确
+。</p>
 </section>
-<section id="id5">
-<h2>Video Guide on How to Submit (Please skip the lengthy packing and downloading processes)<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<section id="video-guide-on-how-to-submit-please-skip-the-lengthy-packing-and-downloading-processes">
+<h2>Video Guide on How to Submit (Please skip the lengthy packing and downloading processes)<a class="headerlink" href="#video-guide-on-how-to-submit-please-skip-the-lengthy-packing-and-downloading-processes" title="Permalink to this heading"></a></h2>
 <blockquote>
 <div><div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/submit_instruction.mp4" type="video/mp4"></video></div></div></blockquote>
 </section>
-<section id="id6">
-<h2>Real-machine competition details coming soon…<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<section id="real-machine-competition-details-coming-soon">
+<h2>Real-machine competition details coming soon…<a class="headerlink" href="#real-machine-competition-details-coming-soon" title="Permalink to this heading"></a></h2>
 </section>
 </section>
 
@@ -139,7 +162,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2016-2025, 乐聚机器人.</p>
+    <p>&#169; Copyright 2016-2025, Leju Robot.</p>
   </div> <div class="footer-copyright">
   <p>
     乐聚智能（深圳）股份有限公司<br> 
@@ -164,21 +187,6 @@
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions">
-    
-    <dl>
-      <dt>Languages</dt>
-        
-          <!-- <dd><a href="cn/submit.html">cn</a></dd> -->
-           <dd><a href=" ../../cn/pages/submit.html">cn</a></dd>
-            <!-- 
-            <dd><a href="cn#">cn</a></dd> -->
-        
-          <!-- <dd><a href="en/submit.html">en</a></dd> -->
-           <dd><a href=" ../../en/pages/submit.html">en</a></dd>
-            <!-- 
-            <dd><a href="en#">en</a></dd> -->
-        
-    </dl>
     
     
     <dl>

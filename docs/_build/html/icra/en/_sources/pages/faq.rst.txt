@@ -1,60 +1,60 @@
 .. _faq:
 
 ****************
-常见问题&回答
+FAQs
 ****************
 
-Q：我想报名参赛，该如何报名呢？有报名费吗？
-    A：报名不需要报名费。进入 阿里云天池-天池大赛-工程开发赛-乐聚机器人第一届具身智能操作任务挑战赛&创业启航营，点击报名参赛，填写个人信息即可报名参赛（Note：若个人参赛，学校/公司可填写无， 报名信息里的团队并不计入统计，创建/加入团队请在报名后操作）
+Q: I would like to sign up for this competition, how would I sign up? How much does the signup cost?
+    A: The signup process is free of charge. Go to Alibaba Cloud - Tianchi Competition - Engineering Development Competition - Leju Robotics REAL; Click Sign Up, fill in your personal information to sign up. (Note: For individual signups, school/company name can be left blank, Any teams in the signup information are not to be recorded as competition teams. For teaming up for the competition, please do so after everyone's signup have been completed)
 
-Q：如何创建/加入队伍呢？
-    A：完成报名后，在比赛页面左侧点击我的团队选项，可以创建队伍/加入队伍，每个队限2-4人。
+Q: How do I create/join teams?
+    A: After signup, click my teams found on the left pane to create/join teams. 2-4 members are allowed within every team.
 
-Q：真机赛如何参与呢？一定需要去现场调试真机吗？
-    A：顺利通过初赛（模拟器赛）的筛选的选手和队伍可以进入真机赛，若无法到场调试，我们会安排技术人员在现场调试。
+Q: How do I participate in the real-machine competition? Is this an in-person only event?
+    A: All participants/teams passing the first qualification round (simulator round) may participate in the real-machine competition. If for any reason one is unable to partake in-person for testing, we can arrange technical personnel live on-stage to configure for your testing
 
-Q：如何申请GPU算力
-	A：相关算力还在申请和协调，一旦有新的算力会给大家同步，建议大家先自己匹配算力
+Q: How to apply for GPU compute power assistance?
+	A: Relevant assistance resources are still under negotiation for now. We will provide an update as soon as any becomes available. We strongly encourage everyone to equip and utilise their own compute power for now.
 
-Q：数据集现在有哪些格式的？
-	A：目前上传的数据集全部是原生rosbag文件，选手可以自行使用 ``python kuavo_data/CvtRosbag2Lerobot.py`` 来批量全自动转换成Lerobot Parquet格式，详细请查看 ``kuavo_data_challenge`` 说明文档
+Q: What data formats are provided for the datasets
+	A: Everything uploaded are in native rosbag formats, but participants can freely use ``python kuavo_data/CvtRosbag2Lerobot.py`` to freely convert such datasets into Lerobot Parquet format en masse. For more details, please consult the ``kuavo_data_challenge`` readme documentation.
 
-Q：数据集需要提前下载好吗？
-	A：最好一次只下载需要训练到的数据集，无需一次把所有的任务的数据集一起下载，下载量会十分庞大
+Q: Does the dataset needs to be downloaded all at once?
+	A: We recommend you download only what you'll need during each download. There is no need for you to download everything at once, as such download size is humongous!
 
-Q：打开仿真器（例如 ``deploy.py`` 脚本）的时候，仿真器打开然后闪退
-	A：确认 ``ROBOT_VERSION`` 是45；确认 ``echo $ROBOT_VERSION`` 是否打印45
+Q: After opening the simulator (i.e. ``deploy.py``), the simulator opens and immediately disappears.
+	A: Please ensure that ``ROBOT_VERSION`` is set to 45. You can check this by ``echo $ROBOT_VERSION`` and see if 45 is correctly printed.
 
-	    - 每次重启docker镜像都需要重新 ``export ROBOT_VERSION=45`` ，或者可选加入zshrc里面
+	    - Note that after every re-entry into the docker image, you need to rerun ``export ROBOT_VERSION=45``, or you can optionally add this line into the .zshrc file.
 
-Q：同时运行 ``deploy.py`` 和 ``eval_kuavo.sh`` 正常进行仿真器测试时，仿真器正常打开，但测试环节不开始、第一次reset轮后不开始、或者开始后循环reset轮自动闪退
-	A：在运行的 ``eval_kuavo.sh`` ，按照下面顺序注意以下事项：
+Q: During simutaneous execution of ``deploy.py`` and ``eval_kuavo.sh`` , the simulator opens successfully, but either the evaluation never begins, never restarts after the first reset round, and/or every round becomes a reset round in an infinite loop
+	A: In the running ``eval_kuavo.sh``, check the following items in order:
 
-		- 确认选的是选项8
-		- 按下L键查看log，检查log里面有没有崩溃、缺Python包这种错误（常见为 ``apriltag_ros`` 包缺失），按照提示自行弥补
-		- 确认训练好的权重文件路径是否正确，是否有权限访问
-		- 推荐改要用到的文件夹访问权限，而不是在 ``eval_kuavo.sh`` 前面加 ``sudo`` （容易出问题）
-		- 重新配置 ``eval_kuavo.sh`` 运行的Python环境
-		- 在某些慢一些的系统上面，可能需要改等待仿真起来那个位置（~348行）的 ``time.sleep`` ，可能需要调长一些
+		- Ensure that Option 8 was the one selected
+		- Press L to check the log, ensure that there are no crash messages, potentially indicating missing Python packages (commonly ``apriltag_ros`` may be missing). Install any missing packages as prompted
+		- Ensure that the pretrained weights filepath is correctly set, and that the code has sufficient permissions to access it
+		- It is highly recommended that you change and grant the permissions of all folders in use with this project. It is not recommended for you to add ``sudo`` in front of ``eval_kuavo.sh`` as it may lead to unexpected errors
+		- Reconfigure the Python environment containing the ``eval_kuavo.sh``
+		- Under some slower systems, it may be necessary for you to wait longer for the simulator to be ready. Change the ``time.sleep`` at approx. Line 348 to a larger value.
 
-Q：仿真器 ``catkin build`` 的时候找不到模块报错，如找不到 ``humanoid_interface`` 
-	A：检查以下事项：
+Q: When ``catkin build`` ing the simulator, it fails to find necessary modules, such as ``humanoid_interface`` 
+	A: Check the following checklist:
 
-        - 请确认运行 ``catkin build`` 之前先 ``source installed/setup.zsh`` 
-        - 请勿使用 ``catkin clean`` ，会丢失关键包裹，用了请麻烦重新pull整个库
-        - 重新pull整个库
+        - Please ensure that ``source installed/setup.zsh`` successfully executed prior to ``catkin build`` 
+        - Do NOT use ``catkin clean``, as it may erase critical packages. If you accidentally used this, please re-pull the entire repository to start over.
+        - re-pull the entire repository
 
-Q：仿真器 ``catkin build`` 的时候报错 ``failed to make symbolic link .../../*.so``
-	A：使用Windows来 ``git clone`` 这个库会导致symbolic link丢失
+Q: When ``catkin build`` ing the simulator, errors pop up that read ``failed to make symbolic link .../../*.so``
+	A: If you used ``git clone`` inside Windows environment, where symbolic links do not work correctly under Linux, this can occur
 
-        - 使用Ubuntu环境来执行 ``git clone/pull`` 
+        - Please use a Linux distro to perform ``git clone/pull`` 
 
-Q：仿真器很卡
-	A：检查以下事项：
+Q: The simulator is very laggy
+	A: Check the following checklist:
     
-        - 确认使用了 ``run_with_gpu.sh`` 正确使用CUDA加速
-        - 确认docker是否正确使用了CUDA
-        - 推荐不要使用WSL（Windows Subsystem for Linux），CUDA加速有问题，要是使用这个请在QQ群里面看看能不能找到解决方案
+        - Please ensure that ``run_with_gpu.sh`` was used to create the docker container, and that it is using CUDA properly.
+        - Ensure that docker is correctly using CUDA
+        - It is not recommended for you to use WSL (Windows Subsystem for Linux) for this project, as it is reported that it has CUDA acceleration issues. If you are under such environment, please see the QQ group chat to see if there are any existing solutions inside the discussion group.
 
-Q：仿真器运行 ``deploy.py`` 完全没有仿真页面
-	A：确认没有残骸没完全杀死的ROS进程，可重启电脑试试
+Q: No simulator window showing up after executing ``deploy.py`` for the simulator
+	A: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try againA: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try again

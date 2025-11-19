@@ -9,7 +9,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Datasets &mdash; 赛事手册  documentation</title>
+  <title>Datasets &mdash; Competition Manual  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=c773721a" />
 
@@ -39,12 +39,28 @@
             
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
-              <div class="switch-menus">
+              <!-- <div class="switch-menus">
                 <div class="version-switch"></div>
                 <div class="language-switch">
                   <a href=" ../../cn/pages/datasets.html" style="color: #ffffff !important;">中文</a>
                   <a href=" ../../en/pages/datasets.html" style="color: #ffffff !important;">English</a>
                 </div>
+              </div> -->
+              <div class="switch-menus">
+                  <div class="version-switch">
+                      <select id="competitionSelect" onchange="if(this.value) window.location.href=this.value">
+                          <!-- <a href=" ../../..//cn/pages/datasets.html" -->
+                          <option value=" ../../../icra/en/pages/datasets.html" selected="selected">ICRA 2026 Competition</option>
+                          <option value=" ../../../tianchi/cn/pages/datasets.html">Tianchi Competition</option>
+                      </select>
+                      
+                      <!-- <select id="languageSelect">
+                          <option value="en">English</option>
+                          <option value="zh_CN">中文</option>
+                      </select> -->
+                      <!-- <button onclick="switchVersion()">Switch</button> -->
+                      <!-- ::after -->
+                  </div>
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -57,35 +73,35 @@
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Competition Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tasks.html">Tasks Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks.html">Task Description</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Competition Overview</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="signup.html">Competition Registration</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Datasets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Downloading Datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rosbag">Rosbag Data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">rosbag Topics</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#cam-x-color-image-raw-compressed">/cam_x/color/image_raw/compressed Camera RGB Image Data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-h-depth-image-raw-compressed">/cam_h/depth/image_raw/compressed Head camera depth sensor information</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-x-depth-image-rect-raw-compressed">/cam_x/depth/image_rect_raw/compressed Left, right wrist camera depth sensor information</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#kuavo-arm-traj">/kuavo_arm_traj Arm trajectory control</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gripper-command">/gripper/command Gripper control (Simulator dataset only)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gripper-state">/gripper/state Gripper state (Simulator dataset only)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#control-robot-hand-position">/control_robot_hand_position Dexterous hand position (Real-machine dataset only)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dexhand-state">/dexhand/state Dexterous hand state (Real-machine dataset only)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#control-robot-leju-claw">/control_robot_leju_claw Claw control data (Real-machine dataset only)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#leju-claw-state">/leju_claw_state Claw states (Real-machine dataset only)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sensors-data-raw">/sensors_data_raw Raw sensor data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#joint-cmd">/joint_cmd All joint control commands</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cmd-pose-world-4">/cmd_pose_world Robot positional commands (Task 4 only)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloading-datasets">Downloading Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rosbag-data">Rosbag Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rosbag-topics">rosbag Topics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cam-x-color-image-raw-compressed-camera-rgb-image-data">/cam_x/color/image_raw/compressed Camera RGB Image Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-h-depth-image-raw-compressed-head-camera-depth-sensor-information">/cam_h/depth/image_raw/compressed Head camera depth sensor information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-x-depth-image-rect-raw-compressed-left-right-wrist-camera-depth-sensor-information">/cam_x/depth/image_rect_raw/compressed Left, right wrist camera depth sensor information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kuavo-arm-traj-arm-trajectory-control">/kuavo_arm_traj Arm trajectory control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gripper-command-gripper-control-simulator-dataset-only">/gripper/command Gripper control (Simulator dataset only)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gripper-state-gripper-state-simulator-dataset-only">/gripper/state Gripper state (Simulator dataset only)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#control-robot-hand-position-dexterous-hand-position-real-machine-dataset-only">/control_robot_hand_position Dexterous hand position (Real-machine dataset only)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dexhand-state-dexterous-hand-state-real-machine-dataset-only">/dexhand/state Dexterous hand state (Real-machine dataset only)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#control-robot-leju-claw-claw-control-data-real-machine-dataset-only">/control_robot_leju_claw Claw control data (Real-machine dataset only)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#leju-claw-state-claw-states-real-machine-dataset-only">/leju_claw_state Claw states (Real-machine dataset only)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sensors-data-raw-raw-sensor-data">/sensors_data_raw Raw sensor data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joint-cmd-all-joint-control-commands">/joint_cmd All joint control commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cmd-pose-world-robot-positional-commands-task-4-only">/cmd_pose_world Robot positional commands (Task 4 only)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">Lerobot Dataset</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#rosbag-lerobot">Rosbag to Lerobot Conversion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">Lerobot directory structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lerobot-dataset">Lerobot Dataset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rosbag-to-lerobot-conversion">Rosbag to Lerobot Conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lerobot-directory-structure">Lerobot directory structure</a></li>
 </ul>
 </li>
 </ul>
@@ -105,7 +121,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">赛事手册</a>
+          <a href="../index.html">Competition Manual</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -122,11 +138,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="kuavo-dataset">
-<span id="id1"></span><h1>Datasets<a class="headerlink" href="#kuavo-dataset" title="Permalink to this heading"></a></h1>
+  <section id="datasets">
+<span id="kuavo-dataset"></span><h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this heading"></a></h1>
 <p>For maximum preservation of the valuable information contained in the original data, all of this competition’s datasets are in rosbag format. Competitors can freely use the abundant sources of sensor data inside the rosbag files for their model training.</p>
-<section id="id2">
-<h2>Downloading Datasets<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<section id="downloading-datasets">
+<h2>Downloading Datasets<a class="headerlink" href="#downloading-datasets" title="Permalink to this heading"></a></h2>
 <blockquote>
 <div><p>Dataset downloads are all done through the Alibaba Cloud’s Object Storage Service (OSS). A guide is as follows:</p>
 <ol class="loweralpha">
@@ -298,13 +314,13 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ol>
 </div></blockquote>
 </section>
-<section id="rosbag">
-<h2>Rosbag Data<a class="headerlink" href="#rosbag" title="Permalink to this heading"></a></h2>
+<section id="rosbag-data">
+<h2>Rosbag Data<a class="headerlink" href="#rosbag-data" title="Permalink to this heading"></a></h2>
 <p>Inspired from the open-sourced <a class="reference external" href="https://github.com/huggingface/lerobot">lerobot</a> project by HuggingFace, the host has also prepared an easy-to-use tool that systematically converts the rosbag datasets from our Kuavo robots into Lerobot dataset formats, including <em>depth sensor</em> and other multimodal data. For more details, you may refer to the data conversion scripts from our <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> repository. The exact dataset formats are as follows:</p>
-<section id="id3">
-<h3>rosbag Topics<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
-<section id="cam-x-color-image-raw-compressed">
-<h4>/cam_x/color/image_raw/compressed Camera RGB Image Data<a class="headerlink" href="#cam-x-color-image-raw-compressed" title="Permalink to this heading"></a></h4>
+<section id="rosbag-topics">
+<h3>rosbag Topics<a class="headerlink" href="#rosbag-topics" title="Permalink to this heading"></a></h3>
+<section id="cam-x-color-image-raw-compressed-camera-rgb-image-data">
+<h4>/cam_x/color/image_raw/compressed Camera RGB Image Data<a class="headerlink" href="#cam-x-color-image-raw-compressed-camera-rgb-image-data" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -318,7 +334,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message body</dt><dd><ul class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
 <li><p>format (string): Image encoding format</p></li>
 <li><p>data (uint8[]): Image data</p></li>
@@ -329,8 +345,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ol>
 </div></blockquote>
 </section>
-<section id="cam-h-depth-image-raw-compressed">
-<h4>/cam_h/depth/image_raw/compressed Head camera depth sensor information<a class="headerlink" href="#cam-h-depth-image-raw-compressed" title="Permalink to this heading"></a></h4>
+<section id="cam-h-depth-image-raw-compressed-head-camera-depth-sensor-information">
+<h4>/cam_h/depth/image_raw/compressed Head camera depth sensor information<a class="headerlink" href="#cam-h-depth-image-raw-compressed-head-camera-depth-sensor-information" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -344,7 +360,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message body</dt><dd><ul class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
 <li><p>format (string): Image encoding format</p></li>
 <li><p>data (uint8[]): Image data</p></li>
@@ -355,8 +371,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ol>
 </div></blockquote>
 </section>
-<section id="cam-x-depth-image-rect-raw-compressed">
-<h4>/cam_x/depth/image_rect_raw/compressed Left, right wrist camera depth sensor information<a class="headerlink" href="#cam-x-depth-image-rect-raw-compressed" title="Permalink to this heading"></a></h4>
+<section id="cam-x-depth-image-rect-raw-compressed-left-right-wrist-camera-depth-sensor-information">
+<h4>/cam_x/depth/image_rect_raw/compressed Left, right wrist camera depth sensor information<a class="headerlink" href="#cam-x-depth-image-rect-raw-compressed-left-right-wrist-camera-depth-sensor-information" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -370,7 +386,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message body</dt><dd><ul class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
 <li><p>format (string): Image encoding format</p></li>
 <li><p>data (uint8[]): Image data</p></li>
@@ -381,8 +397,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ol>
 </div></blockquote>
 </section>
-<section id="kuavo-arm-traj">
-<h4>/kuavo_arm_traj Arm trajectory control<a class="headerlink" href="#kuavo-arm-traj" title="Permalink to this heading"></a></h4>
+<section id="kuavo-arm-traj-arm-trajectory-control">
+<h4>/kuavo_arm_traj Arm trajectory control<a class="headerlink" href="#kuavo-arm-traj-arm-trajectory-control" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -396,7 +412,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message body</dt><dd><ul class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
 <li><p>name (list of string): List of the arm joints. When there are 14 joints in total, the names will be from “arm_joint_1” to “arm_joint_14”.</p></li>
 <li><p>position (list of float): A list of current arm joint positions. The data structure is similar to items 12-25 of sensor_data_raw below.</p></li>
@@ -407,8 +423,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ol>
 </div></blockquote>
 </section>
-<section id="gripper-command">
-<h4>/gripper/command Gripper control (Simulator dataset only)<a class="headerlink" href="#gripper-command" title="Permalink to this heading"></a></h4>
+<section id="gripper-command-gripper-control-simulator-dataset-only">
+<h4>/gripper/command Gripper control (Simulator dataset only)<a class="headerlink" href="#gripper-command-gripper-control-simulator-dataset-only" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -422,7 +438,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message body</dt><dd><ul class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
 <li><p>position (list of float): Size 2 array, data being the target positions of the left and right grippers, each element is between [0, 255], where 0 is fully open and 255 is fully shut.</p></li>
 </ul>
@@ -432,8 +448,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ol>
 </div></blockquote>
 </section>
-<section id="gripper-state">
-<h4>/gripper/state Gripper state (Simulator dataset only)<a class="headerlink" href="#gripper-state" title="Permalink to this heading"></a></h4>
+<section id="gripper-state-gripper-state-simulator-dataset-only">
+<h4>/gripper/state Gripper state (Simulator dataset only)<a class="headerlink" href="#gripper-state-gripper-state-simulator-dataset-only" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -447,7 +463,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message body</dt><dd><ul class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
 <li><p>position (list of float): Size 2 array, data being the current positions of the left and right grippers, each element is between [0, 0.8], where 0 is fully open and 0.8 is fully shut</p></li>
 </ul>
@@ -457,8 +473,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ol>
 </div></blockquote>
 </section>
-<section id="control-robot-hand-position">
-<h4>/control_robot_hand_position Dexterous hand position (Real-machine dataset only)<a class="headerlink" href="#control-robot-hand-position" title="Permalink to this heading"></a></h4>
+<section id="control-robot-hand-position-dexterous-hand-position-real-machine-dataset-only">
+<h4>/control_robot_hand_position Dexterous hand position (Real-machine dataset only)<a class="headerlink" href="#control-robot-hand-position-dexterous-hand-position-real-machine-dataset-only" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -472,7 +488,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message body</dt><dd><ul class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
 <li><p>left_hand_position (list of float): Left hand position in a size 6 array, each element is between [0, 100], where 0 is fully open, 100 is fully closed</p></li>
 <li><p>right_hand_position (list of float): Right hand position in a size 6 array, each element is between [0, 100], where 0 is fully open, 100 is fully closed</p></li>
 </ul>
@@ -482,8 +498,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ol>
 </div></blockquote>
 </section>
-<section id="dexhand-state">
-<h4>/dexhand/state Dexterous hand state (Real-machine dataset only)<a class="headerlink" href="#dexhand-state" title="Permalink to this heading"></a></h4>
+<section id="dexhand-state-dexterous-hand-state-real-machine-dataset-only">
+<h4>/dexhand/state Dexterous hand state (Real-machine dataset only)<a class="headerlink" href="#dexhand-state-dexterous-hand-state-real-machine-dataset-only" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -497,7 +513,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message body</dt><dd><ul class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
 <li><p>name (list of string): list of joint names, 12 joints in total:</p></li>
 <li><p>position (list of float): List of joint positions, 12 in total, first 6 being left joint positions, later 6 being right joint positions</p></li>
 <li><p>velocity (list of float): List of joint velocities, 12 in total, first 6 being left joint velocities, later 6 being right joint velocities</p></li>
@@ -509,8 +525,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ol>
 </div></blockquote>
 </section>
-<section id="control-robot-leju-claw">
-<h4>/control_robot_leju_claw Claw control data (Real-machine dataset only)<a class="headerlink" href="#control-robot-leju-claw" title="Permalink to this heading"></a></h4>
+<section id="control-robot-leju-claw-claw-control-data-real-machine-dataset-only">
+<h4>/control_robot_leju_claw Claw control data (Real-machine dataset only)<a class="headerlink" href="#control-robot-leju-claw-claw-control-data-real-machine-dataset-only" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -524,7 +540,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message body</dt><dd><ul class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
 <li><p>name (list of string): Length 2 list, consisting of “left_claw”, “right_claw”</p></li>
 <li><p>position (list of float): Length 2 list, consisting of left and right claw target positions, each element is between [0, 100], where 0 denotes fully open, 100 denotes fully closed</p></li>
 <li><p>velocity (list of float): Length 2 list, target velocities for the claws, again between [0, 100]. Defaults to 50.</p></li>
@@ -536,8 +552,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ol>
 </div></blockquote>
 </section>
-<section id="leju-claw-state">
-<h4>/leju_claw_state Claw states (Real-machine dataset only)<a class="headerlink" href="#leju-claw-state" title="Permalink to this heading"></a></h4>
+<section id="leju-claw-state-claw-states-real-machine-dataset-only">
+<h4>/leju_claw_state Claw states (Real-machine dataset only)<a class="headerlink" href="#leju-claw-state-claw-states-real-machine-dataset-only" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic">
 <li><dl class="simple">
@@ -551,7 +567,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl>
-<dt>Message body</dt><dd><ul>
+<dt>消息字段</dt><dd><ul>
 <li><p>state: Data type int8[]; Length 2 list denoting Claw states. First element denotes left claw, the other being right claw.</p></li>
 <li><p>data: Data type kuavo_msgs/endEffectorData; Claw position, velocity and effort</p></li>
 <li><p>state values’ meanings:</p>
@@ -573,8 +589,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ol>
 </div></blockquote>
 </section>
-<section id="sensors-data-raw">
-<h4>/sensors_data_raw Raw sensor data<a class="headerlink" href="#sensors-data-raw" title="Permalink to this heading"></a></h4>
+<section id="sensors-data-raw-raw-sensor-data">
+<h4>/sensors_data_raw Raw sensor data<a class="headerlink" href="#sensors-data-raw-raw-sensor-data" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic">
 <li><dl class="simple">
@@ -588,7 +604,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message body</dt><dd><ul class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
 <li><p>sensor_time (time): Timestamp</p></li>
 <li><p>joint_data (kuavo_msgs/jointData): Joint data: position, velocity, acceleration, current</p></li>
 <li><p>imu_data (kuavo_msgs/imuData): Includes gyroscope, accelerometer, free angular velocity, quarternion</p></li>
@@ -598,7 +614,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl>
-<dt>Joint data description</dt><dd><ul>
+<dt>关节数据说明</dt><dd><ul>
 <li><p>Order of data</p>
 <blockquote>
 <div><ul>
@@ -648,8 +664,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ol>
 </div></blockquote>
 </section>
-<section id="joint-cmd">
-<h4>/joint_cmd All joint control commands<a class="headerlink" href="#joint-cmd" title="Permalink to this heading"></a></h4>
+<section id="joint-cmd-all-joint-control-commands">
+<h4>/joint_cmd All joint control commands<a class="headerlink" href="#joint-cmd-all-joint-control-commands" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -663,7 +679,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message body</dt><dd><ul class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
 <li><p>joint_q (list of float): Joint positions, in radians</p></li>
 <li><p>joint_v (list of float): Joint velocities, in radian/s</p></li>
@@ -680,8 +696,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ol>
 </div></blockquote>
 </section>
-<section id="cmd-pose-world-4">
-<h4>/cmd_pose_world Robot positional commands (Task 4 only)<a class="headerlink" href="#cmd-pose-world-4" title="Permalink to this heading"></a></h4>
+<section id="cmd-pose-world-robot-positional-commands-task-4-only">
+<h4>/cmd_pose_world Robot positional commands (Task 4 only)<a class="headerlink" href="#cmd-pose-world-robot-positional-commands-task-4-only" title="Permalink to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -695,7 +711,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Message body</dt><dd><ul class="simple">
+<dt>消息字段</dt><dd><ul class="simple">
 <li><p>linear.x (float): x-directional data in world coordinates, in metres</p></li>
 <li><p>linear.y (float): y-directional data in world coordinates, in metres</p></li>
 <li><p>linear.z (float): z-directional data in world coordinates, in metres</p></li>
@@ -711,10 +727,10 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </section>
 </section>
 </section>
-<section id="id4">
-<h2>Lerobot Dataset<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
-<section id="rosbag-lerobot">
-<h3>Rosbag to Lerobot Conversion<a class="headerlink" href="#rosbag-lerobot" title="Permalink to this heading"></a></h3>
+<section id="lerobot-dataset">
+<h2>Lerobot Dataset<a class="headerlink" href="#lerobot-dataset" title="Permalink to this heading"></a></h2>
+<section id="rosbag-to-lerobot-conversion">
+<h3>Rosbag to Lerobot Conversion<a class="headerlink" href="#rosbag-to-lerobot-conversion" title="Permalink to this heading"></a></h3>
 <p>Please complete the installation guide first, then refer to the tutorial from the <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> repository to convert Kuavo-native rosbags into Lerobot parquet format:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>kuavo_data/CvtRosbag2Lerobot.py<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--config-path<span class="o">=</span>../configs/data/<span class="w"> </span><span class="se">\</span>
@@ -732,8 +748,8 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </ul>
 </div></blockquote>
 </section>
-<section id="id6">
-<h3>Lerobot directory structure<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
+<section id="lerobot-directory-structure">
+<h3>Lerobot directory structure<a class="headerlink" href="#lerobot-directory-structure" title="Permalink to this heading"></a></h3>
 <p>After executing the script, a standard Lerobot formatted dataset will be generated. The directory structure is as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>output_dir/
     ├── data/
@@ -907,7 +923,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2016-2025, 乐聚机器人.</p>
+    <p>&#169; Copyright 2016-2025, Leju Robot.</p>
   </div> <div class="footer-copyright">
   <p>
     乐聚智能（深圳）股份有限公司<br> 
@@ -932,21 +948,6 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions">
-    
-    <dl>
-      <dt>Languages</dt>
-        
-          <!-- <dd><a href="cn/datasets.html">cn</a></dd> -->
-           <dd><a href=" ../../cn/pages/datasets.html">cn</a></dd>
-            <!-- 
-            <dd><a href="cn#">cn</a></dd> -->
-        
-          <!-- <dd><a href="en/datasets.html">en</a></dd> -->
-           <dd><a href=" ../../en/pages/datasets.html">en</a></dd>
-            <!-- 
-            <dd><a href="en#">en</a></dd> -->
-        
-    </dl>
     
     
     <dl>

@@ -9,7 +9,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>赛事报名 &mdash; 赛事手册  文档</title>
+  <title>Competition Registration &mdash; Competition Manual  文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=c773721a" />
 
@@ -24,8 +24,8 @@
     <script src="../_static/js/versions.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="赛事数据" href="datasets.html" />
-    <link rel="prev" title="任务说明" href="tasks.html" /> 
+    <link rel="next" title="Datasets" href="datasets.html" />
+    <link rel="prev" title="Task Description" href="tasks.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,12 +40,28 @@
             
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
-              <div class="switch-menus">
+              <!-- <div class="switch-menus">
                 <div class="version-switch"></div>
                 <div class="language-switch">
                   <a href=" ../../cn/pages/signup.html" style="color: #ffffff !important;">中文</a>
                   <a href=" ../../en/pages/signup.html" style="color: #ffffff !important;">English</a>
                 </div>
+              </div> -->
+              <div class="switch-menus">
+                  <div class="version-switch">
+                      <select id="competitionSelect" onchange="if(this.value) window.location.href=this.value">
+                          <!-- <a href=" ../../..//cn/pages/signup.html" -->
+                          <option value=" ../../../icra/en/pages/signup.html" selected="selected">ICRA 2026 Competition</option>
+                          <option value=" ../../../tianchi/cn/pages/signup.html">Tianchi Competition</option>
+                      </select>
+                      
+                      <!-- <select id="languageSelect">
+                          <option value="en">English</option>
+                          <option value="zh_CN">中文</option>
+                      </select> -->
+                      <!-- <button onclick="switchVersion()">Switch</button> -->
+                      <!-- ::after -->
+                  </div>
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -55,26 +71,26 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
-              <p class="caption" role="heading"><span class="caption-text">赛事介绍</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">赛事简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tasks.html">任务说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Competition Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks.html">Task Description</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">赛事流程</span></p>
+<p class="caption" role="heading"><span class="caption-text">Competition Overview</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">赛事报名</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">报名参赛</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">加入讨论群</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Competition Registration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#signing-up">Signing Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#joining-our-discussions-group">Joining our Discussions Group</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="datasets.html">赛事数据</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">安装训练指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="submit.html">提交说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submit.html">Submission</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">辅助信息</span></p>
+<p class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">常见问题&amp;回答</a></li>
-<li class="toctree-l1"><a class="reference internal" href="forums.html">赛事论坛</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forums.html">Forums</a></li>
 </ul>
 
         </div>
@@ -83,7 +99,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">赛事手册</a>
+          <a href="../index.html">Competition Manual</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -91,7 +107,7 @@
           <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">赛事报名</li>
+      <li class="breadcrumb-item active">Competition Registration</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -100,25 +116,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="signup">
-<span id="id1"></span><h1>赛事报名<a class="headerlink" href="#signup" title="此标题的永久链接"></a></h1>
-<p>本赛事参赛队伍由2–4 名参赛选手组成。请选手们先报名再组队伍，队伍内所有成员须为报名表单及实名认证信息中的人员。本赛事参赛报名不需要报名费。参赛前请完整阅读天池上面全部规则与要求。</p>
-<section id="id2">
-<h2>报名参赛<a class="headerlink" href="#id2" title="此标题的永久链接"></a></h2>
+  <section id="competition-registration">
+<span id="signup"></span><h1>Competition Registration<a class="headerlink" href="#competition-registration" title="此标题的永久链接"></a></h1>
+<p>This competition comprises of teams of 2–4 personnel. Please sign-up for the competition first before forming teams, and all members within all teams are required to be on the signup list and have their identities verified. There are no costs for signing up for this competition. Please thoroughly read the full rules and requirements laid out on the Tianchi website prior to signing up.</p>
+<section id="signing-up">
+<h2>Signing Up<a class="headerlink" href="#signing-up" title="此标题的永久链接"></a></h2>
 <ul>
-<li><p>打开阿里云天池-天池大赛-工程开发赛-乐聚机器人第一届具身智能操作任务挑战赛&amp;创业启航营，或者使用此链接： <a class="reference external" href="https://tianchi.aliyun.com/competition/entrance/532415">乐聚天池赛事主页</a></p></li>
-<li><p>点击报名参赛，填写个人信息即可报名参赛</p>
+<li><p>Open the Alibaba Cloud - Tianchi Competition - Engineering Development Competition - Leju Robotics REAL, or use this link provided <a class="reference external" href="https://tianchi.aliyun.com/competition/entrance/532415">here</a></p></li>
+<li><p>Click the sign-up button, fill in your personal information to sign up for this competition</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>温馨提示：若个人参赛，学校/公司可填写无， 报名信息里的团队并不计入统计，创建/加入团队请在报名后操作</p></li>
+<li><p>Note: For individual signups, school/company name can be left blank, Any teams in the signup information are not to be recorded as competition teams. For teaming up for the competition, please do so after everyone’s signup have been completed</p></li>
 </ul>
 </div></blockquote>
 </li>
 </ul>
 </section>
-<section id="id4">
-<h2>加入讨论群<a class="headerlink" href="#id4" title="此标题的永久链接"></a></h2>
-<p>为方便大家讨论和解决问题，我们组织了技术同学建了一个 <a class="reference external" href="../_static/images/qq_team.jpg">QQ群</a> ，请报名完成后尽早点击链接扫码入群。</p>
+<section id="joining-our-discussions-group">
+<h2>Joining our Discussions Group<a class="headerlink" href="#joining-our-discussions-group" title="此标题的永久链接"></a></h2>
+<p>To facilitate discussion and raising/solving problems and concerns, we have organised a <a class="reference external" href="../_static/images/qq_team.jpg">group chat</a>  just for our contestants, please scan the QR code to join the chat as soon as possible after registration!To facilitate discussion and raising/solving problems and concerns, we have organised a <a class="reference external" href="../_static/images/qq_team.jpg">group chat</a>  just for our contestants, please scan the QR code to join the chat as soon as possible after registration!</p>
 </section>
 </section>
 
@@ -126,14 +142,14 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
-        <a href="tasks.html" class="btn btn-neutral float-left" title="任务说明" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="datasets.html" class="btn btn-neutral float-right" title="赛事数据" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tasks.html" class="btn btn-neutral float-left" title="Task Description" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="datasets.html" class="btn btn-neutral float-right" title="Datasets" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2016-2025, 乐聚机器人。</p>
+    <p>&#169; 版权所有 2016-2025, Leju Robot。</p>
   </div> <div class="footer-copyright">
   <p>
     乐聚智能（深圳）股份有限公司<br> 
@@ -158,21 +174,6 @@
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions">
-    
-    <dl>
-      <dt>Languages</dt>
-        
-          <!-- <dd><a href="cn/signup.html">cn</a></dd> -->
-           <dd><a href=" ../../cn/pages/signup.html">cn</a></dd>
-            <!-- 
-            <dd><a href="cn#">cn</a></dd> -->
-        
-          <!-- <dd><a href="en/signup.html">en</a></dd> -->
-           <dd><a href=" ../../en/pages/signup.html">en</a></dd>
-            <!-- 
-            <dd><a href="en#">en</a></dd> -->
-        
-    </dl>
     
     
     <dl>

@@ -9,7 +9,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQs &mdash; 赛事手册  documentation</title>
+  <title>FAQs &mdash; Competition Manual  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=c773721a" />
 
@@ -39,12 +39,28 @@
             
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
-              <div class="switch-menus">
+              <!-- <div class="switch-menus">
                 <div class="version-switch"></div>
                 <div class="language-switch">
                   <a href=" ../../cn/pages/faq.html" style="color: #ffffff !important;">中文</a>
                   <a href=" ../../en/pages/faq.html" style="color: #ffffff !important;">English</a>
                 </div>
+              </div> -->
+              <div class="switch-menus">
+                  <div class="version-switch">
+                      <select id="competitionSelect" onchange="if(this.value) window.location.href=this.value">
+                          <!-- <a href=" ../../..//cn/pages/faq.html" -->
+                          <option value=" ../../../icra/en/pages/faq.html" selected="selected">ICRA 2026 Competition</option>
+                          <option value=" ../../../tianchi/cn/pages/faq.html">Tianchi Competition</option>
+                      </select>
+                      
+                      <!-- <select id="languageSelect">
+                          <option value="en">English</option>
+                          <option value="zh_CN">中文</option>
+                      </select> -->
+                      <!-- <button onclick="switchVersion()">Switch</button> -->
+                      <!-- ::after -->
+                  </div>
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -57,7 +73,7 @@
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Competition Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tasks.html">Tasks Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks.html">Task Description</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Competition Overview</span></p>
 <ul>
@@ -78,7 +94,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">赛事手册</a>
+          <a href="../index.html">Competition Manual</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -95,8 +111,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="faq">
-<span id="id1"></span><h1>FAQs<a class="headerlink" href="#faq" title="Permalink to this heading"></a></h1>
+  <section id="faqs">
+<span id="faq"></span><h1>FAQs<a class="headerlink" href="#faqs" title="Permalink to this heading"></a></h1>
 <dl>
 <dt>Q: I would like to sign up for this competition, how would I sign up? How much does the signup cost?</dt><dd><p>A: The signup process is free of charge. Go to Alibaba Cloud - Tianchi Competition - Engineering Development Competition - Leju Robotics REAL; Click Sign Up, fill in your personal information to sign up. (Note: For individual signups, school/company name can be left blank, Any teams in the signup information are not to be recorded as competition teams. For teaming up for the competition, please do so after everyone’s signup have been completed)</p>
 </dd>
@@ -148,7 +164,7 @@
 <li><p>It is not recommended for you to use WSL (Windows Subsystem for Linux) for this project, as it is reported that it has CUDA acceleration issues. If you are under such environment, please see the QQ group chat to see if there are any existing solutions inside the discussion group.</p></li>
 </ul>
 </dd>
-<dt>Q: No simulator window showing up after executing <code class="docutils literal notranslate"><span class="pre">deploy.py</span></code> for the simulator</dt><dd><p>A: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try again</p>
+<dt>Q: No simulator window showing up after executing <code class="docutils literal notranslate"><span class="pre">deploy.py</span></code> for the simulator</dt><dd><p>A: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try againA: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try again</p>
 </dd>
 </dl>
 </section>
@@ -164,7 +180,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2016-2025, 乐聚机器人.</p>
+    <p>&#169; Copyright 2016-2025, Leju Robot.</p>
   </div> <div class="footer-copyright">
   <p>
     乐聚智能（深圳）股份有限公司<br> 
@@ -189,21 +205,6 @@
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions">
-    
-    <dl>
-      <dt>Languages</dt>
-        
-          <!-- <dd><a href="cn/faq.html">cn</a></dd> -->
-           <dd><a href=" ../../cn/pages/faq.html">cn</a></dd>
-            <!-- 
-            <dd><a href="cn#">cn</a></dd> -->
-        
-          <!-- <dd><a href="en/faq.html">en</a></dd> -->
-           <dd><a href=" ../../en/pages/faq.html">en</a></dd>
-            <!-- 
-            <dd><a href="en#">en</a></dd> -->
-        
-    </dl>
     
     
     <dl>

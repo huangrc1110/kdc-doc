@@ -1,19 +1,19 @@
 .. _signup:
  
-**********
-赛事报名
-**********
+******************************
+Competition Registration
+******************************
 
-本赛事参赛队伍由2–4 名参赛选手组成。请选手们先报名再组队伍，队伍内所有成员须为报名表单及实名认证信息中的人员。本赛事参赛报名不需要报名费。参赛前请完整阅读天池上面全部规则与要求。
+This competition comprises of teams of 2–4 personnel. Please sign-up for the competition first before forming teams, and all members within all teams are required to be on the signup list and have their identities verified. There are no costs for signing up for this competition. Please thoroughly read the full rules and requirements laid out on the Tianchi website prior to signing up.
 
-报名参赛
+Signing Up
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- 打开阿里云天池-天池大赛-工程开发赛-乐聚机器人第一届具身智能操作任务挑战赛&创业启航营，或者使用此链接： `乐聚天池赛事主页 <https://tianchi.aliyun.com/competition/entrance/532415>`_
-- 点击报名参赛，填写个人信息即可报名参赛
+- Open the Alibaba Cloud - Tianchi Competition - Engineering Development Competition - Leju Robotics REAL, or use this link provided `here <https://tianchi.aliyun.com/competition/entrance/532415>`_
+- Click the sign-up button, fill in your personal information to sign up for this competition
 
-    - 温馨提示：若个人参赛，学校/公司可填写无， 报名信息里的团队并不计入统计，创建/加入团队请在报名后操作
+    - Note: For individual signups, school/company name can be left blank, Any teams in the signup information are not to be recorded as competition teams. For teaming up for the competition, please do so after everyone's signup have been completed
 
-加入讨论群
+Joining our Discussions Group
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-为方便大家讨论和解决问题，我们组织了技术同学建了一个 `QQ群 <../_static/images/qq_team.jpg>`_ ，请报名完成后尽早点击链接扫码入群。
+To facilitate discussion and raising/solving problems and concerns, we have organised a `group chat <../_static/images/qq_team.jpg>`_  just for our contestants, please scan the QR code to join the chat as soon as possible after registration!To facilitate discussion and raising/solving problems and concerns, we have organised a `group chat <../_static/images/qq_team.jpg>`_  just for our contestants, please scan the QR code to join the chat as soon as possible after registration!

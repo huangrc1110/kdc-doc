@@ -1,18 +1,18 @@
 .. _kuavo-dataset:
 
 **********
-赛事数据
+Datasets
 **********
 
-为最大程度保留原始数据中的信息，本次赛事统一采用 **rosbag** 包作为数据格式。参赛者可自由利用 rosbag 中提供的多源传感器数据进行模型训练。
+For maximum preservation of the valuable information contained in the original data, all of this competition's datasets are in rosbag format. Competitors can freely use the abundant sources of sensor data inside the rosbag files for their model training.
 
-数据集下载
+Downloading Datasets
 =========================================
-   数据集下载需要使用阿里云对象存储 OSS，说明如下。
+   Dataset downloads are all done through the Alibaba Cloud's Object Storage Service (OSS). A guide is as follows:
 
-   a. ossutil 下载与安装
+   a. Downloading & Installing ossutil
 
-      - Linux/macOS 一键安装（推荐）
+      - Linux/macOS One-click Installation (Recommended)
 
         .. code-block:: bash
 
@@ -20,16 +20,16 @@
 
         .. note::
 
-           安装过程中需要解压工具（unzip 或 7z），请提前安装。安装完成后，``ossutil`` 将安装到 ``/usr/bin/`` 目录下。
+           The installation process require a decompression tool (such as unzip or 7zip), please install as needed. ``ossutil`` will be installed under ``/usr/bin/`` by default.
 
-      - 下载地址
+      - Download Link
 
          .. list-table::
             :header-rows: 1
             :widths: 18 82
 
-            * - 平台
-              - 地址
+            * - Platform
+              - Address 
             * - Linux x86_64
               - `ossutil-v1.7.19-linux-amd64.zip <https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-amd64.zip>`__
             * - Linux x86_32
@@ -46,7 +46,7 @@
               - `ossutil-v1.7.19-mac-arm64.zip <https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-mac-arm64.zip>`__
 
 
-      - 手动安装方法
+      - Manual Installation Method
 
         .. code-block:: bash
 
@@ -59,48 +59,48 @@
            # 4. 移动到系统 PATH 目录（可选）
            sudo mv ossutil /usr/local/bin/
 
-   b. 验证安装
+   b. Install Verification
 
       .. code-block:: bash
 
          ossutil
 
-      如果显示使用选项，则安装成功。若需更新版本，可执行：
+      When it shows the usage help page, it means the installation is successful. If it asks you for an update, perform as needed:
 
       .. code-block:: bash
 
          ossutil update
 
-   c. ossutil 配置
+   c. ossutil Configuration
 
-      交互式配置（推荐）：
+      Interactive Configuration (Recommended)
 
       .. code-block:: bash
 
          ossutil config
 
-      按提示输入：
+      Enter as prompted: 
 
-      - 配置文件路径：默认为 ``~/.ossutilconfig`` ，直接回车使用默认路径
-      - 语言设置：输入 ``CH`` （中文）或 ``EN`` （英文）
+      - Default configuration file path: ``~/.ossutilconfig``, simply press Enter to use the default path
+      - Language settings: Enter ``CH`` for Simplified Chinese, or ``EN`` for English
       - Endpoint：``https://oss-cn-hangzhou.aliyuncs.com``
       - AccessKey ID：``LTAI5tJCN2XX2sYt6wWhdvqk``
       - AccessKey Secret：``xbROt0HCaQexY2JrLl2UDScvS3qHpj``
 
-      遇到 ``systoken`` 直接回车即可，提示出现的先后顺序可能不同。
+      When it prompts you for ``stsToken``, don't enter anything and simply press Enter. The order of this appearance may vary on your end.
 
-   d. 验证配置与使用
+   d. Testing the Configuration & its Usage
 
-      - 验证配置
+      - Testing this configuration
 
         .. code-block:: bash
 
            # 输出指定桶名下的文件夹（不包含子文件）
            ossutil ls oss://kuavo-data-challenge-simdata/ -d
 
-        若能正常显示存储空间列表，说明配置成功。
+        If it shows the directory list, it means the configuration is valid.
 
-      - 浏览存储空间内容
+      - Listing the directory information
 
         .. code-block:: bash
 
@@ -111,7 +111,7 @@
            # 递归列出指定前缀的对象（包括子目录）
            ossutil ls oss://kuavo-data-challenge-simdata/folder-name/
 
-      - 查看对象信息
+      - Viewing target details
 
         .. code-block:: bash
 
@@ -120,7 +120,7 @@
            # 查看特定路径对象个数与空间占用
            ossutil du oss://kuavo-data-challenge-simdata/file-name
 
-      - 搜索文件
+      - File(s) searching
 
         .. code-block:: bash
 
@@ -131,9 +131,9 @@
            # 组合使用包含与排除
            ossutil ls oss://kuavo-data-challenge-simdata/ --include "*.log" --exclude "*debug*"
 
-   e. 下载说明
+   e. How to Download Our Data
 
-      - 下载单个文件
+      - Downloading an individual file
 
         .. code-block:: bash
 
@@ -146,14 +146,14 @@
            # 下载文件到指定目录
            ossutil cp oss://kuavo-data-challenge-simdata/<file-path>/<file-name> <local-path>
 
-      - 批量下载文件
+      - Downloading a batch of files
 
         .. code-block:: bash
 
            # 下载整个目录 -r
            ossutil cp -r oss://kuavo-data-challenge-simdata/<file-path>/ <local-path>
 
-      - 断点续传下载
+      - Enabling auto-resume after interruption
 
         .. code-block:: bash
 
@@ -163,219 +163,219 @@
            # 设置分块个数 -j
            ossutil cp oss://kuavo-data-challenge-simdata/large-file.zip ./local-folder/ -j 5
 
-   f. 常见问题
+   f. Tips
 
-      - 使用 ``-j 10`` 增加并行任务数以提高下载速度
-      - 使用 ``-u`` 参数启用断点续传
+      - Use the ``-j 10`` option to increase # of parallel tasks to increase the downloading speed
+      - Use the ``-u`` option to enable auto-resume when the download is interrupted.
 
-   g. 视频教程
+   g. Video Tutorial
 
       .. video:: ../_static/videos/instruction.mp4
          :width: 100%
 
 
-rosbag 数据
+Rosbag Data
 ==================
 
-参考 HuggingFace 开源的 `lerobot <https://github.com/huggingface/lerobot>`_ 项目，赛事方同时提供了将 Kuavo 机器人 rosbag 数据转换为 Lerobot 数据集格式的工具，其中包含 *深度相机* 等多模态数据。具体实现可参阅赛事主办方发布的 `kuavo_data_challenge <https://github.com/LejuRobotics/kuavo_data_challenge>`_ 仓库中的数据转换脚本。数据格式的具体细节如下：
+Inspired from the open-sourced `lerobot <https://github.com/huggingface/lerobot>`_ project by HuggingFace, the host has also prepared an easy-to-use tool that systematically converts the rosbag datasets from our Kuavo robots into Lerobot dataset formats, including *depth sensor* and other multimodal data. For more details, you may refer to the data conversion scripts from our `kuavo_data_challenge <https://github.com/LejuRobotics/kuavo_data_challenge>`_ repository. The exact dataset formats are as follows:
 
-rosbag 话题说明
+rosbag Topics
 ---------------
 
-/cam_x/color/image_raw/compressed 相机彩色图像数据
+/cam_x/color/image_raw/compressed Camera RGB Image Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    1. 功能描述
-        /cam_x/color/image_raw/compressed 话题用于提供相机的原始彩色图像的压缩图像数据，其中，x 为 h、l 或 r，分别表示头部、左腕或右腕相机。
-    2. 消息类型
-        类型: sensor_msgs/CompressedImage
+    1. Description
+        This ROS topic is used to provide the post-compression original RGB imaging data from the camera sensors. x here being h, l or r, denoting head, left and right wrist cameras
+    2. Message type
+        Type: sensor_msgs/CompressedImage
     3. 消息字段
-        - header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息
-        - format (string): 图像编码格式
-        - data (uint8[]): 图像数据
+        - header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.
+        - format (string): Image encoding format
+        - data (uint8[]): Image data
 
-/cam_h/depth/image_raw/compressed 头部相机深度图像数据
+/cam_h/depth/image_raw/compressed Head camera depth sensor information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    1. 功能描述
-        /cam_h/depth/image_raw/compressed 话题用于提供头部相机的原始深度图像经过压缩后的图像数据。
-    2. 消息类型
-        类型: sensor_msgs/CompressedImage
+    1. Description
+        /cam_h/depth/image_raw/compressed is used to provide the post-compression original depth imaging data from the head camera
+    2. Message type
+        Type: sensor_msgs/CompressedImage
     3. 消息字段
-        - header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息
-        - format (string): 图像编码格式
-        - data (uint8[]): 图像数据
+        - header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.
+        - format (string): Image encoding format
+        - data (uint8[]): Image data
 
-/cam_x/depth/image_rect_raw/compressed 左腕、右腕相机深度图像数据
+/cam_x/depth/image_rect_raw/compressed Left, right wrist camera depth sensor information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    1. 功能描述
-        /cam_x/depth/image_rect_raw 话题用于提供左腕或右腕相机的原始深度图像经过校正、压缩后的图像数据，其中，x 为 l 或 r，分别表示左腕或右腕相机。
-    2. 消息类型
-        类型: sensor_msgs/CompressedImage
+    1. Description
+        /cam_x/depth/image_rect_raw is used to provide the post-compression original depth imaging data from camera x, where x is either l (left) or r (right).
+    2. Message type
+        Type: sensor_msgs/CompressedImage
     3. 消息字段
-        - header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息
-        - format (string): 图像编码格式
-        - data (uint8[]): 图像数据
+        - header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.
+        - format (string): Image encoding format
+        - data (uint8[]): Image data
 
-/kuavo_arm_traj 手臂运动控制
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    1. 功能描述
-        /kuavo_arm_traj 话题用于控制机器人手臂运动，通过发布手臂目标关节位置来实现手臂的精确控制
-    2. 消息类型
-        类型: sensor_msgs/JointState
+/kuavo_arm_traj Arm trajectory control
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    1. Description
+        /kuavo_arm_traj is used to control the arm trajectories of the robot. It publishes arm target joint positions to control the arms with high precision.
+    2. Message type
+        Type: sensor_msgs/JointState
     3. 消息字段
-        - header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息
-        - name (list of string): 关节名称列表，假设有 14 个关节，名称为 "arm_joint_1" 到 "arm_joint_14"。
-        - position (list of float): 当前关节位置列表。数据结构跟下面 sensors_data_raw 12-25条相同
+        - header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.
+        - name (list of string): List of the arm joints. When there are 14 joints in total, the names will be from "arm_joint_1" to "arm_joint_14".
+        - position (list of float): A list of current arm joint positions. The data structure is similar to items 12-25 of sensor_data_raw below.
 
-/gripper/command 夹抓控制（仅限仿真数据）
+/gripper/command Gripper control (Simulator dataset only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    1. Description
+        /gripper/command is used to control the grippers (fingers)' movement in the simulator.
+    2. Message type
+        Type: sensor_msgs/JointState
+    3. 消息字段
+        - header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.
+        - position (list of float): Size 2 array, data being the target positions of the left and right grippers, each element is between [0, 255], where 0 is fully open and 255 is fully shut.
+
+/gripper/state Gripper state (Simulator dataset only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    1. 功能描述
-        /gripper/command 话题用于控制仿真中机器人双手(手指)的运动。
-    2. 话题类型
-        类型: sensor_msgs/JointState
+    1. Description
+        /gripper/state is used to capture the current movement of the grippers (fingers) in the simulator.
+    2. Message type
+        Type: sensor_msgs/JointState
     3. 消息字段
-        - header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息
-        - position (list of float): 数组长度为2, 数据为左夹爪和右夹爪的目标位置, 每个元素的取值范围为[0, 255], 0 为张开，255 为闭合。
+        - header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.
+        - position (list of float): Size 2 array, data being the current positions of the left and right grippers, each element is between [0, 0.8], where 0 is fully open and 0.8 is fully shut
 
-/gripper/state 夹抓状态（仅限仿真数据）
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    1. 功能描述
-        /gripper/state 话题用于获取仿真中机器人双手(手指)的运动状态。
-    2. 话题类型
-        类型: sensor_msgs/JointState
+/control_robot_hand_position Dexterous hand position (Real-machine dataset only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    1. Description
+        /control_robot_hand_position is used to control the movement of both hands. It publishes target joint positions to control the hands with high precision.
+    2. Message type
+        Type: kuavo_msgs/robotHandPosition
     3. 消息字段
-        - header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息
-        - position (list of float): 数组长度为2, 数据为左夹爪和右夹爪的位置, 每个元素的取值范围为[0, 0.8], 0 为张开，0.8 为闭合。
+        - left_hand_position (list of float): Left hand position in a size 6 array, each element is between [0, 100], where 0 is fully open, 100 is fully closed
+        - right_hand_position (list of float): Right hand position in a size 6 array, each element is between [0, 100], where 0 is fully open, 100 is fully closed
 
-/control_robot_hand_position 灵巧手控制（仅限真机数据）
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    1. 功能描述
-        /control_robot_hand_position 话题用于控制机器人双手(手指)的运动，通过发布手指目标关节位置来实现手部的精确控制。
-    2. 话题类型
-        类型: kuavo_msgs/robotHandPosition
+/dexhand/state Dexterous hand state (Real-machine dataset only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    1. Description
+        Publishes dexterous hands' status
+    2. Message type
+        Type: sensor_msgs/JointState
     3. 消息字段
-        - left_hand_position (list of float): 左手位置，包含6个元素，每个元素的取值范围为[0, 100], 0 为张开，100 为闭合。
-        - right_hand_position (list of float): 右手位置，包含6个元素，每个元素的取值范围为[0, 100], 0 为张开，100 为闭合。
+        - name (list of string): list of joint names, 12 joints in total:
+        - position (list of float): List of joint positions, 12 in total, first 6 being left joint positions, later 6 being right joint positions
+        - velocity (list of float): List of joint velocities, 12 in total, first 6 being left joint velocities, later 6 being right joint velocities
+        - effort (list of float): List of joint (electrical) current, 12 in total, first 6 being left joint current data, later 6 being right joint current data
 
-/dexhand/state 灵巧手的状态（仅限真机数据）
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    1. 话题描述
-        发布灵巧手的状态数据.
-    2. 消息类型
-        类型: sensor_msgs/JointState
+/control_robot_leju_claw Claw control data (Real-machine dataset only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    1. Description
+        /control_robot_leju_claw Topic used to control the robot hands (i.e. two-finger claws)
+    2. Message type
+        Type: kuavo_msgs/controlLejuClaw
     3. 消息字段
-        - name (list of string): 关节名称数组, 包含12个关节名称:
-        - position (list of float): 关节位置数组, 长度为12, 前6个为左手关节位置, 后6个为右手关节位置
-        - velocity (list of float): 关节速度数组, 长度为12, 前6个为左手关节速度, 后6个为右手关节速度
-        - effort (list of float): 关节电流数组, 长度为12, 前6个为左手关节电流, 后6个为右手关节电流
+        - name (list of string): Length 2 list, consisting of "left_claw", "right_claw"
+        - position (list of float): Length 2 list, consisting of left and right claw target positions, each element is between [0, 100], where 0 denotes fully open, 100 denotes fully closed
+        - velocity (list of float): Length 2 list, target velocities for the claws, again between [0, 100]. Defaults to 50.
+        - effort (list of float): Length 2 list, target current for claws, in Amps. Defaults to 1 Amp
 
-/control_robot_leju_claw 夹抓控制（仅限真机数据）
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    1. 功能描述
-        /control_robot_leju_claw 话题用于机器人夹爪（二指爪）的控制。
-    2. 话题类型
-        类型: kuavo_msgs/controlLejuClaw
-    3. 消息字段
-        - name (list of string): 数组长度为2, 数据为"left_claw", "right_claw"
-        - position (list of float): 数组长度为2, 数据为左夹爪和右夹爪的目标位置, 每个元素的取值范围为[0, 100], 0 为张开，100 为闭合。
-        - velocity (list of float): 数组长度为2, 夹爪目标速度值, 0 ~ 100, 不填写时默认为50
-        - effort (list of float): 数组长度为2, 夹爪目标电流, 单位 A, 不填写时默认为 1.0A
-
-/leju_claw_state 获取机器人夹爪（二指爪）状态（仅限真机数据）
+/leju_claw_state Claw states (Real-machine dataset only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    1. 服务描述
-        /leju_claw_state话题用于发布机器人夹爪（二指爪）的状态，位置，速度，力矩等信息。
-    2. 服务消息类型
+    1. Description
+        /leju_claw_state topic is used to publish the state, position, velocity and efforts of each of the claws.
+    2. Type
         kuavo_msgs/lejuClawState
     3. 消息字段
-        - state： 数据类型 int8[]；二指夹爪的状态, 数组长度为2, 第一个为左夹爪, 第二个为右夹爪
-        - data： 数据类型 kuavo_msgs/endEffectorData；二指夹爪的位置, 速度, 力距等信息
-        - state 状态值含义:
+        - state: Data type int8[]; Length 2 list denoting Claw states. First element denotes left claw, the other being right claw.
+        - data: Data type kuavo_msgs/endEffectorData; Claw position, velocity and effort
+        - state values' meanings:
 
-            - -1 : Error, 表示有执行时有错误
-            - 0 : Unknown, 初始化时默认的状态
-            - 1 : Moving, 表示夹爪正在执行, 移动中
-            - 2 : Reached, 表示夹爪已经执行到达期望的位置
-            - 3 : Grabbed, 表示夹爪抓取到物品
+            - -1: Error, indicating execution error
+            - 0: Unknown, default status upon initialisation
+            - 1: Moving, indicating movement of the claws in progress
+            - 2: Reached, indicating the target positions have been successfully reached
+            - 3: Grabbed, indicating successful grasp of an item
 
-        关于 data 字段中 kuavo_msgs/endEffectorData的消息在/control_robot_leju_claw部分有介绍。
+        Please refer to the descriptions in /control_robot_leju_claw for all the kuavo_msgs/endEffectorData messages inside data.
 
-/sensors_data_raw 传感器数据
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    1. 话题描述
-        话题用于发布实物机器人或仿真器的传感器原始数据，包括关节数据、IMU数据和末端执行器数据。
-    2. 消息类型
-        类型: kuavo_msgs/sensorsData
+/sensors_data_raw Raw sensor data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    1. Description
+        Topic used to publish all real-robot or simulator raw sensor data, from joint data to IMU data to end effector data
+    2. Message type
+        Type: kuavo_msgs/sensorsData
     3. 消息字段
-        - sensor_time (time): 时间戳
-        - joint_data (kuavo_msgs/jointData): 关节数据: 位置、速度、加速度、电流
-        - imu_data (kuavo_msgs/imuData): 包含陀螺仪、加速度计、自由加速度、四元数
-        - end_effector_data (kuavo_msgs/endEffectorData): 末端数据，暂未使用.
+        - sensor_time (time): Timestamp
+        - joint_data (kuavo_msgs/jointData): Joint data: position, velocity, acceleration, current
+        - imu_data (kuavo_msgs/imuData): Includes gyroscope, accelerometer, free angular velocity, quarternion
+        - end_effector_data (kuavo_msgs/endEffectorData): End effector data, not currently used.
     4. 关节数据说明
-        - 数据顺序
+        - Order of data
 
-            - 前 12 个数据为下肢电机数据:
+            - First 12 elements are lower body motor data:
 
-                - 0~5 为左下肢数据 (l_leg_roll, l_leg_yaw, l_leg_pitch, l_knee, l_foot_pitch, l_foot_roll)
-                - 6~11 为右下肢数据 (r_leg_roll, r_leg_yaw, r_leg_pitch, r_knee, r_foot_pitch, r_foot_roll)
+                - 0~5 are left limb data (l_leg_roll, l_leg_yaw, l_leg_pitch, l_knee, l_foot_pitch, l_foot_roll)
+                - 6~11 are right limb data (r_leg_roll, r_leg_yaw, r_leg_pitch, r_knee, r_foot_pitch, r_foot_roll)
 
-            - 接着 14 个数据为手臂电机数据:
+            - The subsequent 14 elements are arm motor data:
 
-                - 12~18 左臂电机数据 ("l_arm_pitch", "l_arm_roll", "l_arm_yaw", "l_forearm_pitch", "l_hand_yaw", "l_hand_pitch", "l_hand_roll")
-                - 19~25 为右臂电机数据 ("r_arm_pitch", "r_arm_roll", "r_arm_yaw", "r_forearm_pitch", "r_hand_yaw", "r_hand_pitch", "r_hand_roll")
+                - 12~18 are left arm motor data ("l_arm_pitch", "l_arm_roll", "l_arm_yaw", "l_forearm_pitch", "l_hand_yaw", "l_hand_pitch", "l_hand_roll")
+                - 19~25 are right arm motor data ("r_arm_pitch", "r_arm_roll", "r_arm_yaw", "r_forearm_pitch", "r_hand_yaw", "r_hand_pitch", "r_hand_roll")
 
-            - 最后 2 个为头部电机数据: head_yaw 和 head_pitch
+            - The last 2 elements are head motor data: head_yaw and head_pitch
 
-        - 单位:
+        - Units:
 
-            - 位置: 弧度 (radian)
-            - 速度: 弧度每秒 (radian/s)
-            - 加速度: 弧度每平方秒 (radian/s²)
-            - 电流: 安培 (A)
+            - Positions: radians
+            - Speed: radians per second (radian/s)
+            - Acceleration: radians per square second (radian/s²)
+            - Current: Amperes (A)
 
-    5. IMU 数据说明
-        - gyro: 陀螺仪的角速度，单位弧度每秒（rad/s）
-        - acc: 加速度计的加速度，单位米每平方秒（m/s²）
-        - quat: IMU的姿态（orientation）
+    5. IMU Data Description
+        - gyro: Gyroscope angular velocities, in rad/s
+        - acc: Accelerometer acceleration, in m/s²
+        - quat" IMU orientation
 
 
-/joint_cmd 所有关节的控制指令
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    1. 话题描述
-        话题用于发布全身所有关节的控制指令
-    2. 消息类型
-        类型: kuavo_msgs/jointCmd
+/joint_cmd All joint control commands
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    1. Description
+        Topic used to publish every joint commands throughout the whole body
+    2. Message type
+        Type: kuavo_msgs/jointCmd
     3. 消息字段
-        - header (std_msgs/Header): 消息头信息, 包含时间戳、序列号、坐标系 ID 等信息
-        - joint_q (list of float): 关节位置, 单位(radian)
-        - joint_v (list of float): 关节速度, 单位(radian/s)
-        - tau (list of float): 关节扭矩, 单位(N·m)
-        - tau_max (list of float): 最大关节扭矩, 单位(N·m)
-        - tau_ratio (list of float): 扭矩系数
-        - joint_kp (list of float): kp 参数
-        - joint_kd (list of float): kd 参数
-        - control_modes (list of int): 关节对应的控制模式，0为Torque 控制模式, 1为Velocity 控制模式, 2为Position 控制模式
+        - header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.
+        - joint_q (list of float): Joint positions, in radians
+        - joint_v (list of float): Joint velocities, in radian/s
+        - tau (list of float): Joint torques, in N·m
+        - tau_max (list of float): Max joint torques, in N·m
+        - tau_ratio (list of float): Torque ratios
+        - joint_kp (list of float): kp data
+        - joint_kd (list of float): kd data
+        - control_modes (list of int): control mode corresponding to each joint, 0 being Torque, 1 being Velocity  and 2 being Positional control modes
 
-/cmd_pose_world 机器人位置指令（仅限任务4）
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    1. 话题描述
-        话题用于发布机器人位置指令
-    2. 消息类型
-        类型: geometry_msgs/Twist
+/cmd_pose_world Robot positional commands (Task 4 only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    1. Description
+        Topic used to publish robot position commands
+    2. Message type
+        Type: geometry_msgs/Twist
     3. 消息字段
-        - linear.x (float): 基于世界坐标系的 x 方向值，单位为米 (m)。
-        - linear.y (float): 基于世界坐标系的 y 方向值，单位为米 (m)。
-        - linear.z (float): 基于世界坐标系的 z 方向值，单位为米 (m)。
-        - angular.x (float): 基于世界坐标系的 x 方向旋转角度，单位为弧度 (radian)。
-        - angular.y (float): 基于世界坐标系的 y 方向旋转角度，单位为弧度 (radian)。
-        - angular.z (float): 基于世界坐标系的 z 方向旋转角度，单位为弧度 (radian)。
+        - linear.x (float): x-directional data in world coordinates, in metres
+        - linear.y (float): y-directional data in world coordinates, in metres
+        - linear.z (float): z-directional data in world coordinates, in metres
+        - angular.x (float): x-directional rotation angle in world coordinates, in radians
+        - angular.y (float): y-directional rotation angle in world coordinates, in radians
+        - angular.z (float): z-directional rotation angle in world coordinates, in radians
 
-lerobot 数据
+Lerobot Dataset
 ==================
 
-rosbag 转 Lerobot 格式
+Rosbag to Lerobot Conversion
 ------------------------------
 
-请先完成安装指南，并参考 `kuavo_data_challenge <https://github.com/LejuRobotics/kuavo_data_challenge>`_ 仓库的教程将 Kuavo 原生 rosbag 数据转换为 Lerobot 框架可用的 parquet 格式：
+Please complete the installation guide first, then refer to the tutorial from the `kuavo_data_challenge <https://github.com/LejuRobotics/kuavo_data_challenge>`_ repository to convert Kuavo-native rosbags into Lerobot parquet format:
 
 .. code-block:: bash
     
@@ -385,17 +385,17 @@ rosbag 转 Lerobot 格式
         rosbag.rosbag_dir=/path/to/rosbag \
         rosbag.lerobot_dir=/path/to/lerobot_data
 
-说明：
+Description:
 
-    - rosbag.rosbag_dir：原始 rosbag 数据路径
-    - rosbag.lerobot_dir：转换后的lerobot-parquet 数据保存路径，通常会在此目录下创建一个名为lerobot的子文件夹
-    - configs/data/KuavoRosbag2Lerobot.yaml：请查看并根据需要选择启用的相机及是否使用深度图像等
+    - rosbag.rosbag_dir: Original rosbag data path
+    - rosbag.lerobot_dir：Target lerobot-parquet path after conversion, usually a new folder named lerobot will be created under this directory
+    - configs/data/KuavoRosbag2Lerobot.yaml: Please review this configuration file and choose which camera(s) to enable and whether to use depth data, based on your needs
 
 
-lerobot数据目录结构说明
+Lerobot directory structure
 ------------------------------
 
-执行脚本后，会生成标准lerobot格式数据集。目录结构如下：
+After executing the script, a standard Lerobot formatted dataset will be generated. The directory structure is as follows:
 
 .. code-block::
 
@@ -418,7 +418,7 @@ lerobot数据目录结构说明
             ├── observation.images.color.wrist_cam_l/
             └── observation.images.color.wrist_cam_r/
 
-info.json 文件中记录了当前所有可用的数据特征的格式。主要可用特征如下：
+info.json records all available data entries, as follows:
 
 .. code-block::
 

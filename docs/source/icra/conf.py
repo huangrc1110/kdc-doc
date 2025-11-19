@@ -6,8 +6,8 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "赛事手册"
-copyright = '2016-2025, 乐聚机器人'
+project = "Competition Manual"
+copyright = '2016-2025, Leju Robot'
 author = 'lejurobot'
 
 # -- General configuration ---------------------------------------------------
@@ -23,7 +23,7 @@ extensions = [
 ]
 exclude_patterns = []
 
-language = 'cn'
+language = 'en'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -36,15 +36,15 @@ html_logo = '_static/images/logo.png'
 html_theme_options = {
     'logo_only': True,
     'version_selector': True,
-    'language_selector': True,
+    'language_selector': False,
 }
 
-locale_dirs = ['locale/']
+#locale_dirs = ['locale/']
 html_context = {
   'current_version' : "Tianchi",
   'versions' : [["Tianchi", "tianchi"], ["ICRA", "icra"]],
-  'current_language': 'cn',
-  'languages': [["cn", "cn"], ["en", "en"]],
+  'current_language': 'en',
+  'languages': [["en", "en"]],
   'DEBUG': True
 }
 

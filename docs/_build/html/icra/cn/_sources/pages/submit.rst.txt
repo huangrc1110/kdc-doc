@@ -1,18 +1,18 @@
 .. _submit:
  
 **********
-提交说明
+Submission
 **********
 
 
-代码提交与评测
+Code Submission and Evaluation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-参考 `kuavo_data_challenge仓库 main 分支的 docker/readme <https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md>`_ ,将环境和代码打包为 docker 镜像提交至 `比赛官网 <https://tianchi.aliyun.com/competition/entrance/532415>`_ 。
+Please refer to the `kuavo_data_challenge main branch docker/readme <https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md>`_ documentation to pack the environment and codebase into a docker image, and then submit it through our `competition website <https://tianchi.aliyun.com/competition/entrance/532415>`_.
 
-评测结果和排行榜将在比赛官网公布。
+The official evaluation results and leaderboard will be updated in real-time on our competition website.
 
-注意事项
+Important Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. 最终提交的文件为zip压缩包, 里面包含两个文件, docker镜像tar文件, run_with_gpu.sh
@@ -36,11 +36,11 @@
 7. 提交后，若评测成功，可以在天池竞赛提交页看到自己的分数，若评测失败，会显示评测失败并显示原因，此时请检查提交的文件是否正确
 。
 
-视频教程(下载打包过程可快进)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Video Guide on How to Submit (Please skip the lengthy packing and downloading processes)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    .. video:: ../_static/videos/submit_instruction.mp4
       :width: 100%
 
 
-真机赛事敬请等待...
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Real-machine competition details coming soon...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,15 +1,15 @@
 .. _forums:
  
 **********
-赛事论坛
+Forums
 **********
 
-赛事官方讨论资源如下：
+Our Official Discussion Resources
 
-阿里天池论坛
+Alibaba Tianchi Discussion Forum
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-`乐聚天池赛事论坛页 <https://tianchi.aliyun.com/competition/entrance/532415/forum>`_
+`Leju Tianchi competition discussions page <https://tianchi.aliyun.com/competition/entrance/532415/forum>`_
 
-QQ讨论群
+QQ Group Chat
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-`赛事官方QQ群 <../_static/images/qq_team.jpg>`_
+`Official QQ group chat <../_static/images/qq_team.jpg>`_`Official QQ group chat <../_static/images/qq_team.jpg>`_

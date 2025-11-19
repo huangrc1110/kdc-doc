@@ -1,22 +1,22 @@
 .. _introduction:
 
-******************
-赛事简介
-******************
+************************************
+Competition Introduction
+************************************
 
-随着具身智能行业的快速发展，模仿学习、强化学习，决策类大模型等相关智能算法已经取得了显著的理论与应用进展。然而，推进这些算法的实际可用性和鲁棒性仍需依赖在现实世界中的持续交互与反馈过程，且此过程现有众多资源门槛：
+With the rapid development of the embodied intelligence sector, intellegent algorithms related to Imitation Learning (IL) , Reinforcement Learning (RL), and large-scale decision-making models have already achieved substantial advances in theoretical foundations. However, the push of evolution of algorithms towards practical usability and high robustness still requires continuous real-world interaction and feedback processes, and such process is faced with several resource-straining barriers:
 
-   - 设备门槛高：高性能机器人设备价格昂贵，动辄数十万甚至数百万元
-   - 数据成本高：高质量数据采集需要专业场地、复杂同步系统与人工标注
-   - 评测标准缺失：缺乏统一的评测平台，算法难以在真实条件下公平比较
+   - High cost of entry: High-performance robotics hardware still carry an astronomically expensive price tag, ranging from hundreds of thousands to even millions of Yuan.
+   - High dataset production costs: High-quality datasets require complex synchronisation systems and manual annotations on specialised facilities, which incurs high costs and long development cycles
+   - Lack of a standardised testing platform: There lacks a standardised testing platform, which greatly increases the difficulty of comparing algorithms in a fair manner under real-world conditions.
 
-面临重重壁垒，我们这款全新赛事将：
+Being faced with these bottlenecks, this brand-new competition promises the following:
 
-   - 首次面向全球开发者开放耗资数千万元打造的真实机器人训练场采集的高质量操作数据
-   - 全面开放真实机器人测试平台，支持选手算法的远程部署与评测
-   - 提供自研评估系统、标准化任务接口、技术社区支持
-   - 针对主赛道和特色赛道，提供数十万奖金和奖励
+   - First-in-world to release large datasets collected from our fleet of real twin-armed humanoid robots from specialised facilities
+   - Fully open-sourcing an evaluation platform with real-world robots, along with support for participant's remote deployment and evaluation of their algorithms
+   - Provides various self-testing systems developed in-house, with standardised interfaces for all the tasks, as well as a full technical support community.
+   - Provides hundreds of thousands of Yuan in compensation for both our main track and specialty tracks
 
-我们的目标是降低技术门槛，让没有机器人的研究者也能开发、测试、部署真实世界的机器人智能系统，助力具身智能技术从学术走向工程，从想法走向落地。
+Our goal is to lower the technical barrier of entry, so that every participant can efficiently access their required resources, have a quick onboarding experience, and have easy access to algorithm validations.
 
 .. image:: ../_static/images/task3_real.jpeg

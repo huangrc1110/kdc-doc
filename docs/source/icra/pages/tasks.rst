@@ -1,149 +1,125 @@
 .. _task:
 
-**********
-任务说明
-**********
+********************
+Task Description
+********************
 
-本挑战赛以真实双臂人形机器人平台为核心，围绕工业典型场景设计多个具备真实部署价值的操作任务，并针对每个任务采集了大量高质量真实机器人操作数据。为了方便参赛者进行算法开发与验证，熟悉kuavo机器人的数据格式等，主办方提供了与真实机器人平台高度一致的仿真环境，并举行仿真赛。通过仿真模拟评测筛选出算法成熟度高、具备真机测试价值的队伍进入真机赛，并最终在真实机器人平台上进行算法调整与验证。
+At its core, this competition is based on real dual-arm humanoid robots, with several tasks thoughtfully prepared that are highly representative of typical industrial applications workflow. In addition, a simulation environment that closely resembles the task workflows of the real robot is also provided, along with open access to high-quality task datasets, evaluation scripts, complete execution pipelines, online evaluation servers and ready-to-run baseline code. 
+The simulation track is especially designed for competitors to familiarise themselves with the Kuavo robot dataset formats, algorithm development and algorithm testing with our baseline code. It also simulates and selects teams with highly matured algorithms that are highly worthy of real-robot competition in a fair manner.
 
-
-仿真场景四个任务的说明：
+Simulation Task Description
 ================================
 
-任务1：移动目标抓取
--------------------
+Task 1: Parcel Weighing - Task Difficulity 1.0
+----------------------------------------------------------------
 
-此任务中，机器人左臂将左侧传送带上的物体抓取并放置到桌面指定区域1，右臂再抓取此物体并放置到区域2。
+In this task, the robot is required to pick up a soft-pouch express parcel from a moving conveyor belt, place it on an electronic scale for weighing, and then transfer it to another conveyor belt.
 
-其中，环境光照强度，颜色，物体的颜色，在传送带上的位置，区域1与区域2的位置与颜色，均会在一定范围内随机。
+Within this task, the lighting/reflection, colours, and the positioning of the parcel and the scale will be randomised within a reasonable range.
 
-- 评分标准：
-    - a. 成功抓住传送带上物体并放到桌面上指定区域，加30分，保持方向正确，加10分；
+Each task is out of 100 base points as the base task score.
 
-    - b. 成功抓住放置到桌面物体并放到最终目标区域，加30分，保持方向正确，加10分；
+- Scoring standards:
+    a. 25 pts for the successful grasp of the object from the conveyor belt
 
-    - c. 在指定时间N秒内完成，加20分，超出N秒，每一秒扣2分。
+    b. 25 points for the subsequent correct placement of the object onto its desginated area (the electronic scale)
 
-    - 关于位置和方向的判定：
+    c. 25 pts for picking it up from the scale
 
-        物体必须在桌面上，且中心位置必须位于区域色块内才视为位置正确，仅位置成功时才会触发方向正确加分，物体z轴与世界z轴偏差不超过10度视为方向正确。
+    d. 25 pts for the correct placement/orientation of the object
 
-.. video:: ../_static/videos/task1.mp4
-    :width: 100%
-
-
-任务2：移动物体称重
--------------------
-
-此任务中，机器人右臂将正面传送带上的移动物体抓取并放置到桌面的秤(具有一定高度)上，称重后左臂再将物体从秤抓取放置到目标区域。
-
-其中，环境光照强度，颜色，物体的颜色，在传送带上的位置，秤与目标区域的位置与颜色，均会在一定范围内随机。
-
-- 评分标准：
-    - a. 成功抓住传送带上物体并放到秤，加30分，保持方向正确，加10分；
-
-    - b. 成功抓住称重后物体并放到最终目标区域，加30分，保持方向正确，加10分；
-
-    - c. 在指定时间N秒内完成，加20分，超出N秒，每一秒扣2分。
-
-    - 关于位置和方向的判定：
-
-        物体必须在桌面上，且中心位置必须位于区域色块内才视为位置正确，仅位置成功时才会触发方向正确加分，物体z轴与世界z轴偏差不超过10度视为方向正确。
-
-.. video:: ../_static/videos/task2.mp4
-    :width: 100%
+.. image:: ../_static/images/task1_sim.png
 
 
-任务3：物体定姿摆放
--------------------
+Task 2: Part Sorting - Task Difficulity 1.5
+----------------------------------------------------------------
 
-此任务中，机器人需要将桌面上的三个物体中反面的物体进行翻面并运送到目标区域，正面物体不翻面仅移动到目标区域。
+In this task, the robot needs to pick up a component chosen from different categories representative in the industrial setting, lying in a randomised orientation on a moving conveyor belt, and then place the component into the correct sorting bin.
 
-其中，三个物体中会有随机的两个物体是反面，一个物体是正面，三个物体的位置会在一定范围内随机。
+Within this task, the lighting/reflection, colours, and the positioning of the component and the bins will be randomised within a reasonable range.
 
-- 评分标准
-    - a. 成功将两个反面物体运送到目标区域，每一个加10分，保持正面朝上，每一个加25分；
+- Scoring standards:
+    a. 50 pts for picking up the component from the conveyor belt
 
-    - b. 成功将一个正面物体运送到目标区域，加10分，保持正面朝上，加10分；
+    b. 50 pts for placing it into the correct bin
 
-    - c. 在指定时间N秒内完成，加10分，超出N秒，每一秒扣1分。
+    c. 20 bonus pts for completing it within a specified timeframe. An 1-pt penalty will be applied for every second elapsed outside of this timeframe
 
-    - 关于位置和方向的判定：
-
-        物体必须在桌面上，且中心位置必须位于区域内才视为位置正确，仅位置成功时才会触发方向正确加分，物体正面轴(-y)与世界z轴偏差不超过10度视为方向正确。
-
-.. video:: ../_static/videos/task3.mp4
-    :width: 100%
+.. image:: ../_static/images/task2_sim.png
 
 
-任务4：全流程分拣
--------------------
+Task 3: Full-cycle Plate Transferral - Task Difficulity 2.5
+----------------------------------------------------------------------------
 
-此任务中，机器人需要先移动到前方货架，右臂抓取物体1，转身并移动到后方货架，将物体1放置于料盘A。再从后方货架移动到前方货架，左臂抓取物体2，返回后方货架并将物体2放置于料盘B。
+In this task, the robot needs to move to a specified location in front of the plate shelf, picks up the plate from the slot indicated by a red light, then turns around and places it into the target container.
 
-其中，物体1，2的位置，料盘A，B的位置会在一定范围内随机。
+Within this task, the robot will start from a reasonable randomised location, the illumination of the red light is randomised, and the location of the target container is randomised.
 
-- 评分标准
-    - a. 准确移动到目标区域，每一次加10分，共4次；
+- Scoring standards:
+    a. 25 pts for moving to the correct target area in front of the tray shelf
 
-    - b. 成功将两个物体放置于指定料盘，每一个加20分；
+    b. 25 pts for the successful pickup of the desginated plate
 
-    - c. 在指定时间N秒内完成，加20分，超出N秒，每一秒扣1分。
+    c. 25 pts for moving to the correct area in front of the destination
 
-.. video:: ../_static/videos/task4.mp4
-    :width: 100%
+    d. 25 pts for successful placement of the tray
+
+.. image:: ../_static/images/task3_sim.png
 
 
-真实场景四个任务的说明：
-================================
+Real-machine Task Description
+==================================
 
-任务1：移动目标抓取
--------------------
+Task 1: Parcel Weighing - Task Difficulity 1.0
+----------------------------------------------------------------
 
-任务描述：机器人从移动的传送带上抓取物体，放置于桌面后，再将其推送至指定区域内。
+In this task, the robot is required to pick up a soft-pouch express parcel from a moving conveyor belt, place it on an electronic scale for weighing, and then transfer it to another conveyor belt.
 
-挑战要点：
-    - 传送带运动状态下的动态抓取；
-    - 目标物体位置随机（工作范围内）；
-    - 机器人初始姿态存在±10cm位置偏移和±10°姿态偏移。
+Within this task, the lighting/reflection, colours, and the positioning of the parcel and the scale will be randomised within a reasonable range.
+
+Each task is out of 100 base points as the base task score.
+
+- Scoring standards:
+    a. 25 pts for the successful grasp of the object from the conveyor belt
+
+    b. 25 points for the subsequent correct placement of the object onto its desginated area (the electronic scale)
+
+    c. 25 pts for picking it up from the scale
+
+    d. 25 pts for the correct placement/orientation of the object
 
 .. image:: ../_static/images/task1_real.jpeg
 
-任务2：快递袋称重
------------------------
+Task 2: Part Sorting - Task Difficulity 1.5
+----------------------------------------------------------------
 
-任务描述：机器人从移动的传送带上拾取快递袋，先放置在电子秤上完成称重，随后再次拾起并放入指定收纳筐中。
+In this task, the robot needs to pick up a component chosen from different categories representative in the industrial setting, lying in a randomised orientation on a moving conveyor belt, and then place the component into the correct sorting bin.
 
-挑战要点：
-    - 软包装可形变物体的稳定抓取；
-    - 目标物体外观特征多样性；
-    - 精准称重操作要求；
-    - 双臂协调操作。
+Within this task, the lighting/reflection, colours, and the positioning of the component and the bins will be randomised within a reasonable range.
+
+- Scoring standards:
+    a. 50 pts for picking up the component from the conveyor belt
+
+    b. 50 pts for placing it into the correct bin
+
+    c. 20 bonus pts for completing it within a specified timeframe. An 1-pt penalty will be applied for every second elapsed outside of this timeframe
 
 .. image:: ../_static/images/task2_real.jpeg
 
-任务3：日化产品定姿摆放
---------------------------
+Task 3: Full-cycle Plate Transferral - Task Difficulity 2.5
+----------------------------------------------------------------------------
 
-任务描述：机器人从杂乱摆放的日化瓶中随机拾取一瓶，传递至另一只手后，再按照指定姿态将其摆放在目标位置。瓶身摆放要求：瓶口位于黄色区域外部；瓶身大部分位于黄色区域内部；瓶身标签面朝上。
+In this task, the robot needs to move to a specified location in front of the plate shelf, picks up the plate from the slot indicated by a red light, then turns around and places it into the target container.
 
-挑战要点：
-    - 双手协调与物体传递；
-    - 精确姿态控制；
-    - 空间约束满足。
+Within this task, the robot will start from a reasonable randomised location, the illumination of the red light is randomised, and the location of the target container is randomised.
+
+- Scoring standards:
+    a. 25 pts for moving to the correct target area in front of the tray shelf
+
+    b. 25 pts for the successful pickup of the desginated plate
+
+    c. 25 pts for moving to the correct area in front of the destination
+
+    d. 25 pts for successful placement of the tray
 
 .. image:: ../_static/images/task3_real.jpeg
-
-任务4：全流程分拣
--------------------
-
-任务描述：机器人从指定起始点出发，移动至流利架前拾取工件，随后转身移动至放置架，将工件放置在物料筐内指定位置。
-
-挑战要点：
-    - 全身运动协调；
-    - 背向操作的空间感知；
-    - 精准投放控制；
-    - 复杂环境适应（±10cm随机偏移）。
-
-
-.. image:: ../_static/images/task4_real.jpeg
