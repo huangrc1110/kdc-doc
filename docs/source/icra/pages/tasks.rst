@@ -47,24 +47,26 @@ Within this task, the lighting/reflection, colours, and the positioning of the c
 
 .. image:: ../_static/images/task2_sim.png
 
-
-Task 3: Full-cycle Plate Transferral - Task Difficulity 2.5
+Task 3 Details to be Determined...
 ----------------------------------------------------------------------------
 
-In this task, the robot needs to move to a specified location in front of the plate shelf, picks up the plate from the slot indicated by a red light, then turns around and places it into the target container.
+.. Task 3: Full-cycle Plate Transferral - Task Difficulity 2.5
+.. ----------------------------------------------------------------------------
 
-Within this task, the robot will start from a reasonable randomised location, the illumination of the red light is randomised, and the location of the target container is randomised.
+.. In this task, the robot needs to move to a specified location in front of the plate shelf, picks up the plate from the slot indicated by a red light, then turns around and places it into the target container.
 
-- Scoring standards:
-    a. 25 pts for moving to the correct target area in front of the tray shelf
+.. Within this task, the robot will start from a reasonable randomised location, the illumination of the red light is randomised, and the location of the target container is randomised.
 
-    b. 25 pts for the successful pickup of the desginated plate
+.. - Scoring standards:
+..     a. 25 pts for moving to the correct target area in front of the tray shelf
 
-    c. 25 pts for moving to the correct area in front of the destination
+..     b. 25 pts for the successful pickup of the desginated plate
 
-    d. 25 pts for successful placement of the tray
+..     c. 25 pts for moving to the correct area in front of the destination
 
-.. image:: ../_static/images/task3_sim.png
+..     d. 25 pts for successful placement of the tray
+
+.. .. image:: ../_static/images/task3_sim.png
 
 
 Real-machine Task Description
@@ -106,20 +108,23 @@ Within this task, the lighting/reflection, colours, and the positioning of the c
 
 .. image:: ../_static/images/task2_real.jpeg
 
-Task 3: Full-cycle Plate Transferral - Task Difficulity 2.5
+Task 3 Details to be Determined...
 ----------------------------------------------------------------------------
 
-In this task, the robot needs to move to a specified location in front of the plate shelf, picks up the plate from the slot indicated by a red light, then turns around and places it into the target container.
+.. Task 3: Full-cycle Plate Transferral - Task Difficulity 2.5
+.. ----------------------------------------------------------------------------
 
-Within this task, the robot will start from a reasonable randomised location, the illumination of the red light is randomised, and the location of the target container is randomised.
+.. In this task, the robot needs to move to a specified location in front of the plate shelf, picks up the plate from the slot indicated by a red light, then turns around and places it into the target container.
 
-- Scoring standards:
-    a. 25 pts for moving to the correct target area in front of the tray shelf
+.. Within this task, the robot will start from a reasonable randomised location, the illumination of the red light is randomised, and the location of the target container is randomised.
 
-    b. 25 pts for the successful pickup of the desginated plate
+.. - Scoring standards:
+..     a. 25 pts for moving to the correct target area in front of the tray shelf
 
-    c. 25 pts for moving to the correct area in front of the destination
+..     b. 25 pts for the successful pickup of the desginated plate
 
-    d. 25 pts for successful placement of the tray
+..     c. 25 pts for moving to the correct area in front of the destination
 
-.. image:: ../_static/images/task3_real.jpeg
+..     d. 25 pts for successful placement of the tray
+
+.. .. image:: ../_static/images/task3_real.jpeg

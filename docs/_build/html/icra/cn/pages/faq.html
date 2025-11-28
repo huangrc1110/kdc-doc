@@ -85,7 +85,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">FAQs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FAQs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-questions">General Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#common-technical-issues-resolution">Common Technical Issues &amp; Resolution</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="forums.html">Forums</a></li>
 </ul>
 
@@ -114,8 +118,10 @@
              
   <section id="faqs">
 <span id="faq"></span><h1>FAQs<a class="headerlink" href="#faqs" title="此标题的永久链接"></a></h1>
-<dl>
-<dt>Q: I would like to sign up for this competition, how would I sign up? How much does the signup cost?</dt><dd><p>A: The signup process is free of charge. Go to Alibaba Cloud - Tianchi Competition - Engineering Development Competition - Leju Robotics REAL; Click Sign Up, fill in your personal information to sign up. (Note: For individual signups, school/company name can be left blank, Any teams in the signup information are not to be recorded as competition teams. For teaming up for the competition, please do so after everyone’s signup have been completed)</p>
+<section id="general-questions">
+<h2>General Questions<a class="headerlink" href="#general-questions" title="此标题的永久链接"></a></h2>
+<dl class="simple">
+<dt>Q: I would like to sign up for this competition, how would I sign up? How much does the signup cost?</dt><dd><p>A: The signup process is free of charge. Go to our competition’s <a class="reference external" href="https://www.kdc.icra.lejurobot.com/home">official website</a>, and then click Sign Up, fill in your personal information to sign up. (Note: Any teams in the signup information are not to be recorded as competition teams. For teaming up for the competition, please do so after everyone’s signup have been completed)</p>
 </dd>
 <dt>Q: How do I create/join teams?</dt><dd><p>A: After signup, click my teams found on the left pane to create/join teams. 2-4 members are allowed within every team.</p>
 </dd>
@@ -127,6 +133,11 @@
 </dd>
 <dt>Q: Does the dataset needs to be downloaded all at once?</dt><dd><p>A: We recommend you download only what you’ll need during each download. There is no need for you to download everything at once, as such download size is humongous!</p>
 </dd>
+</dl>
+</section>
+<section id="common-technical-issues-resolution">
+<h2>Common Technical Issues &amp; Resolution<a class="headerlink" href="#common-technical-issues-resolution" title="此标题的永久链接"></a></h2>
+<dl>
 <dt>Q: After opening the simulator (i.e. <code class="docutils literal notranslate"><span class="pre">deploy.py</span></code>), the simulator opens and immediately disappears.</dt><dd><p>A: Please ensure that <code class="docutils literal notranslate"><span class="pre">ROBOT_VERSION</span></code> is set to 45. You can check this by <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$ROBOT_VERSION</span></code> and see if 45 is correctly printed.</p>
 <blockquote>
 <div><ul class="simple">
@@ -165,9 +176,10 @@
 <li><p>It is not recommended for you to use WSL (Windows Subsystem for Linux) for this project, as it is reported that it has CUDA acceleration issues. If you are under such environment, please see the QQ group chat to see if there are any existing solutions inside the discussion group.</p></li>
 </ul>
 </dd>
-<dt>Q: No simulator window showing up after executing <code class="docutils literal notranslate"><span class="pre">deploy.py</span></code> for the simulator</dt><dd><p>A: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try againA: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try again</p>
+<dt>Q: No simulator window showing up after executing <code class="docutils literal notranslate"><span class="pre">deploy.py</span></code> for the simulator</dt><dd><p>A: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try again</p>
 </dd>
 </dl>
+</section>
 </section>
 
 

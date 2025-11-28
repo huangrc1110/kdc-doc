@@ -4,11 +4,14 @@
 FAQs
 ****************
 
+General Questions
+=================================
+
 Q: I would like to sign up for this competition, how would I sign up? How much does the signup cost?
-    A: The signup process is free of charge. Go to Alibaba Cloud - Tianchi Competition - Engineering Development Competition - Leju Robotics REAL; Click Sign Up, fill in your personal information to sign up. (Note: For individual signups, school/company name can be left blank, Any teams in the signup information are not to be recorded as competition teams. For teaming up for the competition, please do so after everyone's signup have been completed)
+    A: The signup process is free of charge. Go to our competition's `official website <https://www.kdc.icra.lejurobot.com/home>`_, and then click Sign Up, fill in your personal information to sign up. (Note: Any teams in the signup information are not to be recorded as competition teams. For teaming up for the competition, please do so after everyone's signup have been completed)
 
 Q: How do I create/join teams?
-    A: After signup, click my teams found on the left pane to create/join teams. 2-4 members are allowed within every team.
+    A: After signup, click my teams found on the left pane to create/join teams. 1-4 members are allowed within every team.
 
 Q: How do I participate in the real-machine competition? Is this an in-person only event?
     A: All participants/teams passing the first qualification round (simulator round) may participate in the real-machine competition. If for any reason one is unable to partake in-person for testing, we can arrange technical personnel live on-stage to configure for your testing
@@ -21,6 +24,9 @@ Q: What data formats are provided for the datasets
 
 Q: Does the dataset needs to be downloaded all at once?
 	A: We recommend you download only what you'll need during each download. There is no need for you to download everything at once, as such download size is humongous!
+
+Common Technical Issues & Resolution
+=====================================================
 
 Q: After opening the simulator (i.e. ``deploy.py``), the simulator opens and immediately disappears.
 	A: Please ensure that ``ROBOT_VERSION`` is set to 45. You can check this by ``echo $ROBOT_VERSION`` and see if 45 is correctly printed.
@@ -57,4 +63,4 @@ Q: The simulator is very laggy
         - It is not recommended for you to use WSL (Windows Subsystem for Linux) for this project, as it is reported that it has CUDA acceleration issues. If you are under such environment, please see the QQ group chat to see if there are any existing solutions inside the discussion group.
 
 Q: No simulator window showing up after executing ``deploy.py`` for the simulator
-	A: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try againA: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try again
+	A: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try again

@@ -39,11 +39,26 @@
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="switch-menus">
-                <div class="version-switch"></div>
                 <div class="language-switch">
-                  <a href=" ../../cn/pages/forums.html" style="color: #ffffff !important;">中文</a>
-                  <a href=" ../../en/pages/forums.html" style="color: #ffffff !important;">English</a>
+                  <a href=" ../../cn/pages/forums.html" style="color: #ffffff !important;">中 /</a>
+                  <a href=" ../../en/pages/forums.html" style="color: #ffffff !important;">En</a>
                 </div>
+              <!-- </div>
+              <div class="switch-menus"> -->
+                  <div class="version-switch">
+                      <select id="competitionSelect" onchange="if(this.value) window.location.href=this.value">
+                          <!-- <a href=" ../../..//cn/pages/forums.html" -->
+                          <option value=" ../../../tianchi/cn/pages/forums.html" selected="selected">Tianchi</option>
+                          <option value=" ../../../icra/en/pages/forums.html">ICRA 2026</option>
+                      </select>
+                      
+                      <!-- <select id="languageSelect" onchange="if(this.value) window.location.href=this.value">
+                          <option value=" ../../cn/pages/forums.html" selected="selected">中文</option>
+                          <option value=" ../../en/pages/forums.html">English</option>
+                      </select> -->
+                      <!-- <button onclick="switchVersion()">Switch</button> -->
+                      <!-- ::after -->
+                  </div>
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">

@@ -40,11 +40,26 @@
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="switch-menus">
-                <div class="version-switch"></div>
                 <div class="language-switch">
-                  <a href=" ../../cn/pages/faq.html" style="color: #ffffff !important;">中文</a>
-                  <a href=" ../../en/pages/faq.html" style="color: #ffffff !important;">English</a>
+                  <a href=" ../../cn/pages/faq.html" style="color: #ffffff !important;">中 /</a>
+                  <a href=" ../../en/pages/faq.html" style="color: #ffffff !important;">En</a>
                 </div>
+              <!-- </div>
+              <div class="switch-menus"> -->
+                  <div class="version-switch">
+                      <select id="competitionSelect" onchange="if(this.value) window.location.href=this.value">
+                          <!-- <a href=" ../../..//cn/pages/faq.html" -->
+                          <option value=" ../../../tianchi/cn/pages/faq.html" selected="selected">Tianchi</option>
+                          <option value=" ../../../icra/en/pages/faq.html">ICRA 2026</option>
+                      </select>
+                      
+                      <!-- <select id="languageSelect" onchange="if(this.value) window.location.href=this.value">
+                          <option value=" ../../cn/pages/faq.html" selected="selected">中文</option>
+                          <option value=" ../../en/pages/faq.html">English</option>
+                      </select> -->
+                      <!-- <button onclick="switchVersion()">Switch</button> -->
+                      <!-- ::after -->
+                  </div>
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -68,7 +83,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">FAQs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FAQs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">赛事流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">基准代码/环境常见问题</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="forums.html">Forums</a></li>
 </ul>
 
@@ -97,10 +116,12 @@
              
   <section id="faq">
 <span id="id1"></span><h1>FAQs<a class="headerlink" href="#faq" title="Permalink to this heading"></a></h1>
-<dl>
+<section id="id2">
+<h2>赛事流程<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<dl class="simple">
 <dt>Q: I would like to sign up for this competition, how would I sign up? How much does the signup cost?</dt><dd><p>A: The signup process is free of charge. Go to Alibaba Cloud - Tianchi Competition - Engineering Development Competition - Leju Robotics REAL; Click Sign Up, fill in your personal information to sign up. (Note: For individual signups, school/company name can be left blank, Any teams in the signup information are not to be recorded as competition teams. For teaming up for the competition, please do so after everyone’s signup have been completed)</p>
 </dd>
-<dt>Q: How do I create/join teams?</dt><dd><p>A: After signup, click my teams found on the left pane to create/join teams. 2-4 members are allowed within every team.</p>
+<dt>Q: How do I create/join teams?</dt><dd><p>A：完成报名后，在比赛页面左侧点击我的团队选项，可以创建队伍/加入队伍，每个队推荐1-4人。</p>
 </dd>
 <dt>Q: How do I participate in the real-machine competition? Is this an in-person only event?</dt><dd><p>A: All participants/teams passing the first qualification round (simulator round) may participate in the real-machine competition. If for any reason one is unable to partake in-person for testing, we can arrange technical personnel live on-stage to configure for your testing</p>
 </dd>
@@ -110,6 +131,13 @@
 </dd>
 <dt>Q: Does the dataset needs to be downloaded all at once?</dt><dd><p>A: We recommend you download only what you’ll need during each download. There is no need for you to download everything at once, as such download size is humongous!</p>
 </dd>
+<dt>Q：如何提交呢？提交后多久会有成绩？</dt><dd><p>A：提交需要将模型与参数等打包成docker镜像，具体请查看“提交说明”栏目，最后提交的是zip压缩包。提交后后台即会开始评测，评测完成后，若评测成功会上传分数，若评测失败会上传失败原因，此时请检查自己本地是否可以加载镜像并正常推理，若本地一切正常，请在群里联系管理员。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>基准代码/环境常见问题<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<dl>
 <dt>Q: After opening the simulator (i.e. <code class="docutils literal notranslate"><span class="pre">deploy.py</span></code>), the simulator opens and immediately disappears.</dt><dd><p>A: Please ensure that <code class="docutils literal notranslate"><span class="pre">ROBOT_VERSION</span></code> is set to 45. You can check this by <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$ROBOT_VERSION</span></code> and see if 45 is correctly printed.</p>
 <blockquote>
 <div><ul class="simple">
@@ -151,6 +179,7 @@
 <dt>Q: No simulator window showing up after executing <code class="docutils literal notranslate"><span class="pre">deploy.py</span></code> for the simulator</dt><dd><p>A: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try again</p>
 </dd>
 </dl>
+</section>
 </section>
 
 

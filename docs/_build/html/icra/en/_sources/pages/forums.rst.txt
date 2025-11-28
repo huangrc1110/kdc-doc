@@ -6,10 +6,10 @@ Forums
 
 Our Official Discussion Resources
 
-Alibaba Tianchi Discussion Forum
+GitHub Pages and Discussions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-`Leju Tianchi competition discussions page <https://tianchi.aliyun.com/competition/entrance/532415/forum>`_
+`Leju Kuavo Data Challenge issues page <https://github.com/LejuRobotics/kuavo_data_challenge/issues>`_
 
-QQ Group Chat
+Discord Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-`Official QQ group chat <../_static/images/qq_team.jpg>`_`Official QQ group chat <../_static/images/qq_team.jpg>`_
+`Official Discord server group <https://discord.gg/pVFtCtTA>`_

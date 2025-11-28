@@ -130,11 +130,26 @@
           {%- if READTHEDOCS or DEBUG %}
             {%- if theme_version_selector or theme_language_selector %}
               <div class="switch-menus">
-                <div class="version-switch"></div>
                 <div class="language-switch">
-                  <a href=" ../{%if pagename.split('/')[-1] != pagename%}..{% else %}.{% endif %}/cn/{{ pagename }}.html" style="color: #ffffff !important;">中文</a>
-                  <a href=" ../{%if pagename.split('/')[-1] != pagename%}..{% else %}.{% endif %}/en/{{ pagename }}.html" style="color: #ffffff !important;">English</a>
+                  <a href=" ../{%if pagename.split('/')[-1] != pagename%}..{% else %}.{% endif %}/cn/{{ pagename }}.html" style="color: #ffffff !important;">中 /</a>
+                  <a href=" ../{%if pagename.split('/')[-1] != pagename%}..{% else %}.{% endif %}/en/{{ pagename }}.html" style="color: #ffffff !important;">En</a>
                 </div>
+              <!-- </div>
+              <div class="switch-menus"> -->
+                  <div class="version-switch">
+                      <select id="competitionSelect" onchange="if(this.value) window.location.href=this.value">
+                          <!-- <a href=" ../../{%if pagename.split('/')[-1] != pagename%}..{% else %}.{% endif %}/{{ url }}/{%if url == 'icra'%}en{% else %}cn{% endif %}/{{ pagename }}.html" -->
+                          <option value=" ../../{%if pagename.split('/')[-1] != pagename%}..{% else %}.{% endif %}/tianchi/cn/{{ pagename }}.html" selected="selected">Tianchi</option>
+                          <option value=" ../../{%if pagename.split('/')[-1] != pagename%}..{% else %}.{% endif %}/icra/en/{{ pagename }}.html">ICRA 2026</option>
+                      </select>
+                      
+                      <!-- <select id="languageSelect" onchange="if(this.value) window.location.href=this.value">
+                          <option value=" ../{%if pagename.split('/')[-1] != pagename%}..{% else %}.{% endif %}/cn/{{ pagename }}.html" selected="selected">中文</option>
+                          <option value=" ../{%if pagename.split('/')[-1] != pagename%}..{% else %}.{% endif %}/en/{{ pagename }}.html">English</option>
+                      </select> -->
+                      <!-- <button onclick="switchVersion()">Switch</button> -->
+                      <!-- ::after -->
+                  </div>
               </div>
             {%- endif %}
           {%- endif %}

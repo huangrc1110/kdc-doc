@@ -41,11 +41,26 @@
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="switch-menus">
-                <div class="version-switch"></div>
                 <div class="language-switch">
-                  <a href=" ../../cn/pages/faq.html" style="color: #ffffff !important;">中文</a>
-                  <a href=" ../../en/pages/faq.html" style="color: #ffffff !important;">English</a>
+                  <a href=" ../../cn/pages/faq.html" style="color: #ffffff !important;">中 /</a>
+                  <a href=" ../../en/pages/faq.html" style="color: #ffffff !important;">En</a>
                 </div>
+              <!-- </div>
+              <div class="switch-menus"> -->
+                  <div class="version-switch">
+                      <select id="competitionSelect" onchange="if(this.value) window.location.href=this.value">
+                          <!-- <a href=" ../../..//cn/pages/faq.html" -->
+                          <option value=" ../../../tianchi/cn/pages/faq.html" selected="selected">Tianchi</option>
+                          <option value=" ../../../icra/en/pages/faq.html">ICRA 2026</option>
+                      </select>
+                      
+                      <!-- <select id="languageSelect" onchange="if(this.value) window.location.href=this.value">
+                          <option value=" ../../cn/pages/faq.html" selected="selected">中文</option>
+                          <option value=" ../../en/pages/faq.html">English</option>
+                      </select> -->
+                      <!-- <button onclick="switchVersion()">Switch</button> -->
+                      <!-- ::after -->
+                  </div>
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -69,7 +84,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">辅助信息</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">常见问题&amp;回答</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">常见问题&amp;回答</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">赛事流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">基准代码/环境常见问题</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="forums.html">赛事论坛</a></li>
 </ul>
 
@@ -98,10 +117,12 @@
              
   <section id="faq">
 <span id="id1"></span><h1>常见问题&amp;回答<a class="headerlink" href="#faq" title="此标题的永久链接"></a></h1>
-<dl>
+<section id="id2">
+<h2>赛事流程<a class="headerlink" href="#id2" title="此标题的永久链接"></a></h2>
+<dl class="simple">
 <dt>Q：我想报名参赛，该如何报名呢？有报名费吗？</dt><dd><p>A：报名不需要报名费。进入 阿里云天池-天池大赛-工程开发赛-乐聚机器人第一届具身智能操作任务挑战赛&amp;创业启航营，点击报名参赛，填写个人信息即可报名参赛（Note：若个人参赛，学校/公司可填写无， 报名信息里的团队并不计入统计，创建/加入团队请在报名后操作）</p>
 </dd>
-<dt>Q：如何创建/加入队伍呢？</dt><dd><p>A：完成报名后，在比赛页面左侧点击我的团队选项，可以创建队伍/加入队伍，每个队限2-4人。</p>
+<dt>Q：如何创建/加入队伍呢？</dt><dd><p>A：完成报名后，在比赛页面左侧点击我的团队选项，可以创建队伍/加入队伍，每个队推荐1-4人。</p>
 </dd>
 <dt>Q：真机赛如何参与呢？一定需要去现场调试真机吗？</dt><dd><p>A：顺利通过初赛（模拟器赛）的筛选的选手和队伍可以进入真机赛，若无法到场调试，我们会安排技术人员在现场调试。</p>
 </dd>
@@ -111,6 +132,13 @@
 </dd>
 <dt>Q：数据集需要提前下载好吗？</dt><dd><p>A：最好一次只下载需要训练到的数据集，无需一次把所有的任务的数据集一起下载，下载量会十分庞大</p>
 </dd>
+<dt>Q：如何提交呢？提交后多久会有成绩？</dt><dd><p>A：提交需要将模型与参数等打包成docker镜像，具体请查看“提交说明”栏目，最后提交的是zip压缩包。提交后后台即会开始评测，评测完成后，若评测成功会上传分数，若评测失败会上传失败原因，此时请检查自己本地是否可以加载镜像并正常推理，若本地一切正常，请在群里联系管理员。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>基准代码/环境常见问题<a class="headerlink" href="#id3" title="此标题的永久链接"></a></h2>
+<dl>
 <dt>Q：打开仿真器（例如 <code class="docutils literal notranslate"><span class="pre">deploy.py</span></code> 脚本）的时候，仿真器打开然后闪退</dt><dd><p>A：确认 <code class="docutils literal notranslate"><span class="pre">ROBOT_VERSION</span></code> 是45；确认 <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$ROBOT_VERSION</span></code> 是否打印45</p>
 <blockquote>
 <div><ul class="simple">
@@ -152,6 +180,7 @@
 <dt>Q：仿真器运行 <code class="docutils literal notranslate"><span class="pre">deploy.py</span></code> 完全没有仿真页面</dt><dd><p>A：确认没有残骸没完全杀死的ROS进程，可重启电脑试试</p>
 </dd>
 </dl>
+</section>
 </section>
 
 
