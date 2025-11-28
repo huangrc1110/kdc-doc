@@ -8,171 +8,20 @@ For maximum preservation of the valuable information contained in the original d
 
 Downloading Datasets
 =========================================
-   Dataset downloads are all done through the Alibaba Cloud's Object Storage Service (OSS). A guide is as follows:
+   Dataset downloads are all done through our `HuggingFace page <https://huggingface.co/datasets/LejuRobotics/kuavo_data_challenge/tree/main>`_. This link is also found on our website's main page.
+   
+   A detailed guide is as follows:
 
-   a. Downloading & Installing ossutil
+   a. Open the page with the link above, which should take you to the Files and versions tab.
+   
+        - If you don't have an HuggingFace account already, use the Sign Up button on the top-right corner to do so now.
 
-      - Linux/macOS One-click Installation (Recommended)
+   b. Navigate to and open the ``sim`` folder, then select the folder with the task that you wish to download datasets for.
 
-        .. code-block:: bash
+   c. Click the download button on each of the rosbags to download them.
 
-           sudo -v ; curl https://gosspublic.alicdn.com/ossutil/install.sh | sudo bash
-
-        .. note::
-
-           The installation process require a decompression tool (such as unzip or 7zip), please install as needed. ``ossutil`` will be installed under ``/usr/bin/`` by default.
-
-      - Download Link
-
-         .. list-table::
-            :header-rows: 1
-            :widths: 18 82
-
-            * - Platform
-              - Address 
-            * - Linux x86_64
-              - `ossutil-v1.7.19-linux-amd64.zip <https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-amd64.zip>`__
-            * - Linux x86_32
-              - `ossutil-v1.7.19-linux-386.zip <https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-386.zip>`__
-            * - Linux arm_64
-              - `ossutil-v1.7.19-linux-arm64.zip <https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-arm64.zip>`__
-            * - Windows x64
-              - `ossutil-v1.7.19-windows-amd64.zip <https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-windows-amd64.zip>`__
-            * - Windows x32
-              - `ossutil-v1.7.19-windows-386.zip <https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-windows-386.zip>`__
-            * - macOS 64
-              - `ossutil-v1.7.19-mac-amd64.zip <https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-mac-amd64.zip>`__
-            * - macOS arm_64
-              - `ossutil-v1.7.19-mac-arm64.zip <https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-mac-arm64.zip>`__
-
-
-      - Manual Installation Method
-
-        .. code-block:: bash
-
-           # 1. 下载压缩包（以 Linux x64 为例）
-           wget https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-amd64.zip
-           # 2. 解压
-           unzip ossutil-v1.7.19-linux-amd64.zip
-           # 3. 添加执行权限
-           chmod +x ossutil
-           # 4. 移动到系统 PATH 目录（可选）
-           sudo mv ossutil /usr/local/bin/
-
-   b. Install Verification
-
-      .. code-block:: bash
-
-         ossutil
-
-      When it shows the usage help page, it means the installation is successful. If it asks you for an update, perform as needed:
-
-      .. code-block:: bash
-
-         ossutil update
-
-   c. ossutil Configuration
-
-      Interactive Configuration (Recommended)
-
-      .. code-block:: bash
-
-         ossutil config
-
-      Enter as prompted: 
-
-      - Default configuration file path: ``~/.ossutilconfig``, simply press Enter to use the default path
-      - Language settings: Enter ``CH`` for Simplified Chinese, or ``EN`` for English
-      - Endpoint：``https://oss-cn-hangzhou.aliyuncs.com``
-      - AccessKey ID：``LTAI5tJCN2XX2sYt6wWhdvqk``
-      - AccessKey Secret：``xbROt0HCaQexY2JrLl2UDScvS3qHpj``
-
-      When it prompts you for ``stsToken``, don't enter anything and simply press Enter. The order of this appearance may vary on your end.
-
-   d. Testing the Configuration & its Usage
-
-      - Testing this configuration
-
-        .. code-block:: bash
-
-           # 输出指定桶名下的文件夹（不包含子文件）
-           ossutil ls oss://kuavo-data-challenge-simdata/ -d
-
-        If it shows the directory list, it means the configuration is valid.
-
-      - Listing the directory information
-
-        .. code-block:: bash
-
-           # 列出指定存储空间的对象（不包括子目录）
-           ossutil ls oss://kuavo-data-challenge-simdata/ -d
-           # 递归列出所有对象（包括子目录）
-           ossutil ls oss://kuavo-data-challenge-simdata/
-           # 递归列出指定前缀的对象（包括子目录）
-           ossutil ls oss://kuavo-data-challenge-simdata/folder-name/
-
-      - Viewing target details
-
-        .. code-block:: bash
-
-           # 查看单个对象的详细信息
-           ossutil stat oss://kuavo-data-challenge-simdata/file-name
-           # 查看特定路径对象个数与空间占用
-           ossutil du oss://kuavo-data-challenge-simdata/file-name
-
-      - File(s) searching
-
-        .. code-block:: bash
-
-           # 按文件名模式搜索 --include
-           ossutil ls oss://kuavo-data-challenge-simdata/ --include "*.jpg"
-           # 排除特定文件 --exclude
-           ossutil ls oss://kuavo-data-challenge-simdata/ --exclude "*.tmp"
-           # 组合使用包含与排除
-           ossutil ls oss://kuavo-data-challenge-simdata/ --include "*.log" --exclude "*debug*"
-
-   e. How to Download Our Data
-
-      - Downloading an individual file
-
-        .. code-block:: bash
-
-           # 下载文件到当前目录
-           ossutil cp oss://kuavo-data-challenge-simdata/<file-path>/<file-name> ./
-
-           # 下载文件并重命名
-           ossutil cp oss://kuavo-data-challenge-simdata/<file-path>/<file-name> <local-path>/<local-name>
-
-           # 下载文件到指定目录
-           ossutil cp oss://kuavo-data-challenge-simdata/<file-path>/<file-name> <local-path>
-
-      - Downloading a batch of files
-
-        .. code-block:: bash
-
-           # 下载整个目录 -r
-           ossutil cp -r oss://kuavo-data-challenge-simdata/<file-path>/ <local-path>
-
-      - Enabling auto-resume after interruption
-
-        .. code-block:: bash
-
-           # 启用断点续传（大文件自动启用） -u
-           ossutil cp -u oss://kuavo-data-challenge-simdata/large-file.zip ./local-folder/
-           ossutil cp -u -r oss://kuavo-data-challenge-simdata/remote-folder/ ./local-folder/
-           # 设置分块个数 -j
-           ossutil cp oss://kuavo-data-challenge-simdata/large-file.zip ./local-folder/ -j 5
-
-   f. Tips
-
-      - Use the ``-j 10`` option to increase # of parallel tasks to increase the downloading speed
-      - Use the ``-u`` option to enable auto-resume when the download is interrupted.
-
-   g. Video Tutorial
-
-      .. video:: ../_static/videos/instruction.mp4
-         :width: 100%
-
+.. note::
+      We recommend **against** downloading all the rosbags for all the datasets at once. You are unlikely to utilise all of them at once, while they take up massive amounts of your device storage. Consider downloading only what you need.
 
 Rosbag Data
 ==================
@@ -188,7 +37,7 @@ rosbag Topics
         This ROS topic is used to provide the post-compression original RGB imaging data from the camera sensors. x here being h, l or r, denoting head, left and right wrist cameras
     2. Message type
         Type: sensor_msgs/CompressedImage
-    3. 消息字段
+    3. Messsage body
         - header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.
         - format (string): Image encoding format
         - data (uint8[]): Image data
@@ -199,7 +48,7 @@ rosbag Topics
         /cam_h/depth/image_raw/compressed is used to provide the post-compression original depth imaging data from the head camera
     2. Message type
         Type: sensor_msgs/CompressedImage
-    3. 消息字段
+    3. Messsage body
         - header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.
         - format (string): Image encoding format
         - data (uint8[]): Image data
@@ -210,7 +59,7 @@ rosbag Topics
         /cam_x/depth/image_rect_raw is used to provide the post-compression original depth imaging data from camera x, where x is either l (left) or r (right).
     2. Message type
         Type: sensor_msgs/CompressedImage
-    3. 消息字段
+    3. Messsage body
         - header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.
         - format (string): Image encoding format
         - data (uint8[]): Image data
@@ -221,7 +70,7 @@ rosbag Topics
         /kuavo_arm_traj is used to control the arm trajectories of the robot. It publishes arm target joint positions to control the arms with high precision.
     2. Message type
         Type: sensor_msgs/JointState
-    3. 消息字段
+    3. Messsage body
         - header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.
         - name (list of string): List of the arm joints. When there are 14 joints in total, the names will be from "arm_joint_1" to "arm_joint_14".
         - position (list of float): A list of current arm joint positions. The data structure is similar to items 12-25 of sensor_data_raw below.
@@ -232,7 +81,7 @@ rosbag Topics
         /gripper/command is used to control the grippers (fingers)' movement in the simulator.
     2. Message type
         Type: sensor_msgs/JointState
-    3. 消息字段
+    3. Messsage body
         - header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.
         - position (list of float): Size 2 array, data being the target positions of the left and right grippers, each element is between [0, 255], where 0 is fully open and 255 is fully shut.
 
@@ -242,7 +91,7 @@ rosbag Topics
         /gripper/state is used to capture the current movement of the grippers (fingers) in the simulator.
     2. Message type
         Type: sensor_msgs/JointState
-    3. 消息字段
+    3. Messsage body
         - header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.
         - position (list of float): Size 2 array, data being the current positions of the left and right grippers, each element is between [0, 0.8], where 0 is fully open and 0.8 is fully shut
 
@@ -252,7 +101,7 @@ rosbag Topics
         /control_robot_hand_position is used to control the movement of both hands. It publishes target joint positions to control the hands with high precision.
     2. Message type
         Type: kuavo_msgs/robotHandPosition
-    3. 消息字段
+    3. Messsage body
         - left_hand_position (list of float): Left hand position in a size 6 array, each element is between [0, 100], where 0 is fully open, 100 is fully closed
         - right_hand_position (list of float): Right hand position in a size 6 array, each element is between [0, 100], where 0 is fully open, 100 is fully closed
 
@@ -262,7 +111,7 @@ rosbag Topics
         Publishes dexterous hands' status
     2. Message type
         Type: sensor_msgs/JointState
-    3. 消息字段
+    3. Messsage body
         - name (list of string): list of joint names, 12 joints in total:
         - position (list of float): List of joint positions, 12 in total, first 6 being left joint positions, later 6 being right joint positions
         - velocity (list of float): List of joint velocities, 12 in total, first 6 being left joint velocities, later 6 being right joint velocities
@@ -274,7 +123,7 @@ rosbag Topics
         /control_robot_leju_claw Topic used to control the robot hands (i.e. two-finger claws)
     2. Message type
         Type: kuavo_msgs/controlLejuClaw
-    3. 消息字段
+    3. Messsage body
         - name (list of string): Length 2 list, consisting of "left_claw", "right_claw"
         - position (list of float): Length 2 list, consisting of left and right claw target positions, each element is between [0, 100], where 0 denotes fully open, 100 denotes fully closed
         - velocity (list of float): Length 2 list, target velocities for the claws, again between [0, 100]. Defaults to 50.
@@ -286,7 +135,7 @@ rosbag Topics
         /leju_claw_state topic is used to publish the state, position, velocity and efforts of each of the claws.
     2. Type
         kuavo_msgs/lejuClawState
-    3. 消息字段
+    3. Messsage body
         - state: Data type int8[]; Length 2 list denoting Claw states. First element denotes left claw, the other being right claw.
         - data: Data type kuavo_msgs/endEffectorData; Claw position, velocity and effort
         - state values' meanings:
@@ -305,12 +154,12 @@ rosbag Topics
         Topic used to publish all real-robot or simulator raw sensor data, from joint data to IMU data to end effector data
     2. Message type
         Type: kuavo_msgs/sensorsData
-    3. 消息字段
+    3. Messsage body
         - sensor_time (time): Timestamp
         - joint_data (kuavo_msgs/jointData): Joint data: position, velocity, acceleration, current
         - imu_data (kuavo_msgs/imuData): Includes gyroscope, accelerometer, free angular velocity, quarternion
         - end_effector_data (kuavo_msgs/endEffectorData): End effector data, not currently used.
-    4. 关节数据说明
+    4. Joint data description
         - Order of data
 
             - First 12 elements are lower body motor data:
@@ -344,7 +193,7 @@ rosbag Topics
         Topic used to publish every joint commands throughout the whole body
     2. Message type
         Type: kuavo_msgs/jointCmd
-    3. 消息字段
+    3. Messsage body
         - header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.
         - joint_q (list of float): Joint positions, in radians
         - joint_v (list of float): Joint velocities, in radian/s
@@ -361,7 +210,7 @@ rosbag Topics
         Topic used to publish robot position commands
     2. Message type
         Type: geometry_msgs/Twist
-    3. 消息字段
+    3. Messsage body
         - linear.x (float): x-directional data in world coordinates, in metres
         - linear.y (float): y-directional data in world coordinates, in metres
         - linear.z (float): z-directional data in world coordinates, in metres

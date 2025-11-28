@@ -112,7 +112,6 @@
 <p class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="forums.html">Forums</a></li>
 </ul>
 
         </div>
@@ -144,175 +143,24 @@
 <section id="downloading-datasets">
 <h2>Downloading Datasets<a class="headerlink" href="#downloading-datasets" title="Permalink to this heading"></a></h2>
 <blockquote>
-<div><p>Dataset downloads are all done through the Alibaba Cloud’s Object Storage Service (OSS). A guide is as follows:</p>
+<div><p>Dataset downloads are all done through our <a class="reference external" href="https://huggingface.co/datasets/LejuRobotics/kuavo_data_challenge/tree/main">HuggingFace page</a>. This link is also found on our website’s main page.</p>
+<p>A detailed guide is as follows:</p>
 <ol class="loweralpha">
-<li><p>Downloading &amp; Installing ossutil</p>
-<ul>
-<li><p>Linux/macOS One-click Installation (Recommended)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>-v<span class="w"> </span><span class="p">;</span><span class="w"> </span>curl<span class="w"> </span>https://gosspublic.alicdn.com/ossutil/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The installation process require a decompression tool (such as unzip or 7zip), please install as needed. <code class="docutils literal notranslate"><span class="pre">ossutil</span></code> will be installed under <code class="docutils literal notranslate"><span class="pre">/usr/bin/</span></code> by default.</p>
-</div>
-</li>
-<li><p>Download Link</p>
+<li><p>Open the page with the link above, which should take you to the Files and versions tab.</p>
 <blockquote>
-<div><table class="docutils align-default">
-<colgroup>
-<col style="width: 18.0%" />
-<col style="width: 82.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Platform</p></th>
-<th class="head"><p>Address</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Linux x86_64</p></td>
-<td><p><a class="reference external" href="https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-amd64.zip">ossutil-v1.7.19-linux-amd64.zip</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Linux x86_32</p></td>
-<td><p><a class="reference external" href="https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-386.zip">ossutil-v1.7.19-linux-386.zip</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Linux arm_64</p></td>
-<td><p><a class="reference external" href="https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-arm64.zip">ossutil-v1.7.19-linux-arm64.zip</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Windows x64</p></td>
-<td><p><a class="reference external" href="https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-windows-amd64.zip">ossutil-v1.7.19-windows-amd64.zip</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Windows x32</p></td>
-<td><p><a class="reference external" href="https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-windows-386.zip">ossutil-v1.7.19-windows-386.zip</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>macOS 64</p></td>
-<td><p><a class="reference external" href="https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-mac-amd64.zip">ossutil-v1.7.19-mac-amd64.zip</a></p></td>
-</tr>
-<tr class="row-even"><td><p>macOS arm_64</p></td>
-<td><p><a class="reference external" href="https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-mac-arm64.zip">ossutil-v1.7.19-mac-arm64.zip</a></p></td>
-</tr>
-</tbody>
-</table>
+<div><ul class="simple">
+<li><p>If you don’t have an HuggingFace account already, use the Sign Up button on the top-right corner to do so now.</p></li>
+</ul>
 </div></blockquote>
 </li>
-<li><p>Manual Installation Method</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. 下载压缩包（以 Linux x64 为例）</span>
-wget<span class="w"> </span>https://gosspublic.alicdn.com/ossutil/1.7.19/ossutil-v1.7.19-linux-amd64.zip
-<span class="c1"># 2. 解压</span>
-unzip<span class="w"> </span>ossutil-v1.7.19-linux-amd64.zip
-<span class="c1"># 3. 添加执行权限</span>
-chmod<span class="w"> </span>+x<span class="w"> </span>ossutil
-<span class="c1"># 4. 移动到系统 PATH 目录（可选）</span>
-sudo<span class="w"> </span>mv<span class="w"> </span>ossutil<span class="w"> </span>/usr/local/bin/
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-<li><p>Install Verification</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ossutil
-</pre></div>
-</div>
-<p>When it shows the usage help page, it means the installation is successful. If it asks you for an update, perform as needed:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ossutil<span class="w"> </span>update
-</pre></div>
-</div>
-</li>
-<li><p>ossutil Configuration</p>
-<p>Interactive Configuration (Recommended)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ossutil<span class="w"> </span>config
-</pre></div>
-</div>
-<p>Enter as prompted:</p>
-<ul class="simple">
-<li><p>Default configuration file path: <code class="docutils literal notranslate"><span class="pre">~/.ossutilconfig</span></code>, simply press Enter to use the default path</p></li>
-<li><p>Language settings: Enter <code class="docutils literal notranslate"><span class="pre">CH</span></code> for Simplified Chinese, or <code class="docutils literal notranslate"><span class="pre">EN</span></code> for English</p></li>
-<li><p>Endpoint：<code class="docutils literal notranslate"><span class="pre">https://oss-cn-hangzhou.aliyuncs.com</span></code></p></li>
-<li><p>AccessKey ID：<code class="docutils literal notranslate"><span class="pre">LTAI5tJCN2XX2sYt6wWhdvqk</span></code></p></li>
-<li><p>AccessKey Secret：<code class="docutils literal notranslate"><span class="pre">xbROt0HCaQexY2JrLl2UDScvS3qHpj</span></code></p></li>
-</ul>
-<p>When it prompts you for <code class="docutils literal notranslate"><span class="pre">stsToken</span></code>, don’t enter anything and simply press Enter. The order of this appearance may vary on your end.</p>
-</li>
-<li><p>Testing the Configuration &amp; its Usage</p>
-<ul>
-<li><p>Testing this configuration</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 输出指定桶名下的文件夹（不包含子文件）</span>
-ossutil<span class="w"> </span>ls<span class="w"> </span>oss://kuavo-data-challenge-simdata/<span class="w"> </span>-d
-</pre></div>
-</div>
-<p>If it shows the directory list, it means the configuration is valid.</p>
-</li>
-<li><p>Listing the directory information</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 列出指定存储空间的对象（不包括子目录）</span>
-ossutil<span class="w"> </span>ls<span class="w"> </span>oss://kuavo-data-challenge-simdata/<span class="w"> </span>-d
-<span class="c1"># 递归列出所有对象（包括子目录）</span>
-ossutil<span class="w"> </span>ls<span class="w"> </span>oss://kuavo-data-challenge-simdata/
-<span class="c1"># 递归列出指定前缀的对象（包括子目录）</span>
-ossutil<span class="w"> </span>ls<span class="w"> </span>oss://kuavo-data-challenge-simdata/folder-name/
-</pre></div>
-</div>
-</li>
-<li><p>Viewing target details</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查看单个对象的详细信息</span>
-ossutil<span class="w"> </span>stat<span class="w"> </span>oss://kuavo-data-challenge-simdata/file-name
-<span class="c1"># 查看特定路径对象个数与空间占用</span>
-ossutil<span class="w"> </span>du<span class="w"> </span>oss://kuavo-data-challenge-simdata/file-name
-</pre></div>
-</div>
-</li>
-<li><p>File(s) searching</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 按文件名模式搜索 --include</span>
-ossutil<span class="w"> </span>ls<span class="w"> </span>oss://kuavo-data-challenge-simdata/<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.jpg&quot;</span>
-<span class="c1"># 排除特定文件 --exclude</span>
-ossutil<span class="w"> </span>ls<span class="w"> </span>oss://kuavo-data-challenge-simdata/<span class="w"> </span>--exclude<span class="w"> </span><span class="s2">&quot;*.tmp&quot;</span>
-<span class="c1"># 组合使用包含与排除</span>
-ossutil<span class="w"> </span>ls<span class="w"> </span>oss://kuavo-data-challenge-simdata/<span class="w"> </span>--include<span class="w"> </span><span class="s2">&quot;*.log&quot;</span><span class="w"> </span>--exclude<span class="w"> </span><span class="s2">&quot;*debug*&quot;</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-<li><p>How to Download Our Data</p>
-<ul>
-<li><p>Downloading an individual file</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 下载文件到当前目录</span>
-ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challenge-simdata/&lt;file-path&gt;/&lt;file-name&gt;<span class="w"> </span>./
-
-<span class="c1"># 下载文件并重命名</span>
-ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challenge-simdata/&lt;file-path&gt;/&lt;file-name&gt;<span class="w"> </span>&lt;local-path&gt;/&lt;local-name&gt;
-
-<span class="c1"># 下载文件到指定目录</span>
-ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challenge-simdata/&lt;file-path&gt;/&lt;file-name&gt;<span class="w"> </span>&lt;local-path&gt;
-</pre></div>
-</div>
-</li>
-<li><p>Downloading a batch of files</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 下载整个目录 -r</span>
-ossutil<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>oss://kuavo-data-challenge-simdata/&lt;file-path&gt;/<span class="w"> </span>&lt;local-path&gt;
-</pre></div>
-</div>
-</li>
-<li><p>Enabling auto-resume after interruption</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 启用断点续传（大文件自动启用） -u</span>
-ossutil<span class="w"> </span>cp<span class="w"> </span>-u<span class="w"> </span>oss://kuavo-data-challenge-simdata/large-file.zip<span class="w"> </span>./local-folder/
-ossutil<span class="w"> </span>cp<span class="w"> </span>-u<span class="w"> </span>-r<span class="w"> </span>oss://kuavo-data-challenge-simdata/remote-folder/<span class="w"> </span>./local-folder/
-<span class="c1"># 设置分块个数 -j</span>
-ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challenge-simdata/large-file.zip<span class="w"> </span>./local-folder/<span class="w"> </span>-j<span class="w"> </span><span class="m">5</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-<li><p>Tips</p>
-<ul class="simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">-j</span> <span class="pre">10</span></code> option to increase # of parallel tasks to increase the downloading speed</p></li>
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">-u</span></code> option to enable auto-resume when the download is interrupted.</p></li>
-</ul>
-</li>
-<li><p>Video Tutorial</p>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/instruction.mp4" type="video/mp4"></video></div></li>
+<li><p>Navigate to and open the <code class="docutils literal notranslate"><span class="pre">sim</span></code> folder, then select the folder with the task that you wish to download datasets for.</p></li>
+<li><p>Click the download button on each of the rosbags to download them.</p></li>
 </ol>
 </div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We recommend <strong>against</strong> downloading all the rosbags for all the datasets at once. You are unlikely to utilise all of them at once, while they take up massive amounts of your device storage. Consider downloading only what you need.</p>
+</div>
 </section>
 <section id="rosbag-data">
 <h2>Rosbag Data<a class="headerlink" href="#rosbag-data" title="Permalink to this heading"></a></h2>
@@ -334,7 +182,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>消息字段</dt><dd><ul class="simple">
+<dt>Messsage body</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
 <li><p>format (string): Image encoding format</p></li>
 <li><p>data (uint8[]): Image data</p></li>
@@ -360,7 +208,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>消息字段</dt><dd><ul class="simple">
+<dt>Messsage body</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
 <li><p>format (string): Image encoding format</p></li>
 <li><p>data (uint8[]): Image data</p></li>
@@ -386,7 +234,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>消息字段</dt><dd><ul class="simple">
+<dt>Messsage body</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
 <li><p>format (string): Image encoding format</p></li>
 <li><p>data (uint8[]): Image data</p></li>
@@ -412,7 +260,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>消息字段</dt><dd><ul class="simple">
+<dt>Messsage body</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
 <li><p>name (list of string): List of the arm joints. When there are 14 joints in total, the names will be from “arm_joint_1” to “arm_joint_14”.</p></li>
 <li><p>position (list of float): A list of current arm joint positions. The data structure is similar to items 12-25 of sensor_data_raw below.</p></li>
@@ -438,7 +286,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>消息字段</dt><dd><ul class="simple">
+<dt>Messsage body</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
 <li><p>position (list of float): Size 2 array, data being the target positions of the left and right grippers, each element is between [0, 255], where 0 is fully open and 255 is fully shut.</p></li>
 </ul>
@@ -463,7 +311,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>消息字段</dt><dd><ul class="simple">
+<dt>Messsage body</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
 <li><p>position (list of float): Size 2 array, data being the current positions of the left and right grippers, each element is between [0, 0.8], where 0 is fully open and 0.8 is fully shut</p></li>
 </ul>
@@ -488,7 +336,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>消息字段</dt><dd><ul class="simple">
+<dt>Messsage body</dt><dd><ul class="simple">
 <li><p>left_hand_position (list of float): Left hand position in a size 6 array, each element is between [0, 100], where 0 is fully open, 100 is fully closed</p></li>
 <li><p>right_hand_position (list of float): Right hand position in a size 6 array, each element is between [0, 100], where 0 is fully open, 100 is fully closed</p></li>
 </ul>
@@ -513,7 +361,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>消息字段</dt><dd><ul class="simple">
+<dt>Messsage body</dt><dd><ul class="simple">
 <li><p>name (list of string): list of joint names, 12 joints in total:</p></li>
 <li><p>position (list of float): List of joint positions, 12 in total, first 6 being left joint positions, later 6 being right joint positions</p></li>
 <li><p>velocity (list of float): List of joint velocities, 12 in total, first 6 being left joint velocities, later 6 being right joint velocities</p></li>
@@ -540,7 +388,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>消息字段</dt><dd><ul class="simple">
+<dt>Messsage body</dt><dd><ul class="simple">
 <li><p>name (list of string): Length 2 list, consisting of “left_claw”, “right_claw”</p></li>
 <li><p>position (list of float): Length 2 list, consisting of left and right claw target positions, each element is between [0, 100], where 0 denotes fully open, 100 denotes fully closed</p></li>
 <li><p>velocity (list of float): Length 2 list, target velocities for the claws, again between [0, 100]. Defaults to 50.</p></li>
@@ -567,7 +415,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl>
-<dt>消息字段</dt><dd><ul>
+<dt>Messsage body</dt><dd><ul>
 <li><p>state: Data type int8[]; Length 2 list denoting Claw states. First element denotes left claw, the other being right claw.</p></li>
 <li><p>data: Data type kuavo_msgs/endEffectorData; Claw position, velocity and effort</p></li>
 <li><p>state values’ meanings:</p>
@@ -604,7 +452,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>消息字段</dt><dd><ul class="simple">
+<dt>Messsage body</dt><dd><ul class="simple">
 <li><p>sensor_time (time): Timestamp</p></li>
 <li><p>joint_data (kuavo_msgs/jointData): Joint data: position, velocity, acceleration, current</p></li>
 <li><p>imu_data (kuavo_msgs/imuData): Includes gyroscope, accelerometer, free angular velocity, quarternion</p></li>
@@ -614,7 +462,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl>
-<dt>关节数据说明</dt><dd><ul>
+<dt>Joint data description</dt><dd><ul>
 <li><p>Order of data</p>
 <blockquote>
 <div><ul>
@@ -679,7 +527,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>消息字段</dt><dd><ul class="simple">
+<dt>Messsage body</dt><dd><ul class="simple">
 <li><p>header (std_msgs/Header): Message head; includes timestamp, serial number, coordinate system identification, etc.</p></li>
 <li><p>joint_q (list of float): Joint positions, in radians</p></li>
 <li><p>joint_v (list of float): Joint velocities, in radian/s</p></li>
@@ -711,7 +559,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </dl>
 </li>
 <li><dl class="simple">
-<dt>消息字段</dt><dd><ul class="simple">
+<dt>Messsage body</dt><dd><ul class="simple">
 <li><p>linear.x (float): x-directional data in world coordinates, in metres</p></li>
 <li><p>linear.y (float): y-directional data in world coordinates, in metres</p></li>
 <li><p>linear.z (float): z-directional data in world coordinates, in metres</p></li>

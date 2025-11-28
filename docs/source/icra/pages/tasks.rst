@@ -47,7 +47,7 @@ Within this task, the lighting/reflection, colours, and the positioning of the c
 
 .. image:: ../_static/images/task2_sim.png
 
-Task 3 Details to be Determined...
+Task 3 Details to be Unveiled... Stay Tuned!
 ----------------------------------------------------------------------------
 
 .. Task 3: Full-cycle Plate Transferral - Task Difficulity 2.5
@@ -108,7 +108,7 @@ Within this task, the lighting/reflection, colours, and the positioning of the c
 
 .. image:: ../_static/images/task2_real.jpeg
 
-Task 3 Details to be Determined...
+Task 3 Details to be Unveiled... Stay Tuned!
 ----------------------------------------------------------------------------
 
 .. Task 3: Full-cycle Plate Transferral - Task Difficulity 2.5

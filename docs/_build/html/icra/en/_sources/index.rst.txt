@@ -45,7 +45,7 @@ The 1st Real-world Embodied AI Learning Challenge
 .. image:: https://kuavo.lejurobot.com/manual/assets/images/kuavo_4pro-cf84d43f1c370666c6e810d2807ae3e4.png
 
 
-Welcome to the official competition manual for the 1st Real-world Embodied AI Learning Challenge! This manual covers all the details about the datasets, baseline codes as well as the simulator used in this competition. As for the official competition rules, important dates and other general info, please consult our official `competition website <https://tianchi.aliyun.com/competition/entrance/532415>`_ .
+Welcome to the official competition manual for the 1st Real-world Embodied AI Learning Challenge! This manual covers all the details about the datasets, baseline codes as well as the simulator used in this competition. As for the official competition rules, important dates and other general info, please consult our official `competition website <https://www.kdc.icra.lejurobot.com/home>`_ .
 
 The competition repositories consist of two parts: The baseline code (kuavo_data_challenge repository) and the simulator (kuavo-ros-opensource repository). Their features are as follows:
 
@@ -96,11 +96,11 @@ Getting Started
    :caption: Additional Resources
 
    pages/faq
-   pages/forums
+.. pages/forums
 
 Please consider joining our discussion group:
 ========================================================================
-To facilitate discussion and raising/solving problems and concerns, we have organised a `group chat 1 (full) <./_static/images/qq_team1.jpg>`_ and `group chat 2 <./_static/images/qq_team2.jpg>`_ just for our contestants, please consider clicking and scanning the QR code to join the chat!
+To facilitate discussion and raising/solving problems and concerns, we have organised a `Discord Server <https://discord.gg/H8RFYH4KNM>`_ just for our contestants, please consider clicking the link to accept the invitation!
 
 This manual is being updated in a regular basis...
 ========================================================================

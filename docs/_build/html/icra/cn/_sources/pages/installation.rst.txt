@@ -4,7 +4,7 @@
 Installation & Training
 ************************************
 
-为确保比赛过程顺利，我们提供了数据下载、基准代码、仿真器环境等相关资源，供参赛者使用。以下是步骤说明及相关链接：
+To ensure a seamless development workflow, we have provided datasets, baseline codes and simulators for all competitors. Here is how to get started:
 
 1. Installing the `kuavo_data_challenge <https://github.com/LejuRobotics/kuavo_data_challenge>`_ (Baseline code) Repository
 ======================================================================================================================================================
@@ -12,10 +12,10 @@ This repository is used for data conversion, model training and model deployment
 
    .. code-block:: bash
       
-      git clone --depth=1 https://github.com/LejuRobotics/kuavo_data_challenge.git  
+      git clone -b dev --depth=1 https://github.com/LejuRobotics/kuavo_data_challenge.git  
 
    .. note::
-      For more details regarding to its installation and usage, please refer to its corresponding `README <https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/README.md>`_ documentation found on its GitHub page
+      For more details regarding to its installation and usage, please refer to this `documentation <http://huangrc1110.github.io/kdc-web>`_.
 
 2. Installing the `kuavo-ros-opensource <https://github.com/LejuRobotics/kuavo-ros-opensource>`_ (Simulator) Repository
 =======================================================================================================================================================
@@ -28,12 +28,12 @@ This repository contains the simulator. Use git operation to fetch the latest co
    .. note::
       For more details regarding to its installation and usage, please refer to its corresponding `README <https://github.com/LejuRobotics/kuavo-ros-opensource/blob/opensource/kuavo-data-challenge/readme.md>`_  documentation found on its GitHub page
 
-3. Video Tutorial
-====================================================================================================
-   .. video:: ../_static/videos/demo.mp4
-      :width: 100%
+.. 3. Video Tutorial
+.. ====================================================================================================
+..    .. video:: ../_static/videos/demo.mp4
+..       :width: 100%
 
 
-4. Local Model Deployment and Testing
-================================================
-Please refer to the `readme` <https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/README.md>`_ from the kuavo_data_challenge main branch, for help on local deployment.Please refer to the `readme` <https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/README.md>`_ from the kuavo_data_challenge main branch, for help on local deployment.
+.. 4. Local Model Deployment and Testing
+.. ================================================
+.. Please refer to this `documentation <http://huangrc1110.github.io/kdc-web>`_ for help on local deployment.

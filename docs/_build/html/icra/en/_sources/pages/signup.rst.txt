@@ -4,7 +4,7 @@
 Competition Registration
 ******************************
 
-This competition comprises of teams of 2–4 personnel. Please sign-up for the competition first before forming teams, and all members within all teams are required to be on the signup list and have their identities verified. There are no costs for signing up for this competition. Please thoroughly read the full rules and requirements laid out on the Tianchi website prior to signing up.
+This competition comprises of teams of 1–4 personnel. Please sign-up for the competition first before forming teams, and all members within all teams are required to be on the signup list and have their identities verified. There are no costs for signing up for this competition. Please thoroughly read the full rules and requirements laid out on the Tianchi website prior to signing up.
 
 Signing Up
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -24,4 +24,4 @@ Logging In
 
 Joining our Discussions Group
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-To facilitate discussion and raising/solving problems and concerns, we have organised a `group chat <../_static/images/qq_team.jpg>`_  just for our contestants, please scan the QR code to join the chat as soon as possible after registration!To facilitate discussion and raising/solving problems and concerns, we have organised a `group chat <../_static/images/qq_team.jpg>`_  just for our contestants, please scan the QR code to join the chat as soon as possible after registration!
+To facilitate discussion and raising/solving problems and concerns, we have organised a `Discord server <https://discord.gg/H8RFYH4KNM>`_  just for our contestants, please click on the link join the chat as soon as possible after registration!

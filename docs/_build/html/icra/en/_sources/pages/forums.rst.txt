@@ -1,10 +1,12 @@
+:orphan:
+
 .. _forums:
  
-**********
-Forums
-**********
+**************
+Discussions
+**************
 
-Our Official Discussion Resources
+Got questions? Here are our official discussion resources
 
 GitHub Pages and Discussions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -12,4 +14,4 @@ GitHub Pages and Discussions
 
 Discord Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-`Official Discord server group <https://discord.gg/pVFtCtTA>`_
+`Official Discord server group <https://discord.gg/H8RFYH4KNM>`_

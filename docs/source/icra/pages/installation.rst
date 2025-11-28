@@ -28,12 +28,12 @@ This repository contains the simulator. Use git operation to fetch the latest co
    .. note::
       For more details regarding to its installation and usage, please refer to its corresponding `README <https://github.com/LejuRobotics/kuavo-ros-opensource/blob/opensource/kuavo-data-challenge/readme.md>`_  documentation found on its GitHub page
 
-3. Video Tutorial
-====================================================================================================
-   .. video:: ../_static/videos/demo.mp4
-      :width: 100%
+.. 3. Video Tutorial
+.. ====================================================================================================
+..    .. video:: ../_static/videos/demo.mp4
+..       :width: 100%
 
 
-4. Local Model Deployment and Testing
-================================================
-Please refer to this `documentation <http://huangrc1110.github.io/kdc-web>`_ for help on local deployment.
+.. 4. Local Model Deployment and Testing
+.. ================================================
+.. Please refer to this `documentation <http://huangrc1110.github.io/kdc-web>`_ for help on local deployment.

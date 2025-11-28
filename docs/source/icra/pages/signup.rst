@@ -24,4 +24,4 @@ Logging In
 
 Joining our Discussions Group
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-To facilitate discussion and raising/solving problems and concerns, we have organised a `group chat <../_static/images/qq_team.jpg>`_  just for our contestants, please scan the QR code to join the chat as soon as possible after registration!To facilitate discussion and raising/solving problems and concerns, we have organised a `group chat <../_static/images/qq_team.jpg>`_  just for our contestants, please scan the QR code to join the chat as soon as possible after registration!
+To facilitate discussion and raising/solving problems and concerns, we have organised a `Discord server <https://discord.gg/H8RFYH4KNM>`_  just for our contestants, please click on the link join the chat as soon as possible after registration!
