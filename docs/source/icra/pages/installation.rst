@@ -8,7 +8,7 @@ To ensure a seamless development workflow, we have provided datasets, baseline c
 
 1. Installing the `kuavo_data_challenge <https://github.com/LejuRobotics/kuavo_data_challenge>`_ (Baseline code) Repository
 ======================================================================================================================================================
-This repository is used for data conversion, model training and model deployment. Use git operation to fetch the latest codebase (main branch):  
+This repository is used for data conversion, model training and model deployment. Use git operation to fetch the latest codebase (master branch):  
 
    .. code-block:: bash
       

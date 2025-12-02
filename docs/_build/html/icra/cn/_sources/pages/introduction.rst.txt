@@ -3,6 +3,7 @@
 ************************************
 Competition Introduction
 ************************************
+.. image:: https://kuavo.lejurobot.com/manual/assets/images/kuavo_4pro-cf84d43f1c370666c6e810d2807ae3e4.png
 
 With the rapid development of the embodied intelligence sector, intellegent algorithms related to Imitation Learning (IL) , Reinforcement Learning (RL), and large-scale decision-making models have already achieved substantial advances in theoretical foundations. However, the push of evolution of algorithms towards practical usability and high robustness still requires continuous real-world interaction and feedback processes, and such process is faced with several resource-straining barriers:
 
@@ -18,5 +19,3 @@ Being faced with these bottlenecks, this brand-new competition promises the foll
    - Provides tens of thousands of dollars in compensation for both our main track and specialty tracks
 
 Our goal is to lower the technical barrier of entry, so that every participant can efficiently access their required resources, have a quick onboarding experience, and have easy access to algorithm validations.
-
-.. image:: ../_static/images/task3_real.jpeg

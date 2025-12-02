@@ -6,11 +6,6 @@ The 1st Real-world Embodied AI Learning Challenge
 
   <style>.wy-nav-content .document h1:first-of-type{display:none;}</style>
 
-.. .. raw:: html
-
-..   <h1 style="text-align:center;margin:0.3em 0 0;">第一届具身智能操作任务挑战赛&创业启航营官方文档</h1>
-..   <br>
-
 .. image:: ./_static/images/heading.png
 
 .. raw:: html
@@ -42,8 +37,12 @@ The 1st Real-world Embodied AI Learning Challenge
 
 
 
-.. image:: https://kuavo.lejurobot.com/manual/assets/images/kuavo_4pro-cf84d43f1c370666c6e810d2807ae3e4.png
+.. .. image:: https://kuavo.lejurobot.com/manual/assets/images/kuavo_4pro-cf84d43f1c370666c6e810d2807ae3e4.png
+..    :width: 400px
 
+.. warning::
+
+   **Notice:** All related resources are not valid yet, and will be updated when the competition starts.
 
 Welcome to the official competition manual for the 1st Real-world Embodied AI Learning Challenge! This manual covers all the details about the datasets, baseline codes as well as the simulator used in this competition. As for the official competition rules, important dates and other general info, please consult our official `competition website <https://www.kdc.icra.lejurobot.com/home>`_ .
 

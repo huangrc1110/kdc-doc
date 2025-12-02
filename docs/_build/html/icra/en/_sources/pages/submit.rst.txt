@@ -12,10 +12,7 @@ Please refer to the `kuavo_data_challenge main branch docker/readme <https://git
 
 The official evaluation results and leaderboard will be updated in real-time on our competition website.
 
-Important Notes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Coming soon...
 
 .. Video Guide on How to Submit (Please skip the lengthy packing and downloading processes)
 .. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -23,5 +20,5 @@ Important Notes
 ..       :width: 100%
 
 
-Real-machine competition details coming soon...
+Real-robot competition details coming soon...
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
