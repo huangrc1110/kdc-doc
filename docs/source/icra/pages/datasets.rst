@@ -8,7 +8,7 @@ For maximum preservation of the valuable information contained in the original d
 
 Downloading Datasets
 =========================================
-   Dataset downloads are all done through our `HuggingFace page <https://huggingface.co/datasets/LejuRobotics/kuavo_data_challenge/tree/main>`_. This link is also found on our website's main page.
+   Dataset downloads are all done through our HuggingFace page. This link is also found on our website's main page.
    
    A detailed guide is as follows:
 
