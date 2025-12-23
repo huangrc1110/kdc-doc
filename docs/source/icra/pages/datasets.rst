@@ -244,26 +244,24 @@ Description:
 Lerobot directory structure
 ------------------------------
 
-After executing the script, a standard Lerobot formatted dataset will be generated. The directory structure is as follows:
+After executing the script, a standard Lerobot (LerobotDataset V3) formatted dataset will be generated. The directory structure is as follows:
 
 .. code-block::
 
     output_dir/
         ├── data/
         │   └── chunk-000/
-        │       ├── episode_000000.parquet  # 转换后的数据，包含所有指定转换的数据特征
-        │       ├── episode_000001.parquet
-        │       └── ...
+        │       └── file-000.parquet  # Post-conversion dataset, containing all the data entries
         ├── meta/
-        │   ├── episodes.jsonl  # 每个 episode 的时长
-        │   ├── info.json       # data/ 下各 parquet 的特征信息
-        │   └── tasks.jsonl     # 当前任务名称
+        │   ├── episodes/        # Episode runtimes
+        │   ├── info.json        # data/ parquet characteristics
+        │   ├── stats.json       # Data statistics
+        │   └── tasks.parquet    # Task name
         └── images/
             ├── observation.images.color.head_cam_h/
-            │   ├── episode_000000/
-            │   │   ├── frame_000000.png
-            │   │   └── frame_000001.png
-            │   └── ...
+            │   └── file_000000/
+            │       ├── frame_000000.png
+            │       └── frame_000001.png
             ├── observation.images.color.wrist_cam_l/
             └── observation.images.color.wrist_cam_r/
 
@@ -273,7 +271,7 @@ info.json records all available data entries, as follows:
 
     {
         "features": {
-            "observation.state": { # 机器人状态，包括14个手臂关节状态和2个末端执行器状态，顺序如 names 中所示
+            "observation.state": { # Robot state, containing 14 arm joints and 2 end-effector statuses. Its order is dictated by the names dictionary
                 "dtype": "float32",
                 "shape": [
                     16
@@ -299,7 +297,7 @@ info.json records all available data entries, as follows:
                     ]
                 }
             },
-            "action": { # 动作数据，包含14个手臂关节动作和2个末端执行器动作，顺序如 names 中所示
+            "action": { # Action data, containing 14 arm joints and 2 end-effector statuses. Its order is dictated by the names dictionary
                 "dtype": "float32",
                 "shape": [
                     16
@@ -325,7 +323,7 @@ info.json records all available data entries, as follows:
                     ]
                 }
             },
-            "observation.images.head_cam_h": { # 头部相机RGB图像数据
+            "observation.images.head_cam_h": { # Head cam RGB image data
                 "dtype": "image",
                 "shape": [
                     3,
@@ -338,7 +336,7 @@ info.json records all available data entries, as follows:
                     "width"
                 ]
             },
-            "observation.depth_h": { # 头部相机深度图像数据
+            "observation.depth_h": { # Head cam depth sensing data
                 "dtype": "uint16",
                 "shape": [
                     1,
@@ -351,7 +349,7 @@ info.json records all available data entries, as follows:
                     "width"
                 ]
             },
-            "observation.images.wrist_cam_l": { # 左腕相机RGB图像数据
+            "observation.images.wrist_cam_l": { # Left wrist cam RGB image data
                 "dtype": "image",
                 "shape": [
                     3,
@@ -364,7 +362,7 @@ info.json records all available data entries, as follows:
                     "width"
                 ]
             },
-            "observation.depth_l": { # 左腕相机深度图像数据
+            "observation.depth_l": { # Left wrist cam depth sensing data
                 "dtype": "uint16",
                 "shape": [
                     1,
@@ -377,7 +375,7 @@ info.json records all available data entries, as follows:
                     "width"
                 ]
             },
-            "observation.images.wrist_cam_r": { # 右腕相机RGB图像数据
+            "observation.images.wrist_cam_r": { # Right wrist cam RGB image data
                 "dtype": "image",
                 "shape": [
                     3,
@@ -390,7 +388,7 @@ info.json records all available data entries, as follows:
                     "width"
                 ]
             }
-            "observation.depth_r": { # 右腕相机深度图像数据
+            "observation.depth_r": { # Right wrist cam depth sensing data
                 "dtype": "uint16",
                 "shape": [
                     1,

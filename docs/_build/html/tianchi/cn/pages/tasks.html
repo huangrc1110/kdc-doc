@@ -81,11 +81,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#id6">任务4：全流程分拣</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">真实场景四个任务的说明：</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id8">任务1：移动目标抓取</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">任务2：快递袋称重</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">任务3：日化产品定姿摆放</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">任务4：全流程分拣</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">真实场景三个任务的说明：</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sps">任务1：SPS物料分拣</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">任务2：产品质检称重</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">任务3：日化产品上料</a></li>
 </ul>
 </li>
 </ul>
@@ -249,37 +248,36 @@
 <div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task4.mp4" type="video/mp4"></video></div></section>
 </section>
 <section id="id7">
-<h2>真实场景四个任务的说明：<a class="headerlink" href="#id7" title="此标题的永久链接"></a></h2>
-<section id="id8">
-<h3>任务1：移动目标抓取<a class="headerlink" href="#id8" title="此标题的永久链接"></a></h3>
-<p>任务描述：机器人从移动的传送带上抓取物体，放置于桌面后，再将其推送至指定区域内。</p>
+<h2>真实场景三个任务的说明：<a class="headerlink" href="#id7" title="此标题的永久链接"></a></h2>
+<section id="sps">
+<h3>任务1：SPS物料分拣<a class="headerlink" href="#sps" title="此标题的永久链接"></a></h3>
+<p>任务描述：机器人站立不动，夹取指定的安全带或者线缆，将其放至指定的空箱子中。</p>
 <dl class="simple">
 <dt>挑战要点：</dt><dd><ul class="simple">
-<li><p>传送带运动状态下的动态抓取；</p></li>
+<li><p>软物体、可形变物体的稳定抓取；</p></li>
 <li><p>目标物体位置随机（工作范围内）；</p></li>
 <li><p>机器人初始姿态存在±10cm位置偏移和±10°姿态偏移。</p></li>
 </ul>
 </dd>
 </dl>
-<img alt="../_images/task1_real.jpeg" src="../_images/task1_real.jpeg" />
+<img alt="../_images/task1_real.png" src="../_images/task1_real.png" />
 </section>
-<section id="id9">
-<h3>任务2：快递袋称重<a class="headerlink" href="#id9" title="此标题的永久链接"></a></h3>
-<p>任务描述：机器人从移动的传送带上拾取快递袋，先放置在电子秤上完成称重，随后再次拾起并放入指定收纳筐中。</p>
+<section id="id8">
+<h3>任务2：产品质检称重<a class="headerlink" href="#id8" title="此标题的永久链接"></a></h3>
+<p>任务描述：机器人从桌面上拾取机械套管，先放置在电子秤上完成称重，随后按照合格与不合格的产品分别，再次拾起并放入正确的收纳筐中。</p>
 <dl class="simple">
 <dt>挑战要点：</dt><dd><ul class="simple">
-<li><p>软包装可形变物体的稳定抓取；</p></li>
-<li><p>目标物体外观特征多样性；</p></li>
+<li><p>超薄环形物体的稳定抓取；</p></li>
 <li><p>精准称重操作要求；</p></li>
 <li><p>双臂协调操作。</p></li>
 </ul>
 </dd>
 </dl>
-<img alt="../_images/task2_real.jpeg" src="../_images/task2_real.jpeg" />
+<img alt="../_images/task2_real.png" src="../_images/task2_real.png" />
 </section>
-<section id="id10">
-<h3>任务3：日化产品定姿摆放<a class="headerlink" href="#id10" title="此标题的永久链接"></a></h3>
-<p>任务描述：机器人从杂乱摆放的日化瓶中随机拾取一瓶，传递至另一只手后，再按照指定姿态将其摆放在目标位置。瓶身摆放要求：瓶口位于黄色区域外部；瓶身大部分位于黄色区域内部；瓶身标签面朝上。</p>
+<section id="id9">
+<h3>任务3：日化产品上料<a class="headerlink" href="#id9" title="此标题的永久链接"></a></h3>
+<p>任务描述：机器人从杂乱摆放的牙膏盒中随机拾取一盒，一只手先将其摆放规整，另一只手拾起后，再按照指定放置在目标传送带上面。</p>
 <dl class="simple">
 <dt>挑战要点：</dt><dd><ul class="simple">
 <li><p>双手协调与物体传递；</p></li>
@@ -288,21 +286,7 @@
 </ul>
 </dd>
 </dl>
-<img alt="../_images/task3_real.jpeg" src="../_images/task3_real.jpeg" />
-</section>
-<section id="id11">
-<h3>任务4：全流程分拣<a class="headerlink" href="#id11" title="此标题的永久链接"></a></h3>
-<p>任务描述：机器人从指定起始点出发，移动至流利架前拾取工件，随后转身移动至放置架，将工件放置在物料筐内指定位置。</p>
-<dl class="simple">
-<dt>挑战要点：</dt><dd><ul class="simple">
-<li><p>全身运动协调；</p></li>
-<li><p>背向操作的空间感知；</p></li>
-<li><p>精准投放控制；</p></li>
-<li><p>复杂环境适应（±10cm随机偏移）。</p></li>
-</ul>
-</dd>
-</dl>
-<img alt="../_images/task4_real.jpeg" src="../_images/task4_real.jpeg" />
+<img alt="../_images/task3_real.png" src="../_images/task3_real.png" />
 </section>
 </section>
 </section>
@@ -318,7 +302,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2016-2025, 乐聚机器人.</p>
+    <p>&#169; 版权所有 2016-2025, 乐聚机器人。</p>
   </div> <div class="footer-copyright">
   <p>
     乐聚智能（深圳）股份有限公司<br> 

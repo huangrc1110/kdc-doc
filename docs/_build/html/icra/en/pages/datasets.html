@@ -143,7 +143,7 @@
 <section id="downloading-datasets">
 <h2>Downloading Datasets<a class="headerlink" href="#downloading-datasets" title="Permalink to this heading"></a></h2>
 <blockquote>
-<div><p>Dataset downloads are all done through our <a class="reference external" href="https://huggingface.co/datasets/LejuRobotics/kuavo_data_challenge/tree/main">HuggingFace page</a>. This link is also found on our website’s main page.</p>
+<div><p>Dataset downloads are all done through our HuggingFace page. This link is also found on our website’s main page.</p>
 <p>A detailed guide is as follows:</p>
 <ol class="loweralpha">
 <li><p>Open the page with the link above, which should take you to the Files and versions tab.</p>
@@ -598,23 +598,21 @@
 </section>
 <section id="lerobot-directory-structure">
 <h3>Lerobot directory structure<a class="headerlink" href="#lerobot-directory-structure" title="Permalink to this heading"></a></h3>
-<p>After executing the script, a standard Lerobot formatted dataset will be generated. The directory structure is as follows:</p>
+<p>After executing the script, a standard Lerobot (LerobotDataset V3) formatted dataset will be generated. The directory structure is as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>output_dir/
     ├── data/
     │   └── chunk-000/
-    │       ├── episode_000000.parquet  # 转换后的数据，包含所有指定转换的数据特征
-    │       ├── episode_000001.parquet
-    │       └── ...
+    │       └── file-000.parquet  # Post-conversion dataset, containing all the data entries
     ├── meta/
-    │   ├── episodes.jsonl  # 每个 episode 的时长
-    │   ├── info.json       # data/ 下各 parquet 的特征信息
-    │   └── tasks.jsonl     # 当前任务名称
+    │   ├── episodes/        # Episode runtimes
+    │   ├── info.json        # data/ parquet characteristics
+    │   ├── stats.json       # Data statistics
+    │   └── tasks.parquet    # Task name
     └── images/
         ├── observation.images.color.head_cam_h/
-        │   ├── episode_000000/
-        │   │   ├── frame_000000.png
-        │   │   └── frame_000001.png
-        │   └── ...
+        │   └── file_000000/
+        │       ├── frame_000000.png
+        │       └── frame_000001.png
         ├── observation.images.color.wrist_cam_l/
         └── observation.images.color.wrist_cam_r/
 </pre></div>
@@ -622,7 +620,7 @@
 <p>info.json records all available data entries, as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;features&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;observation.state&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 机器人状态，包括14个手臂关节状态和2个末端执行器状态，顺序如 names 中所示</span>
+        <span class="s2">&quot;observation.state&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># Robot state, containing 14 arm joints and 2 end-effector statuses. Its order is dictated by the names dictionary</span>
             <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;float32&quot;</span><span class="p">,</span>
             <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
                 <span class="mi">16</span>
@@ -648,7 +646,7 @@
                 <span class="p">]</span>
             <span class="p">}</span>
         <span class="p">},</span>
-        <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 动作数据，包含14个手臂关节动作和2个末端执行器动作，顺序如 names 中所示</span>
+        <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># Action data, containing 14 arm joints and 2 end-effector statuses. Its order is dictated by the names dictionary</span>
             <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;float32&quot;</span><span class="p">,</span>
             <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
                 <span class="mi">16</span>
@@ -674,7 +672,7 @@
                 <span class="p">]</span>
             <span class="p">}</span>
         <span class="p">},</span>
-        <span class="s2">&quot;observation.images.head_cam_h&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 头部相机RGB图像数据</span>
+        <span class="s2">&quot;observation.images.head_cam_h&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># Head cam RGB image data</span>
             <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
             <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
                 <span class="mi">3</span><span class="p">,</span>
@@ -687,7 +685,7 @@
                 <span class="s2">&quot;width&quot;</span>
             <span class="p">]</span>
         <span class="p">},</span>
-        <span class="s2">&quot;observation.depth_h&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 头部相机深度图像数据</span>
+        <span class="s2">&quot;observation.depth_h&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># Head cam depth sensing data</span>
             <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;uint16&quot;</span><span class="p">,</span>
             <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
                 <span class="mi">1</span><span class="p">,</span>
@@ -700,7 +698,7 @@
                 <span class="s2">&quot;width&quot;</span>
             <span class="p">]</span>
         <span class="p">},</span>
-        <span class="s2">&quot;observation.images.wrist_cam_l&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 左腕相机RGB图像数据</span>
+        <span class="s2">&quot;observation.images.wrist_cam_l&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># Left wrist cam RGB image data</span>
             <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
             <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
                 <span class="mi">3</span><span class="p">,</span>
@@ -713,7 +711,7 @@
                 <span class="s2">&quot;width&quot;</span>
             <span class="p">]</span>
         <span class="p">},</span>
-        <span class="s2">&quot;observation.depth_l&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 左腕相机深度图像数据</span>
+        <span class="s2">&quot;observation.depth_l&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># Left wrist cam depth sensing data</span>
             <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;uint16&quot;</span><span class="p">,</span>
             <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
                 <span class="mi">1</span><span class="p">,</span>
@@ -726,7 +724,7 @@
                 <span class="s2">&quot;width&quot;</span>
             <span class="p">]</span>
         <span class="p">},</span>
-        <span class="s2">&quot;observation.images.wrist_cam_r&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 右腕相机RGB图像数据</span>
+        <span class="s2">&quot;observation.images.wrist_cam_r&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># Right wrist cam RGB image data</span>
             <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
             <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
                 <span class="mi">3</span><span class="p">,</span>
@@ -739,7 +737,7 @@
                 <span class="s2">&quot;width&quot;</span>
             <span class="p">]</span>
         <span class="p">}</span>
-        <span class="s2">&quot;observation.depth_r&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 右腕相机深度图像数据</span>
+        <span class="s2">&quot;observation.depth_r&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># Right wrist cam depth sensing data</span>
             <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="s2">&quot;uint16&quot;</span><span class="p">,</span>
             <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
                 <span class="mi">1</span><span class="p">,</span>

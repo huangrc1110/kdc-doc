@@ -40,9 +40,9 @@ The 1st Real-world Embodied AI Learning Challenge
 .. .. image:: https://kuavo.lejurobot.com/manual/assets/images/kuavo_4pro-cf84d43f1c370666c6e810d2807ae3e4.png
 ..    :width: 400px
 
-.. warning::
+.. note::
 
-   **Notice:** All related resources are not valid yet, and will be updated when the competition starts.
+   Some related resources may not be available at this time. They will all be released once the competition officially starts. Stay tuned!
 
 Welcome to the official competition manual for the 1st Real-world Embodied AI Learning Challenge! This manual covers all the details about the datasets, baseline codes as well as the simulator used in this competition. As for the official competition rules, important dates and other general info, please consult our official `competition website <https://www.kdc.icra.lejurobot.com/home>`_ .
 

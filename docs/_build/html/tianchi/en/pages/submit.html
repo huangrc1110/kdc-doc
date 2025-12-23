@@ -80,10 +80,15 @@
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; Training</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Submission</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Code Submission and Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">Important Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">仿真赛代码提交与评测</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Important Notes</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#id5">Video Guide on How to Submit (Please skip the lengthy packing and downloading processes)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">Real-machine competition details coming soon…</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">真机赛代码提交与评测</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Important Notes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -119,12 +124,11 @@
   <section id="submit">
 <span id="id1"></span><h1>Submission<a class="headerlink" href="#submit" title="Permalink to this heading"></a></h1>
 <section id="id2">
-<h2>Code Submission and Evaluation<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<h2>仿真赛代码提交与评测<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>Please refer to the <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md">kuavo_data_challenge main branch docker/readme</a> documentation to pack the environment and codebase into a docker image, and then submit it through our <a class="reference external" href="https://tianchi.aliyun.com/competition/entrance/532415">competition website</a>.</p>
 <p>The official evaluation results and leaderboard will be updated in real-time on our competition website.</p>
-</section>
 <section id="id4">
-<h2>Important Notes<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<h3>Important Notes<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
 <p>The final submission file should be a zip archive, containing two files: The docker tar image, and the correct run_with_gpu.sh</p>
 <p>Please also name your tar and zip filenames as Team/Personal name_task{i}. Pinyin of the team’s name and/or personal names are accepted. For instance, our team name is Leju Zhandui, and my name is kuavo, for a submission of Task 2, the tar filename then can be either lejuzhandui_task2.tar or kuavo_task2.tar, same goes for the zip archive. Please remember to modify the IMAGE_NAME and CONTAINER_NAME correspondingly, or else the image will not be found!</p>
 <p>3. 打包镜像前, 一定要注意把kuavo_sim_env.yaml里的配置改好, 测试回合数(eval_episodes)为100回合,最大回合步数(max_episode_steps)不超过300(任务一和二)、600(任务三)、1000(任务四), 一般200(任务一和二)、500(任务三)、800(任务四)是足够的
@@ -134,13 +138,123 @@
 <p>Our official evaluation system is similar to the local testing system, so all competitors can freely test their models locally and amend codes if necessary. Please try your best to ensure the functionality of your code locally prior to submission, as to not overly waste other competitor’s online evaluation resources.</p>
 <p>After submission, if the evaluation is successful, you can check your scores on the Tianchi competition website. If the evaluation failed, a detailed explaination will be provided, please check your submission materials</p>
 </section>
+</section>
 <section id="id5">
 <h2>Video Guide on How to Submit (Please skip the lengthy packing and downloading processes)<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
 <blockquote>
 <div><div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/submit_instruction.mp4" type="video/mp4"></video></div></div></blockquote>
 </section>
 <section id="id6">
-<h2>Real-machine competition details coming soon…<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<h2>真机赛代码提交与评测<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<p>跟仿真赛同理，真机赛代码提交也是环境和代码打包为 docker 镜像，之后提交至 <a class="reference external" href="https://tianchi.aliyun.com/competition/entrance/532415">比赛官网</a> 。具体步骤如下：</p>
+<ol class="arabic">
+<li><p>配置docker加速，打包环境：可参考仿真赛 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md">提交说明 docker/readme</a> 步骤1-2</p></li>
+<li><p>复制以下Dockerfile模板（专为真机赛的定制版），修改必要参数，例如Conda环境名、Conda环境包名、添加额外必要系统、python包等，保存为项目根目录下的 <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code></p>
+<div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="c"># =========================</span>
+<span class="c"># Stage 1: Builder</span>
+<span class="c"># =========================</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">ros:noetic-ros-core-focal</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
+
+<span class="k">ARG</span><span class="w"> </span><span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive
+
+<span class="c"># 国内APT源</span>
+<span class="k">RUN</span><span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g&#39;</span><span class="w"> </span>/etc/apt/sources.list<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g&#39;</span><span class="w"> </span>/etc/apt/sources.list
+
+<span class="c"># 安装必要工具和ROS依赖</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>curl<span class="w"> </span>wget<span class="w"> </span>gnupg2<span class="w"> </span>lsb-release<span class="w"> </span>sudo<span class="w"> </span>ca-certificates<span class="w"> </span>build-essential<span class="w"> </span>bzip2<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>ros-noetic-cv-bridge<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>ros-noetic-apriltag-ros<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
+
+<span class="c"># 安装 Miniforge</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">MINIFORGE_URL</span><span class="o">=</span><span class="s2">&quot;https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Miniforge3-Linux-x86_64.sh&quot;</span>
+<span class="k">RUN</span><span class="w"> </span>curl<span class="w"> </span>-L<span class="w"> </span><span class="si">${</span><span class="nv">MINIFORGE_URL</span><span class="si">}</span><span class="w"> </span>-o<span class="w"> </span>/tmp/miniforge.sh<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>bash<span class="w"> </span>/tmp/miniforge.sh<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span>/opt/conda<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>/tmp/miniforge.sh
+
+<span class="k">ENV</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/opt/conda/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">LANG</span><span class="o">=</span>C.UTF-8
+<span class="k">ENV</span><span class="w"> </span><span class="nv">LC_ALL</span><span class="o">=</span>C.UTF-8
+
+<span class="c"># 配置国内镜像并安装 mamba</span>
+<span class="k">RUN</span><span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>show_channel_urls<span class="w"> </span>yes<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>mamba<span class="w"> </span>-c<span class="w"> </span>conda-forge
+
+<span class="c"># 工作目录</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/root/kuavo_data_challenge</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+
+<span class="c"># 解压 Conda 环境并安装项目</span>
+<span class="c"># TODO: 修改Conda环境名和包名，请确保每一个myenv都修改全</span>
+<span class="k">RUN</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;myenv.tar.gz&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>mkdir<span class="w"> </span>-p<span class="w"> </span>./myenv<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tar<span class="w"> </span>-xzf<span class="w"> </span>myenv.tar.gz<span class="w"> </span>-C<span class="w"> </span>./myenv<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>myenv.tar.gz<span class="p">;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="k">fi</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;\</span>
+<span class="s2">      source ./myenv/bin/activate &amp;&amp; \</span>
+<span class="s2">      conda-unpack &amp;&amp; \</span>
+<span class="s2">      pip install -e . &amp;&amp; \</span>
+<span class="s2">      cd ./third_party/lerobot &amp;&amp; pip install -e . -i https://mirrors.aliyun.com/pypi/simple/ &amp;&amp; \</span>
+<span class="s2">      pip install deprecated kuavo_humanoid_sdk==1.2.2 opencv-python==4.11.0.86 opencv-python-headless==4.11.0.86 numpy==1.26.4 -i https://mirrors.aliyun.com/pypi/simple/ &amp;&amp; \</span>
+<span class="s2">      conda clean -afy &amp;&amp; \</span>
+<span class="s2">      rm -rf ./myenv/lib/python*/site-packages/*/tests ./myenv/lib/python*/site-packages/*/test ./myenv/pkgs/* \</span>
+<span class="s2">   &quot;</span>
+
+<span class="c"># =========================</span>
+<span class="c"># Stage 2: Final</span>
+<span class="c"># =========================</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">ros:noetic-ros-core-focal</span>
+
+<span class="c"># 设置工作目录</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/root/kuavo_data_challenge</span>
+
+<span class="c"># 复制 Conda 环境和项目代码</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/opt/conda<span class="w"> </span>/opt/conda
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/root/kuavo_data_challenge<span class="w"> </span>/root/kuavo_data_challenge
+
+<span class="c"># 环境变量</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/opt/conda/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">LANG</span><span class="o">=</span>C.UTF-8
+<span class="k">ENV</span><span class="w"> </span><span class="nv">LC_ALL</span><span class="o">=</span>C.UTF-8
+
+<span class="k">RUN</span><span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g&#39;</span><span class="w"> </span>/etc/apt/sources.list<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g&#39;</span><span class="w"> </span>/etc/apt/sources.list
+<span class="c"># TODO: 如果需要安装其它系统包，请在这里插入</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>ros-noetic-cv-bridge<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>ros-noetic-apriltag-ros<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
+
+<span class="c"># 保留 ROS 环境变量</span>
+<span class="c"># 激活 Conda 环境</span>
+<span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/ros/noetic/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /root/kuavo_data_challenge/myenv/bin/activate&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;chmod 777 -R /root/kuavo_data_challenge/kuavo_deploy&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export ROS_IP=192.168.26.10&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export ROS_MASTER_URI=http://kuavo_master:11311&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc
+
+<span class="c"># 默认命令</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bash&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>构建 Docker 镜像并导出为tar文件：跟仿真赛提交同理，将Dockerfile放置于项目根目录下，运行指令 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">kdc_v0</span> <span class="pre">.</span></code>，然后用 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">docker</span> <span class="pre">save</span> <span class="pre">-o</span> <span class="pre">your_docker_image.tar</span> <span class="pre">kdc_v0:latest</span></code> 导出</p></li>
+<li><p>按照赛事提交文件名要求重命名导出的镜像。跟正确的 <code class="docutils literal notranslate"><span class="pre">run_with_gpu.sh</span></code> 打包成一个高压缩率的压缩包，按照赛事要求，重命名压缩包后方可提交至 <a class="reference external" href="https://tianchi.aliyun.com/competition/entrance/532415">比赛官网</a></p></li>
+</ol>
+<p>The official evaluation results and leaderboard will be updated in real-time on our competition website.</p>
+<section id="id9">
+<h3>Important Notes<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h3>
+<p>The final submission file should be a zip archive, containing two files: The docker tar image, and the correct run_with_gpu.sh</p>
+<p>Please also name your tar and zip filenames as Team/Personal name_task{i}. Pinyin of the team’s name and/or personal names are accepted. For instance, our team name is Leju Zhandui, and my name is kuavo, for a submission of Task 2, the tar filename then can be either lejuzhandui_task2.tar or kuavo_task2.tar, same goes for the zip archive. Please remember to modify the IMAGE_NAME and CONTAINER_NAME correspondingly, or else the image will not be found!</p>
+<p>3. 打包镜像前, 一定要注意把kuavo_real_env.yaml里的配置改好, 按照之前仿真赛kuavo_sim_env.yaml改了的几处就行。测试回合数(eval_episodes)为100回合,最大回合步数(max_episode_steps)不超过300(任务一和二)、600(任务三), 一般200(任务一和二)、500(任务三)是足够的
+。</p>
+<p>Normal submission is through the regular submission portal. If the file is too big (over 5GB in size), the upload might fail, in which case there is an extra-large file submission portal available. Note that its commands refresh every hour!</p>
+<p>Before submission, please ensure that your team is properly enrolled (individual group sized 1 need not perform this operation). If any team amendments occured after the submission, the prior submissions all become nullified. Only one submission required per team, do not submit more than one!</p>
+<p>Our official evaluation system is similar to the local testing system, so all competitors can freely test their models locally and amend codes if necessary. Please try your best to ensure the functionality of your code locally prior to submission, as to not overly waste other competitor’s online evaluation resources.</p>
+<p>After submission, if the evaluation is successful, you can check your scores on the Tianchi competition website. If the evaluation failed, a detailed explaination will be provided, please check your submission materials</p>
+</section>
 </section>
 </section>
 
