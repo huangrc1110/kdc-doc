@@ -15,16 +15,12 @@ Task 1: Toy Sorting
 
 In this task, there will be assorted toys randomly laid out on a desk surface. The robot needs to grasp the toys one-by-one, and place all the animal toys into the right basket, while all the car toys go into the left basket.
 
-Within this task, the robot will start from a reasonable randomised location away from the desk; the assortment of toys on the desk is also randomised.
+Within this task, the robot will start from a reasonable randomised location away from the desk; the height of the desk as well as the assortment of toys on the desk are also randomised.
 
-- Scoring standards (To be updated):
-    a. 25 pts for moving to the correct target area in front of the tray shelf
+- Scoring standards:
+    a. 40 pts for every correct placement of each of the toys
 
-    b. 25 pts for the successful pickup of the desginated plate
-
-    c. 25 pts for moving to the correct area in front of the destination
-
-    d. 25 pts for successful placement of the tray
+    b. 20 pts for completing it within a specified timeframe. A 2-pt **penalty** will be applied for every second elapsed outside of this timeframe
 
 .. image:: ../_static/images/task3_sim.png
 
@@ -33,18 +29,16 @@ Task 2: Parcel Weighing
 
 In this task, the robot is required to pick up a soft-pouch express parcel from a moving conveyor belt, place it on an electronic scale for weighing, and then transfer it to another conveyor belt.
 
-Within this task, the lighting/reflection, colours, and the positioning of the parcel and the scale will be randomised within a reasonable range.
+Within this task, the positioning of the parcel and the scale will be randomised within a reasonable range.
 
 Each task is out of 100 base points as the base task score.
 
 - Scoring standards:
-    a. 25 pts for the successful grasp of the object from the conveyor belt
+    a. 40 pts for the correct placement of the object onto its desginated area (the electronic scale)
 
-    b. 25 points for the subsequent correct placement of the object onto its desginated area (the electronic scale)
+    b. 40 pts for the correct placement of the object after weighing
 
-    c. 25 pts for picking it up from the scale
-
-    d. 25 pts for the correct placement/orientation of the object
+    c. 20 pts for completing it within a specified timeframe. A 2-pt **penalty** will be applied for every second elapsed outside of this timeframe
 
 .. image:: ../_static/images/task1_sim.png
 
@@ -52,16 +46,17 @@ Each task is out of 100 base points as the base task score.
 Task 3: Part Sorting
 ----------------------------------------------------------------
 
-In this task, the robot needs to pick up a component chosen from different categories representative in the industrial setting, lying in a randomised orientation on a moving conveyor belt, and then place the component into the correct sorting bin.
+In this task, the robot needs to pick up a component chosen from different categories representative in the industrial setting, lying in a randomised orientation on a moving conveyor belt, and then place the component into the correct sorting bin. 
+Four such components are given in this task, and the task is considered as successful after correct placements of all four such components.
 
-Within this task, the lighting/reflection, colours, and the positioning of the component and the bins will be randomised within a reasonable range.
+Within this task, the height of the conveyor, the positioning and orientation of the component, as well as when the component will be dropped off onto the conveyor belt, will be randomised within a reasonable range.
 
 - Scoring standards:
-    a. 50 pts for picking up the component from the conveyor belt
+    a. 20 pts for each successful sequence of grasp and final placement of each of the components
 
-    b. 50 pts for placing it into the correct bin
+    b. 10 pts for successful completion of all four components in a row
 
-    c. 20 bonus pts for completing it within a specified timeframe. An 1-pt penalty will be applied for every second elapsed outside of this timeframe
+    c. 10 pts for completing it within a specified timeframe. An 1-pt **penalty** will be applied for every second elapsed outside of this timeframe
 
 .. image:: ../_static/images/task2_sim.png
 
@@ -74,51 +69,46 @@ Task 1: Rubbish Sorting
 
 In this task, there will be assorted refuse randomly laid out on a desk surface. The robot needs to grasp the rubbish pieces one-by-one, and place all the recyclable items into the blue bin, while all the other rubbish go into the grey bin.
 
-Within this task, the robot will start from a reasonable randomised location away from the desk; the assortment of refuse on the desk is also randomised.
+Within this task, the robot will start from a reasonable randomised location away from the desk; the height of the desk as well as the assortment of refuse on the desk is also randomised.
 
-- Scoring standards (To be updated):
-    a. 25 pts for moving to the correct target area in front of the tray shelf
+- Scoring standards:
+    a. 40 pts for every correct placement of each of the rubbish pieces
 
-    b. 25 pts for the successful pickup of the desginated plate
-
-    c. 25 pts for moving to the correct area in front of the destination
-
-    d. 25 pts for successful placement of the tray
+    b. 20 pts for performing the task within the expected time duration. A 2-pt **penalty** will be applied for each second elapsed beyond the expected time duration
 
 .. image:: ../_static/images/task3_real.jpeg
 
 Task 2: Parcel Weighing
 ----------------------------------------------------------------
 
-In this task, the robot is required to pick up a soft-pouch express parcel from a moving conveyor belt, place it on an electronic scale for weighing, and then transfer it to another conveyor belt.
+In this task, the robot is required to pick up a soft-pouch parcel from a moving conveyor belt, place it on an electronic scale for weighing, and then transfer it to another conveyor belt.
 
-Within this task, the lighting/reflection, colours, and the positioning of the parcel and the scale will be randomised within a reasonable range.
+Within this task, the positioning of the parcel and the scale will be randomised within a reasonable range.
 
 Each task is out of 100 base points as the base task score.
 
 - Scoring standards:
-    a. 25 pts for the successful grasp of the object from the conveyor belt
+    a. 40 pts for the correct placement of the object onto its desginated area (the electronic scale)
 
-    b. 25 points for the subsequent correct placement of the object onto its desginated area (the electronic scale)
+    b. 40 pts for the correct placement of the object after weighing
 
-    c. 25 pts for picking it up from the scale
-
-    d. 25 pts for the correct placement/orientation of the object
+    c. 20 pts for completing it within a specified timeframe. A 2-pt **penalty** will be applied for every second elapsed outside of this timeframe
 
 .. image:: ../_static/images/task1_real.jpeg
 
 Task 3: Part Sorting
 ----------------------------------------------------------------
 
-In this task, the robot needs to pick up a component chosen from different categories representative in the industrial setting, lying in a randomised orientation on a moving conveyor belt, and then place the component into the correct sorting bin.
+In this task, the robot needs to pick up a component chosen from different categories representative in the industrial setting, lying in a randomised orientation on a moving conveyor belt, and then place the component into the correct sorting bin. 
+Four such components are given in this task, and the task is considered as successful after correct placements of all four such components.
 
 Within this task, the lighting/reflection, colours, and the positioning of the component and the bins will be randomised within a reasonable range.
 
 - Scoring standards:
-    a. 50 pts for picking up the component from the conveyor belt
+    a. 20 pts for each successful sequence of grasp and final placement of each of the components
 
-    b. 50 pts for placing it into the correct bin
+    b. 10 pts for successful completion of all four components in a row
 
-    c. 20 bonus pts for completing it within a specified timeframe. An 1-pt penalty will be applied for every second elapsed outside of this timeframe
+    c. 10 pts for completing it within a specified timeframe. An 1-pt **penalty** will be applied for every second elapsed outside of this timeframe
 
 .. image:: ../_static/images/task2_real.jpeg
