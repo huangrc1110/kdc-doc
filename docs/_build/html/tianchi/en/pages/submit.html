@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +16,9 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b3ba4146"></script>
-      <script src="../_static/doctools.js?v=888ff710"></script>
-      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <script src="../_static/js/versions.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -122,13 +122,13 @@
            <div itemprop="articleBody">
              
   <section id="submit">
-<span id="id1"></span><h1>Submission<a class="headerlink" href="#submit" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1>Submission<a class="headerlink" href="#submit" title="Link to this heading"></a></h1>
 <section id="id2">
-<h2>仿真赛代码提交与评测<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<h2>仿真赛代码提交与评测<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <p>Please refer to the <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md">kuavo_data_challenge main branch docker/readme</a> documentation to pack the environment and codebase into a docker image, and then submit it through our <a class="reference external" href="https://tianchi.aliyun.com/competition/entrance/532415">competition website</a>.</p>
 <p>The official evaluation results and leaderboard will be updated in real-time on our competition website.</p>
 <section id="id4">
-<h3>Important Notes<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<h3>Important Notes<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <p>The final submission file should be a zip archive, containing two files: The docker tar image, and the correct run_with_gpu.sh</p>
 <p>Please also name your tar and zip filenames as Team/Personal name_task{i}. Pinyin of the team’s name and/or personal names are accepted. For instance, our team name is Leju Zhandui, and my name is kuavo, for a submission of Task 2, the tar filename then can be either lejuzhandui_task2.tar or kuavo_task2.tar, same goes for the zip archive. Please remember to modify the IMAGE_NAME and CONTAINER_NAME correspondingly, or else the image will not be found!</p>
 <p>3. 打包镜像前, 一定要注意把kuavo_sim_env.yaml里的配置改好, 测试回合数(eval_episodes)为100回合,最大回合步数(max_episode_steps)不超过300(任务一和二)、600(任务三)、1000(任务四), 一般200(任务一和二)、500(任务三)、800(任务四)是足够的
@@ -140,12 +140,12 @@
 </section>
 </section>
 <section id="id5">
-<h2>Video Guide on How to Submit (Please skip the lengthy packing and downloading processes)<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<h2>Video Guide on How to Submit (Please skip the lengthy packing and downloading processes)<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
 <blockquote>
 <div><div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/submit_instruction.mp4" type="video/mp4"></video></div></div></blockquote>
 </section>
 <section id="id6">
-<h2>真机赛代码提交与评测<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<h2>真机赛代码提交与评测<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
 <p>跟仿真赛同理，真机赛代码提交也是环境和代码打包为 docker 镜像，之后提交至 <a class="reference external" href="https://tianchi.aliyun.com/competition/entrance/532415">比赛官网</a> 。具体步骤如下：</p>
 <ol class="arabic">
 <li><p>配置docker加速，打包环境：可参考仿真赛 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md">提交说明 docker/readme</a> 步骤1-2</p></li>
@@ -245,7 +245,7 @@
 </ol>
 <p>The official evaluation results and leaderboard will be updated in real-time on our competition website.</p>
 <section id="id9">
-<h3>Important Notes<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h3>
+<h3>Important Notes<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <p>The final submission file should be a zip archive, containing two files: The docker tar image, and the correct run_with_gpu.sh</p>
 <p>Please also name your tar and zip filenames as Team/Personal name_task{i}. Pinyin of the team’s name and/or personal names are accepted. For instance, our team name is Leju Zhandui, and my name is kuavo, for a submission of Task 2, the tar filename then can be either lejuzhandui_task2.tar or kuavo_task2.tar, same goes for the zip archive. Please remember to modify the IMAGE_NAME and CONTAINER_NAME correspondingly, or else the image will not be found!</p>
 <p>3. 打包镜像前, 一定要注意把kuavo_real_env.yaml里的配置改好, 按照之前仿真赛kuavo_sim_env.yaml改了的几处就行。测试回合数(eval_episodes)为100回合,最大回合步数(max_episode_steps)不超过300(任务一和二)、600(任务三), 一般200(任务一和二)、500(任务三)是足够的
@@ -272,8 +272,8 @@
     <p>&#169; Copyright 2016-2025, 乐聚机器人.</p>
   </div> <div class="footer-copyright">
   <p>
-    乐聚智能（深圳）股份有限公司<br> 
-    粤ICP备16048266号
+    Leju (Shenzhen) Robotics Co. Ltd.<br> 
+    Guangdong ICP No. 16048266
   </p>
 </div>
 

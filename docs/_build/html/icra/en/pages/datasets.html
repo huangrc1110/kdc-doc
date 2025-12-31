@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +16,9 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b3ba4146"></script>
-      <script src="../_static/doctools.js?v=888ff710"></script>
-      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <script src="../_static/js/versions.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -138,10 +138,10 @@
            <div itemprop="articleBody">
              
   <section id="datasets">
-<span id="kuavo-dataset"></span><h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this heading"></a></h1>
+<span id="kuavo-dataset"></span><h1>Datasets<a class="headerlink" href="#datasets" title="Link to this heading"></a></h1>
 <p>For maximum preservation of the valuable information contained in the original data, all of this competition’s datasets are in rosbag format. Competitors can freely use the abundant sources of sensor data inside the rosbag files for their model training.</p>
 <section id="downloading-datasets">
-<h2>Downloading Datasets<a class="headerlink" href="#downloading-datasets" title="Permalink to this heading"></a></h2>
+<h2>Downloading Datasets<a class="headerlink" href="#downloading-datasets" title="Link to this heading"></a></h2>
 <blockquote>
 <div><p>Dataset downloads are all done through our HuggingFace page. This link is also found on our website’s main page.</p>
 <p>A detailed guide is as follows:</p>
@@ -163,12 +163,12 @@
 </div>
 </section>
 <section id="rosbag-data">
-<h2>Rosbag Data<a class="headerlink" href="#rosbag-data" title="Permalink to this heading"></a></h2>
+<h2>Rosbag Data<a class="headerlink" href="#rosbag-data" title="Link to this heading"></a></h2>
 <p>Inspired from the open-sourced <a class="reference external" href="https://github.com/huggingface/lerobot">lerobot</a> project by HuggingFace, the host has also prepared an easy-to-use tool that systematically converts the rosbag datasets from our Kuavo robots into Lerobot dataset formats, including <em>depth sensor</em> and other multimodal data. For more details, you may refer to the data conversion scripts from our <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> repository. The exact dataset formats are as follows:</p>
 <section id="rosbag-topics">
-<h3>rosbag Topics<a class="headerlink" href="#rosbag-topics" title="Permalink to this heading"></a></h3>
+<h3>rosbag Topics<a class="headerlink" href="#rosbag-topics" title="Link to this heading"></a></h3>
 <section id="cam-x-color-image-raw-compressed-camera-rgb-image-data">
-<h4>/cam_x/color/image_raw/compressed Camera RGB Image Data<a class="headerlink" href="#cam-x-color-image-raw-compressed-camera-rgb-image-data" title="Permalink to this heading"></a></h4>
+<h4>/cam_x/color/image_raw/compressed Camera RGB Image Data<a class="headerlink" href="#cam-x-color-image-raw-compressed-camera-rgb-image-data" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -194,7 +194,7 @@
 </div></blockquote>
 </section>
 <section id="cam-h-depth-image-raw-compressed-head-camera-depth-sensor-information">
-<h4>/cam_h/depth/image_raw/compressed Head camera depth sensor information<a class="headerlink" href="#cam-h-depth-image-raw-compressed-head-camera-depth-sensor-information" title="Permalink to this heading"></a></h4>
+<h4>/cam_h/depth/image_raw/compressed Head camera depth sensor information<a class="headerlink" href="#cam-h-depth-image-raw-compressed-head-camera-depth-sensor-information" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -220,7 +220,7 @@
 </div></blockquote>
 </section>
 <section id="cam-x-depth-image-rect-raw-compressed-left-right-wrist-camera-depth-sensor-information">
-<h4>/cam_x/depth/image_rect_raw/compressed Left, right wrist camera depth sensor information<a class="headerlink" href="#cam-x-depth-image-rect-raw-compressed-left-right-wrist-camera-depth-sensor-information" title="Permalink to this heading"></a></h4>
+<h4>/cam_x/depth/image_rect_raw/compressed Left, right wrist camera depth sensor information<a class="headerlink" href="#cam-x-depth-image-rect-raw-compressed-left-right-wrist-camera-depth-sensor-information" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -246,7 +246,7 @@
 </div></blockquote>
 </section>
 <section id="kuavo-arm-traj-arm-trajectory-control">
-<h4>/kuavo_arm_traj Arm trajectory control<a class="headerlink" href="#kuavo-arm-traj-arm-trajectory-control" title="Permalink to this heading"></a></h4>
+<h4>/kuavo_arm_traj Arm trajectory control<a class="headerlink" href="#kuavo-arm-traj-arm-trajectory-control" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -272,7 +272,7 @@
 </div></blockquote>
 </section>
 <section id="gripper-command-gripper-control-simulator-dataset-only">
-<h4>/gripper/command Gripper control (Simulator dataset only)<a class="headerlink" href="#gripper-command-gripper-control-simulator-dataset-only" title="Permalink to this heading"></a></h4>
+<h4>/gripper/command Gripper control (Simulator dataset only)<a class="headerlink" href="#gripper-command-gripper-control-simulator-dataset-only" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -297,7 +297,7 @@
 </div></blockquote>
 </section>
 <section id="gripper-state-gripper-state-simulator-dataset-only">
-<h4>/gripper/state Gripper state (Simulator dataset only)<a class="headerlink" href="#gripper-state-gripper-state-simulator-dataset-only" title="Permalink to this heading"></a></h4>
+<h4>/gripper/state Gripper state (Simulator dataset only)<a class="headerlink" href="#gripper-state-gripper-state-simulator-dataset-only" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -322,7 +322,7 @@
 </div></blockquote>
 </section>
 <section id="control-robot-hand-position-dexterous-hand-position-real-machine-dataset-only">
-<h4>/control_robot_hand_position Dexterous hand position (Real-machine dataset only)<a class="headerlink" href="#control-robot-hand-position-dexterous-hand-position-real-machine-dataset-only" title="Permalink to this heading"></a></h4>
+<h4>/control_robot_hand_position Dexterous hand position (Real-machine dataset only)<a class="headerlink" href="#control-robot-hand-position-dexterous-hand-position-real-machine-dataset-only" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -347,7 +347,7 @@
 </div></blockquote>
 </section>
 <section id="dexhand-state-dexterous-hand-state-real-machine-dataset-only">
-<h4>/dexhand/state Dexterous hand state (Real-machine dataset only)<a class="headerlink" href="#dexhand-state-dexterous-hand-state-real-machine-dataset-only" title="Permalink to this heading"></a></h4>
+<h4>/dexhand/state Dexterous hand state (Real-machine dataset only)<a class="headerlink" href="#dexhand-state-dexterous-hand-state-real-machine-dataset-only" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -374,7 +374,7 @@
 </div></blockquote>
 </section>
 <section id="control-robot-leju-claw-claw-control-data-real-machine-dataset-only">
-<h4>/control_robot_leju_claw Claw control data (Real-machine dataset only)<a class="headerlink" href="#control-robot-leju-claw-claw-control-data-real-machine-dataset-only" title="Permalink to this heading"></a></h4>
+<h4>/control_robot_leju_claw Claw control data (Real-machine dataset only)<a class="headerlink" href="#control-robot-leju-claw-claw-control-data-real-machine-dataset-only" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -401,7 +401,7 @@
 </div></blockquote>
 </section>
 <section id="leju-claw-state-claw-states-real-machine-dataset-only">
-<h4>/leju_claw_state Claw states (Real-machine dataset only)<a class="headerlink" href="#leju-claw-state-claw-states-real-machine-dataset-only" title="Permalink to this heading"></a></h4>
+<h4>/leju_claw_state Claw states (Real-machine dataset only)<a class="headerlink" href="#leju-claw-state-claw-states-real-machine-dataset-only" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic">
 <li><dl class="simple">
@@ -438,7 +438,7 @@
 </div></blockquote>
 </section>
 <section id="sensors-data-raw-raw-sensor-data">
-<h4>/sensors_data_raw Raw sensor data<a class="headerlink" href="#sensors-data-raw-raw-sensor-data" title="Permalink to this heading"></a></h4>
+<h4>/sensors_data_raw Raw sensor data<a class="headerlink" href="#sensors-data-raw-raw-sensor-data" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic">
 <li><dl class="simple">
@@ -513,7 +513,7 @@
 </div></blockquote>
 </section>
 <section id="joint-cmd-all-joint-control-commands">
-<h4>/joint_cmd All joint control commands<a class="headerlink" href="#joint-cmd-all-joint-control-commands" title="Permalink to this heading"></a></h4>
+<h4>/joint_cmd All joint control commands<a class="headerlink" href="#joint-cmd-all-joint-control-commands" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -545,7 +545,7 @@
 </div></blockquote>
 </section>
 <section id="cmd-pose-world-robot-positional-commands-task-4-only">
-<h4>/cmd_pose_world Robot positional commands (Task 4 only)<a class="headerlink" href="#cmd-pose-world-robot-positional-commands-task-4-only" title="Permalink to this heading"></a></h4>
+<h4>/cmd_pose_world Robot positional commands (Task 4 only)<a class="headerlink" href="#cmd-pose-world-robot-positional-commands-task-4-only" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -576,9 +576,9 @@
 </section>
 </section>
 <section id="lerobot-dataset">
-<h2>Lerobot Dataset<a class="headerlink" href="#lerobot-dataset" title="Permalink to this heading"></a></h2>
+<h2>Lerobot Dataset<a class="headerlink" href="#lerobot-dataset" title="Link to this heading"></a></h2>
 <section id="rosbag-to-lerobot-conversion">
-<h3>Rosbag to Lerobot Conversion<a class="headerlink" href="#rosbag-to-lerobot-conversion" title="Permalink to this heading"></a></h3>
+<h3>Rosbag to Lerobot Conversion<a class="headerlink" href="#rosbag-to-lerobot-conversion" title="Link to this heading"></a></h3>
 <p>Please complete the installation guide first, then refer to the tutorial from the <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> repository to convert Kuavo-native rosbags into Lerobot parquet format:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>kuavo_data/CvtRosbag2Lerobot.py<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--config-path<span class="o">=</span>../configs/data/<span class="w"> </span><span class="se">\</span>
@@ -597,7 +597,7 @@
 </div></blockquote>
 </section>
 <section id="lerobot-directory-structure">
-<h3>Lerobot directory structure<a class="headerlink" href="#lerobot-directory-structure" title="Permalink to this heading"></a></h3>
+<h3>Lerobot directory structure<a class="headerlink" href="#lerobot-directory-structure" title="Link to this heading"></a></h3>
 <p>After executing the script, a standard Lerobot (LerobotDataset V3) formatted dataset will be generated. The directory structure is as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>output_dir/
     ├── data/

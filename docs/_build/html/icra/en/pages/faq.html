@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +16,9 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b3ba4146"></script>
-      <script src="../_static/doctools.js?v=888ff710"></script>
-      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <script src="../_static/js/versions.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -114,66 +114,31 @@
            <div itemprop="articleBody">
              
   <section id="faqs">
-<span id="faq"></span><h1>FAQs<a class="headerlink" href="#faqs" title="Permalink to this heading"></a></h1>
+<span id="faq"></span><h1>FAQs<a class="headerlink" href="#faqs" title="Link to this heading"></a></h1>
 <section id="general-questions">
-<h2>General Questions<a class="headerlink" href="#general-questions" title="Permalink to this heading"></a></h2>
+<h2>General Questions<a class="headerlink" href="#general-questions" title="Link to this heading"></a></h2>
 <dl class="simple">
-<dt>Q: I would like to sign up for this competition, how would I sign up? How much does the signup cost?</dt><dd><p>A: The signup process is free of charge. Go to our competition’s <a class="reference external" href="https://www.kdc.icra.lejurobot.com/home">official website</a>, and then click Sign Up, fill in your personal information to sign up. (Note: Any teams in the signup information are not to be recorded as competition teams. For teaming up for the competition, please do so after everyone’s signup have been completed)</p>
+<dt>Q: Why there are two stages in the competition (simulator stage and real-machine stage)?</dt><dd><p>A: The simulator stage allows participants to rapidly iterate and test their algorithms in a safe and controlled environment, while the real-machine stage provides an opportunity to validate the performance of their models on actual hardware, ensuring robustness and practical applicability.</p>
 </dd>
-<dt>Q: How do I create/join teams?</dt><dd><p>A: After signup, click my teams found on the left pane to create/join teams. 1-4 members are allowed within every team.</p>
+<dt>Q: How do I participate in the real-machine competition? Is this an in-person only event?</dt><dd><p>A: All participants/teams passing the first qualification round (simulator round) may participate in the real-machine competition. All qualified teams have the option to either send their code for remote evaluation on our real-robot platform, or attend the in-person event, which will locate in Beijing, China.</p>
 </dd>
-<dt>Q: How do I participate in the real-machine competition? Is this an in-person only event?</dt><dd><p>A: All participants/teams passing the first qualification round (simulator round) may participate in the real-machine competition. If for any reason one is unable to partake in-person for testing, we can arrange technical personnel live on-stage to configure for your testing</p>
+<dt>Q: Am I allowed to use external datasets for training my models?</dt><dd><p>A: No, only the datasets provided by the competition organisers are allowed to be used for model training. Use of any external datasets will lead to immediate disqualification.</p>
 </dd>
-<dt>Q: How to apply for GPU compute power assistance?</dt><dd><p>A: Relevant assistance resources are still under negotiation for now. We will provide an update as soon as any becomes available. We strongly encourage everyone to equip and utilise their own compute power for now.</p>
+<dt>Q: Are there any restrictions on the model architectures or algorithms that can be used?</dt><dd><p>A: You can use any models or learning based algorithms you wish, as long as they can be run within the provided environment. The baseline code shows an example of what kind of models that works in our workflow. You are free to modify or replace any part of the baseline code.</p>
 </dd>
-<dt>Q: What data formats are provided for the datasets</dt><dd><p>A: Everything uploaded are in native rosbag formats, but participants can freely use <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">kuavo_data/CvtRosbag2Lerobot.py</span></code> to freely convert such datasets into Lerobot Parquet format en masse. For more details, please consult the <code class="docutils literal notranslate"><span class="pre">kuavo_data_challenge</span></code> readme documentation.</p>
-</dd>
-<dt>Q: Does the dataset needs to be downloaded all at once?</dt><dd><p>A: We recommend you download only what you’ll need during each download. There is no need for you to download everything at once, as such download size is humongous!</p>
+<dt>Q: How will the submissions be evaluated and how do I submit my code?</dt><dd><p>A: For submission, we would require you to package your code and environment into a docker image, which will be run on our evaluation server. In other word, we only provide simulation environment part. It will be pretty much like how you test your model locally but surely there will be some differences like seed setting, time limit, etc.
+Instructions on how to submit your code (for two stages) will be updated soon in the ‘Submission’ page.</p>
 </dd>
 </dl>
 </section>
 <section id="common-technical-issues-resolution">
-<h2>Common Technical Issues &amp; Resolution<a class="headerlink" href="#common-technical-issues-resolution" title="Permalink to this heading"></a></h2>
-<dl>
-<dt>Q: After opening the simulator (i.e. <code class="docutils literal notranslate"><span class="pre">deploy.py</span></code>), the simulator opens and immediately disappears.</dt><dd><p>A: Please ensure that <code class="docutils literal notranslate"><span class="pre">ROBOT_VERSION</span></code> is set to 45. You can check this by <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$ROBOT_VERSION</span></code> and see if 45 is correctly printed.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Note that after every re-entry into the docker image, you need to rerun <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">ROBOT_VERSION=45</span></code>, or you can optionally add this line into the .zshrc file.</p></li>
-</ul>
-</div></blockquote>
+<h2>Common Technical Issues &amp; Resolution<a class="headerlink" href="#common-technical-issues-resolution" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>Q: How to use two repositories (baseline code and simulator) together?</dt><dd><p>A: The baseline code repository provides an example of how to convert the dateset, model training and model inference. The simulator repository serve as the simulation environment as well as scorement system. Two repositories are independent.</p>
 </dd>
-<dt>Q: During simutaneous execution of <code class="docutils literal notranslate"><span class="pre">deploy.py</span></code> and <code class="docutils literal notranslate"><span class="pre">eval_kuavo.sh</span></code> , the simulator opens successfully, but either the evaluation never begins, never restarts after the first reset round, and/or every round becomes a reset round in an infinite loop</dt><dd><p>A: In the running <code class="docutils literal notranslate"><span class="pre">eval_kuavo.sh</span></code>, check the following items in order:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Ensure that Option 8 was the one selected</p></li>
-<li><p>Press L to check the log, ensure that there are no crash messages, potentially indicating missing Python packages (commonly <code class="docutils literal notranslate"><span class="pre">apriltag_ros</span></code> may be missing). Install any missing packages as prompted</p></li>
-<li><p>Ensure that the pretrained weights filepath is correctly set, and that the code has sufficient permissions to access it</p></li>
-<li><p>It is highly recommended that you change and grant the permissions of all folders in use with this project. It is not recommended for you to add <code class="docutils literal notranslate"><span class="pre">sudo</span></code> in front of <code class="docutils literal notranslate"><span class="pre">eval_kuavo.sh</span></code> as it may lead to unexpected errors</p></li>
-<li><p>Reconfigure the Python environment containing the <code class="docutils literal notranslate"><span class="pre">eval_kuavo.sh</span></code></p></li>
-<li><p>Under some slower systems, it may be necessary for you to wait longer for the simulator to be ready. Change the <code class="docutils literal notranslate"><span class="pre">time.sleep</span></code> at approx. Line 348 to a larger value.</p></li>
-</ul>
-</div></blockquote>
+<dt>Q: I am implementing model inference, but the simulator keeps reset. What should I do?</dt><dd><p>A: Normally this is due to incorrect config settings. Please make sure all paths, names are correctly set.</p>
 </dd>
-<dt>Q: When <code class="docutils literal notranslate"><span class="pre">catkin</span> <span class="pre">build</span></code> ing the simulator, it fails to find necessary modules, such as <code class="docutils literal notranslate"><span class="pre">humanoid_interface</span></code></dt><dd><p>A: Check the following checklist:</p>
-<ul class="simple">
-<li><p>Please ensure that <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">installed/setup.zsh</span></code> successfully executed prior to <code class="docutils literal notranslate"><span class="pre">catkin</span> <span class="pre">build</span></code></p></li>
-<li><p>Do NOT use <code class="docutils literal notranslate"><span class="pre">catkin</span> <span class="pre">clean</span></code>, as it may erase critical packages. If you accidentally used this, please re-pull the entire repository to start over.</p></li>
-<li><p>re-pull the entire repository</p></li>
-</ul>
-</dd>
-<dt>Q: When <code class="docutils literal notranslate"><span class="pre">catkin</span> <span class="pre">build</span></code> ing the simulator, errors pop up that read <code class="docutils literal notranslate"><span class="pre">failed</span> <span class="pre">to</span> <span class="pre">make</span> <span class="pre">symbolic</span> <span class="pre">link</span> <span class="pre">.../../*.so</span></code></dt><dd><p>A: If you used <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> inside Windows environment, where symbolic links do not work correctly under Linux, this can occur</p>
-<ul class="simple">
-<li><p>Please use a Linux distro to perform <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone/pull</span></code></p></li>
-</ul>
-</dd>
-<dt>Q: The simulator is very laggy</dt><dd><p>A: Check the following checklist:</p>
-<ul class="simple">
-<li><p>Please ensure that <code class="docutils literal notranslate"><span class="pre">run_with_gpu.sh</span></code> was used to create the docker container, and that it is using CUDA properly.</p></li>
-<li><p>Ensure that docker is correctly using CUDA</p></li>
-<li><p>It is not recommended for you to use WSL (Windows Subsystem for Linux) for this project, as it is reported that it has CUDA acceleration issues. If you are under such environment, please see the QQ group chat to see if there are any existing solutions inside the discussion group.</p></li>
-</ul>
-</dd>
-<dt>Q: No simulator window showing up after executing <code class="docutils literal notranslate"><span class="pre">deploy.py</span></code> for the simulator</dt><dd><p>A: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try again</p>
+<dt>Q: I am using dockers for both simulator and baseline code, but when I start model inference, nothing happens. What should I do?</dt><dd><p>A: If you make sure all configs are correct, you might have to set up container to container communication.</p>
 </dd>
 </dl>
 </section>

@@ -7,60 +7,29 @@ FAQs
 General Questions
 =================================
 
-Q: I would like to sign up for this competition, how would I sign up? How much does the signup cost?
-    A: The signup process is free of charge. Go to our competition's `official website <https://www.kdc.icra.lejurobot.com/home>`_, and then click Sign Up, fill in your personal information to sign up. (Note: Any teams in the signup information are not to be recorded as competition teams. For teaming up for the competition, please do so after everyone's signup have been completed)
-
-Q: How do I create/join teams?
-    A: After signup, click my teams found on the left pane to create/join teams. 1-4 members are allowed within every team.
+Q: Why there are two stages in the competition (simulator stage and real-machine stage)?
+    A: The simulator stage allows participants to rapidly iterate and test their algorithms in a safe and controlled environment, while the real-machine stage provides an opportunity to validate the performance of their models on actual hardware, ensuring robustness and practical applicability.
 
 Q: How do I participate in the real-machine competition? Is this an in-person only event?
-    A: All participants/teams passing the first qualification round (simulator round) may participate in the real-machine competition. If for any reason one is unable to partake in-person for testing, we can arrange technical personnel live on-stage to configure for your testing
+    A: All participants/teams passing the first qualification round (simulator round) may participate in the real-machine competition. All qualified teams have the option to either send their code for remote evaluation on our real-robot platform, or attend the in-person event, which will locate in Beijing, China.
 
-Q: How to apply for GPU compute power assistance?
-	A: Relevant assistance resources are still under negotiation for now. We will provide an update as soon as any becomes available. We strongly encourage everyone to equip and utilise their own compute power for now.
+Q: Am I allowed to use external datasets for training my models?
+	A: No, only the datasets provided by the competition organisers are allowed to be used for model training. Use of any external datasets will lead to immediate disqualification.
 
-Q: What data formats are provided for the datasets
-	A: Everything uploaded are in native rosbag formats, but participants can freely use ``python kuavo_data/CvtRosbag2Lerobot.py`` to freely convert such datasets into Lerobot Parquet format en masse. For more details, please consult the ``kuavo_data_challenge`` readme documentation.
+Q: Are there any restrictions on the model architectures or algorithms that can be used?
+	A: You can use any models or learning based algorithms you wish, as long as they can be run within the provided environment. The baseline code shows an example of what kind of models that works in our workflow. You are free to modify or replace any part of the baseline code. 
 
-Q: Does the dataset needs to be downloaded all at once?
-	A: We recommend you download only what you'll need during each download. There is no need for you to download everything at once, as such download size is humongous!
+Q: How will the submissions be evaluated and how do I submit my code?
+	A: For submission, we would require you to package your code and environment into a docker image, which will be run on our evaluation server. In other word, we only provide simulation environment part. It will be pretty much like how you test your model locally but surely there will be some differences like seed setting, time limit, etc. 
+	Instructions on how to submit your code (for two stages) will be updated soon in the 'Submission' page.
 
 Common Technical Issues & Resolution
 =====================================================
+Q: How to use two repositories (baseline code and simulator) together?
+	A: The baseline code repository provides an example of how to convert the dateset, model training and model inference. The simulator repository serve as the simulation environment as well as scorement system. Two repositories are independent.
 
-Q: After opening the simulator (i.e. ``deploy.py``), the simulator opens and immediately disappears.
-	A: Please ensure that ``ROBOT_VERSION`` is set to 45. You can check this by ``echo $ROBOT_VERSION`` and see if 45 is correctly printed.
+Q: I am implementing model inference, but the simulator keeps reset. What should I do?
+	A: Normally this is due to incorrect config settings. Please make sure all paths, names are correctly set.
 
-	    - Note that after every re-entry into the docker image, you need to rerun ``export ROBOT_VERSION=45``, or you can optionally add this line into the .zshrc file.
-
-Q: During simutaneous execution of ``deploy.py`` and ``eval_kuavo.sh`` , the simulator opens successfully, but either the evaluation never begins, never restarts after the first reset round, and/or every round becomes a reset round in an infinite loop
-	A: In the running ``eval_kuavo.sh``, check the following items in order:
-
-		- Ensure that Option 8 was the one selected
-		- Press L to check the log, ensure that there are no crash messages, potentially indicating missing Python packages (commonly ``apriltag_ros`` may be missing). Install any missing packages as prompted
-		- Ensure that the pretrained weights filepath is correctly set, and that the code has sufficient permissions to access it
-		- It is highly recommended that you change and grant the permissions of all folders in use with this project. It is not recommended for you to add ``sudo`` in front of ``eval_kuavo.sh`` as it may lead to unexpected errors
-		- Reconfigure the Python environment containing the ``eval_kuavo.sh``
-		- Under some slower systems, it may be necessary for you to wait longer for the simulator to be ready. Change the ``time.sleep`` at approx. Line 348 to a larger value.
-
-Q: When ``catkin build`` ing the simulator, it fails to find necessary modules, such as ``humanoid_interface`` 
-	A: Check the following checklist:
-
-        - Please ensure that ``source installed/setup.zsh`` successfully executed prior to ``catkin build`` 
-        - Do NOT use ``catkin clean``, as it may erase critical packages. If you accidentally used this, please re-pull the entire repository to start over.
-        - re-pull the entire repository
-
-Q: When ``catkin build`` ing the simulator, errors pop up that read ``failed to make symbolic link .../../*.so``
-	A: If you used ``git clone`` inside Windows environment, where symbolic links do not work correctly under Linux, this can occur
-
-        - Please use a Linux distro to perform ``git clone/pull`` 
-
-Q: The simulator is very laggy
-	A: Check the following checklist:
-    
-        - Please ensure that ``run_with_gpu.sh`` was used to create the docker container, and that it is using CUDA properly.
-        - Ensure that docker is correctly using CUDA
-        - It is not recommended for you to use WSL (Windows Subsystem for Linux) for this project, as it is reported that it has CUDA acceleration issues. If you are under such environment, please see the QQ group chat to see if there are any existing solutions inside the discussion group.
-
-Q: No simulator window showing up after executing ``deploy.py`` for the simulator
-	A: Please ensure that there are no running ROS processes that are not killed properly. Restart the computer and try again
+Q: I am using dockers for both simulator and baseline code, but when I start model inference, nothing happens. What should I do?
+	A: If you make sure all configs are correct, you might have to set up container to container communication.

@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="zh-CN">
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +16,9 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=babeb00e"></script>
-      <script src="../_static/doctools.js?v=888ff710"></script>
-      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../_static/documentation_options.js?v=7d86a446"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/translations.js?v=beaddf03"></script>
     <script src="../_static/js/theme.js"></script>
     <script src="../_static/js/versions.js"></script>
@@ -116,31 +116,23 @@
            <div itemprop="articleBody">
              
   <section id="installation-training">
-<span id="installation"></span><h1>Installation &amp; Training<a class="headerlink" href="#installation-training" title="此标题的永久链接"></a></h1>
+<span id="installation"></span><h1>Installation &amp; Training<a class="headerlink" href="#installation-training" title="Link to this heading"></a></h1>
 <p>To ensure a seamless development workflow, we have provided datasets, baseline codes and simulators for all competitors. Here is how to get started:</p>
 <section id="installing-the-kuavo-data-challenge-baseline-code-repository">
-<h2>1. Installing the <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> (Baseline code) Repository<a class="headerlink" href="#installing-the-kuavo-data-challenge-baseline-code-repository" title="此标题的永久链接"></a></h2>
-<p>This repository is used for data conversion, model training and model deployment. Use git operation to fetch the latest codebase (master branch):</p>
+<h2>1. Installing the <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> (Baseline code) Repository<a class="headerlink" href="#installing-the-kuavo-data-challenge-baseline-code-repository" title="Link to this heading"></a></h2>
+<p>This repository is used for data conversion, model training and model deployment. Use git operation to fetch the latest codebase (<strong>icra</strong> branch):</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>dev<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo_data_challenge.git
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>icra<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo_data_challenge.git
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">备注</p>
-<p>For more details regarding to its installation and usage, please refer to this <a class="reference external" href="http://huangrc1110.github.io/kdc-web">documentation</a>.</p>
 </div>
 </div></blockquote>
 </section>
 <section id="installing-the-kuavo-ros-opensource-simulator-repository">
-<h2>2. Installing the <a class="reference external" href="https://github.com/LejuRobotics/kuavo-ros-opensource">kuavo-ros-opensource</a> (Simulator) Repository<a class="headerlink" href="#installing-the-kuavo-ros-opensource-simulator-repository" title="此标题的永久链接"></a></h2>
-<p>This repository contains the simulator. Use git operation to fetch the latest codebase (opensource/kuavo-data-challenge branch):</p>
+<h2>2. Installing the <a class="reference external" href="https://github.com/LejuRobotics/kuavo-ros-opensource/tree/opensource/kuavo-data-challenge-icra">kuavo-ros-opensource</a> (Simulator) Repository<a class="headerlink" href="#installing-the-kuavo-ros-opensource-simulator-repository" title="Link to this heading"></a></h2>
+<p>This repository contains the simulator. Use git operation to fetch the latest codebase (<strong>opensource/kuavo-data-challenge-icra</strong> branch):</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>opensource/kuavo-data-challenge<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo-ros-opensource.git
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>opensource/kuavo-data-challenge-icra<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo-ros-opensource.git
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">备注</p>
-<p>For more details regarding to its installation and usage, please refer to its corresponding <a class="reference external" href="https://github.com/LejuRobotics/kuavo-ros-opensource/blob/opensource/kuavo-data-challenge/readme.md">README</a>  documentation found on its GitHub page</p>
 </div>
 </div></blockquote>
 </section>

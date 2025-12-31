@@ -8,6 +8,16 @@ The 1st Real-world Embodied AI Learning Challenge
 
 .. image:: ./_static/images/heading.png
 
+.. .. raw:: html
+
+..    <div class="banner-video-container" style="position: relative; width: 100%; max-width: 1200px; height: 360px; margin: 0 auto; overflow: hidden;">
+..       <video autoplay loop muted playsinline class="banner-video" poster="./_static/images/banner1.png" style="position: absolute; inset: 0; width: 100%; height: 90%; object-fit: cover; z-index: 1;">
+..          <source src="./_static/videos/banner1.mov" type="video/quicktime">
+..          <source src="./_static/videos/banner1.mov" type="video/mp4">
+..          Your browser does not support the video tag.
+..       </video>
+..       <img src="./_static/images/banner1.png" alt="Banner" class="banner-image" style="position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); max-width: 70%; max-height: 45%; width: auto; height: auto; object-fit: contain; z-index: 2; pointer-events: none;" />
+..    </div>
 .. raw:: html
 
    <div align="center">
@@ -39,6 +49,8 @@ The 1st Real-world Embodied AI Learning Challenge
 
 .. .. image:: https://kuavo.lejurobot.com/manual/assets/images/kuavo_4pro-cf84d43f1c370666c6e810d2807ae3e4.png
 ..    :width: 400px
+.. note::
+   This manual is being updated in a regular basis...
 
 .. note::
 
@@ -54,6 +66,17 @@ The competition repositories consist of two parts: The baseline code (kuavo_data
    - Simulator deployment interface as well as automatic high-precision model grading system
    - Real-device verification and its deployment
 
+Process
+===================
+The competition consists of the following steps:
+
+1. Sign up for the competition through the competition website
+
+2. Download datasets and baseline codes as well as environment setup
+
+3. Train your models, you are free to use any learning based methods
+
+4. Submit your models and beat other competitors in the leaderboard!
 
 Getting Started
 ===================
@@ -101,8 +124,6 @@ Please consider joining our discussion group:
 ========================================================================
 To facilitate discussion and raising/solving problems and concerns, we have organised a `Discord Server <https://discord.gg/H8RFYH4KNM>`_ just for our contestants, please consider clicking the link to accept the invitation!
 
-This manual is being updated in a regular basis...
-========================================================================
 
 Open-sourcing Agreement
 ============================================

@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="zh-CN">
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +16,9 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=babeb00e"></script>
-      <script src="../_static/doctools.js?v=888ff710"></script>
-      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../_static/documentation_options.js?v=7d86a446"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/translations.js?v=beaddf03"></script>
     <script src="../_static/js/theme.js"></script>
     <script src="../_static/js/versions.js"></script>
@@ -127,12 +127,12 @@
            <div itemprop="articleBody">
              
   <section id="task">
-<span id="id1"></span><h1>任务说明<a class="headerlink" href="#task" title="此标题的永久链接"></a></h1>
+<span id="id1"></span><h1>任务说明<a class="headerlink" href="#task" title="Link to this heading"></a></h1>
 <p>本挑战赛以真实双臂人形机器人平台为核心，围绕工业典型场景设计多个具备真实部署价值的操作任务，并针对每个任务采集了大量高质量真实机器人操作数据。为了方便参赛者进行算法开发与验证，熟悉kuavo机器人的数据格式等，主办方提供了与真实机器人平台高度一致的仿真环境，并举行仿真赛。通过仿真模拟评测筛选出算法成熟度高、具备真机测试价值的队伍进入真机赛，并最终在真实机器人平台上进行算法调整与验证。</p>
 <section id="id2">
-<h2>仿真场景四个任务的说明：<a class="headerlink" href="#id2" title="此标题的永久链接"></a></h2>
+<h2>仿真场景四个任务的说明：<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <section id="id3">
-<h3>任务1：移动目标抓取<a class="headerlink" href="#id3" title="此标题的永久链接"></a></h3>
+<h3>任务1：移动目标抓取<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <p>此任务中，机器人左臂将左侧传送带上的物体抓取并放置到桌面指定区域1，右臂再抓取此物体并放置到区域2。</p>
 <p>其中，环境光照强度，颜色，物体的颜色，在传送带上的位置，区域1与区域2的位置与颜色，均会在一定范围内随机。</p>
 <ul>
@@ -162,7 +162,7 @@
 </ul>
 <div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task1.mp4" type="video/mp4"></video></div></section>
 <section id="id4">
-<h3>任务2：移动物体称重<a class="headerlink" href="#id4" title="此标题的永久链接"></a></h3>
+<h3>任务2：移动物体称重<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <p>此任务中，机器人右臂将正面传送带上的移动物体抓取并放置到桌面的秤(具有一定高度)上，称重后左臂再将物体从秤抓取放置到目标区域。</p>
 <p>其中，环境光照强度，颜色，物体的颜色，在传送带上的位置，秤与目标区域的位置与颜色，均会在一定范围内随机。</p>
 <ul>
@@ -192,7 +192,7 @@
 </ul>
 <div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task2.mp4" type="video/mp4"></video></div></section>
 <section id="id5">
-<h3>任务3：物体定姿摆放<a class="headerlink" href="#id5" title="此标题的永久链接"></a></h3>
+<h3>任务3：物体定姿摆放<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <p>此任务中，机器人需要将桌面上的三个物体中反面的物体进行翻面并运送到目标区域，正面物体不翻面仅移动到目标区域。</p>
 <p>其中，三个物体中会有随机的两个物体是反面，一个物体是正面，三个物体的位置会在一定范围内随机。</p>
 <ul>
@@ -222,7 +222,7 @@
 </ul>
 <div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task3.mp4" type="video/mp4"></video></div></section>
 <section id="id6">
-<h3>任务4：全流程分拣<a class="headerlink" href="#id6" title="此标题的永久链接"></a></h3>
+<h3>任务4：全流程分拣<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>此任务中，机器人需要先移动到前方货架，右臂抓取物体1，转身并移动到后方货架，将物体1放置于料盘A。再从后方货架移动到前方货架，左臂抓取物体2，返回后方货架并将物体2放置于料盘B。</p>
 <p>其中，物体1，2的位置，料盘A，B的位置会在一定范围内随机。</p>
 <ul class="simple">
@@ -248,9 +248,9 @@
 <div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task4.mp4" type="video/mp4"></video></div></section>
 </section>
 <section id="id7">
-<h2>真实场景三个任务的说明：<a class="headerlink" href="#id7" title="此标题的永久链接"></a></h2>
+<h2>真实场景三个任务的说明：<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
 <section id="sps">
-<h3>任务1：SPS物料分拣<a class="headerlink" href="#sps" title="此标题的永久链接"></a></h3>
+<h3>任务1：SPS物料分拣<a class="headerlink" href="#sps" title="Link to this heading"></a></h3>
 <p>任务描述：机器人站立不动，夹取指定的安全带或者线缆，将其放至指定的空箱子中。</p>
 <dl class="simple">
 <dt>挑战要点：</dt><dd><ul class="simple">
@@ -263,7 +263,7 @@
 <img alt="../_images/task1_real.png" src="../_images/task1_real.png" />
 </section>
 <section id="id8">
-<h3>任务2：产品质检称重<a class="headerlink" href="#id8" title="此标题的永久链接"></a></h3>
+<h3>任务2：产品质检称重<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <p>任务描述：机器人从桌面上拾取机械套管，先放置在电子秤上完成称重，随后按照合格与不合格的产品分别，再次拾起并放入正确的收纳筐中。</p>
 <dl class="simple">
 <dt>挑战要点：</dt><dd><ul class="simple">
@@ -276,7 +276,7 @@
 <img alt="../_images/task2_real.png" src="../_images/task2_real.png" />
 </section>
 <section id="id9">
-<h3>任务3：日化产品上料<a class="headerlink" href="#id9" title="此标题的永久链接"></a></h3>
+<h3>任务3：日化产品上料<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <p>任务描述：机器人从杂乱摆放的牙膏盒中随机拾取一盒，一只手先将其摆放规整，另一只手拾起后，再按照指定放置在目标传送带上面。</p>
 <dl class="simple">
 <dt>挑战要点：</dt><dd><ul class="simple">

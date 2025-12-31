@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +16,9 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b3ba4146"></script>
-      <script src="../_static/doctools.js?v=888ff710"></script>
-      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <script src="../_static/js/versions.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -77,13 +77,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#simulation-task-description">Simulation Task Description</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#task-1-toy-sorting">Task 1: Toy Sorting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#task-2-parcel-weighing">Task 2: Parcel Weighing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#task-3-part-sorting">Task 3: Part Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-3-conveyor-belt-parts-sorting">Task 3: Conveyor Belt Parts Sorting</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#real-machine-task-description">Real-machine Task Description</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#task-1-rubbish-sorting">Task 1: Rubbish Sorting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Task 2: Parcel Weighing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Task 3: Part Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Task 3: Conveyor Belt Parts Sorting</a></li>
 </ul>
 </li>
 </ul>
@@ -125,20 +125,20 @@
            <div itemprop="articleBody">
              
   <section id="task-description">
-<span id="task"></span><h1>Task Description<a class="headerlink" href="#task-description" title="Permalink to this heading"></a></h1>
+<span id="task"></span><h1>Task Description<a class="headerlink" href="#task-description" title="Link to this heading"></a></h1>
 <p>At its core, this competition is based on real dual-arm humanoid robots, with several tasks thoughtfully prepared that are highly representative of typical industrial applications workflow. In addition, a simulation environment that closely resembles the task workflows of the real robot is also provided, along with open access to high-quality task datasets, evaluation scripts, complete execution pipelines, online evaluation servers and ready-to-run baseline code.
 The simulation track is especially designed for competitors to familiarise themselves with the Kuavo robot dataset formats, algorithm development and algorithm testing with our baseline code. It also simulates and selects teams with highly matured algorithms that are highly worthy of real-robot competition in a fair manner.</p>
 <section id="simulation-task-description">
-<h2>Simulation Task Description<a class="headerlink" href="#simulation-task-description" title="Permalink to this heading"></a></h2>
+<h2>Simulation Task Description<a class="headerlink" href="#simulation-task-description" title="Link to this heading"></a></h2>
 <section id="task-1-toy-sorting">
-<h3>Task 1: Toy Sorting<a class="headerlink" href="#task-1-toy-sorting" title="Permalink to this heading"></a></h3>
-<p>In this task, there will be assorted toys randomly laid out on a desk surface. The robot needs to grasp the toys one-by-one, and place all the animal toys into the right basket, while all the car toys go into the left basket.</p>
+<h3>Task 1: Toy Sorting<a class="headerlink" href="#task-1-toy-sorting" title="Link to this heading"></a></h3>
+<p>In this task, there will be assorted toys randomly laid out on a desk surface. The robot needs to grasp the toys, and place all the animal toys into the right basket, while all the car toys go into the left basket.</p>
 <p>Within this task, the robot will start from a reasonable randomised location away from the desk; the height of the desk as well as the assortment of toys on the desk are also randomised.</p>
 <ul class="simple">
 <li><dl class="simple">
 <dt>Scoring standards:</dt><dd><ol class="loweralpha simple">
 <li><p>40 pts for every correct placement of each of the toys</p></li>
-<li><p>20 pts for completing it within a specified timeframe. A 2-pt <strong>penalty</strong> will be applied for every second elapsed outside of this timeframe</p></li>
+<li><p>20 pts for completing it within a specified timeframe. 1-pt <strong>penalty</strong> will be applied for every second elapsed outside of this timeframe</p></li>
 </ol>
 </dd>
 </dl>
@@ -147,7 +147,7 @@ The simulation track is especially designed for competitors to familiarise thems
 <img alt="../_images/task3_sim.png" src="../_images/task3_sim.png" />
 </section>
 <section id="task-2-parcel-weighing">
-<h3>Task 2: Parcel Weighing<a class="headerlink" href="#task-2-parcel-weighing" title="Permalink to this heading"></a></h3>
+<h3>Task 2: Parcel Weighing<a class="headerlink" href="#task-2-parcel-weighing" title="Link to this heading"></a></h3>
 <p>In this task, the robot is required to pick up a soft-pouch express parcel from a moving conveyor belt, place it on an electronic scale for weighing, and then transfer it to another conveyor belt.</p>
 <p>Within this task, the positioning of the parcel and the scale will be randomised within a reasonable range.</p>
 <p>Each task is out of 100 base points as the base task score.</p>
@@ -156,16 +156,16 @@ The simulation track is especially designed for competitors to familiarise thems
 <dt>Scoring standards:</dt><dd><ol class="loweralpha simple">
 <li><p>40 pts for the correct placement of the object onto its desginated area (the electronic scale)</p></li>
 <li><p>40 pts for the correct placement of the object after weighing</p></li>
-<li><p>20 pts for completing it within a specified timeframe. A 2-pt <strong>penalty</strong> will be applied for every second elapsed outside of this timeframe</p></li>
+<li><p>20 pts for completing it within a specified timeframe. 1-pt <strong>penalty</strong> will be applied for every second elapsed outside of this timeframe</p></li>
 </ol>
 </dd>
 </dl>
 </li>
 </ul>
-<img alt="../_images/task1_sim.png" src="../_images/task1_sim.png" />
+<img alt="../_images/task2_sim.jpg" src="../_images/task2_sim.jpg" />
 </section>
-<section id="task-3-part-sorting">
-<h3>Task 3: Part Sorting<a class="headerlink" href="#task-3-part-sorting" title="Permalink to this heading"></a></h3>
+<section id="task-3-conveyor-belt-parts-sorting">
+<h3>Task 3: Conveyor Belt Parts Sorting<a class="headerlink" href="#task-3-conveyor-belt-parts-sorting" title="Link to this heading"></a></h3>
 <p>In this task, the robot needs to pick up a component chosen from different categories representative in the industrial setting, lying in a randomised orientation on a moving conveyor belt, and then place the component into the correct sorting bin.
 Four such components are given in this task, and the task is considered as successful after correct placements of all four such components.</p>
 <p>Within this task, the height of the conveyor, the positioning and orientation of the component, as well as when the component will be dropped off onto the conveyor belt, will be randomised within a reasonable range.</p>
@@ -174,7 +174,7 @@ Four such components are given in this task, and the task is considered as succe
 <dt>Scoring standards:</dt><dd><ol class="loweralpha simple">
 <li><p>20 pts for each successful sequence of grasp and final placement of each of the components</p></li>
 <li><p>10 pts for successful completion of all four components in a row</p></li>
-<li><p>10 pts for completing it within a specified timeframe. An 1-pt <strong>penalty</strong> will be applied for every second elapsed outside of this timeframe</p></li>
+<li><p>10 pts for completing it within a specified timeframe. 1-pt <strong>penalty</strong> will be applied for every second elapsed outside of this timeframe</p></li>
 </ol>
 </dd>
 </dl>
@@ -184,57 +184,22 @@ Four such components are given in this task, and the task is considered as succe
 </section>
 </section>
 <section id="real-machine-task-description">
-<h2>Real-machine Task Description<a class="headerlink" href="#real-machine-task-description" title="Permalink to this heading"></a></h2>
+<h2>Real-machine Task Description<a class="headerlink" href="#real-machine-task-description" title="Link to this heading"></a></h2>
 <section id="task-1-rubbish-sorting">
-<h3>Task 1: Rubbish Sorting<a class="headerlink" href="#task-1-rubbish-sorting" title="Permalink to this heading"></a></h3>
+<h3>Task 1: Rubbish Sorting<a class="headerlink" href="#task-1-rubbish-sorting" title="Link to this heading"></a></h3>
 <p>In this task, there will be assorted refuse randomly laid out on a desk surface. The robot needs to grasp the rubbish pieces one-by-one, and place all the recyclable items into the blue bin, while all the other rubbish go into the grey bin.</p>
-<p>Within this task, the robot will start from a reasonable randomised location away from the desk; the height of the desk as well as the assortment of refuse on the desk is also randomised.</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>Scoring standards:</dt><dd><ol class="loweralpha simple">
-<li><p>40 pts for every correct placement of each of the rubbish pieces</p></li>
-<li><p>20 pts for performing the task within the expected time duration. A 2-pt <strong>penalty</strong> will be applied for each second elapsed beyond the expected time duration</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-</ul>
 <img alt="../_images/task3_real.jpeg" src="../_images/task3_real.jpeg" />
 </section>
 <section id="id1">
-<h3>Task 2: Parcel Weighing<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<h3>Task 2: Parcel Weighing<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
 <p>In this task, the robot is required to pick up a soft-pouch parcel from a moving conveyor belt, place it on an electronic scale for weighing, and then transfer it to another conveyor belt.</p>
-<p>Within this task, the positioning of the parcel and the scale will be randomised within a reasonable range.</p>
 <p>Each task is out of 100 base points as the base task score.</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>Scoring standards:</dt><dd><ol class="loweralpha simple">
-<li><p>40 pts for the correct placement of the object onto its desginated area (the electronic scale)</p></li>
-<li><p>40 pts for the correct placement of the object after weighing</p></li>
-<li><p>20 pts for completing it within a specified timeframe. A 2-pt <strong>penalty</strong> will be applied for every second elapsed outside of this timeframe</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-</ul>
 <img alt="../_images/task1_real.jpeg" src="../_images/task1_real.jpeg" />
 </section>
 <section id="id2">
-<h3>Task 3: Part Sorting<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<h3>Task 3: Conveyor Belt Parts Sorting<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <p>In this task, the robot needs to pick up a component chosen from different categories representative in the industrial setting, lying in a randomised orientation on a moving conveyor belt, and then place the component into the correct sorting bin.
 Four such components are given in this task, and the task is considered as successful after correct placements of all four such components.</p>
-<p>Within this task, the lighting/reflection, colours, and the positioning of the component and the bins will be randomised within a reasonable range.</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>Scoring standards:</dt><dd><ol class="loweralpha simple">
-<li><p>20 pts for each successful sequence of grasp and final placement of each of the components</p></li>
-<li><p>10 pts for successful completion of all four components in a row</p></li>
-<li><p>10 pts for completing it within a specified timeframe. An 1-pt <strong>penalty</strong> will be applied for every second elapsed outside of this timeframe</p></li>
-</ol>
-</dd>
-</dl>
-</li>
-</ul>
 <img alt="../_images/task2_real.jpeg" src="../_images/task2_real.jpeg" />
 </section>
 </section>
