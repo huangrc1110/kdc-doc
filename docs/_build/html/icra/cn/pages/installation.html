@@ -9,7 +9,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &amp; Training &mdash; Competition Manual  文档</title>
+  <title>Simulator &amp; Baseline Code &mdash; Competition Manual  文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=c773721a" />
 
@@ -78,9 +78,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Competition Overview</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="signup.html">Competition Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signup.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation &amp; Training</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Simulator &amp; Baseline Code</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installing-the-kuavo-data-challenge-baseline-code-repository">1. Installing the kuavo_data_challenge (Baseline code) Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installing-the-kuavo-ros-opensource-simulator-repository">2. Installing the kuavo-ros-opensource (Simulator) Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#video-tutorial">3. Video Tutorial</a></li>
@@ -107,7 +107,7 @@
           <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Installation &amp; Training</li>
+      <li class="breadcrumb-item active">Simulator &amp; Baseline Code</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -116,9 +116,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="installation-training">
-<span id="installation"></span><h1>Installation &amp; Training<a class="headerlink" href="#installation-training" title="Link to this heading"></a></h1>
+  <section id="simulator-baseline-code">
+<span id="installation"></span><h1>Simulator &amp; Baseline Code<a class="headerlink" href="#simulator-baseline-code" title="Link to this heading"></a></h1>
 <p>To ensure a seamless development workflow, we have provided datasets, baseline codes and simulators for all competitors. Here is how to get started:</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>All repositories might be updated from time to time, it is recommended to always fetch the latest codebase before starting your development.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>Please use the correct branches:</p>
+<ul class="simple">
+<li><p>Baseline code repo (<cite>kuavo_data_challenge</cite>): <code class="docutils literal notranslate"><span class="pre">icra</span></code></p></li>
+<li><p>Simulator repo (<cite>kuavo-ros-opensource</cite>): <code class="docutils literal notranslate"><span class="pre">opensource/kuavo-data-challenge-icra</span></code></p></li>
+</ul>
+</div>
 <section id="installing-the-kuavo-data-challenge-baseline-code-repository">
 <h2>1. Installing the <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/tree/icra">kuavo_data_challenge</a> (Baseline code) Repository<a class="headerlink" href="#installing-the-kuavo-data-challenge-baseline-code-repository" title="Link to this heading"></a></h2>
 <p>This repository is used for data conversion, model training and model deployment. Use git operation to fetch the latest codebase (<strong>icra</strong> branch):</p>

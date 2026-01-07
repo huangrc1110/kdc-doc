@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "Competition Manual"
-copyright = '2016-2025, Leju Robot'
+copyright = '2016-2026, Leju Robot'
 author = 'lejurobot'
 
 # -- General configuration ---------------------------------------------------

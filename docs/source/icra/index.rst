@@ -74,21 +74,6 @@ The competition consists of the following steps:
 
 4. Submit your models and beat other competitors in the leaderboard!
 
-Getting Started
-===================
-.. descriptions here are active
-
-1. :doc:`pages/signup`
-      The signup process for this competition
-
-2. :doc:`pages/datasets`
-      Detailed description of the datasets
-
-3. :doc:`pages/installation`
-      Baseline code installation and usage
-
-4. :doc:`pages/submit`
-      Details on how to submit your models
 
 .. toctree::
    :maxdepth: 1
@@ -120,6 +105,13 @@ Please consider joining our discussion group:
 ========================================================================
 To facilitate discussion and raising/solving problems and concerns, we have organised a `Discord Server <https://discord.gg/H8RFYH4KNM>`_ just for our contestants, please consider clicking the link to accept the invitation!
 
+Quick Links Here:
+========================================================================
+- `Competition Website <https://www.kdc.icra.lejurobot.com/home>`_
+- `Competition Datasets <https://huggingface.co/datasets/LejuRobotics/kuavo_data_challenge_icra>`_
+- `Baseline Code Repository <https://github.com/LejuRobotics/kuavo_data_challenge/tree/icra>`_
+- `Simulator Repository <https://github.com/LejuRobotics/kuavo-ros-opensource/tree/opensource/kuavo-data-challenge-icra>`_
+- `Discussion Group (Discord) <https://discord.gg/H8RFYH4KNM>`_
 
 Open-sourcing Agreement
 ============================================

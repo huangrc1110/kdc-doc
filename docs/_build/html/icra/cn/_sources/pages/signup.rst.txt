@@ -1,7 +1,7 @@
 .. _signup:
  
 ******************************
-Competition Registration
+Registration
 ******************************
 
 This competition comprises of teams of 1–4 people. Please sign-up for the competition first before forming teams, and all members within all teams are required to be on the signup list and have their identities verified. There are no costs for signing up for this competition. Please thoroughly read the full rules and requirements laid out on the competition website prior to signing up.
@@ -25,7 +25,3 @@ Note
 
 - After registration, you will be in a team where you are the team leader. You can joint other teams or let others join your team. Each person has 3 chances to join a team.
 - All submission and ranking will be based on the team level. Every team member is able to submit submissions for the competition.
-
-Joining our Discussions Group
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-To facilitate discussion and raising/solving problems and concerns, we have organised a `Discord server <https://discord.gg/H8RFYH4KNM>`_  just for our contestants, please click on the link join the chat as soon as possible after registration!

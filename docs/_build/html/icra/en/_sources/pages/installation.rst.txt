@@ -1,10 +1,19 @@
 .. _installation:
 
 ************************************
-Installation & Training
+Simulator & Baseline Code
 ************************************
 
 To ensure a seamless development workflow, we have provided datasets, baseline codes and simulators for all competitors. Here is how to get started:
+
+.. note::
+   All repositories might be updated from time to time, it is recommended to always fetch the latest codebase before starting your development.
+
+.. important::
+   Please use the correct branches:
+
+   - Baseline code repo (`kuavo_data_challenge`): ``icra``
+   - Simulator repo (`kuavo-ros-opensource`): ``opensource/kuavo-data-challenge-icra``
 
 1. Installing the `kuavo_data_challenge <https://github.com/LejuRobotics/kuavo_data_challenge/tree/icra>`_ (Baseline code) Repository
 ======================================================================================================================================================

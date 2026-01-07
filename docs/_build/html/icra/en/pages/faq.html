@@ -76,9 +76,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Competition Overview</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="signup.html">Competition Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signup.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Simulator &amp; Baseline Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="submit.html">Submission</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
@@ -129,11 +129,15 @@
 <dt>Q: How will the submissions be evaluated and how do I submit my code?</dt><dd><p>A: For submission, we would require you to package your code and environment into a docker image, which will be run on our evaluation server. In other word, we only provide simulation environment part. It will be pretty much like how you test your model locally but surely there will be some differences like seed setting, time limit, etc.
 Instructions on how to submit your code (for two stages) will be updated soon in the ‘Submission’ page.</p>
 </dd>
+<dt>Q: Do I have to complete all three tasks?</dt><dd><p>A: Strictly speaking, no. But it is highly recommended to do so, as the final ranking will be based on the aggregate scores of all three tasks(both sim and real).</p>
+</dd>
 </dl>
 </section>
 <section id="common-technical-issues-resolution">
 <h2>Common Technical Issues &amp; Resolution<a class="headerlink" href="#common-technical-issues-resolution" title="Link to this heading"></a></h2>
 <dl class="simple">
+<dt>Q: How much harddisk space do I need to set aside for the datasets and baseline code?</dt><dd><p>A: The total size of the datasets is around 1.3TB (280GB for TASK1, 250GB for TASK2, and 800GB for TASK3). The baseline code and simulator are relatively small in size (less than 1GB). But notice that you don’t have to download all datasets at once. And if you choose to use lerobot format, the size will be much smaller.</p>
+</dd>
 <dt>Q: How to use two repositories (baseline code and simulator) together?</dt><dd><p>A: The baseline code repository provides an example of how to convert the dateset, model training and model inference. The simulator repository serve as the simulation environment as well as scorement system. Two repositories are independent.</p>
 </dd>
 <dt>Q: I am implementing model inference, but the simulator keeps reset. What should I do?</dt><dd><p>A: Normally this is due to incorrect config settings. Please make sure all paths, names are correctly set.</p>

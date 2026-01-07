@@ -23,8 +23,14 @@ Q: How will the submissions be evaluated and how do I submit my code?
 	A: For submission, we would require you to package your code and environment into a docker image, which will be run on our evaluation server. In other word, we only provide simulation environment part. It will be pretty much like how you test your model locally but surely there will be some differences like seed setting, time limit, etc. 
 	Instructions on how to submit your code (for two stages) will be updated soon in the 'Submission' page.
 
+Q: Do I have to complete all three tasks?
+	A: Strictly speaking, no. But it is highly recommended to do so, as the final ranking will be based on the aggregate scores of all three tasks(both sim and real).
+
 Common Technical Issues & Resolution
 =====================================================
+Q: How much harddisk space do I need to set aside for the datasets and baseline code?
+	A: The total size of the datasets is around 1.4TB (300GB for TASK1, 300GB for TASK2, and 800GB for TASK3). The baseline code and simulator are relatively small in size (less than 1GB). But notice that you don't have to download all datasets at once. And if you choose to use lerobot format, the size will be much smaller.
+
 Q: How to use two repositories (baseline code and simulator) together?
 	A: The baseline code repository provides an example of how to convert the dateset, model training and model inference. The simulator repository serve as the simulation environment as well as scorement system. Two repositories are independent.
 
