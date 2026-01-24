@@ -1,0 +1,592 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>真机赛 &mdash; 赛事手册  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=c773721a" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <script src="../_static/js/versions.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FAQs" href="faq.html" />
+    <link rel="prev" title="Submission" href="submit.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="switch-menus">
+                <div class="language-switch">
+                  <a href=" ../../cn/pages/real.html" style="color: #ffffff !important;">中 /</a>
+                  <a href=" ../../en/pages/real.html" style="color: #ffffff !important;">En</a>
+                </div>
+              <!-- </div>
+              <div class="switch-menus"> -->
+                  <div class="version-switch">
+                      <select id="competitionSelect" onchange="if(this.value) window.location.href=this.value">
+                          <!-- <a href=" ../../..//cn/pages/real.html" -->
+                          <option value=" ../../../tianchi/cn/pages/real.html" selected="selected">Tianchi</option>
+                          <option value=" ../../../icra/en/pages/real.html">ICRA 2026</option>
+                      </select>
+                      
+                      <!-- <select id="languageSelect" onchange="if(this.value) window.location.href=this.value">
+                          <option value=" ../../cn/pages/real.html" selected="selected">中文</option>
+                          <option value=" ../../en/pages/real.html">English</option>
+                      </select> -->
+                      <!-- <button onclick="switchVersion()">Switch</button> -->
+                      <!-- ::after -->
+                  </div>
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Competition Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks.html">Tasks Description</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Competition Overview</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="signup.html">Competition Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submit.html">Submission</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">真机赛</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">真机赛任务介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">任务简介</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">任务一</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">任务二</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">任务三</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">任务评分</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">任务1：桌面物料分拣（100分）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">任务2：工业零件质检（100分）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">任务3：汽车大件上料（100分）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">真机赛数据介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modelscope">真机数据下载地址(modelscope)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">真机赛配置文件说明(可对照修改，最好不要直接复制粘贴)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">数据转换（可能需要修改的地方有注释）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">模型推理配置文件</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main-configkuavo-real-env-yaml">main分支(需要修改的config是kuavo_real_env.yaml，可能需要修改的地方有注释)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dev">dev分支(可能需要修改的地方有注释)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">真机赛提交说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">真机赛成绩说明</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forums.html">Forums</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">赛事手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">真机赛</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>真机赛<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="id2">
+<h2>真机赛任务介绍<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<section id="id3">
+<h3>任务简介<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p>真机赛中使用的机器人为乐聚夸父4pro（kauvo 4 pro），末端执行器为灵巧手/夹爪</p>
+<section id="id4">
+<h4>任务一<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<p>桌面物料分拣：机器人站立不动，完成pick and place操作。 夹取安全带、线缆、pin口（三种零件）放到对应的空盒子中</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task1_real.mp4" type="video/mp4"></video></div></section>
+<section id="id5">
+<h4>任务二<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<p>工业零件质检：将机械套管承重，根据亮灯情况判断合格与不合格，并产品分别放在指定区域</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task2_real.mp4" type="video/mp4"></video></div></section>
+<section id="id6">
+<h4>任务三<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
+<p>汽车大件上料：将汽车钣金料抓取，放置到指定区域</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task3_real.mp4" type="video/mp4"></video></div></section>
+</section>
+<section id="id7">
+<h3>任务评分<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p>每个任务将会测评十轮，最终得分为十轮得分的平均值</p>
+<section id="id8">
+<h4>任务1：桌面物料分拣（100分）<a class="headerlink" href="#id8" title="Link to this heading"></a></h4>
+<p>测评时，会随机放置三种物料（安全带、线缆、pin口），每种物料各一个，共三个，评分标准如下：</p>
+<ul class="simple">
+<li><p>抓取成功且稳定：10分/每个物体，共30分</p></li>
+<li><p>准确放至指定位置：20分/每个物体，共60分</p></li>
+<li><p>全部完成奖励：10分</p></li>
+</ul>
+</section>
+<section id="id9">
+<h4>任务2：工业零件质检（100分）<a class="headerlink" href="#id9" title="Link to this heading"></a></h4>
+<p>测评时，会在任意一排放置五个套管，需要将一排五个套管全部抓取完成，并根据“绿灯合格，红灯不合格”的规则放置，评分标准如下：</p>
+<ul class="simple">
+<li><p>准确放至电子称：10分/每个套管，共50分</p></li>
+<li><p>正确放至目标区域：10分/每个套管，共50分</p></li>
+</ul>
+</section>
+<section id="id10">
+<h4>任务3：汽车大件上料（100分）<a class="headerlink" href="#id10" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>抓取成功且稳定：40分</p></li>
+<li><p>准确放至指定位置：60分</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="id11">
+<h2>真机赛数据介绍<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>真机视频的size是848*480，区别于仿真数据的640*480</p>
+</div>
+<p>与仿真赛类似，我们提供的真机数据是原生的rosbag，各位选手可根据需要自行处理。真机数据的话题名称、话题内容、数据格式等均与仿真数据相同（除视频图像尺寸）。若仍然使用kuavo_data_challenge的baseline代码框架，则可完全按照之前仿真数据的数据转换、训练、推理流程。需要修改的部分是config文件中的部分配置。</p>
+<p>考虑到在仿真赛环节大家的算力等问题，首批真机数据为每个任务1000条。若后续测试过程中诊断为数据量不够导致模型性能表现不佳，可以联系主办方补充数据。</p>
+<section id="modelscope">
+<h3>真机数据下载地址(modelscope)<a class="headerlink" href="#modelscope" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://www.modelscope.cn/datasets/lejurobot/LET_Tianchi-Dataset">https://www.modelscope.cn/datasets/lejurobot/LET_Tianchi-Dataset</a></p>
+</section>
+</section>
+<section id="id12">
+<h2>真机赛配置文件说明(可对照修改，最好不要直接复制粘贴)<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<section id="id13">
+<h3>数据转换（可能需要修改的地方有注释）<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">########不需要修改#######</span>
+hydra:
+<span class="w">    </span>run:
+<span class="w">        </span>dir:<span class="w"> </span>./outputs/data_cvt_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
+<span class="w">    </span>sweep:
+<span class="w">        </span>dir:<span class="w"> </span>./outputs/data_cvt_hydra_save/multirun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
+<span class="w">        </span>subdir:<span class="w"> </span><span class="si">${</span><span class="nv">hydra</span><span class="p">:</span><span class="nv">job</span><span class="p">.override_dirname</span><span class="si">}</span>
+
+<span class="c1">########根据实际目录修改#######</span>
+rosbag:
+<span class="w">    </span>rosbag_dir:<span class="w"> </span>/path/to/your/rosbag
+<span class="w">    </span>num_used:<span class="w"> </span>null
+<span class="w">    </span>lerobot_dir:<span class="w"> </span>/path/to/your/lerobot/save/file
+
+dataset:
+<span class="w">    </span>only_arm:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># 默认true, 是否只使用手臂数据</span>
+<span class="w">    </span>eef_type:<span class="w"> </span>rq2f85<span class="w"> </span><span class="c1"># 真机可选：leju_claw, qiangnao，任务一二是夹爪 leju_claw，任务三是灵巧手 qiangnao</span>
+<span class="w">    </span>which_arm:<span class="w"> </span>both<span class="w">  </span><span class="c1"># 需要哪一只手臂的数据，可选: left, right, both，注意这会同时选择对应手臂的相机，已默认包含头部相机，任务一和三是单手操作，可以选right（但不是一定选），任务二必须选both</span>
+<span class="w">    </span>use_depth:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># 是否需要深度图像数据，与上面手臂保持一致的深度数据，目前本分支只有diffusion policy支持了深度，ACT policy暂不支持深度图像，但在dev分支中已经支持</span>
+<span class="w">    </span>depth_range:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1000</span><span class="o">]</span><span class="w">  </span><span class="c1"># 深度图的裁剪范围，单位：毫米</span>
+
+<span class="w">    </span>task_description:<span class="w"> </span><span class="s2">&quot;Pick and Place&quot;</span>
+
+<span class="w">    </span>train_hz:<span class="w"> </span><span class="m">10</span>
+<span class="w">    </span>main_timeline:<span class="w"> </span>head_cam_h
+<span class="w">    </span>main_timeline_fps:<span class="w"> </span><span class="m">30</span>
+<span class="w">    </span>sample_drop:<span class="w"> </span><span class="m">10</span>
+
+
+<span class="w">    </span>dex_dof_needed:<span class="w"> </span><span class="m">1</span>
+
+<span class="w">    </span>is_binary:<span class="w"> </span><span class="nb">false</span>
+<span class="w">    </span>delta_action:<span class="w"> </span><span class="nb">false</span>
+<span class="w">    </span>relative_start:<span class="w"> </span><span class="nb">false</span>
+
+<span class="w">    </span>resize:
+<span class="w">        </span>width:<span class="w"> </span><span class="m">848</span>
+<span class="w">        </span>height:<span class="w"> </span><span class="m">480</span>
+</pre></div>
+</div>
+</section>
+<section id="id14">
+<h3>模型推理配置文件<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<section id="main-configkuavo-real-env-yaml">
+<h4>main分支(需要修改的config是kuavo_real_env.yaml，可能需要修改的地方有注释)<a class="headerlink" href="#main-configkuavo-real-env-yaml" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hydra:
+<span class="w">    </span>run:
+<span class="w">        </span>dir:<span class="w"> </span>./outputs/kuavo_sim_deploy_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
+<span class="w">    </span>sweep:
+<span class="w">        </span>dir:<span class="w"> </span>./outputs/kuavo_sim_deploy_hydra_save/multirun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
+<span class="w">        </span>subdir:<span class="w"> </span><span class="si">${</span><span class="nv">hydra</span><span class="p">:</span><span class="nv">job</span><span class="p">.override_dirname</span><span class="si">}</span>
+
+
+real:<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="c1"># 设置为true，表示是真机赛配置</span>
+
+only_arm:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># 设置为true，表示只使用手臂控制</span>
+eef_type:<span class="w"> </span>leju_claw<span class="w">  </span><span class="c1"># 末端执行器类型，真机可选leju_claw或qiangnao: 根据任务使用的eef选择，任务一和二都是夹爪 leju_claw，任务三是灵巧手 qiangnao</span>
+control_mode:<span class="w"> </span>joint
+which_arm:<span class="w"> </span>both<span class="w">  </span><span class="c1"># 需要哪一只手臂的数据，可选: left, right, both，注意这会同时选择对应手臂的相机，已默认包含头部相机；任务一和三是单手操作，可以选right（但不是一定选），任务二必须选both</span>
+head_init:<span class="w"> </span>null
+
+<span class="c1"># input_images：输入图像，可选&quot;head_cam_h&quot;,&#39;depth_h&#39;,&#39;wrist_cam_l&#39;,&#39;depth_l&#39;,&#39;wrist_cam_r&#39;,&#39;depth_r&#39;</span>
+<span class="c1"># (每个都是可选，需要与你的机器人配置、训练模型一致)</span>
+<span class="c1"># 通常：cameras = [{&quot;left&quot;:[&#39;head_cam_h&#39;,&#39;wrist_cam_l&#39;],</span>
+<span class="c1">#                 &quot;right&quot;:[&#39;head_cam_h&#39;,&#39;wrist_cam_r&#39;],</span>
+<span class="c1">#                 &quot;both&quot;:[&#39;head_cam_h&#39;,&#39;wrist_cam_l&#39;,&#39;wrist_cam_r&#39;]</span>
+<span class="c1">#                 },</span>
+<span class="c1">#                 {&quot;left&quot;:[&#39;head_cam_h&#39;,&#39;depth_h&#39;,&#39;wrist_cam_l&#39;,&#39;depth_l&#39;],</span>
+<span class="c1">#                 &quot;right&quot;:[&#39;head_cam_h&#39;,&#39;depth_h&#39;,&#39;wrist_cam_r&#39;,&#39;depth_r&#39;],</span>
+<span class="c1">#                 &quot;both&quot;:[&#39;head_cam_h&#39;,&#39;depth_h&#39;,&#39;wrist_cam_l&#39;,&#39;depth_l&#39;,&#39;wrist_cam_r&#39;,&#39;depth_r&#39;]</span>
+<span class="c1">#                 }][int(self.use_depth)][self.which_arm]</span>
+input_images:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;head_cam_h&quot;</span>,<span class="s1">&#39;depth_h&#39;</span>,<span class="s1">&#39;wrist_cam_l&#39;</span>,<span class="s1">&#39;depth_l&#39;</span>,<span class="s1">&#39;wrist_cam_r&#39;</span>,<span class="s1">&#39;depth_r&#39;</span><span class="o">]</span><span class="w"> </span><span class="c1"># 目前本分支只有diffusion policy支持了深度，ACT policy暂不支持深度图像，但在dev分支中已经支持</span>
+depth_range:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1000</span><span class="o">]</span><span class="w">  </span><span class="c1"># 深度图的裁剪范围，单位：毫米，没有深度图时不起作用</span>
+image_size:<span class="w"> </span><span class="o">[</span><span class="m">480</span>,<span class="w"> </span><span class="m">848</span><span class="o">]</span><span class="w"> </span><span class="c1"># 图像大小（高，宽）</span>
+ros_rate:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># 推理频率，单位Hz</span>
+
+<span class="c1">################### 以下环境配置为不建议改动配置################33</span>
+qiangnao_dof_needed:<span class="w"> </span><span class="m">1</span>
+
+leju_claw_dof_needed:<span class="w"> </span><span class="m">1</span>
+
+rq2f85_dof_needed:<span class="w"> </span><span class="m">1</span>
+
+arm_init:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
+
+arm_min:<span class="w"> </span><span class="o">[</span>-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180<span class="o">]</span>
+arm_max:<span class="w"> </span><span class="o">[</span><span class="m">180</span>,180,180,180,180,180,180,180,180,180,180,180,180,180<span class="o">]</span>
+
+eef_min:<span class="w"> </span><span class="o">[</span><span class="m">0</span><span class="o">]</span>
+eef_max:<span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span>
+
+base_min:<span class="w"> </span><span class="o">[</span>-2.0,<span class="w"> </span>-2.0,<span class="w"> </span>-3.14,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
+base_max:<span class="w"> </span><span class="o">[</span><span class="m">2</span>.0,<span class="w"> </span><span class="m">2</span>.0,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">1</span><span class="o">]</span>
+
+is_binary:<span class="w"> </span><span class="nb">false</span>
+
+<span class="c1">######### 以下为需要根据真机赛任务修改的配置 ###########</span>
+go_bag_path:<span class="w"> </span>/your_bag_path<span class="w">  </span><span class="c1"># 真机推理时需要提供bag包的完整路径，请在kuavo_data_challenge仓库的任意地方存放此次任务的任意一个原始bag包，并给出正确路径</span>
+
+policy_type:<span class="w"> </span><span class="s2">&quot;diffusion&quot;</span><span class="w">  </span><span class="c1"># 策略名字，支持diffusion，act等</span>
+use_delta:<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="c1"># 是否使用增量动作，default=false（暂未支持）</span>
+eval_episodes:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># 测试回合数，真机推理可以连续推理，设置为10或者大于10数值均可</span>
+seed:<span class="w"> </span><span class="m">42</span>
+start_seed:<span class="w"> </span><span class="m">42</span>
+device:<span class="w"> </span><span class="s2">&quot;cuda&quot;</span>
+task:<span class="w"> </span><span class="s2">&quot;your_task&quot;</span>
+method:<span class="w"> </span><span class="s2">&quot;your_method&quot;</span>
+timestamp:<span class="w"> </span><span class="s2">&quot;your_timestamp&quot;</span>
+epoch:<span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c1"># 使用训练保存的哪一个epoch。注意：代码将在outputs/&lt;task&gt;/&lt;method&gt;/run_&lt;timestamp&gt;/epoch10中load policy的模型参数</span>
+max_episode_steps:<span class="w"> </span><span class="m">500</span><span class="w">  </span><span class="c1"># 最大回合步数，超过自动结束，根据任务所需时长调整，设置为500即可</span>
+env_name:<span class="w"> </span>Kuavo-Real<span class="w">  </span><span class="c1"># kuavo仿真器环境名称</span>
+</pre></div>
+</div>
+</section>
+<section id="dev">
+<h4>dev分支(可能需要修改的地方有注释)<a class="headerlink" href="#dev" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hydra:
+<span class="w">    </span>run:
+<span class="w">        </span>dir:<span class="w"> </span>./outputs/kuavo_deploy_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
+<span class="w">    </span>sweep:
+<span class="w">        </span>dir:<span class="w"> </span>./outputs/kuavo_deploy_hydra_save/multirun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
+<span class="w">        </span>subdir:<span class="w"> </span><span class="si">${</span><span class="nv">hydra</span><span class="p">:</span><span class="nv">job</span><span class="p">.override_dirname</span><span class="si">}</span>
+
+env:
+<span class="w">    </span>env_name:<span class="w"> </span>Kuavo-Real<span class="w">  </span><span class="c1"># kuavo环境名称，仿真Kuavo-Sim，真机Kuavo-Real</span>
+<span class="w">    </span>control_mode:<span class="w"> </span>joint<span class="w"> </span><span class="c1"># joint 或 eef （正在开发中）</span>
+<span class="w">    </span>eef_type:<span class="w"> </span>leju_claw<span class="w">  </span><span class="c1"># 末端执行器类型，真机可选leju_claw或qiangnao: 根据任务使用的eef选择，任务一和二都是夹爪 leju_claw，任务三是灵巧手 qiangnao</span>
+<span class="w">    </span>which_arm:<span class="w"> </span>both<span class="w">  </span><span class="c1"># 需要哪一只手臂的数据，可选: left, right, both，注意这会同时选择对应手臂的相机，已默认包含头部相机；任务一和三是单手操作，可以选right（但不是一定选），任务二必须选both</span>
+<span class="w">    </span>head_init:<span class="w"> </span>null<span class="w">  </span><span class="c1"># 机器人头部初始位置，仿真请默认使用这个值，保持观测统一, 真机可根据需要调整，一般为null！！！</span>
+<span class="w">    </span>ros_rate:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># 推理控制频率，单位Hz</span>
+
+<span class="w">    </span>only_arm:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># 默认true, 是否只使用手臂数据</span>
+
+<span class="w">    </span>image_size:<span class="w"> </span><span class="p">&amp;</span>IMGSIZE<span class="w"> </span><span class="o">[</span><span class="m">848</span>,<span class="w"> </span><span class="m">480</span><span class="o">]</span><span class="w">  </span><span class="c1"># 图像大小：宽，高</span>
+<span class="w">    </span>depth_range:<span class="w"> </span><span class="p">&amp;</span>DEPTHRANGE<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 深度图范围设置，单位mm，default=[0,1500]</span>
+<span class="w">    </span>obs_key_map:<span class="w">  </span><span class="c1"># 话题、消息类型、频率、图像尺寸、深度裁剪等配置，深度图范围设置，单位mm，default=[0,1500]，请注意需要与训练保持一致！</span>
+<span class="w">        </span>head_cam_h:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_h/color/image_raw/compressed&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span><span class="w">  </span><span class="c1"># 头部RGB相机话题，必选</span>
+<span class="w">        </span>wrist_cam_l:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_l/color/image_raw/compressed&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span><span class="w">  </span><span class="c1"># 左手腕RGB相机话题，请对应选择，与下至少选择一个</span>
+<span class="w">        </span>wrist_cam_r:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_r/color/image_raw/compressed&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span><span class="w">  </span><span class="c1"># 右手腕RGB相机话题，请对应选择，与上至少选择一个</span>
+<span class="w">        </span>depth_h:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_h/depth/image_raw/compressedDepth&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span><span class="w">  </span><span class="c1"># 头部相机深度图话题，可与上述对应选</span>
+<span class="w">        </span>depth_l:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_l/depth/image_rect_raw/compressedDepth&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span><span class="w">  </span><span class="c1"># 左手腕相机深度图话题，可与上述对应选</span>
+<span class="w">        </span>depth_r:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_r/depth/image_rect_raw/compressedDepth&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span><span class="w">  </span><span class="c1"># 右手腕相机深度图话题，可与上述对应选</span>
+<span class="w">        </span>joint_q:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/sensors_data_raw&quot;</span>,<span class="w"> </span><span class="s2">&quot;sensorsData&quot;</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 关节角度话题，必选</span>
+<span class="w">        </span>qiangnao:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/dexhand/state&quot;</span>,<span class="w"> </span><span class="s2">&quot;JointState&quot;</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 末端执行器的话题，灵巧手</span>
+<span class="w">        </span>leju_claw:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/leju_claw_state&quot;</span>,<span class="w"> </span><span class="s2">&quot;lejuClawState&quot;</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 末端执行器的话题，夹爪</span>
+<span class="w">        </span>rq2f85:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/gripper/state&quot;</span>,<span class="w"> </span><span class="s2">&quot;JointState&quot;</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 末端执行器的话题，仿真中夹爪</span>
+
+<span class="w">    </span>arm_state_keys:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;joint_q&quot;</span>,<span class="s2">&quot;gripper&quot;</span><span class="o">]</span><span class="w">  </span><span class="c1"># 默认不动，模型观测输入的手臂状态包含关节角度和夹爪开合状态</span>
+<span class="w">    </span>frame_alignment:<span class="w"> </span><span class="nb">false</span><span class="w">  </span><span class="c1"># 是否启用帧对齐，default=false</span>
+<span class="w">    </span>ratio:<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span><span class="c1"># 使用帧对齐时，获取最近观测占所有历史观测的比例，default=1.0</span>
+
+<span class="w">    </span>limits:
+<span class="w">        </span>joint_q:
+<span class="w">        </span>min:<span class="w"> </span><span class="o">[</span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14<span class="o">]</span>
+<span class="w">        </span>max:<span class="w"> </span><span class="o">[</span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14<span class="o">]</span>
+
+<span class="w">        </span>gripper:
+<span class="w">        </span>min:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
+<span class="w">        </span>max:<span class="w"> </span><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span><span class="o">]</span>
+
+<span class="w">        </span>eef:
+<span class="w">        </span>min:<span class="w"> </span><span class="o">[</span>-1,<span class="w"> </span>-1,<span class="w"> </span>-1,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-1,<span class="w"> </span>-1,<span class="w"> </span>-1,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14<span class="o">]</span>
+<span class="w">        </span>max:<span class="w"> </span><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14<span class="o">]</span>
+
+<span class="w">        </span>eef_relative:
+<span class="w">        </span>min:<span class="w"> </span><span class="o">[</span>-0.005,<span class="w"> </span>-0.0075,<span class="w"> </span>-0.004,<span class="w"> </span>-0.03,<span class="w"> </span>-0.03,<span class="w"> </span>-0.05,<span class="w"> </span>-0.005,<span class="w"> </span>-0.0075,<span class="w"> </span>-0.004,<span class="w"> </span>-0.03,<span class="w"> </span>-0.03,<span class="w"> </span>-0.05<span class="o">]</span>
+<span class="w">        </span>max:<span class="w"> </span><span class="o">[</span><span class="m">0</span>.005,<span class="w"> </span><span class="m">0</span>.0075,<span class="w"> </span><span class="m">0</span>.004,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.05,<span class="w"> </span><span class="m">0</span>.005,<span class="w"> </span><span class="m">0</span>.0075,<span class="w"> </span><span class="m">0</span>.004,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.05<span class="o">]</span>
+
+<span class="w">        </span>base:
+<span class="w">        </span>min:<span class="w"> </span><span class="o">[</span>-2.0,<span class="w"> </span>-2.0,<span class="w"> </span>-3.14,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
+<span class="w">        </span>max:<span class="w"> </span><span class="o">[</span><span class="m">2</span>.0,<span class="w"> </span><span class="m">2</span>.0,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">1</span><span class="o">]</span>
+
+<span class="w">    </span><span class="c1"># 以下环境配置为不建议改动配置</span>
+
+<span class="w">    </span>qiangnao_dof_needed:<span class="w"> </span><span class="m">1</span>
+
+<span class="w">    </span>is_binary:<span class="w"> </span><span class="nb">false</span>
+
+inference:
+<span class="w">    </span>go_bag_path:<span class="w"> </span>/path/to/your/go.bag<span class="w"> </span><span class="c1"># 真机推理时需要提供bag包的完整路径，请在kuavo_data_challenge仓库的任意地方存放此次任务的任意一个原始bag包，并给出正确路径</span>
+<span class="w">    </span>policy_type:<span class="w"> </span><span class="s2">&quot;act&quot;</span><span class="w">  </span><span class="c1"># 策略名字，支持diffusion，act等</span>
+<span class="w">    </span>eval_episodes:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># 测试回合数，真机推理可以连续推理，设置为10或者大于10数值均可</span>
+<span class="w">    </span>seed:<span class="w"> </span><span class="m">42</span>
+<span class="w">    </span>start_seed:<span class="w"> </span><span class="m">42</span>
+<span class="w">    </span>device:<span class="w"> </span><span class="s2">&quot;cuda&quot;</span>
+<span class="w">    </span>task:<span class="w"> </span><span class="s2">&quot;your_task&quot;</span>
+<span class="w">    </span>method:<span class="w"> </span><span class="s2">&quot;your_method&quot;</span>
+<span class="w">    </span>timestamp:<span class="w"> </span><span class="s2">&quot;your_timestamp&quot;</span>
+<span class="w">    </span>epoch:<span class="w"> </span>best<span class="w">  </span><span class="c1"># 使用训练保存的哪一个epoch，可填50，100，best等，注意：代码将在outputs/train/&lt;task&gt;/&lt;method&gt;/&lt;timestamp&gt;/epoch&lt;epoch&gt;中load policy的模型参数</span>
+<span class="w">    </span>max_episode_steps:<span class="w"> </span><span class="m">500</span><span class="w">  </span><span class="c1"># 最大回合步数，设置为500即可</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="id15">
+<h2>真机赛提交说明<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<p>跟仿真赛同理，真机赛代码提交也是环境和代码打包为 docker 镜像。具体步骤如下：
+1. 配置docker加速，打包环境：可参考仿真赛 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md">提交说明 docker/readme</a> 步骤1-2</p>
+<ol class="arabic" start="2">
+<li><p>复制以下Dockerfile模板（专为真机赛的定制版），修改必要参数，例如Conda环境名、Conda环境包名、添加额外必要系统、python包等，保存为项目根目录下的 <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code></p>
+<div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="c"># =========================</span>
+<span class="c"># Stage 1: Builder</span>
+<span class="c"># =========================</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">ros:noetic-ros-core-focal</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
+
+<span class="k">ARG</span><span class="w"> </span><span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive
+
+<span class="c"># 国内APT源</span>
+<span class="k">RUN</span><span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g&#39;</span><span class="w"> </span>/etc/apt/sources.list<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g&#39;</span><span class="w"> </span>/etc/apt/sources.list
+
+<span class="c"># 安装必要工具和ROS依赖</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>curl<span class="w"> </span>wget<span class="w"> </span>gnupg2<span class="w"> </span>lsb-release<span class="w"> </span>sudo<span class="w"> </span>ca-certificates<span class="w"> </span>build-essential<span class="w"> </span>bzip2<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>ros-noetic-cv-bridge<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>ros-noetic-apriltag-ros<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
+
+<span class="c"># 安装 Miniforge</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">MINIFORGE_URL</span><span class="o">=</span><span class="s2">&quot;https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Miniforge3-Linux-x86_64.sh&quot;</span>
+<span class="k">RUN</span><span class="w"> </span>curl<span class="w"> </span>-L<span class="w"> </span><span class="si">${</span><span class="nv">MINIFORGE_URL</span><span class="si">}</span><span class="w"> </span>-o<span class="w"> </span>/tmp/miniforge.sh<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>bash<span class="w"> </span>/tmp/miniforge.sh<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span>/opt/conda<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>/tmp/miniforge.sh
+
+<span class="k">ENV</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/opt/conda/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">LANG</span><span class="o">=</span>C.UTF-8
+<span class="k">ENV</span><span class="w"> </span><span class="nv">LC_ALL</span><span class="o">=</span>C.UTF-8
+
+<span class="c"># 配置国内镜像并安装 mamba</span>
+<span class="k">RUN</span><span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>show_channel_urls<span class="w"> </span>yes<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>mamba<span class="w"> </span>-c<span class="w"> </span>conda-forge
+
+<span class="c"># 工作目录</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/root/kuavo_data_challenge</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+
+<span class="c"># 解压 Conda 环境并安装项目</span>
+<span class="c"># TODO: 修改Conda环境名和包名，请确保每一个myenv都修改全</span>
+<span class="k">RUN</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;myenv.tar.gz&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>mkdir<span class="w"> </span>-p<span class="w"> </span>./myenv<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tar<span class="w"> </span>-xzf<span class="w"> </span>myenv.tar.gz<span class="w"> </span>-C<span class="w"> </span>./myenv<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>myenv.tar.gz<span class="p">;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="k">fi</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;\</span>
+<span class="s2">      source ./myenv/bin/activate &amp;&amp; \</span>
+<span class="s2">      conda-unpack &amp;&amp; \</span>
+<span class="s2">      pip install -e . &amp;&amp; \</span>
+<span class="s2">      cd ./third_party/lerobot &amp;&amp; pip install -e . -i https://mirrors.aliyun.com/pypi/simple/ &amp;&amp; \</span>
+<span class="s2">      pip install deprecated kuavo_humanoid_sdk==1.2.2 opencv-python==4.11.0.86 opencv-python-headless==4.11.0.86 numpy==1.26.4 -i https://mirrors.aliyun.com/pypi/simple/ &amp;&amp; \</span>
+<span class="s2">      conda clean -afy &amp;&amp; \</span>
+<span class="s2">      rm -rf ./myenv/lib/python*/site-packages/*/tests ./myenv/lib/python*/site-packages/*/test ./myenv/pkgs/* \</span>
+<span class="s2">   &quot;</span>
+
+<span class="c"># =========================</span>
+<span class="c"># Stage 2: Final</span>
+<span class="c"># =========================</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">ros:noetic-ros-core-focal</span>
+
+<span class="c"># 设置工作目录</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/root/kuavo_data_challenge</span>
+
+<span class="c"># 复制 Conda 环境和项目代码</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/opt/conda<span class="w"> </span>/opt/conda
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/root/kuavo_data_challenge<span class="w"> </span>/root/kuavo_data_challenge
+
+<span class="c"># 环境变量</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/opt/conda/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">LANG</span><span class="o">=</span>C.UTF-8
+<span class="k">ENV</span><span class="w"> </span><span class="nv">LC_ALL</span><span class="o">=</span>C.UTF-8
+
+<span class="k">RUN</span><span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g&#39;</span><span class="w"> </span>/etc/apt/sources.list<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g&#39;</span><span class="w"> </span>/etc/apt/sources.list
+<span class="c"># TODO: 如果需要安装其它系统包，请在这里插入</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>ros-noetic-cv-bridge<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>ros-noetic-apriltag-ros<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
+
+<span class="c"># 保留 ROS 环境变量</span>
+<span class="c"># 激活 Conda 环境</span>
+<span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/ros/noetic/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /root/kuavo_data_challenge/myenv/bin/activate&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;chmod 777 -R /root/kuavo_data_challenge/kuavo_deploy&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export ROS_IP=192.168.26.10&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export ROS_MASTER_URI=http://kuavo_master:11311&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc
+
+<span class="c"># 默认命令</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bash&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>后续步骤同仿真赛提交说明4-5，注意修改run_with_gpu.sh中的docker镜像名称为你刚刚打包的真机赛镜像名称即可。</p></li>
+</ol>
+</section>
+<section id="id16">
+<h2>真机赛成绩说明<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<p>真机赛的返回结果将包含以下内容：</p>
+<ol class="arabic simple">
+<li><p>任务平均得分：十轮测试的平均总得分与小分</p></li>
+<li><p>每轮评测得分：每轮测试的总得分与小分</p></li>
+<li><p>每轮评测视频：每轮测试的机器人操作视频（第三视角）</p></li>
+<li><p>log文件：每轮测试的详细log文件，来源 <code class="docutils literal notranslate"><span class="pre">log/kuavo_deploy/kauavo_deploy.log</span></code></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="submit.html" class="btn btn-neutral float-left" title="Submission" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="faq.html" class="btn btn-neutral float-right" title="FAQs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2016-2025, 乐聚机器人.</p>
+  </div> <div class="footer-copyright">
+  <p>
+    Leju (Shenzhen) Robotics Co. Ltd.<br> 
+    Guangdong ICP No. 16048266
+  </p>
+</div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <!-- Version: Tianchi -->
+    Language & Competition
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    
+    <dl>
+      <dt>Languages</dt>
+        
+          <!-- <dd><a href="cn/real.html">cn</a></dd> -->
+           <dd><a href=" ../../cn/pages/real.html">cn</a></dd>
+            <!-- 
+            <dd><a href="cn#">cn</a></dd> -->
+        
+          <!-- <dd><a href="en/real.html">en</a></dd> -->
+           <dd><a href=" ../../en/pages/real.html">en</a></dd>
+            <!-- 
+            <dd><a href="en#">en</a></dd> -->
+        
+    </dl>
+    
+    
+    <dl>
+      <dt>Competition</dt>
+      
+        <!-- <dd><a href="tianchi/pages.html">Tianchi</a></dd> -->
+         <dd><a href=" ../../../tianchi/cn/pages/real.html">Tianchi</a></dd>
+      
+        <!-- <dd><a href="icra/pages.html">ICRA</a></dd> -->
+         <dd><a href=" ../../../icra/en/pages/real.html">ICRA</a></dd>
+      
+    </dl>
+    
+    <br>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

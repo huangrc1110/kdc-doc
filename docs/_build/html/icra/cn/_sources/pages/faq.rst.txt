@@ -29,7 +29,7 @@ Q: Do I have to complete all three tasks?
 Common Technical Issues & Resolution
 =====================================================
 Q: How much harddisk space do I need to set aside for the datasets and baseline code?
-	A: The total size of the datasets is around 1.3TB (280GB for TASK1, 250GB for TASK2, and 800GB for TASK3). The baseline code and simulator are relatively small in size (less than 1GB). But notice that you don't have to download all datasets at once. And if you choose to use lerobot format, the size will be much smaller.
+	A: The total size of the datasets is around 1.4TB (300GB for TASK1, 300GB for TASK2, and 800GB for TASK3). The baseline code and simulator are relatively small in size (less than 1GB). But notice that you don't have to download all datasets at once. And if you choose to use lerobot format, the size will be much smaller.
 
 Q: How to use two repositories (baseline code and simulator) together?
 	A: The baseline code repository provides an example of how to convert the dateset, model training and model inference. The simulator repository serve as the simulation environment as well as scorement system. Two repositories are independent.

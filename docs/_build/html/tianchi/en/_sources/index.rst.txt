@@ -89,6 +89,7 @@
    pages/datasets
    pages/installation
    pages/submit
+   pages/real
 
 .. toctree::
    :maxdepth: 1
