@@ -39,8 +39,6 @@ Important Notes
 Video Tutorial (You may fast-forward through the packaging process)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Coming soon...
-..    .. video:: ../_static/videos/submit_instruction.mp4
-..       :width: 100%
 
 Copy the following Dockerfile template (customized for the simulation track), modify necessary parameters such as the Conda environment name, Conda environment package name, and add any additional required system or Python packages. Save it as ``Dockerfile`` in your project root directory.
    
