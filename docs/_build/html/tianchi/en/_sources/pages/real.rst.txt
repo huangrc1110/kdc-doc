@@ -81,7 +81,7 @@
 
 真机数据下载地址(modelscope)
 -------------------------
-https://www.modelscope.cn/datasets/lejurobot/LET_Tianchi-Dataset
+https://www.modelscope.cn/datasets/lejurobot/LET-Tianchi-Dataset
 
 
 真机赛配置文件说明(可对照修改，最好不要直接复制粘贴)
