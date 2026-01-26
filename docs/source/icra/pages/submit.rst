@@ -48,73 +48,74 @@ Copy the following Dockerfile template (customized for the simulation track), mo
       # Stage 1: Builder
       # =========================
       FROM ros:noetic-ros-core-focal AS builder
+      
       ARG DEBIAN_FRONTEND=noninteractive
-      # Use domestic APT mirrors
+      
       RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list && \
-      sed -i 's/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
-      # Install essential tools and ROS dependencies
+         sed -i 's/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
+      
       RUN apt-get update && apt-get install -y \
-      curl wget gnupg2 lsb-release sudo ca-certificates build-essential bzip2 \
-      ros-noetic-cv-bridge \
-      ros-noetic-apriltag-ros \
-      && rm -rf /var/lib/apt/lists/*
-      # Install Miniforge
+         curl wget gnupg2 lsb-release sudo ca-certificates build-essential bzip2 \
+         ros-noetic-cv-bridge \
+         ros-noetic-apriltag-ros \
+         && rm -rf /var/lib/apt/lists/*
+      
       ENV MINIFORGE_URL="https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Miniforge3-Linux-x86_64.sh"
       RUN curl -L ${MINIFORGE_URL} -o /tmp/miniforge.sh \
-      && bash /tmp/miniforge.sh -b -p /opt/conda \
-      && rm /tmp/miniforge.sh
+         && bash /tmp/miniforge.sh -b -p /opt/conda \
+         && rm /tmp/miniforge.sh
+      
       ENV PATH="/opt/conda/bin:${PATH}"
       ENV LANG=C.UTF-8
       ENV LC_ALL=C.UTF-8
-      # Configure domestic Conda mirrors and install mamba
+      
       RUN conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ \
-      && conda config --set show_channel_urls yes \
-      && conda install -y mamba -c conda-forge
-      # Working directory
+         && conda config --set show_channel_urls yes \
+         && conda install -y mamba -c conda-forge
+      
       WORKDIR /root/kuavo_data_challenge
       COPY . .
-      # Extract Conda environment and install the project
-      # TODO: Replace "myenv" with your actual Conda environment name and package filename throughout
+      
       RUN if [ -f "myenv.tar.gz" ]; then \
-          mkdir -p ./myenv && tar -xzf myenv.tar.gz -C ./myenv && rm myenv.tar.gz; \
-      fi && \
-      /bin/bash -c "\
-          source ./myenv/bin/activate && \
-          conda-unpack && \
-          pip install -e . && \
-          cd ./third_party/lerobot && pip install -e . -i https://mirrors.aliyun.com/pypi/simple/ && \
-          pip install deprecated kuavo_humanoid_sdk==1.2.2 opencv-python==4.11.0.86 opencv-python-headless==4.11.0.86 numpy==1.26.4 -i https:mirrors.aliyun.com/pypi/simple/ && \
-          conda clean -afy && \
-          rm -rf ./myenv/lib/python*/site-packages/*/tests ./myenv/lib/python*/site-packages/*/test ./myenv/pkgs/* \
-      "
+            mkdir -p ./myenv && tar -xzf myenv.tar.gz -C ./myenv && rm myenv.tar.gz; \
+         fi && \
+         /bin/bash -c "\
+            source ./myenv/bin/activate && \
+            conda-unpack && \
+            pip install -e . && \
+            cd ./third_party/lerobot && pip install -e . -i https://mirrors.aliyun.com/pypi/simple/ && \
+            pip install deprecated kuavo_humanoid_sdk==1.2.2 opencv-python==4.11.0.86 opencv-python-headless==4.11.0.86 numpy==1.26.4 -i https://mirrors.aliyun.com/pypi/simple/ && \
+            conda clean -afy && \
+            rm -rf ./myenv/lib/python*/site-packages/*/tests ./myenv/lib/python*/site-packages/*/test ./myenv/pkgs/* \
+         "
+      
       # =========================
       # Stage 2: Final
       # =========================
       FROM ros:noetic-ros-core-focal
-      # Set working directory
+      
       WORKDIR /root/kuavo_data_challenge
-      # Copy Conda environment and project code
+      
       COPY --from=builder /opt/conda /opt/conda
       COPY --from=builder /root/kuavo_data_challenge /root/kuavo_data_challenge
-      # Environment variables
+      
       ENV PATH="/opt/conda/bin:${PATH}"
       ENV LANG=C.UTF-8
       ENV LC_ALL=C.UTF-8
+      
       RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list && \
-      sed -i 's/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
-      # TODO: Add any additional system packages here if needed
+         sed -i 's/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
       RUN apt-get update && apt-get install -y \
-      ros-noetic-cv-bridge \
-      ros-noetic-apriltag-ros \
-      && rm -rf /var/lib/apt/lists/*
-      # Preserve ROS environment variables
-      # Activate Conda environment
+         ros-noetic-cv-bridge \
+         ros-noetic-apriltag-ros \
+         && rm -rf /var/lib/apt/lists/*
+      
       RUN echo "source /opt/ros/noetic/setup.bash" >> /root/.bashrc && \
-      echo "source /root/kuavo_data_challenge/myenv/bin/activate" >> /root/.bashrc && \
-      echo "chmod 777 -R /root/kuavo_data_challenge/kuavo_deploy" >> /root/.bashrc && \
-      echo "export ROS_IP=127.0.0.1" >> /root/.bashrc && \
-      echo "export ROS_MASTER_URI=http://127.0.0.1:11311" >> /root/.bashrc
-      # Default command
+         echo "source /root/kuavo_data_challenge/myenv/bin/activate" >> /root/.bashrc && \
+         echo "chmod 777 -R /root/kuavo_data_challenge/kuavo_deploy" >> /root/.bashrc && \
+         echo "export ROS_IP=127.0.0.1" >> /root/.bashrc && \
+         echo "export ROS_MASTER_URI=http://127.0.0.1:11311" >> /root/.bashrc
+      
       CMD ["bash"]
 
 
