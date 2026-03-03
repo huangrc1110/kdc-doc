@@ -92,6 +92,7 @@ The competition consists of the following steps:
    pages/datasets
    pages/installation
    pages/submit
+   pages/real
 
 .. toctree::
    :maxdepth: 1
