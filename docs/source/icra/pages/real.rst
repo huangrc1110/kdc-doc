@@ -319,7 +319,7 @@ Similar to the simulation competition, real robot competition code submission al
          && bash /tmp/miniforge.sh -b -p /opt/conda \
          && rm /tmp/miniforge.sh
 
-      ENV PATH=”/opt/conda/bin:${PATH}”
+      ENV PATH="/opt/conda/bin:${PATH}"
       ENV LANG=C.UTF-8
       ENV LC_ALL=C.UTF-8
 
@@ -360,7 +360,7 @@ Similar to the simulation competition, real robot competition code submission al
       COPY --from=builder /root/kuavo_data_challenge /root/kuavo_data_challenge
 
       # Environment variables
-      ENV PATH=”/opt/conda/bin:${PATH}”
+      ENV PATH="/opt/conda/bin:${PATH}"
       ENV LANG=C.UTF-8
       ENV LC_ALL=C.UTF-8
 
@@ -381,7 +381,7 @@ Similar to the simulation competition, real robot competition code submission al
          echo “export ROS_MASTER_URI=http://kuavo_master:11311” >> /root/.bashrc
 
       # Default command
-      CMD [“bash”]
+      CMD ["bash"]
 
 3. Subsequent steps are the same as simulation competition submission instructions 4-5, note to modify the docker image name in run_with_gpu.sh to the real robot competition image name you just packaged.
 
