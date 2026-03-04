@@ -14,7 +14,7 @@ The robot used in the real robot competition is Leju Kuavo 4 Pro, with end-effec
 Task 1
 ^^^^^^^^^
 
-Desktop Material Sorting: The robot stands still and completes pick and place operations. Pick up seat belts, cables, and pin connectors (three types of parts) and place them into corresponding empty boxes.
+Small Part Flipping: The robot stands still while the conveyor belt runs at medium speed to transport parts, and the robot performs flipping operations on the parts that need to be flipped.
 
 .. video:: ../_static/videos/task1_real.mp4
    :width: 100%
@@ -22,7 +22,7 @@ Desktop Material Sorting: The robot stands still and completes pick and place op
 Task 2
 ^^^^^^^^^
 
-Industrial Parts Quality Inspection: Weigh mechanical sleeves, determine pass/fail based on light status, and place products in designated areas.
+Express Fackage Weighing: The robot stands still, grabs the express package on the table and places it on the weighing platform, checks whether the express label is facing up to determine if it needs to be flipped, and then places the package on the conveyor belt on the left-hand side.
 
 .. video:: ../_static/videos/task2_real.mp4
    :width: 100%
@@ -30,7 +30,7 @@ Industrial Parts Quality Inspection: Weigh mechanical sleeves, determine pass/fa
 Task 3
 ^^^^^^^^^
 
-Automotive Large Parts Loading: Pick up automotive sheet metal parts and place them in designated areas.
+Unilever: Pick up the bottle from the table and place it on the conveyor belt.
 
 .. video:: ../_static/videos/task3_real.mp4
    :width: 100%
@@ -41,33 +41,36 @@ Task Scoring
 
 Each task will be evaluated for ten rounds, with the final score being the average of the ten rounds.
 
-Task 1: Desktop Material Sorting (100 points)
+Task 1: Small Part Flipping (100 points)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-During evaluation, three types of materials (seat belt, cable, pin connector) will be randomly placed, one of each type, totaling three items. Scoring criteria are as follows:
+During evaluation, three small parts will be randomly placed on the conveyor belt, and each small part needs to be flipped in sequence. Scoring criteria are as follows:
 
-*   Successful and stable grasping: 10 points per object, total 30 points
-
-*   Accurate placement to designated position: 20 points per object, total 60 points
+*   Successful grasping and flipping: 30 points per object, total 90 points
 
 *   Completion bonus: 10 points
 
-Task 2: Industrial Parts Quality Inspection (100 points)
+Task 2: Express Package Weighing (100 points)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-During evaluation, five sleeves will be placed in any row. All five sleeves in a row need to be grasped and placed according to the rule “green light pass, red light fail”. Scoring criteria are as follows:
+During evaluation, one express package with label facing down and one with label facing up will be placed on the right side of the robot. The express packages need to be placed on the weighing platform, determine the label position, flip the package with label facing down, and then grasp and place the packages onto the conveyor belt on the left-hand side. Scoring criteria are as follows:
 
-*   Accurate placement on electronic scale: 10 points per sleeve, total 50 points
+*   Accurate grasping of express package: 10 points per package, total 20 points
 
-*   Correct placement to target area: 10 points per sleeve, total 50 points
+*   Successful identification and flipping of packages that need flipping: 30 points per package, total 60 points
 
+*   Stable placement to designated position: 10 points per package, total 20 points
 
-Task 3: Automotive Large Parts Loading (100 points)
+Task 3: Unilever (100 points)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*   Successful and stable grasping: 40 points
+During evaluation, two bottles will be placed in front of the robot. First pick up the bottle with the right hand, then pass the bottle in the air to the left hand, and finally place the bottle on the conveyor belt with the left hand. Scoring criteria are as follows:
 
-*   Accurate placement to designated position: 60 points
+*   Successful object handover: 30 points per bottle, total 60 points
+
+*   Accurate placement to designated position: 10 points per bottle, total 20 points
+
+*   Completion bonus: 20 points
 
 Real Robot Competition Data Introduction
 ================
