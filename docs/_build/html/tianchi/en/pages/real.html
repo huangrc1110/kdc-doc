@@ -104,7 +104,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#id13">真机赛配置文件说明(可对照修改，最好不要直接复制粘贴)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id14">数据转换（可能需要修改的地方有注释）</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id15">模型推理配置文件</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#main-configkuavo-real-env-yaml">main分支(需要修改的config是kuavo_real_env.yaml，可能需要修改的地方有注释)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#dev">dev分支(可能需要修改的地方有注释)</a></li>
 </ul>
 </li>
@@ -236,13 +235,14 @@ rosbag:
 <span class="w">    </span>rosbag_dir:<span class="w"> </span>/path/to/your/rosbag
 <span class="w">    </span>num_used:<span class="w"> </span>null
 <span class="w">    </span>lerobot_dir:<span class="w"> </span>/path/to/your/lerobot/save/file
+<span class="w">    </span>chunk_size:<span class="w"> </span><span class="m">100</span>
 
 dataset:
 <span class="w">    </span>only_arm:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># 默认true, 是否只使用手臂数据</span>
-<span class="w">    </span>eef_type:<span class="w"> </span>rq2f85<span class="w"> </span><span class="c1"># 真机可选：leju_claw, qiangnao，任务一二是夹爪 leju_claw，任务三是灵巧手 qiangnao</span>
+<span class="w">    </span>eef_type:<span class="w"> </span>qiangnao<span class="w"> </span><span class="c1"># 真机可选：leju_claw, qiangnao，任务一二是夹爪 leju_claw，任务三是灵巧手 qiangnao</span>
 <span class="w">    </span>which_arm:<span class="w"> </span>both<span class="w">  </span><span class="c1"># 需要哪一只手臂的数据，可选: left, right, both，注意这会同时选择对应手臂的相机，已默认包含头部相机，任务一和三是单手操作，可以选right（但不是一定选），任务二必须选both</span>
 <span class="w">    </span>use_depth:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># 是否需要深度图像数据，与上面手臂保持一致的深度数据，目前本分支只有diffusion policy支持了深度，ACT policy暂不支持深度图像，但在dev分支中已经支持</span>
-<span class="w">    </span>depth_range:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1000</span><span class="o">]</span><span class="w">  </span><span class="c1"># 深度图的裁剪范围，单位：毫米</span>
+<span class="w">    </span>depth_range:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 深度图的裁剪范围，单位：毫米</span>
 
 <span class="w">    </span>task_description:<span class="w"> </span><span class="s2">&quot;Pick and Place&quot;</span>
 
@@ -266,77 +266,6 @@ dataset:
 </section>
 <section id="id15">
 <h3>模型推理配置文件<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
-<section id="main-configkuavo-real-env-yaml">
-<h4>main分支(需要修改的config是kuavo_real_env.yaml，可能需要修改的地方有注释)<a class="headerlink" href="#main-configkuavo-real-env-yaml" title="Link to this heading"></a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hydra:
-<span class="w">    </span>run:
-<span class="w">        </span>dir:<span class="w"> </span>./outputs/kuavo_sim_deploy_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
-<span class="w">    </span>sweep:
-<span class="w">        </span>dir:<span class="w"> </span>./outputs/kuavo_sim_deploy_hydra_save/multirun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
-<span class="w">        </span>subdir:<span class="w"> </span><span class="si">${</span><span class="nv">hydra</span><span class="p">:</span><span class="nv">job</span><span class="p">.override_dirname</span><span class="si">}</span>
-
-
-real:<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="c1"># 设置为true，表示是真机赛配置</span>
-
-only_arm:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># 设置为true，表示只使用手臂控制</span>
-eef_type:<span class="w"> </span>leju_claw<span class="w">  </span><span class="c1"># 末端执行器类型，真机可选leju_claw或qiangnao: 根据任务使用的eef选择，任务一和二都是夹爪 leju_claw，任务三是灵巧手 qiangnao</span>
-control_mode:<span class="w"> </span>joint
-which_arm:<span class="w"> </span>both<span class="w">  </span><span class="c1"># 需要哪一只手臂的数据，可选: left, right, both，注意这会同时选择对应手臂的相机，已默认包含头部相机；任务一和三是单手操作，可以选right（但不是一定选），任务二必须选both</span>
-head_init:<span class="w"> </span>null
-
-<span class="c1"># input_images：输入图像，可选&quot;head_cam_h&quot;,&#39;depth_h&#39;,&#39;wrist_cam_l&#39;,&#39;depth_l&#39;,&#39;wrist_cam_r&#39;,&#39;depth_r&#39;</span>
-<span class="c1"># (每个都是可选，需要与你的机器人配置、训练模型一致)</span>
-<span class="c1"># 通常：cameras = [{&quot;left&quot;:[&#39;head_cam_h&#39;,&#39;wrist_cam_l&#39;],</span>
-<span class="c1">#                 &quot;right&quot;:[&#39;head_cam_h&#39;,&#39;wrist_cam_r&#39;],</span>
-<span class="c1">#                 &quot;both&quot;:[&#39;head_cam_h&#39;,&#39;wrist_cam_l&#39;,&#39;wrist_cam_r&#39;]</span>
-<span class="c1">#                 },</span>
-<span class="c1">#                 {&quot;left&quot;:[&#39;head_cam_h&#39;,&#39;depth_h&#39;,&#39;wrist_cam_l&#39;,&#39;depth_l&#39;],</span>
-<span class="c1">#                 &quot;right&quot;:[&#39;head_cam_h&#39;,&#39;depth_h&#39;,&#39;wrist_cam_r&#39;,&#39;depth_r&#39;],</span>
-<span class="c1">#                 &quot;both&quot;:[&#39;head_cam_h&#39;,&#39;depth_h&#39;,&#39;wrist_cam_l&#39;,&#39;depth_l&#39;,&#39;wrist_cam_r&#39;,&#39;depth_r&#39;]</span>
-<span class="c1">#                 }][int(self.use_depth)][self.which_arm]</span>
-input_images:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;head_cam_h&quot;</span>,<span class="s1">&#39;depth_h&#39;</span>,<span class="s1">&#39;wrist_cam_l&#39;</span>,<span class="s1">&#39;depth_l&#39;</span>,<span class="s1">&#39;wrist_cam_r&#39;</span>,<span class="s1">&#39;depth_r&#39;</span><span class="o">]</span><span class="w"> </span><span class="c1"># 目前本分支只有diffusion policy支持了深度，ACT policy暂不支持深度图像，但在dev分支中已经支持</span>
-depth_range:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1000</span><span class="o">]</span><span class="w">  </span><span class="c1"># 深度图的裁剪范围，单位：毫米，没有深度图时不起作用</span>
-image_size:<span class="w"> </span><span class="o">[</span><span class="m">480</span>,<span class="w"> </span><span class="m">848</span><span class="o">]</span><span class="w"> </span><span class="c1"># 图像大小（高，宽）</span>
-ros_rate:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># 推理频率，单位Hz</span>
-
-<span class="c1">################### 以下环境配置为不建议改动配置################33</span>
-qiangnao_dof_needed:<span class="w"> </span><span class="m">1</span>
-
-leju_claw_dof_needed:<span class="w"> </span><span class="m">1</span>
-
-rq2f85_dof_needed:<span class="w"> </span><span class="m">1</span>
-
-arm_init:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
-
-arm_min:<span class="w"> </span><span class="o">[</span>-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180<span class="o">]</span>
-arm_max:<span class="w"> </span><span class="o">[</span><span class="m">180</span>,180,180,180,180,180,180,180,180,180,180,180,180,180<span class="o">]</span>
-
-eef_min:<span class="w"> </span><span class="o">[</span><span class="m">0</span><span class="o">]</span>
-eef_max:<span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span>
-
-base_min:<span class="w"> </span><span class="o">[</span>-2.0,<span class="w"> </span>-2.0,<span class="w"> </span>-3.14,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
-base_max:<span class="w"> </span><span class="o">[</span><span class="m">2</span>.0,<span class="w"> </span><span class="m">2</span>.0,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">1</span><span class="o">]</span>
-
-is_binary:<span class="w"> </span><span class="nb">false</span>
-
-<span class="c1">######### 以下为需要根据真机赛任务修改的配置 ###########</span>
-go_bag_path:<span class="w"> </span>/your_bag_path<span class="w">  </span><span class="c1"># 真机推理时需要提供bag包的完整路径，请在kuavo_data_challenge仓库的任意地方存放此次任务的任意一个原始bag包，并给出正确路径</span>
-
-policy_type:<span class="w"> </span><span class="s2">&quot;diffusion&quot;</span><span class="w">  </span><span class="c1"># 策略名字，支持diffusion，act等</span>
-use_delta:<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="c1"># 是否使用增量动作，default=false（暂未支持）</span>
-eval_episodes:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># 测试回合数，真机推理可以连续推理，设置为10或者大于10数值均可</span>
-seed:<span class="w"> </span><span class="m">42</span>
-start_seed:<span class="w"> </span><span class="m">42</span>
-device:<span class="w"> </span><span class="s2">&quot;cuda&quot;</span>
-task:<span class="w"> </span><span class="s2">&quot;your_task&quot;</span>
-method:<span class="w"> </span><span class="s2">&quot;your_method&quot;</span>
-timestamp:<span class="w"> </span><span class="s2">&quot;your_timestamp&quot;</span>
-epoch:<span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c1"># 使用训练保存的哪一个epoch。注意：代码将在outputs/&lt;task&gt;/&lt;method&gt;/run_&lt;timestamp&gt;/epoch10中load policy的模型参数</span>
-max_episode_steps:<span class="w"> </span><span class="m">500</span><span class="w">  </span><span class="c1"># 最大回合步数，超过自动结束，根据任务所需时长调整，设置为500即可</span>
-env_name:<span class="w"> </span>Kuavo-Real<span class="w">  </span><span class="c1"># kuavo仿真器环境名称</span>
-</pre></div>
-</div>
-</section>
 <section id="dev">
 <h4>dev分支(可能需要修改的地方有注释)<a class="headerlink" href="#dev" title="Link to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hydra:
@@ -349,7 +278,7 @@ env_name:<span class="w"> </span>Kuavo-Real<span class="w">  </span><span class=
 env:
 <span class="w">    </span>env_name:<span class="w"> </span>Kuavo-Real<span class="w">  </span><span class="c1"># kuavo环境名称，仿真Kuavo-Sim，真机Kuavo-Real</span>
 <span class="w">    </span>control_mode:<span class="w"> </span>joint<span class="w"> </span><span class="c1"># joint 或 eef （正在开发中）</span>
-<span class="w">    </span>eef_type:<span class="w"> </span>leju_claw<span class="w">  </span><span class="c1"># 末端执行器类型，真机可选leju_claw或qiangnao: 根据任务使用的eef选择，任务一和二都是夹爪 leju_claw，任务三是灵巧手 qiangnao</span>
+<span class="w">    </span>eef_type:<span class="w"> </span>qiangnao<span class="w">  </span><span class="c1"># 末端执行器类型，真机可选leju_claw或qiangnao: 根据任务使用的eef选择，任务一和二都是夹爪 leju_claw，任务三是灵巧手 qiangnao</span>
 <span class="w">    </span>which_arm:<span class="w"> </span>both<span class="w">  </span><span class="c1"># 需要哪一只手臂的数据，可选: left, right, both，注意这会同时选择对应手臂的相机，已默认包含头部相机；任务一和三是单手操作，可以选right（但不是一定选），任务二必须选both</span>
 <span class="w">    </span>head_init:<span class="w"> </span>null<span class="w">  </span><span class="c1"># 机器人头部初始位置，仿真请默认使用这个值，保持观测统一, 真机可根据需要调整，一般为null！！！</span>
 <span class="w">    </span>ros_rate:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># 推理控制频率，单位Hz</span>
@@ -367,8 +296,8 @@ env:
 <span class="w">        </span>depth_r:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_r/depth/image_rect_raw/compressedDepth&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span><span class="w">  </span><span class="c1"># 右手腕相机深度图话题，可与上述对应选</span>
 <span class="w">        </span>joint_q:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/sensors_data_raw&quot;</span>,<span class="w"> </span><span class="s2">&quot;sensorsData&quot;</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 关节角度话题，必选</span>
 <span class="w">        </span>qiangnao:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/dexhand/state&quot;</span>,<span class="w"> </span><span class="s2">&quot;JointState&quot;</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 末端执行器的话题，灵巧手</span>
-<span class="w">        </span>leju_claw:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/leju_claw_state&quot;</span>,<span class="w"> </span><span class="s2">&quot;lejuClawState&quot;</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 末端执行器的话题，夹爪</span>
-<span class="w">        </span>rq2f85:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/gripper/state&quot;</span>,<span class="w"> </span><span class="s2">&quot;JointState&quot;</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 末端执行器的话题，仿真中夹爪</span>
+<span class="w">        </span><span class="c1">#leju_claw: [&quot;/leju_claw_state&quot;, &quot;lejuClawState&quot;, 500]  # 末端执行器的话题，夹爪</span>
+<span class="w">        </span><span class="c1">#rq2f85: [&quot;/gripper/state&quot;, &quot;JointState&quot;, 500]  # 末端执行器的话题，仿真中夹爪 # 根据选择的末端执行器类型，选择对应的话题，并确保与训练时一致</span>
 
 <span class="w">    </span>arm_state_keys:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;joint_q&quot;</span>,<span class="s2">&quot;gripper&quot;</span><span class="o">]</span><span class="w">  </span><span class="c1"># 默认不动，模型观测输入的手臂状态包含关节角度和夹爪开合状态</span>
 <span class="w">    </span>frame_alignment:<span class="w"> </span><span class="nb">false</span><span class="w">  </span><span class="c1"># 是否启用帧对齐，default=false</span>
@@ -402,7 +331,7 @@ env:
 <span class="w">    </span>is_binary:<span class="w"> </span><span class="nb">false</span>
 
 inference:
-<span class="w">    </span>go_bag_path:<span class="w"> </span>/path/to/your/go.bag<span class="w"> </span><span class="c1"># 真机推理时需要提供bag包的完整路径，请在kuavo_data_challenge仓库的任意地方存放此次任务的任意一个原始bag包，并给出正确路径</span>
+<span class="w">    </span>go_bag_path:<span class="w"> </span>/path/to/your/go.bag<span class="w"> </span><span class="c1"># go_bag文件由主办方提供，选手不需要修改该参数</span>
 <span class="w">    </span>policy_type:<span class="w"> </span><span class="s2">&quot;act&quot;</span><span class="w">  </span><span class="c1"># 策略名字，支持diffusion，act等</span>
 <span class="w">    </span>eval_episodes:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># 测试回合数，真机推理可以连续推理，设置为10或者大于10数值均可</span>
 <span class="w">    </span>seed:<span class="w"> </span><span class="m">42</span>
@@ -412,7 +341,7 @@ inference:
 <span class="w">    </span>method:<span class="w"> </span><span class="s2">&quot;your_method&quot;</span>
 <span class="w">    </span>timestamp:<span class="w"> </span><span class="s2">&quot;your_timestamp&quot;</span>
 <span class="w">    </span>epoch:<span class="w"> </span>best<span class="w">  </span><span class="c1"># 使用训练保存的哪一个epoch，可填50，100，best等，注意：代码将在outputs/train/&lt;task&gt;/&lt;method&gt;/&lt;timestamp&gt;/epoch&lt;epoch&gt;中load policy的模型参数</span>
-<span class="w">    </span>max_episode_steps:<span class="w"> </span><span class="m">500</span><span class="w">  </span><span class="c1"># 最大回合步数，设置为500即可</span>
+<span class="w">    </span>max_episode_steps:<span class="w"> </span><span class="m">2000</span><span class="w">  </span><span class="c1"># 最大回合步数，真机建议设置为2000即可</span>
 </pre></div>
 </div>
 </section>

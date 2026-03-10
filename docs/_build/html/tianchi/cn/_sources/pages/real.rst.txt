@@ -114,13 +114,14 @@ https://www.modelscope.cn/datasets/lejurobot/LET-Tianchi-Dataset
         rosbag_dir: /path/to/your/rosbag
         num_used: null 
         lerobot_dir: /path/to/your/lerobot/save/file
+        chunk_size: 100
 
     dataset:
         only_arm: true  # 默认true, 是否只使用手臂数据
-        eef_type: rq2f85 # 真机可选：leju_claw, qiangnao，任务一二是夹爪 leju_claw，任务三是灵巧手 qiangnao
+        eef_type: qiangnao # 真机可选：leju_claw, qiangnao，任务一二是夹爪 leju_claw，任务三是灵巧手 qiangnao
         which_arm: both  # 需要哪一只手臂的数据，可选: left, right, both，注意这会同时选择对应手臂的相机，已默认包含头部相机，任务一和三是单手操作，可以选right（但不是一定选），任务二必须选both
         use_depth: true  # 是否需要深度图像数据，与上面手臂保持一致的深度数据，目前本分支只有diffusion policy支持了深度，ACT policy暂不支持深度图像，但在dev分支中已经支持
-        depth_range: [0, 1000]  # 深度图的裁剪范围，单位：毫米
+        depth_range: [0, 1500]  # 深度图的裁剪范围，单位：毫米
 
         task_description: "Pick and Place"
 
@@ -143,77 +144,6 @@ https://www.modelscope.cn/datasets/lejurobot/LET-Tianchi-Dataset
 
 模型推理配置文件
 --------------------------
-main分支(需要修改的config是kuavo_real_env.yaml，可能需要修改的地方有注释)
-^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: bash
-
-    hydra:  
-        run:
-            dir: ./outputs/kuavo_sim_deploy_hydra_save/singlerun/${now:%Y%m%d_%H%M%S}
-        sweep:
-            dir: ./outputs/kuavo_sim_deploy_hydra_save/multirun/${now:%Y%m%d_%H%M%S}
-            subdir: ${hydra:job.override_dirname}
-
-
-    real: true # 设置为true，表示是真机赛配置
-
-    only_arm: true  # 设置为true，表示只使用手臂控制
-    eef_type: leju_claw  # 末端执行器类型，真机可选leju_claw或qiangnao: 根据任务使用的eef选择，任务一和二都是夹爪 leju_claw，任务三是灵巧手 qiangnao
-    control_mode: joint 
-    which_arm: both  # 需要哪一只手臂的数据，可选: left, right, both，注意这会同时选择对应手臂的相机，已默认包含头部相机；任务一和三是单手操作，可以选right（但不是一定选），任务二必须选both
-    head_init: null  
-
-    # input_images：输入图像，可选"head_cam_h",'depth_h','wrist_cam_l','depth_l','wrist_cam_r','depth_r'
-    # (每个都是可选，需要与你的机器人配置、训练模型一致)
-    # 通常：cameras = [{"left":['head_cam_h','wrist_cam_l'],
-    #                 "right":['head_cam_h','wrist_cam_r'],
-    #                 "both":['head_cam_h','wrist_cam_l','wrist_cam_r']
-    #                 },
-    #                 {"left":['head_cam_h','depth_h','wrist_cam_l','depth_l'],
-    #                 "right":['head_cam_h','depth_h','wrist_cam_r','depth_r'],
-    #                 "both":['head_cam_h','depth_h','wrist_cam_l','depth_l','wrist_cam_r','depth_r']
-    #                 }][int(self.use_depth)][self.which_arm]
-    input_images: ["head_cam_h",'depth_h','wrist_cam_l','depth_l','wrist_cam_r','depth_r'] # 目前本分支只有diffusion policy支持了深度，ACT policy暂不支持深度图像，但在dev分支中已经支持
-    depth_range: [0, 1000]  # 深度图的裁剪范围，单位：毫米，没有深度图时不起作用
-    image_size: [480, 848] # 图像大小（高，宽）
-    ros_rate: 10  # 推理频率，单位Hz
-
-    ################### 以下环境配置为不建议改动配置################33
-    qiangnao_dof_needed: 1 
-
-    leju_claw_dof_needed: 1
-
-    rq2f85_dof_needed: 1 
-
-    arm_init: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 
-
-    arm_min: [-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180]
-    arm_max: [180,180,180,180,180,180,180,180,180,180,180,180,180,180]
-
-    eef_min: [0]
-    eef_max: [1]
-
-    base_min: [-2.0, -2.0, -3.14, 0]
-    base_max: [2.0, 2.0, 3.14, 1]
-
-    is_binary: false
-
-    ######### 以下为需要根据真机赛任务修改的配置 ###########
-    go_bag_path: /your_bag_path  # 真机推理时需要提供bag包的完整路径，请在kuavo_data_challenge仓库的任意地方存放此次任务的任意一个原始bag包，并给出正确路径
-
-    policy_type: "diffusion"  # 策略名字，支持diffusion，act等
-    use_delta: false # 是否使用增量动作，default=false（暂未支持）
-    eval_episodes: 10  # 测试回合数，真机推理可以连续推理，设置为10或者大于10数值均可
-    seed: 42  
-    start_seed: 42  
-    device: "cuda"  
-    task: "your_task"
-    method: "your_method"
-    timestamp: "your_timestamp"
-    epoch: 1  # 使用训练保存的哪一个epoch。注意：代码将在outputs/<task>/<method>/run_<timestamp>/epoch10中load policy的模型参数
-    max_episode_steps: 500  # 最大回合步数，超过自动结束，根据任务所需时长调整，设置为500即可
-    env_name: Kuavo-Real  # kuavo仿真器环境名称
-
 dev分支(可能需要修改的地方有注释)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: bash
@@ -228,7 +158,7 @@ dev分支(可能需要修改的地方有注释)
     env:
         env_name: Kuavo-Real  # kuavo环境名称，仿真Kuavo-Sim，真机Kuavo-Real
         control_mode: joint # joint 或 eef （正在开发中）
-        eef_type: leju_claw  # 末端执行器类型，真机可选leju_claw或qiangnao: 根据任务使用的eef选择，任务一和二都是夹爪 leju_claw，任务三是灵巧手 qiangnao
+        eef_type: qiangnao  # 末端执行器类型，真机可选leju_claw或qiangnao: 根据任务使用的eef选择，任务一和二都是夹爪 leju_claw，任务三是灵巧手 qiangnao
         which_arm: both  # 需要哪一只手臂的数据，可选: left, right, both，注意这会同时选择对应手臂的相机，已默认包含头部相机；任务一和三是单手操作，可以选right（但不是一定选），任务二必须选both
         head_init: null  # 机器人头部初始位置，仿真请默认使用这个值，保持观测统一, 真机可根据需要调整，一般为null！！！
         ros_rate: 10  # 推理控制频率，单位Hz
@@ -246,8 +176,8 @@ dev分支(可能需要修改的地方有注释)
             depth_r: ["/cam_r/depth/image_rect_raw/compressedDepth", "CompressedImage", 30, *IMGSIZE, *DEPTHRANGE]  # 右手腕相机深度图话题，可与上述对应选
             joint_q: ["/sensors_data_raw", "sensorsData", 500]  # 关节角度话题，必选
             qiangnao: ["/dexhand/state", "JointState", 500]  # 末端执行器的话题，灵巧手
-            leju_claw: ["/leju_claw_state", "lejuClawState", 500]  # 末端执行器的话题，夹爪
-            rq2f85: ["/gripper/state", "JointState", 500]  # 末端执行器的话题，仿真中夹爪
+            #leju_claw: ["/leju_claw_state", "lejuClawState", 500]  # 末端执行器的话题，夹爪
+            #rq2f85: ["/gripper/state", "JointState", 500]  # 末端执行器的话题，仿真中夹爪 # 根据选择的末端执行器类型，选择对应的话题，并确保与训练时一致
         
         arm_state_keys: ["joint_q","gripper"]  # 默认不动，模型观测输入的手臂状态包含关节角度和夹爪开合状态
         frame_alignment: false  # 是否启用帧对齐，default=false
@@ -281,7 +211,7 @@ dev分支(可能需要修改的地方有注释)
         is_binary: false 
 
     inference:
-        go_bag_path: /path/to/your/go.bag # 真机推理时需要提供bag包的完整路径，请在kuavo_data_challenge仓库的任意地方存放此次任务的任意一个原始bag包，并给出正确路径
+        go_bag_path: /path/to/your/go.bag # go_bag文件由主办方提供，选手不需要修改该参数
         policy_type: "act"  # 策略名字，支持diffusion，act等
         eval_episodes: 10  # 测试回合数，真机推理可以连续推理，设置为10或者大于10数值均可
         seed: 42 
@@ -291,7 +221,7 @@ dev分支(可能需要修改的地方有注释)
         method: "your_method"
         timestamp: "your_timestamp"
         epoch: best  # 使用训练保存的哪一个epoch，可填50，100，best等，注意：代码将在outputs/train/<task>/<method>/<timestamp>/epoch<epoch>中load policy的模型参数
-        max_episode_steps: 500  # 最大回合步数，设置为500即可
+        max_episode_steps: 2000  # 最大回合步数，真机建议设置为2000即可
 
 真机赛提交说明
 ================
