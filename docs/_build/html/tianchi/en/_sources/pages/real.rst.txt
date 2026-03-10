@@ -144,7 +144,7 @@ https://www.modelscope.cn/datasets/lejurobot/LET-Tianchi-Dataset
 
 模型推理配置文件
 --------------------------
-dev分支(可能需要修改的地方有注释)
+tianchi分支(可能需要修改的地方有注释)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: bash
 
