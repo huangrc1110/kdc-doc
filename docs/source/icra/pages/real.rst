@@ -84,7 +84,7 @@ Considering computational power issues during the simulation competition phase, 
 
 Real Robot Data Download Address (modelscope)
 -------------------------
-https://www.modelscope.cn/datasets/lejurobot/LET-Tianchi-Dataset
+https://www.modelscope.cn/datasets/lejurobot/LET-ICRA2026Competition-Data
 
 
 Real Robot Competition Configuration File Instructions (modify by reference, do not copy-paste directly)
