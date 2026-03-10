@@ -3,6 +3,17 @@
 真机赛
 **********
 
+安装 `kuavo_data_challenge <https://github.com/LejuRobotics/kuavo_data_challenge>`_ （基准代码）仓库
+======================================================================================================================================================
+此仓库用于数据转换、模型训练、模型部署，使用 git 获取最新的代码仓库（tianchi 分支）：  
+
+   .. code-block:: bash
+      
+      git clone --depth=1 https://github.com/LejuRobotics/kuavo_data_challenge.git  
+
+   .. note::
+      详细安装及使用步骤请参阅其在 GitHub 上的对应 `README <https://github.com/LejuRobotics/kuavo_data_challenge/blob/tianchi/README.md>`_ 文档。
+
 真机赛任务介绍
 ================
 

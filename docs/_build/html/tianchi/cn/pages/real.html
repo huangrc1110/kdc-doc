@@ -82,36 +82,37 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">安装训练指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="submit.html">提交说明</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">真机赛</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">真机赛任务介绍</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">任务简介</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id4">任务一</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">任务二</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6">任务三</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">安装 kuavo_data_challenge （基准代码）仓库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">真机赛任务介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">任务简介</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">任务一</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">任务二</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">任务三</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">任务评分</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id8">任务1：桌面物料分拣（100分）</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id9">任务2：工业零件质检（100分）</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id10">任务3：汽车大件上料（100分）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">任务评分</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">任务1：桌面物料分拣（100分）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">任务2：工业零件质检（100分）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">任务3：汽车大件上料（100分）</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id11">真机赛数据介绍</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id12">真机赛数据介绍</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#modelscope">真机数据下载地址(modelscope)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id12">真机赛配置文件说明(可对照修改，最好不要直接复制粘贴)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id13">数据转换（可能需要修改的地方有注释）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">模型推理配置文件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id13">真机赛配置文件说明(可对照修改，最好不要直接复制粘贴)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id14">数据转换（可能需要修改的地方有注释）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">模型推理配置文件</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#main-configkuavo-real-env-yaml">main分支(需要修改的config是kuavo_real_env.yaml，可能需要修改的地方有注释)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#dev">dev分支(可能需要修改的地方有注释)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id15">真机赛提交说明</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id16">真机赛成绩说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">真机赛提交说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">真机赛成绩说明</a></li>
 </ul>
 </li>
 </ul>
@@ -147,28 +148,41 @@
   <section id="id1">
 <h1>真机赛<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <section id="id2">
-<h2>真机赛任务介绍<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<h2>安装 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> （基准代码）仓库<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>此仓库用于数据转换、模型训练、模型部署，使用 git 获取最新的代码仓库（tianchi 分支）：</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo_data_challenge.git
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>详细安装及使用步骤请参阅其在 GitHub 上的对应 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/blob/tianchi/README.md">README</a> 文档。</p>
+</div>
+</div></blockquote>
+</section>
 <section id="id3">
-<h3>任务简介<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
-<p>真机赛中使用的机器人为乐聚夸父4pro（kauvo 4 pro），末端执行器为灵巧手/夹爪</p>
+<h2>真机赛任务介绍<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <section id="id4">
-<h4>任务一<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<h3>任务简介<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>真机赛中使用的机器人为乐聚夸父4pro（kauvo 4 pro），末端执行器为灵巧手/夹爪</p>
+<section id="id5">
+<h4>任务一<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
 <p>桌面物料分拣：机器人站立不动，完成pick and place操作。 夹取安全带、线缆、pin口（三种零件）放到对应的空盒子中</p>
 <div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task1_real.mp4" type="video/mp4"></video></div></section>
-<section id="id5">
-<h4>任务二<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<section id="id6">
+<h4>任务二<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
 <p>工业零件质检：将机械套管承重，根据亮灯情况判断合格与不合格，并产品分别放在指定区域</p>
 <div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task2_real.mp4" type="video/mp4"></video></div></section>
-<section id="id6">
-<h4>任务三<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
+<section id="id7">
+<h4>任务三<a class="headerlink" href="#id7" title="Link to this heading"></a></h4>
 <p>汽车大件上料：将汽车钣金料抓取，放置到指定区域</p>
 <div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task3_real.mp4" type="video/mp4"></video></div></section>
 </section>
-<section id="id7">
-<h3>任务评分<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
-<p>每个任务将会测评十轮，最终得分为十轮得分的平均值</p>
 <section id="id8">
-<h4>任务1：桌面物料分拣（100分）<a class="headerlink" href="#id8" title="Link to this heading"></a></h4>
+<h3>任务评分<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<p>每个任务将会测评十轮，最终得分为十轮得分的平均值</p>
+<section id="id9">
+<h4>任务1：桌面物料分拣（100分）<a class="headerlink" href="#id9" title="Link to this heading"></a></h4>
 <p>测评时，会随机放置三种物料（安全带、线缆、pin口），每种物料各一个，共三个，评分标准如下：</p>
 <ul class="simple">
 <li><p>抓取成功且稳定：10分/每个物体，共30分</p></li>
@@ -176,16 +190,16 @@
 <li><p>全部完成奖励：10分</p></li>
 </ul>
 </section>
-<section id="id9">
-<h4>任务2：工业零件质检（100分）<a class="headerlink" href="#id9" title="Link to this heading"></a></h4>
+<section id="id10">
+<h4>任务2：工业零件质检（100分）<a class="headerlink" href="#id10" title="Link to this heading"></a></h4>
 <p>测评时，会在任意一排放置五个套管，需要将一排五个套管全部抓取完成，并根据“绿灯合格，红灯不合格”的规则放置，评分标准如下：</p>
 <ul class="simple">
 <li><p>准确放至电子称：10分/每个套管，共50分</p></li>
 <li><p>正确放至目标区域：10分/每个套管，共50分</p></li>
 </ul>
 </section>
-<section id="id10">
-<h4>任务3：汽车大件上料（100分）<a class="headerlink" href="#id10" title="Link to this heading"></a></h4>
+<section id="id11">
+<h4>任务3：汽车大件上料（100分）<a class="headerlink" href="#id11" title="Link to this heading"></a></h4>
 <ul class="simple">
 <li><p>抓取成功且稳定：40分</p></li>
 <li><p>准确放至指定位置：60分</p></li>
@@ -193,8 +207,8 @@
 </section>
 </section>
 </section>
-<section id="id11">
-<h2>真机赛数据介绍<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<section id="id12">
+<h2>真机赛数据介绍<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
 <p>真机视频的size是848*480，区别于仿真数据的640*480</p>
@@ -206,10 +220,10 @@
 <p><a class="reference external" href="https://www.modelscope.cn/datasets/lejurobot/LET-Tianchi-Dataset">https://www.modelscope.cn/datasets/lejurobot/LET-Tianchi-Dataset</a></p>
 </section>
 </section>
-<section id="id12">
-<h2>真机赛配置文件说明(可对照修改，最好不要直接复制粘贴)<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
 <section id="id13">
-<h3>数据转换（可能需要修改的地方有注释）<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<h2>真机赛配置文件说明(可对照修改，最好不要直接复制粘贴)<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<section id="id14">
+<h3>数据转换（可能需要修改的地方有注释）<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">########不需要修改#######</span>
 hydra:
 <span class="w">    </span>run:
@@ -251,8 +265,8 @@ dataset:
 </pre></div>
 </div>
 </section>
-<section id="id14">
-<h3>模型推理配置文件<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<section id="id15">
+<h3>模型推理配置文件<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
 <section id="main-configkuavo-real-env-yaml">
 <h4>main分支(需要修改的config是kuavo_real_env.yaml，可能需要修改的地方有注释)<a class="headerlink" href="#main-configkuavo-real-env-yaml" title="Link to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hydra:
@@ -405,8 +419,8 @@ inference:
 </section>
 </section>
 </section>
-<section id="id15">
-<h2>真机赛提交说明<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<section id="id16">
+<h2>真机赛提交说明<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
 <p>跟仿真赛同理，真机赛代码提交也是环境和代码打包为 docker 镜像。具体步骤如下：
 1. 配置docker加速，打包环境：可参考仿真赛 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md">提交说明 docker/readme</a> 步骤1-2</p>
 <ol class="arabic" start="2">
@@ -504,8 +518,8 @@ inference:
 <li><p>后续步骤同仿真赛提交说明4-5，注意修改run_with_gpu.sh中的docker镜像名称为你刚刚打包的真机赛镜像名称即可。</p></li>
 </ol>
 </section>
-<section id="id16">
-<h2>真机赛成绩说明<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<section id="id17">
+<h2>真机赛成绩说明<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
 <p>真机赛的返回结果将包含以下内容：</p>
 <ol class="arabic simple">
 <li><p>任务平均得分：十轮测试的平均总得分与小分</p></li>
