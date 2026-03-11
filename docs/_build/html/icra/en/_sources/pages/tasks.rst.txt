@@ -64,31 +64,31 @@ Within this task, the height of the conveyor, the positioning and orientation of
 Real-machine Task Description
 ==================================
 
-Task 1: Rubbish Sorting
+Task 1: Small Part Flipping
 ----------------------------------------------------------------------------
 
-In this task, there will be assorted refuse randomly laid out on a desk surface. The robot needs to grasp the rubbish pieces one-by-one, and place all the recyclable items into the blue bin, while all the other rubbish go into the grey bin.
+In this task, the robot stands still while the conveyor belt runs at medium speed to transport parts, and the robot performs flipping operations on the parts that need to be flipped.
 
 
 
-.. image:: ../_static/images/task3_real.jpeg
+.. image:: ../_static/images/task1_real.jpg
 
-Task 2: Parcel Weighing
+Task 2: Express Fackage Weighing
 ----------------------------------------------------------------
 
-In this task, the robot is required to pick up a soft-pouch parcel from a moving conveyor belt, place it on an electronic scale for weighing, and then transfer it to another conveyor belt.
+In this task, the robot stands still, grabs the express package on the table and places it on the weighing platform, checks whether the express label is facing up to determine if it needs to be flipped, and then places the package on the conveyor belt on the left-hand side.
 
 
-Each task is out of 100 base points as the base task score.
+Two express packages will be provided here, and the task is considered successful when both are correctly flipped and placed on the conveyor belt.
 
+.. image:: ../_static/images/task2_real.jpg
 
-.. image:: ../_static/images/task1_real.jpeg
-
-Task 3: Conveyor Belt Parts Sorting
+Task 3: Unilever
 ----------------------------------------------------------------
 
-In this task, the robot needs to pick up a component chosen from different categories representative in the industrial setting, lying in a randomised orientation on a moving conveyor belt, and then place the component into the correct sorting bin. 
-Four such components are given in this task, and the task is considered as successful after correct placements of all four such components.
+In this task, Pick up the bottle from the table and place it on the conveyor belt.
 
 
-.. image:: ../_static/images/task2_real.jpeg
+Two bottles will be provided here, and placing both on the conveyor belt counts as completing the task.
+
+.. image:: ../_static/images/task3_real.jpg
