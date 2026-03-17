@@ -86,8 +86,6 @@ Key Challenges:
     - Coordinated dual-arm operation;
     - Precise control of flipping soft objects.
 
-Two express packages will be provided here, and the task is considered successful when both are correctly flipped and placed on the conveyor belt.
-
 .. image:: ../_static/images/task2_real.jpg
 
 Task 3: Unilever
@@ -99,7 +97,5 @@ Key Challenges:
     - Dual-hand coordination and object handover;
     - Precise pose control;
     - Spatial constraint satisfaction.
-
-Two bottles will be provided here, and placing both on the conveyor belt counts as completing the task.
 
 .. image:: ../_static/images/task3_real.jpg
