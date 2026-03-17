@@ -82,7 +82,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#real-machine-task-description">Real-machine Task Description</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#task-1-small-part-flipping">Task 1: Small Part Flipping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#task-2-express-fackage-weighing">Task 2: Express Fackage Weighing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-2-express-package-weighing">Task 2: Express Package Weighing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#task-3-unilever">Task 3: Unilever</a></li>
 </ul>
 </li>
@@ -188,18 +188,42 @@ Four such components are given in this task, and the task is considered as succe
 <h2>Real-machine Task Description<a class="headerlink" href="#real-machine-task-description" title="Link to this heading"></a></h2>
 <section id="task-1-small-part-flipping">
 <h3>Task 1: Small Part Flipping<a class="headerlink" href="#task-1-small-part-flipping" title="Link to this heading"></a></h3>
-<p>In this task, the robot stands still while the conveyor belt runs at medium speed to transport parts, and the robot performs flipping operations on the parts that need to be flipped.</p>
+<p>Task Description: The robot stands beside a conveyor belt running at constant speed, picks up a small part from the conveyor belt, flips it, and places it back on the conveyor belt.</p>
+<dl class="simple">
+<dt>Key Challenges:</dt><dd><ul class="simple">
+<li><p>Stable grasping of ring-shaped objects;</p></li>
+<li><p>Random positioning of target objects (within working range);</p></li>
+<li><p>Precise control of flipping small objects.</p></li>
+</ul>
+</dd>
+</dl>
 <img alt="../_images/task1_real.jpg" src="../_images/task1_real.jpg" />
 </section>
-<section id="task-2-express-fackage-weighing">
-<h3>Task 2: Express Fackage Weighing<a class="headerlink" href="#task-2-express-fackage-weighing" title="Link to this heading"></a></h3>
-<p>In this task, the robot stands still, grabs the express package on the table and places it on the weighing platform, checks whether the express label is facing up to determine if it needs to be flipped, and then places the package on the conveyor belt on the left-hand side.</p>
+<section id="task-2-express-package-weighing">
+<h3>Task 2: Express Package Weighing<a class="headerlink" href="#task-2-express-package-weighing" title="Link to this heading"></a></h3>
+<p>Task Description: The robot picks up an express package and places it on the weighing platform with the label facing up. After weighing is complete, the robot places the package on the conveyor belt.</p>
+<dl class="simple">
+<dt>Key Challenges:</dt><dd><ul class="simple">
+<li><p>Stable grasping of soft packages;</p></li>
+<li><p>Coordinated dual-arm operation;</p></li>
+<li><p>Precise control of flipping soft objects.</p></li>
+</ul>
+</dd>
+</dl>
 <p>Two express packages will be provided here, and the task is considered successful when both are correctly flipped and placed on the conveyor belt.</p>
 <img alt="../_images/task2_real.jpg" src="../_images/task2_real.jpg" />
 </section>
 <section id="task-3-unilever">
 <h3>Task 3: Unilever<a class="headerlink" href="#task-3-unilever" title="Link to this heading"></a></h3>
-<p>In this task, Pick up the bottle from the table and place it on the conveyor belt.</p>
+<p>Task Description: The robot randomly picks one daily chemical product from a cluttered shelf, rotates it by a certain angle, and places it on the target conveyor belt nearby.</p>
+<dl class="simple">
+<dt>Key Challenges:</dt><dd><ul class="simple">
+<li><p>Dual-hand coordination and object handover;</p></li>
+<li><p>Precise pose control;</p></li>
+<li><p>Spatial constraint satisfaction.</p></li>
+</ul>
+</dd>
+</dl>
 <p>Two bottles will be provided here, and placing both on the conveyor belt counts as completing the task.</p>
 <img alt="../_images/task3_real.jpg" src="../_images/task3_real.jpg" />
 </section>

@@ -67,17 +67,24 @@ Real-machine Task Description
 Task 1: Small Part Flipping
 ----------------------------------------------------------------------------
 
-In this task, the robot stands still while the conveyor belt runs at medium speed to transport parts, and the robot performs flipping operations on the parts that need to be flipped.
+Task Description: The robot stands beside a conveyor belt running at constant speed, picks up a small part from the conveyor belt, flips it, and places it back on the conveyor belt.
 
-
+Key Challenges:
+    - Stable grasping of ring-shaped objects;
+    - Random positioning of target objects (within working range);
+    - Precise control of flipping small objects.
 
 .. image:: ../_static/images/task1_real.jpg
 
-Task 2: Express Fackage Weighing
+Task 2: Express Package Weighing
 ----------------------------------------------------------------
 
-In this task, the robot stands still, grabs the express package on the table and places it on the weighing platform, checks whether the express label is facing up to determine if it needs to be flipped, and then places the package on the conveyor belt on the left-hand side.
+Task Description: The robot picks up an express package and places it on the weighing platform with the label facing up. After weighing is complete, the robot places the package on the conveyor belt.
 
+Key Challenges:
+    - Stable grasping of soft packages;
+    - Coordinated dual-arm operation;
+    - Precise control of flipping soft objects.
 
 Two express packages will be provided here, and the task is considered successful when both are correctly flipped and placed on the conveyor belt.
 
@@ -86,8 +93,12 @@ Two express packages will be provided here, and the task is considered successfu
 Task 3: Unilever
 ----------------------------------------------------------------
 
-In this task, Pick up the bottle from the table and place it on the conveyor belt.
+Task Description: The robot randomly picks one daily chemical product from a cluttered shelf, rotates it by a certain angle, and places it on the target conveyor belt nearby.
 
+Key Challenges:
+    - Dual-hand coordination and object handover;
+    - Precise pose control;
+    - Spatial constraint satisfaction.
 
 Two bottles will be provided here, and placing both on the conveyor belt counts as completing the task.
 

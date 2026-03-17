@@ -24,7 +24,19 @@ Q: How will the submissions be evaluated and how do I submit my code?
 	Instructions on how to submit your code (for two stages) will be updated soon in the 'Submission' page.
 
 Q: Do I have to complete all three tasks?
-	A: Strictly speaking, no. But it is highly recommended to do so, as the final ranking will be based on the aggregate scores of all three tasks(both sim and real).
+	A: Strictly speaking, no. But it is highly recommended to do so. The final ranking will be based on the total score of all three tasks, so completing all three tasks will give you a better chance to win the competition.
+
+Q: Why hasn't my submission been evaluated yet?
+	A: If your submission result has not appeared in the evaluation, it means your work has not been pulled by the evaluators yet. Please be patient and wait, as it usually takes 1-3 business days for evaluation, or you can contact the administrator.
+
+Q: Why do simulation evaluations often fail? How to resolve this?
+	A: There can be many reasons for evaluation failures, including but not limited to: incorrect model file paths, model file permission issues, environment configuration problems, additional downloads or configurations required. It is recommended that you first check whether the image can be loaded locally and perform inference normally. If everything works fine locally, please contact the administrator in the group, and we will help you resolve the issue as soon as possible.
+
+Q: Why can't I submit again after submitting once?
+	A: Instructions on the number of times participants can upload submissions: Each task can only be submitted once per day. Participants should thoroughly verify your work locally before uploading. If you have no submission opportunities left for the day, please wait patiently for the next day's submission opportunity, or contact the administrator if you have other questions.
+
+Q: Is there any difference between team members?
+	A: It has been repaired. There is basically no difference between the captain and the team members. Please don't set up two teams for one player, which may cause abnormal scoring.
 
 Common Technical Issues & Resolution
 =====================================================
