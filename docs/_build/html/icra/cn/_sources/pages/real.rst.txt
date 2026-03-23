@@ -61,7 +61,7 @@ During evaluation, one express package with label facing down and one with label
 
 *   Stable placement to designated position: 10 points per package, total 20 points
 
-Task 3: Unilever (100 points)
+Task 3: Bottling (100 points)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 During evaluation, two bottles will be placed in front of the robot. First pick up the bottle with the right hand, then pass the bottle in the air to the left hand, and finally place the bottle on the conveyor belt with the left hand. Scoring criteria are as follows:

@@ -88,7 +88,7 @@ Key Challenges:
 
 .. image:: ../_static/images/task2_real.jpg
 
-Task 3: Unilever
+Task 3: Bottling
 ----------------------------------------------------------------
 
 Task Description: The robot randomly picks one daily chemical product from a cluttered shelf, rotates it by a certain angle, and places it on the target conveyor belt nearby.
