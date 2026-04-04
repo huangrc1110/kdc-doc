@@ -14,6 +14,10 @@ This repository is used for data conversion, model training and model deployment
       
       git clone -b main --depth=1 https://github.com/LejuRobotics/kuavo_data_challenge.git 
 
+Additional package
+    Lingbot-vla(README.md has detailed installation instructions)：https://github.com/JoyJeeo/lingbot-vla
+
+
 The robot used in the real robot competition is Leju Kuavo 4 Pro, with end-effectors being dexterous hands/grippers.
 
 Task Overview
