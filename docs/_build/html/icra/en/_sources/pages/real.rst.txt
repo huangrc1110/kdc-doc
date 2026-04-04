@@ -6,9 +6,6 @@ Real Robot Competition
 Real Robot Competition Task Introduction
 ================
 
-Task Overview
---------
-
 Installing the `kuavo_data_challenge <https://github.com/LejuRobotics/kuavo_data_challenge/tree/main>`_ (Baseline code) Repository
 ======================================================================================================================================================
 This repository is used for data conversion, model training and model deployment. Use git operation to fetch the latest codebase (**icra** branch):  
@@ -18,6 +15,9 @@ This repository is used for data conversion, model training and model deployment
       git clone -b main --depth=1 https://github.com/LejuRobotics/kuavo_data_challenge.git 
 
 The robot used in the real robot competition is Leju Kuavo 4 Pro, with end-effectors being dexterous hands/grippers.
+
+Task Overview
+--------
 
 Task 1
 ^^^^^^^^^
