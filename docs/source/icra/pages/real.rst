@@ -9,6 +9,14 @@ Real Robot Competition Task Introduction
 Task Overview
 --------
 
+Installing the `kuavo_data_challenge <https://github.com/LejuRobotics/kuavo_data_challenge/tree/main>`_ (Baseline code) Repository
+======================================================================================================================================================
+This repository is used for data conversion, model training and model deployment. Use git operation to fetch the latest codebase (**icra** branch):  
+
+   .. code-block:: bash
+      
+      git clone -b main --depth=1 https://github.com/LejuRobotics/kuavo_data_challenge.git 
+
 The robot used in the real robot competition is Leju Kuavo 4 Pro, with end-effectors being dexterous hands/grippers.
 
 Task 1
@@ -93,44 +101,58 @@ Data Conversion (parts that may need modification are commented)
 --------------------------
 .. code-block:: bash
 
-    ########No modification needed#######
-    hydra:
-        run:
-            dir: ./outputs/data_cvt_hydra_save/singlerun/${now:%Y%m%d_%H%M%S}
-        sweep:
-            dir: ./outputs/data_cvt_hydra_save/multirun/${now:%Y%m%d_%H%M%S}
-            subdir: ${hydra:job.override_dirname}
+    hydra:  # Hydra config directory, for parameter checking only
+    run:
+        dir: ./outputs/data_cvt_hydra_save/singlerun/${now:%Y%m%d_%H%M%S}  # Single run root dir
+    sweep:
+        dir: ./outputs/data_cvt_hydra_save/multirun/${now:%Y%m%d_%H%M%S}  # sweep root dir
+        subdir: ${hydra:job.override_dirname}
 
-    ########Modify according to actual directory#######
+
+    #Convert kuavo rosbag data into lerobot-parquet format configuration file
+    #Please pay attention! ! !
+    #The data conversion code of this branch is updated simultaneously with the lerobot version, and currently supports lerobot version 0.4.2
+    #Due to version changes, the data conversion code, training, and inference codes have undergone major changes. Please be sure to install and use the lerobot0.4.2 version of the code for data conversion.
+    #lerobot address: https://github.com/huggingface/lerobot
+
     rosbag:
-        rosbag_dir: /path/to/your/rosbag
-        num_used: null
-        lerobot_dir: /path/to/your/lerobot/save/file
+    rosbag_dir: /path/to/your/rosbag #Directory where rosbag files are stored
+    num_used: null #The number of rosbags used (if set to any number, random sampling will be selected), null means using all rosbags
+    lerobot_dir: /your/path/to/your/lerobotdata/  #The directory where the converted lerobot files are saved will generate a lerobot subdirectory in this directory and store the corresponding data.
+    chunk_size: 100  #This is the size setting that currently uses streaming to read the bag and process it in blocks. It has nothing to do with the one that imitates learning action blocks.
 
     dataset:
-        only_arm: true  # Default true, whether to use only arm data
-        eef_type: rq2f85 # Real robot options: leju_claw, qiangnao; tasks 1 and 2 use gripper leju_claw, task 3 uses dexterous hand qiangnao
-        which_arm: both  # Which arm data is needed, options: left, right, both; note this will simultaneously select cameras for corresponding arms, head camera is included by default; tasks 1 and 3 are single-arm operations, can choose right (but not necessarily), task 2 must choose both
-        use_depth: true  # Whether depth image data is needed, depth data consistent with arms above; currently only diffusion policy supports depth in this branch, ACT policy does not support depth images yet but is supported in dev branch
-        depth_range: [0, 1000]  # Depth map cropping range, unit: millimeters
+    #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    only_arm: true  # Default is true, whether to use only arm data. Setting this to true automatically ignores all lower limb data.
+    #!!!!!!!!!!!!Should be true for all tasks in this competition!!!!!!!!!!!!!!!
+    #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    eef_type: leju_claw #End effector type, simulation selection: rq2f85, real machine optional: leju_claw, (gripper) qiangnao, (dexterous hand)
+    which_arm: right  #Which arm's joint + image data is needed, optional: left, right, both. Note that the image data will also include the head camera image.
+    use_depth: False  #Do you need depth image data? Depth image data corresponding to the upper arm. Both act and dp of this branch support depth images.
+    depth_range: [0, 1500]  #The clipping range of the depth map, in millimeters, will be used for normalization
+    
+    task_description: "Pick and Place" # Task description, change if desired
 
-        task_description: “Pick and Place”
+    train_hz: 10  # Training data sampling rate
+    main_timeline: head_cam_h # Which cam is your main cam. Default is head_cam_h. Could be changed to wrist_cam_l, wrist_cam_r wrist cam if desired.
+    main_timeline_fps: 30 # Main cam frame rate, must be stable. Default is 30fps.
+    sample_drop: 10 # Drop 10 frames in the beginning and end of each episode.
 
-        train_hz: 10
-        main_timeline: head_cam_h
-        main_timeline_fps: 30
-        sample_drop: 10
+    # dex_dof_needed is the dof needed for dex hand. The qiangnao dexhand has 6 dof, with fully closed being [100] * 6, fully open being [0] * 6.
+    # 1: When precise operation or multi-finger coordinated operation is not required, it is usually set to 1, which means that only the first joint is needed as the basis for opening and closing.
+    #    In this case, [0, 100, 0, 0, 0, 0] is used to represent the open state, and [100] * 6 represents the clenched fist state.
+    # 2(Untested): 0,2,3,4,5 dof becomes a single dof.
+    # 6(Untested): All 6 dof are available.
+    dex_dof_needed: 1   # default=1
+
+    is_binary: false  # Is open and close binary? default=false
+    delta_action: false # Whether to use delta for action. default=false. Still under development
+    relative_start: false # Whether to use relative start position. default=false
 
 
-        dex_dof_needed: 1
-
-        is_binary: false
-        delta_action: false
-        relative_start: false
-
-        resize:
-            width: 848
-            height: 480
+    resize:
+        width: 848  #Image scaling width, please check first (recommended browser foxglove tool) the original size of the image in rosbag to avoid problems such as blurring or stretching deformation caused by enlarging or reducing.
+        height: 480  #Image zoom height. Please check first (recommended browser foxglove tool) the original size of the image in rosbag to avoid problems such as blurring or stretching deformation caused by enlarging or reducing.
 
 
 Model Inference Configuration File
@@ -139,151 +161,112 @@ main branch (config to modify is kuavo_real_env.yaml, parts that may need modifi
 ^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: bash
 
-    hydra:
-        run:
-            dir: ./outputs/kuavo_sim_deploy_hydra_save/singlerun/${now:%Y%m%d_%H%M%S}
-        sweep:
-            dir: ./outputs/kuavo_sim_deploy_hydra_save/multirun/${now:%Y%m%d_%H%M%S}
-            subdir: ${hydra:job.override_dirname}
+    hydra:  # Hydra config directory, for parameter checking only
+    run:
+        dir: ./outputs/kuavo_deploy_hydra_save/singlerun/${now:%Y%m%d_%H%M%S}  # Single run root dir
+    sweep:
+        dir: ./outputs/kuavo_deploy_hydra_save/multirun/${now:%Y%m%d_%H%M%S}  # sweep root dir
+        subdir: ${hydra:job.override_dirname}
 
 
-    real: true # Set to true, indicating real robot competition configuration
-
-    only_arm: true  # Set to true, indicating only arm control is used
-    eef_type: leju_claw  # End-effector type, real robot options leju_claw or qiangnao: choose according to task's eef, tasks 1 and 2 use gripper leju_claw, task 3 uses dexterous hand qiangnao
-    control_mode: joint
-    which_arm: both  # Which arm data is needed, options: left, right, both; note this will simultaneously select cameras for corresponding arms, head camera is included by default; tasks 1 and 3 are single-arm operations, can choose right (but not necessarily), task 2 must choose both
-    head_init: null
-
-    # input_images: input images, options “head_cam_h”,'depth_h','wrist_cam_l','depth_l','wrist_cam_r','depth_r'
-    # (each is optional, needs to be consistent with your robot configuration and trained model)
-    # Typically: cameras = [{“left”:['head_cam_h','wrist_cam_l'],
-    #                 “right”:['head_cam_h','wrist_cam_r'],
-    #                 “both”:['head_cam_h','wrist_cam_l','wrist_cam_r']
-    #                 },
-    #                 {“left”:['head_cam_h','depth_h','wrist_cam_l','depth_l'],
-    #                 “right”:['head_cam_h','depth_h','wrist_cam_r','depth_r'],
-    #                 “both”:['head_cam_h','depth_h','wrist_cam_l','depth_l','wrist_cam_r','depth_r']
-    #                 }][int(self.use_depth)][self.which_arm]
-    input_images: [“head_cam_h”,'depth_h','wrist_cam_l','depth_l','wrist_cam_r','depth_r'] # Currently only diffusion policy supports depth in this branch, ACT policy does not support depth images yet but is supported in dev branch
-    depth_range: [0, 1000]  # Depth map cropping range, unit: millimeters, has no effect without depth images
-    image_size: [480, 848] # Image size (height, width)
-    ros_rate: 10  # Inference frequency, unit Hz
-
-    ################### The following environment configurations are not recommended to modify ################33
-    qiangnao_dof_needed: 1
-
-    leju_claw_dof_needed: 1
-
-    rq2f85_dof_needed: 1
-
-    arm_init: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-    arm_min: [-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180]
-    arm_max: [180,180,180,180,180,180,180,180,180,180,180,180,180,180]
-
-    eef_min: [0]
-    eef_max: [1]
-
-    base_min: [-2.0, -2.0, -3.14, 0]
-    base_max: [2.0, 2.0, 3.14, 1]
-
-    is_binary: false
-
-    ######### The following configurations need to be modified according to real robot competition tasks ###########
-    go_bag_path: /your_bag_path  # For real robot inference, the complete path of the bag file is required. Please store any original bag file of this task anywhere in the kuavo_data_challenge repository and provide the correct path.
-
-    policy_type: “diffusion”  # Policy name, supports diffusion, act, etc.
-    use_delta: false # Whether to use delta actions, default=false (not yet supported)
-    eval_episodes: 10  # Number of test episodes, real robot inference can run continuously, set to 10 or greater than 10
-    seed: 42
-    start_seed: 42
-    device: “cuda”
-    task: “your_task”
-    method: “your_method”
-    timestamp: “your_timestamp”
-    epoch: 1  # Which epoch of trained model to use. Note: code will load policy model parameters from outputs/<task>/<method>/run_<timestamp>/epoch10
-    max_episode_steps: 500  # Maximum episode steps, automatically ends when exceeded, adjust according to task duration, set to 500 is fine
-    env_name: Kuavo-Real  # Kuavo simulator environment name
-
-dev branch (parts that may need modification are commented)
-^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: bash
-
-    hydra:
-        run:
-            dir: ./outputs/kuavo_deploy_hydra_save/singlerun/${now:%Y%m%d_%H%M%S}
-        sweep:
-            dir: ./outputs/kuavo_deploy_hydra_save/multirun/${now:%Y%m%d_%H%M%S}
-            subdir: ${hydra:job.override_dirname}
-
+    # =====================================================
+    # env config: Simulator-based Environment Configuration
+    # =====================================================
     env:
-        env_name: Kuavo-Real  # Kuavo environment name, simulation Kuavo-Sim, real robot Kuavo-Real
-        control_mode: joint # joint or eef (under development)
-        eef_type: leju_claw  # End-effector type, real robot options leju_claw or qiangnao: choose according to task's eef, tasks 1 and 2 use gripper leju_claw, task 3 uses dexterous hand qiangnao
-        which_arm: both  # Which arm data is needed, options: left, right, both; note this will simultaneously select cameras for corresponding arms, head camera is included by default; tasks 1 and 3 are single-arm operations, can choose right (but not necessarily), task 2 must choose both
-        head_init: null  # Robot head initial position, for simulation please use this value by default to maintain observation consistency, real robot can be adjusted as needed, generally null!!!
-        ros_rate: 10  # Inference control frequency, unit Hz
+    env_name: Kuavo-Real  # kuavo environment name. Default for simulator is Kuavo-Sim, real-device is Kuavo-Real
+    control_mode: joint # joint or eef （eef still under development）
+    eef_type: leju_claw  # End-effector type. rq2f85 for simulation. Real-device options being leju_claw (claw, used in this competition) or qiangnao (dexhand)
+    which_arm: both  # Which arm joint + image data to use. Available options:left, right, both. Head cam data will be included regardless
+    head_init: null  # Robot head initial position. Use this value for simulation so that the observation is consistent. Can be adjusted for real-device inferencing, typically being null!!
+    ros_rate: 10  # Inference speed in Hz
 
-        only_arm: true  # Default true, whether to use only arm data
+    #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    only_arm: true  # Default is true, whether to use only arm data. Setting this to true automatically ignores all lower limb data.
+    #!!!!!!!!!!!!Should be true for all tasks in this competition!!!!!!!!!!!!!!!
 
-        image_size: &IMGSIZE [848, 480]  # Image size: width, height
-        depth_range: &DEPTHRANGE [0, 1500]  # Depth map range setting, unit mm, default=[0,1500]
-        obs_key_map:  # Topic, message type, frequency, image size, depth cropping and other configurations, depth map range setting, unit mm, default=[0,1500], please note needs to be consistent with training!
-            head_cam_h: [“/cam_h/color/image_raw/compressed”, “CompressedImage”, 30, *IMGSIZE]  # Head RGB camera topic, required
-            wrist_cam_l: [“/cam_l/color/image_raw/compressed”, “CompressedImage”, 30, *IMGSIZE]  # Left wrist RGB camera topic, please select correspondingly, at least select one with below
-            wrist_cam_r: [“/cam_r/color/image_raw/compressed”, “CompressedImage”, 30, *IMGSIZE]  # Right wrist RGB camera topic, please select correspondingly, at least select one with above
-            depth_h: [“/cam_h/depth/image_raw/compressedDepth”, “CompressedImage”, 30, *IMGSIZE, *DEPTHRANGE]  # Head camera depth map topic, can be selected correspondingly with above
-            depth_l: [“/cam_l/depth/image_rect_raw/compressedDepth”, “CompressedImage”, 30, *IMGSIZE, *DEPTHRANGE]  # Left wrist camera depth map topic, can be selected correspondingly with above
-            depth_r: [“/cam_r/depth/image_rect_raw/compressedDepth”, “CompressedImage”, 30, *IMGSIZE, *DEPTHRANGE]  # Right wrist camera depth map topic, can be selected correspondingly with above
-            joint_q: [“/sensors_data_raw”, “sensorsData”, 500]  # Joint angle topic, required
-            qiangnao: [“/dexhand/state”, “JointState”, 500]  # End-effector topic, dexterous hand
-            leju_claw: [“/leju_claw_state”, “lejuClawState”, 500]  # End-effector topic, gripper
-            rq2f85: [“/gripper/state”, “JointState”, 500]  # End-effector topic, gripper in simulation
-
-        arm_state_keys: [“joint_q”,”gripper”]  # Default unchanged, model observation input arm state includes joint angles and gripper open/close state
-        frame_alignment: false  # Whether to enable frame alignment, default=false
-        ratio: 1.0 # When using frame alignment, the proportion of most recent observations among all historical observations, default=1.0
-
-        limits:
-            joint_q:
+    image_size: &IMGSIZE [848, 480]  # Img size: width, height
+    depth_range: &DEPTHRANGE [0, 1500]  # Depth imaging range in mm, default=[0,1500]
+    obs_key_map:  # Topic, msg type, freq, img size, depth crop. Must be consistent with training config!
+        head_cam_h: ["/cam_h/color/image_raw/compressed", "CompressedImage", 30, *IMGSIZE]  # Head RGB img topic, COMPULSORY
+        wrist_cam_l: ["/cam_l/color/image_raw/compressed", "CompressedImage", 30, *IMGSIZE]  # Left wrist RGB img topic, choose one between this and below
+        wrist_cam_r: ["/cam_r/color/image_raw/compressed", "CompressedImage", 30, *IMGSIZE]  # Left wrist RGB img topic, choose one between this and above
+        depth_h: ["/cam_h/depth/image_raw/compressedDepth", "CompressedImage", 30, *IMGSIZE, *DEPTHRANGE]  # Head depth topic, select if depth is needed
+        depth_l: ["/cam_l/depth/image_rect_raw/compressedDepth", "CompressedImage", 30, *IMGSIZE, *DEPTHRANGE]  # Left wrist depth topic, select if depth is needed
+        depth_r: ["/cam_r/depth/image_rect_raw/compressedDepth", "CompressedImage", 30, *IMGSIZE, *DEPTHRANGE]  # Right wrist depth topic, select if depth is needed
+        joint_q: ["/sensors_data_raw", "sensorsData", 500]  # Joint angle topic, COMPULSORY
+        # qiangnao: ["/dexhand/state", "JointState", 500]  # End-effector topic for dexterous hand
+        leju_claw: ["/leju_claw_state", "lejuClawState", 500]  # End-effector topic for gripper-claw
+        # rq2f85: ["/gripper/state", "JointState", 500]  # End-effector topic for simulator claw
+    
+    arm_state_keys: ["joint_q","gripper"]  # Do not change. Model observation arm state, with joint angles and gripper state.
+    frame_alignment: false  # Frame alignment. default=false
+    ratio: 1.0 # With frame alignment, this is the ratio of the latest observation vs all older observations. default=1.0
+    
+    # Limits joint values. I.e. upper and lower limit definitions. Do not change these.
+    limits:
+        # joint angle limits (7 joints per arm)
+        joint_q:
             min: [-3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14]
             max: [3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14]
-
-            gripper:
+        
+        # Gripper limits
+        gripper:
             min: [0, 0]
             max: [1, 1]
-
-            eef:
+        
+        # End-effector limits
+        eef:
             min: [-1, -1, -1, -3.14, -3.14, -3.14, -1, -1, -1, -3.14, -3.14, -3.14]
             max: [1, 1, 1, 3.14, 3.14, 3.14, 1, 1, 1, 3.14, 3.14, 3.14]
-
-            eef_relative:
+        
+        # End-effector relative limits (for delta, currently in development)
+        eef_relative:
             min: [-0.005, -0.0075, -0.004, -0.03, -0.03, -0.05, -0.005, -0.0075, -0.004, -0.03, -0.03, -0.05]
             max: [0.005, 0.0075, 0.004, 0.03, 0.03, 0.05, 0.005, 0.0075, 0.004, 0.03, 0.03, 0.05]
-
-            base:
+        
+        # Robot movement limits (x, y, yaw, move_flag)
+        base:
             min: [-2.0, -2.0, -3.14, 0]
             max: [2.0, 2.0, 3.14, 1]
 
-        # The following environment configurations are not recommended to modify
+    # It is NOT recommended to change these following configs
 
-        qiangnao_dof_needed: 1
+    # dex_dof_needed is the dof needed for dex hand. The qiangnao dexhand has 6 dof, with fully closed being [100] * 6, fully open being [0] * 6.
+    # 1: When precise operation or multi-finger coordinated operation is not required, it is usually set to 1, which means that only the first joint is needed as the basis for opening and closing.
+    #    In this case, [0, 100, 0, 0, 0, 0] is used to represent the open state, and [100] * 6 represents the clenched fist state.
+    # 2(Untested): 0,2,3,4,5 dof becomes a single dof.
+    # 6(Untested): All 6 dof are available.
+    qiangnao_dof_needed: 1   # default=1
 
-        is_binary: false
+    is_binary: false  # Is open and close binary? default=false
 
+
+    # =====================================================
+    # inference config: Change here for inferencing configuration, both in sim and real-device
+    # =====================================================
     inference:
-        go_bag_path: /path/to/your/go.bag # For real robot inference, the complete path of the bag file is required. Please store any original bag file of this task anywhere in the kuavo_data_challenge repository and provide the correct path.
-        policy_type: “act”  # Policy name, supports diffusion, act, etc.
-        eval_episodes: 10  # Number of test episodes, real robot inference can run continuously, set to 10 or greater than 10
-        seed: 42
-        start_seed: 42
-        device: “cuda”
-        task: “your_task”
-        method: “your_method”
-        timestamp: “your_timestamp”
-        epoch: best  # Which epoch of trained model to use, can fill 50, 100, best, etc. Note: code will load policy model parameters from outputs/train/<task>/<method>/<timestamp>/epoch<epoch>
-        max_episode_steps: 500  # Maximum episode steps, set to 500 is fine
+        go_bag_path: /path/to/your/go.bag  #! ! ! Temporarily not used in the competition emulator! ! ! , the complete path of the bag needs to be provided during real-machine inference, such as reaching the pre-grab posture, etc. You can directly copy a trained rosbag control.
+        policy_type: "act"  #Strategy name, supports diffusion, act, etc.
+        pretrained_path: ""  #Optional: Directly specify the checkpoint / hf_ckpt path. If left blank, it will still be parsed according to outputs/train/<task>/<method>/<timestamp>/epoch<epoch>
+        eval_episodes: 10  #The number of test rounds, the default value of the game simulator is 100, used for scoring
+        seed: 42  #Random seeds can be used to fix the initial state of each object in simulation to facilitate reproduction.
+        start_seed: 42  #The random seed at the beginning of the round can be used to fix the initial state of each object in the simulation to facilitate reproduction.
+        device: "cuda"  # or "cpu"
+        task: "your_task"
+        method: "your_method"
+        timestamp: "your_timestamp" #Similar runtime timestamp
+        epoch: best  #Which epoch to use for training saving, you can fill in 50, 100, best, etc. Note: the code will load the model parameters of the policy in outputs/train/<task>/<method>/<timestamp>/epoch<epoch>
+        max_episode_steps: 2000  #The maximum number of steps in a round will automatically end if exceeded and can be adjusted according to the required duration of the task.
+
+        #Effective when policy_type=lingbot
+        lingbot_root: ""  #Automatically find or read the environment variable LINGBOT_ROOT when left blank
+        task_prompt: ""  #If left blank, return to inference.task
+        lingbot_use_length: 1
+        lingbot_chunk_ret: true
+        lingbot_norm_stats_file: ""  #Optional: Custom norm_stats json
+        lingbot_data_type: "robotwin"
+        lingbot_execute_raw_action: false
+
 
 Real Robot Competition Submission Instructions
 ================

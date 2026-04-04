@@ -83,12 +83,10 @@
 <li class="toctree-l1"><a class="reference internal" href="submit.html">Submission</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Real Robot Competition</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#real-robot-competition-task-introduction">Real Robot Competition Task Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#task-overview">Task Overview</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#task-1">Task 1</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#task-2">Task 2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#task-3">Task 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-overview">Task Overview</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-the-kuavo-data-challenge-baseline-code-repository">Installing the kuavo_data_challenge (Baseline code) Repository</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#task-scoring">Task Scoring</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#task-1-small-part-flipping-100-points">Task 1: Small Part Flipping (100 points)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#task-2-express-package-weighing-100-points">Task 2: Express Package Weighing (100 points)</a></li>
@@ -105,7 +103,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#data-conversion-parts-that-may-need-modification-are-commented">Data Conversion (parts that may need modification are commented)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#model-inference-configuration-file">Model Inference Configuration File</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#main-branch-config-to-modify-is-kuavo-real-env-yaml-parts-that-may-need-modification-are-commented">main branch (config to modify is kuavo_real_env.yaml, parts that may need modification are commented)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dev-branch-parts-that-may-need-modification-are-commented">dev branch (parts that may need modification are commented)</a></li>
 </ul>
 </li>
 </ul>
@@ -149,21 +146,21 @@
 <h2>Real Robot Competition Task Introduction<a class="headerlink" href="#real-robot-competition-task-introduction" title="Link to this heading"></a></h2>
 <section id="task-overview">
 <h3>Task Overview<a class="headerlink" href="#task-overview" title="Link to this heading"></a></h3>
-<p>The robot used in the real robot competition is Leju Kuavo 4 Pro, with end-effectors being dexterous hands/grippers.</p>
-<section id="task-1">
-<h4>Task 1<a class="headerlink" href="#task-1" title="Link to this heading"></a></h4>
-<p>Small Part Flipping: The robot stands still while the conveyor belt runs at medium speed to transport parts, and the robot performs flipping operations on the parts that need to be flipped.</p>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task1_real.mp4" type="video/mp4"></video></div></section>
-<section id="task-2">
-<h4>Task 2<a class="headerlink" href="#task-2" title="Link to this heading"></a></h4>
-<p>Express Fackage Weighing: The robot stands still, grabs the express package on the table and places it on the weighing platform, checks whether the express label is facing up to determine if it needs to be flipped, and then places the package on the conveyor belt on the left-hand side.</p>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task2_real.mp4" type="video/mp4"></video></div></section>
-<section id="task-3">
-<h4>Task 3<a class="headerlink" href="#task-3" title="Link to this heading"></a></h4>
-<p>Unilever: Pick up the bottle from the table and place it on the conveyor belt.</p>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task3_real.mp4" type="video/mp4"></video></div></section>
 </section>
-<section id="task-scoring">
+</section>
+<section id="installing-the-kuavo-data-challenge-baseline-code-repository">
+<h2>Installing the <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/tree/main">kuavo_data_challenge</a> (Baseline code) Repository<a class="headerlink" href="#installing-the-kuavo-data-challenge-baseline-code-repository" title="Link to this heading"></a></h2>
+<p>This repository is used for data conversion, model training and model deployment. Use git operation to fetch the latest codebase (<strong>icra</strong> branch):</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>main<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo_data_challenge.git
+</pre></div>
+</div>
+</div></blockquote>
+<p>The robot used in the real robot competition is Leju Kuavo 4 Pro, with end-effectors being dexterous hands/grippers.</p>
+<p>Small Part Flipping: The robot stands still while the conveyor belt runs at medium speed to transport parts, and the robot performs flipping operations on the parts that need to be flipped.</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task1_real.mp4" type="video/mp4"></video></div><p>Express Fackage Weighing: The robot stands still, grabs the express package on the table and places it on the weighing platform, checks whether the express label is facing up to determine if it needs to be flipped, and then places the package on the conveyor belt on the left-hand side.</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task2_real.mp4" type="video/mp4"></video></div><p>Unilever: Pick up the bottle from the table and place it on the conveyor belt.</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task3_real.mp4" type="video/mp4"></video></div><section id="task-scoring">
 <h3>Task Scoring<a class="headerlink" href="#task-scoring" title="Link to this heading"></a></h3>
 <p>Each task will be evaluated for ten rounds, with the final score being the average of the ten rounds.</p>
 <section id="task-1-small-part-flipping-100-points">
@@ -211,44 +208,58 @@
 <h2>Real Robot Competition Configuration File Instructions (modify by reference, do not copy-paste directly)<a class="headerlink" href="#real-robot-competition-configuration-file-instructions-modify-by-reference-do-not-copy-paste-directly" title="Link to this heading"></a></h2>
 <section id="data-conversion-parts-that-may-need-modification-are-commented">
 <h3>Data Conversion (parts that may need modification are commented)<a class="headerlink" href="#data-conversion-parts-that-may-need-modification-are-commented" title="Link to this heading"></a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">########No modification needed#######</span>
-hydra:
-<span class="w">    </span>run:
-<span class="w">        </span>dir:<span class="w"> </span>./outputs/data_cvt_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
-<span class="w">    </span>sweep:
-<span class="w">        </span>dir:<span class="w"> </span>./outputs/data_cvt_hydra_save/multirun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
-<span class="w">        </span>subdir:<span class="w"> </span><span class="si">${</span><span class="nv">hydra</span><span class="p">:</span><span class="nv">job</span><span class="p">.override_dirname</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hydra:<span class="w">  </span><span class="c1"># Hydra config directory, for parameter checking only</span>
+run:
+<span class="w">    </span>dir:<span class="w"> </span>./outputs/data_cvt_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span><span class="w">  </span><span class="c1"># Single run root dir</span>
+sweep:
+<span class="w">    </span>dir:<span class="w"> </span>./outputs/data_cvt_hydra_save/multirun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span><span class="w">  </span><span class="c1"># sweep root dir</span>
+<span class="w">    </span>subdir:<span class="w"> </span><span class="si">${</span><span class="nv">hydra</span><span class="p">:</span><span class="nv">job</span><span class="p">.override_dirname</span><span class="si">}</span>
 
-<span class="c1">########Modify according to actual directory#######</span>
+
+<span class="c1">#Convert kuavo rosbag data into lerobot-parquet format configuration file</span>
+<span class="c1">#Please pay attention! ! !</span>
+<span class="c1">#The data conversion code of this branch is updated simultaneously with the lerobot version, and currently supports lerobot version 0.4.2</span>
+<span class="c1">#Due to version changes, the data conversion code, training, and inference codes have undergone major changes. Please be sure to install and use the lerobot0.4.2 version of the code for data conversion.</span>
+<span class="c1">#lerobot address: https://github.com/huggingface/lerobot</span>
+
 rosbag:
-<span class="w">    </span>rosbag_dir:<span class="w"> </span>/path/to/your/rosbag
-<span class="w">    </span>num_used:<span class="w"> </span>null
-<span class="w">    </span>lerobot_dir:<span class="w"> </span>/path/to/your/lerobot/save/file
+rosbag_dir:<span class="w"> </span>/path/to/your/rosbag<span class="w"> </span><span class="c1">#Directory where rosbag files are stored</span>
+num_used:<span class="w"> </span>null<span class="w"> </span><span class="c1">#The number of rosbags used (if set to any number, random sampling will be selected), null means using all rosbags</span>
+lerobot_dir:<span class="w"> </span>/your/path/to/your/lerobotdata/<span class="w">  </span><span class="c1">#The directory where the converted lerobot files are saved will generate a lerobot subdirectory in this directory and store the corresponding data.</span>
+chunk_size:<span class="w"> </span><span class="m">100</span><span class="w">  </span><span class="c1">#This is the size setting that currently uses streaming to read the bag and process it in blocks. It has nothing to do with the one that imitates learning action blocks.</span>
 
 dataset:
-<span class="w">    </span>only_arm:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># Default true, whether to use only arm data</span>
-<span class="w">    </span>eef_type:<span class="w"> </span>rq2f85<span class="w"> </span><span class="c1"># Real robot options: leju_claw, qiangnao; tasks 1 and 2 use gripper leju_claw, task 3 uses dexterous hand qiangnao</span>
-<span class="w">    </span>which_arm:<span class="w"> </span>both<span class="w">  </span><span class="c1"># Which arm data is needed, options: left, right, both; note this will simultaneously select cameras for corresponding arms, head camera is included by default; tasks 1 and 3 are single-arm operations, can choose right (but not necessarily), task 2 must choose both</span>
-<span class="w">    </span>use_depth:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># Whether depth image data is needed, depth data consistent with arms above; currently only diffusion policy supports depth in this branch, ACT policy does not support depth images yet but is supported in dev branch</span>
-<span class="w">    </span>depth_range:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1000</span><span class="o">]</span><span class="w">  </span><span class="c1"># Depth map cropping range, unit: millimeters</span>
+<span class="c1">#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+only_arm:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># Default is true, whether to use only arm data. Setting this to true automatically ignores all lower limb data.</span>
+<span class="c1">#!!!!!!!!!!!!Should be true for all tasks in this competition!!!!!!!!!!!!!!!</span>
+<span class="c1">#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+eef_type:<span class="w"> </span>leju_claw<span class="w"> </span><span class="c1">#End effector type, simulation selection: rq2f85, real machine optional: leju_claw, (gripper) qiangnao, (dexterous hand)</span>
+which_arm:<span class="w"> </span>right<span class="w">  </span><span class="c1">#Which arm&#39;s joint + image data is needed, optional: left, right, both. Note that the image data will also include the head camera image.</span>
+use_depth:<span class="w"> </span>False<span class="w">  </span><span class="c1">#Do you need depth image data? Depth image data corresponding to the upper arm. Both act and dp of this branch support depth images.</span>
+depth_range:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1500</span><span class="o">]</span><span class="w">  </span><span class="c1">#The clipping range of the depth map, in millimeters, will be used for normalization</span>
 
-<span class="w">    </span>task_description:<span class="w"> </span>“Pick<span class="w"> </span>and<span class="w"> </span>Place”
+task_description:<span class="w"> </span><span class="s2">&quot;Pick and Place&quot;</span><span class="w"> </span><span class="c1"># Task description, change if desired</span>
 
-<span class="w">    </span>train_hz:<span class="w"> </span><span class="m">10</span>
-<span class="w">    </span>main_timeline:<span class="w"> </span>head_cam_h
-<span class="w">    </span>main_timeline_fps:<span class="w"> </span><span class="m">30</span>
-<span class="w">    </span>sample_drop:<span class="w"> </span><span class="m">10</span>
+train_hz:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># Training data sampling rate</span>
+main_timeline:<span class="w"> </span>head_cam_h<span class="w"> </span><span class="c1"># Which cam is your main cam. Default is head_cam_h. Could be changed to wrist_cam_l, wrist_cam_r wrist cam if desired.</span>
+main_timeline_fps:<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="c1"># Main cam frame rate, must be stable. Default is 30fps.</span>
+sample_drop:<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="c1"># Drop 10 frames in the beginning and end of each episode.</span>
+
+<span class="c1"># dex_dof_needed is the dof needed for dex hand. The qiangnao dexhand has 6 dof, with fully closed being [100] * 6, fully open being [0] * 6.</span>
+<span class="c1"># 1: When precise operation or multi-finger coordinated operation is not required, it is usually set to 1, which means that only the first joint is needed as the basis for opening and closing.</span>
+<span class="c1">#    In this case, [0, 100, 0, 0, 0, 0] is used to represent the open state, and [100] * 6 represents the clenched fist state.</span>
+<span class="c1"># 2(Untested): 0,2,3,4,5 dof becomes a single dof.</span>
+<span class="c1"># 6(Untested): All 6 dof are available.</span>
+dex_dof_needed:<span class="w"> </span><span class="m">1</span><span class="w">   </span><span class="c1"># default=1</span>
+
+is_binary:<span class="w"> </span><span class="nb">false</span><span class="w">  </span><span class="c1"># Is open and close binary? default=false</span>
+delta_action:<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="c1"># Whether to use delta for action. default=false. Still under development</span>
+relative_start:<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="c1"># Whether to use relative start position. default=false</span>
 
 
-<span class="w">    </span>dex_dof_needed:<span class="w"> </span><span class="m">1</span>
-
-<span class="w">    </span>is_binary:<span class="w"> </span><span class="nb">false</span>
-<span class="w">    </span>delta_action:<span class="w"> </span><span class="nb">false</span>
-<span class="w">    </span>relative_start:<span class="w"> </span><span class="nb">false</span>
-
-<span class="w">    </span>resize:
-<span class="w">        </span>width:<span class="w"> </span><span class="m">848</span>
-<span class="w">        </span>height:<span class="w"> </span><span class="m">480</span>
+resize:
+<span class="w">    </span>width:<span class="w"> </span><span class="m">848</span><span class="w">  </span><span class="c1">#Image scaling width, please check first (recommended browser foxglove tool) the original size of the image in rosbag to avoid problems such as blurring or stretching deformation caused by enlarging or reducing.</span>
+<span class="w">    </span>height:<span class="w"> </span><span class="m">480</span><span class="w">  </span><span class="c1">#Image zoom height. Please check first (recommended browser foxglove tool) the original size of the image in rosbag to avoid problems such as blurring or stretching deformation caused by enlarging or reducing.</span>
 </pre></div>
 </div>
 </section>
@@ -256,151 +267,111 @@ dataset:
 <h3>Model Inference Configuration File<a class="headerlink" href="#model-inference-configuration-file" title="Link to this heading"></a></h3>
 <section id="main-branch-config-to-modify-is-kuavo-real-env-yaml-parts-that-may-need-modification-are-commented">
 <h4>main branch (config to modify is kuavo_real_env.yaml, parts that may need modification are commented)<a class="headerlink" href="#main-branch-config-to-modify-is-kuavo-real-env-yaml-parts-that-may-need-modification-are-commented" title="Link to this heading"></a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hydra:
-<span class="w">    </span>run:
-<span class="w">        </span>dir:<span class="w"> </span>./outputs/kuavo_sim_deploy_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
-<span class="w">    </span>sweep:
-<span class="w">        </span>dir:<span class="w"> </span>./outputs/kuavo_sim_deploy_hydra_save/multirun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
-<span class="w">        </span>subdir:<span class="w"> </span><span class="si">${</span><span class="nv">hydra</span><span class="p">:</span><span class="nv">job</span><span class="p">.override_dirname</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hydra:<span class="w">  </span><span class="c1"># Hydra config directory, for parameter checking only</span>
+run:
+<span class="w">    </span>dir:<span class="w"> </span>./outputs/kuavo_deploy_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span><span class="w">  </span><span class="c1"># Single run root dir</span>
+sweep:
+<span class="w">    </span>dir:<span class="w"> </span>./outputs/kuavo_deploy_hydra_save/multirun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span><span class="w">  </span><span class="c1"># sweep root dir</span>
+<span class="w">    </span>subdir:<span class="w"> </span><span class="si">${</span><span class="nv">hydra</span><span class="p">:</span><span class="nv">job</span><span class="p">.override_dirname</span><span class="si">}</span>
 
 
-real:<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="c1"># Set to true, indicating real robot competition configuration</span>
-
-only_arm:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># Set to true, indicating only arm control is used</span>
-eef_type:<span class="w"> </span>leju_claw<span class="w">  </span><span class="c1"># End-effector type, real robot options leju_claw or qiangnao: choose according to task&#39;s eef, tasks 1 and 2 use gripper leju_claw, task 3 uses dexterous hand qiangnao</span>
-control_mode:<span class="w"> </span>joint
-which_arm:<span class="w"> </span>both<span class="w">  </span><span class="c1"># Which arm data is needed, options: left, right, both; note this will simultaneously select cameras for corresponding arms, head camera is included by default; tasks 1 and 3 are single-arm operations, can choose right (but not necessarily), task 2 must choose both</span>
-head_init:<span class="w"> </span>null
-
-<span class="c1"># input_images: input images, options “head_cam_h”,&#39;depth_h&#39;,&#39;wrist_cam_l&#39;,&#39;depth_l&#39;,&#39;wrist_cam_r&#39;,&#39;depth_r&#39;</span>
-<span class="c1"># (each is optional, needs to be consistent with your robot configuration and trained model)</span>
-<span class="c1"># Typically: cameras = [{“left”:[&#39;head_cam_h&#39;,&#39;wrist_cam_l&#39;],</span>
-<span class="c1">#                 “right”:[&#39;head_cam_h&#39;,&#39;wrist_cam_r&#39;],</span>
-<span class="c1">#                 “both”:[&#39;head_cam_h&#39;,&#39;wrist_cam_l&#39;,&#39;wrist_cam_r&#39;]</span>
-<span class="c1">#                 },</span>
-<span class="c1">#                 {“left”:[&#39;head_cam_h&#39;,&#39;depth_h&#39;,&#39;wrist_cam_l&#39;,&#39;depth_l&#39;],</span>
-<span class="c1">#                 “right”:[&#39;head_cam_h&#39;,&#39;depth_h&#39;,&#39;wrist_cam_r&#39;,&#39;depth_r&#39;],</span>
-<span class="c1">#                 “both”:[&#39;head_cam_h&#39;,&#39;depth_h&#39;,&#39;wrist_cam_l&#39;,&#39;depth_l&#39;,&#39;wrist_cam_r&#39;,&#39;depth_r&#39;]</span>
-<span class="c1">#                 }][int(self.use_depth)][self.which_arm]</span>
-input_images:<span class="w"> </span><span class="o">[</span>“head_cam_h”,<span class="s1">&#39;depth_h&#39;</span>,<span class="s1">&#39;wrist_cam_l&#39;</span>,<span class="s1">&#39;depth_l&#39;</span>,<span class="s1">&#39;wrist_cam_r&#39;</span>,<span class="s1">&#39;depth_r&#39;</span><span class="o">]</span><span class="w"> </span><span class="c1"># Currently only diffusion policy supports depth in this branch, ACT policy does not support depth images yet but is supported in dev branch</span>
-depth_range:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1000</span><span class="o">]</span><span class="w">  </span><span class="c1"># Depth map cropping range, unit: millimeters, has no effect without depth images</span>
-image_size:<span class="w"> </span><span class="o">[</span><span class="m">480</span>,<span class="w"> </span><span class="m">848</span><span class="o">]</span><span class="w"> </span><span class="c1"># Image size (height, width)</span>
-ros_rate:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># Inference frequency, unit Hz</span>
-
-<span class="c1">################### The following environment configurations are not recommended to modify ################33</span>
-qiangnao_dof_needed:<span class="w"> </span><span class="m">1</span>
-
-leju_claw_dof_needed:<span class="w"> </span><span class="m">1</span>
-
-rq2f85_dof_needed:<span class="w"> </span><span class="m">1</span>
-
-arm_init:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
-
-arm_min:<span class="w"> </span><span class="o">[</span>-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180,-180<span class="o">]</span>
-arm_max:<span class="w"> </span><span class="o">[</span><span class="m">180</span>,180,180,180,180,180,180,180,180,180,180,180,180,180<span class="o">]</span>
-
-eef_min:<span class="w"> </span><span class="o">[</span><span class="m">0</span><span class="o">]</span>
-eef_max:<span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span>
-
-base_min:<span class="w"> </span><span class="o">[</span>-2.0,<span class="w"> </span>-2.0,<span class="w"> </span>-3.14,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
-base_max:<span class="w"> </span><span class="o">[</span><span class="m">2</span>.0,<span class="w"> </span><span class="m">2</span>.0,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">1</span><span class="o">]</span>
-
-is_binary:<span class="w"> </span><span class="nb">false</span>
-
-<span class="c1">######### The following configurations need to be modified according to real robot competition tasks ###########</span>
-go_bag_path:<span class="w"> </span>/your_bag_path<span class="w">  </span><span class="c1"># For real robot inference, the complete path of the bag file is required. Please store any original bag file of this task anywhere in the kuavo_data_challenge repository and provide the correct path.</span>
-
-policy_type:<span class="w"> </span>“diffusion”<span class="w">  </span><span class="c1"># Policy name, supports diffusion, act, etc.</span>
-use_delta:<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="c1"># Whether to use delta actions, default=false (not yet supported)</span>
-eval_episodes:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># Number of test episodes, real robot inference can run continuously, set to 10 or greater than 10</span>
-seed:<span class="w"> </span><span class="m">42</span>
-start_seed:<span class="w"> </span><span class="m">42</span>
-device:<span class="w"> </span>“cuda”
-task:<span class="w"> </span>“your_task”
-method:<span class="w"> </span>“your_method”
-timestamp:<span class="w"> </span>“your_timestamp”
-epoch:<span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c1"># Which epoch of trained model to use. Note: code will load policy model parameters from outputs/&lt;task&gt;/&lt;method&gt;/run_&lt;timestamp&gt;/epoch10</span>
-max_episode_steps:<span class="w"> </span><span class="m">500</span><span class="w">  </span><span class="c1"># Maximum episode steps, automatically ends when exceeded, adjust according to task duration, set to 500 is fine</span>
-env_name:<span class="w"> </span>Kuavo-Real<span class="w">  </span><span class="c1"># Kuavo simulator environment name</span>
-</pre></div>
-</div>
-</section>
-<section id="dev-branch-parts-that-may-need-modification-are-commented">
-<h4>dev branch (parts that may need modification are commented)<a class="headerlink" href="#dev-branch-parts-that-may-need-modification-are-commented" title="Link to this heading"></a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hydra:
-<span class="w">    </span>run:
-<span class="w">        </span>dir:<span class="w"> </span>./outputs/kuavo_deploy_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
-<span class="w">    </span>sweep:
-<span class="w">        </span>dir:<span class="w"> </span>./outputs/kuavo_deploy_hydra_save/multirun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
-<span class="w">        </span>subdir:<span class="w"> </span><span class="si">${</span><span class="nv">hydra</span><span class="p">:</span><span class="nv">job</span><span class="p">.override_dirname</span><span class="si">}</span>
-
+<span class="c1"># =====================================================</span>
+<span class="c1"># env config: Simulator-based Environment Configuration</span>
+<span class="c1"># =====================================================</span>
 env:
-<span class="w">    </span>env_name:<span class="w"> </span>Kuavo-Real<span class="w">  </span><span class="c1"># Kuavo environment name, simulation Kuavo-Sim, real robot Kuavo-Real</span>
-<span class="w">    </span>control_mode:<span class="w"> </span>joint<span class="w"> </span><span class="c1"># joint or eef (under development)</span>
-<span class="w">    </span>eef_type:<span class="w"> </span>leju_claw<span class="w">  </span><span class="c1"># End-effector type, real robot options leju_claw or qiangnao: choose according to task&#39;s eef, tasks 1 and 2 use gripper leju_claw, task 3 uses dexterous hand qiangnao</span>
-<span class="w">    </span>which_arm:<span class="w"> </span>both<span class="w">  </span><span class="c1"># Which arm data is needed, options: left, right, both; note this will simultaneously select cameras for corresponding arms, head camera is included by default; tasks 1 and 3 are single-arm operations, can choose right (but not necessarily), task 2 must choose both</span>
-<span class="w">    </span>head_init:<span class="w"> </span>null<span class="w">  </span><span class="c1"># Robot head initial position, for simulation please use this value by default to maintain observation consistency, real robot can be adjusted as needed, generally null!!!</span>
-<span class="w">    </span>ros_rate:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># Inference control frequency, unit Hz</span>
+env_name:<span class="w"> </span>Kuavo-Real<span class="w">  </span><span class="c1"># kuavo environment name. Default for simulator is Kuavo-Sim, real-device is Kuavo-Real</span>
+control_mode:<span class="w"> </span>joint<span class="w"> </span><span class="c1"># joint or eef （eef still under development）</span>
+eef_type:<span class="w"> </span>leju_claw<span class="w">  </span><span class="c1"># End-effector type. rq2f85 for simulation. Real-device options being leju_claw (claw, used in this competition) or qiangnao (dexhand)</span>
+which_arm:<span class="w"> </span>both<span class="w">  </span><span class="c1"># Which arm joint + image data to use. Available options:left, right, both. Head cam data will be included regardless</span>
+head_init:<span class="w"> </span>null<span class="w">  </span><span class="c1"># Robot head initial position. Use this value for simulation so that the observation is consistent. Can be adjusted for real-device inferencing, typically being null!!</span>
+ros_rate:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># Inference speed in Hz</span>
 
-<span class="w">    </span>only_arm:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># Default true, whether to use only arm data</span>
+<span class="c1">#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+only_arm:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># Default is true, whether to use only arm data. Setting this to true automatically ignores all lower limb data.</span>
+<span class="c1">#!!!!!!!!!!!!Should be true for all tasks in this competition!!!!!!!!!!!!!!!</span>
 
-<span class="w">    </span>image_size:<span class="w"> </span><span class="p">&amp;</span>IMGSIZE<span class="w"> </span><span class="o">[</span><span class="m">848</span>,<span class="w"> </span><span class="m">480</span><span class="o">]</span><span class="w">  </span><span class="c1"># Image size: width, height</span>
-<span class="w">    </span>depth_range:<span class="w"> </span><span class="p">&amp;</span>DEPTHRANGE<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1500</span><span class="o">]</span><span class="w">  </span><span class="c1"># Depth map range setting, unit mm, default=[0,1500]</span>
-<span class="w">    </span>obs_key_map:<span class="w">  </span><span class="c1"># Topic, message type, frequency, image size, depth cropping and other configurations, depth map range setting, unit mm, default=[0,1500], please note needs to be consistent with training!</span>
-<span class="w">        </span>head_cam_h:<span class="w"> </span><span class="o">[</span>“/cam_h/color/image_raw/compressed”,<span class="w"> </span>“CompressedImage”,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span><span class="w">  </span><span class="c1"># Head RGB camera topic, required</span>
-<span class="w">        </span>wrist_cam_l:<span class="w"> </span><span class="o">[</span>“/cam_l/color/image_raw/compressed”,<span class="w"> </span>“CompressedImage”,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span><span class="w">  </span><span class="c1"># Left wrist RGB camera topic, please select correspondingly, at least select one with below</span>
-<span class="w">        </span>wrist_cam_r:<span class="w"> </span><span class="o">[</span>“/cam_r/color/image_raw/compressed”,<span class="w"> </span>“CompressedImage”,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span><span class="w">  </span><span class="c1"># Right wrist RGB camera topic, please select correspondingly, at least select one with above</span>
-<span class="w">        </span>depth_h:<span class="w"> </span><span class="o">[</span>“/cam_h/depth/image_raw/compressedDepth”,<span class="w"> </span>“CompressedImage”,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span><span class="w">  </span><span class="c1"># Head camera depth map topic, can be selected correspondingly with above</span>
-<span class="w">        </span>depth_l:<span class="w"> </span><span class="o">[</span>“/cam_l/depth/image_rect_raw/compressedDepth”,<span class="w"> </span>“CompressedImage”,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span><span class="w">  </span><span class="c1"># Left wrist camera depth map topic, can be selected correspondingly with above</span>
-<span class="w">        </span>depth_r:<span class="w"> </span><span class="o">[</span>“/cam_r/depth/image_rect_raw/compressedDepth”,<span class="w"> </span>“CompressedImage”,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span><span class="w">  </span><span class="c1"># Right wrist camera depth map topic, can be selected correspondingly with above</span>
-<span class="w">        </span>joint_q:<span class="w"> </span><span class="o">[</span>“/sensors_data_raw”,<span class="w"> </span>“sensorsData”,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># Joint angle topic, required</span>
-<span class="w">        </span>qiangnao:<span class="w"> </span><span class="o">[</span>“/dexhand/state”,<span class="w"> </span>“JointState”,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># End-effector topic, dexterous hand</span>
-<span class="w">        </span>leju_claw:<span class="w"> </span><span class="o">[</span>“/leju_claw_state”,<span class="w"> </span>“lejuClawState”,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># End-effector topic, gripper</span>
-<span class="w">        </span>rq2f85:<span class="w"> </span><span class="o">[</span>“/gripper/state”,<span class="w"> </span>“JointState”,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># End-effector topic, gripper in simulation</span>
+image_size:<span class="w"> </span><span class="p">&amp;</span>IMGSIZE<span class="w"> </span><span class="o">[</span><span class="m">848</span>,<span class="w"> </span><span class="m">480</span><span class="o">]</span><span class="w">  </span><span class="c1"># Img size: width, height</span>
+depth_range:<span class="w"> </span><span class="p">&amp;</span>DEPTHRANGE<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1500</span><span class="o">]</span><span class="w">  </span><span class="c1"># Depth imaging range in mm, default=[0,1500]</span>
+obs_key_map:<span class="w">  </span><span class="c1"># Topic, msg type, freq, img size, depth crop. Must be consistent with training config!</span>
+<span class="w">    </span>head_cam_h:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_h/color/image_raw/compressed&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span><span class="w">  </span><span class="c1"># Head RGB img topic, COMPULSORY</span>
+<span class="w">    </span>wrist_cam_l:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_l/color/image_raw/compressed&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span><span class="w">  </span><span class="c1"># Left wrist RGB img topic, choose one between this and below</span>
+<span class="w">    </span>wrist_cam_r:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_r/color/image_raw/compressed&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span><span class="w">  </span><span class="c1"># Left wrist RGB img topic, choose one between this and above</span>
+<span class="w">    </span>depth_h:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_h/depth/image_raw/compressedDepth&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span><span class="w">  </span><span class="c1"># Head depth topic, select if depth is needed</span>
+<span class="w">    </span>depth_l:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_l/depth/image_rect_raw/compressedDepth&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span><span class="w">  </span><span class="c1"># Left wrist depth topic, select if depth is needed</span>
+<span class="w">    </span>depth_r:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_r/depth/image_rect_raw/compressedDepth&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span><span class="w">  </span><span class="c1"># Right wrist depth topic, select if depth is needed</span>
+<span class="w">    </span>joint_q:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/sensors_data_raw&quot;</span>,<span class="w"> </span><span class="s2">&quot;sensorsData&quot;</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># Joint angle topic, COMPULSORY</span>
+<span class="w">    </span><span class="c1"># qiangnao: [&quot;/dexhand/state&quot;, &quot;JointState&quot;, 500]  # End-effector topic for dexterous hand</span>
+<span class="w">    </span>leju_claw:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/leju_claw_state&quot;</span>,<span class="w"> </span><span class="s2">&quot;lejuClawState&quot;</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># End-effector topic for gripper-claw</span>
+<span class="w">    </span><span class="c1"># rq2f85: [&quot;/gripper/state&quot;, &quot;JointState&quot;, 500]  # End-effector topic for simulator claw</span>
 
-<span class="w">    </span>arm_state_keys:<span class="w"> </span><span class="o">[</span>“joint_q”,”gripper”<span class="o">]</span><span class="w">  </span><span class="c1"># Default unchanged, model observation input arm state includes joint angles and gripper open/close state</span>
-<span class="w">    </span>frame_alignment:<span class="w"> </span><span class="nb">false</span><span class="w">  </span><span class="c1"># Whether to enable frame alignment, default=false</span>
-<span class="w">    </span>ratio:<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span><span class="c1"># When using frame alignment, the proportion of most recent observations among all historical observations, default=1.0</span>
+arm_state_keys:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;joint_q&quot;</span>,<span class="s2">&quot;gripper&quot;</span><span class="o">]</span><span class="w">  </span><span class="c1"># Do not change. Model observation arm state, with joint angles and gripper state.</span>
+frame_alignment:<span class="w"> </span><span class="nb">false</span><span class="w">  </span><span class="c1"># Frame alignment. default=false</span>
+ratio:<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span><span class="c1"># With frame alignment, this is the ratio of the latest observation vs all older observations. default=1.0</span>
 
-<span class="w">    </span>limits:
-<span class="w">        </span>joint_q:
+<span class="c1"># Limits joint values. I.e. upper and lower limit definitions. Do not change these.</span>
+limits:
+<span class="w">    </span><span class="c1"># joint angle limits (7 joints per arm)</span>
+<span class="w">    </span>joint_q:
 <span class="w">        </span>min:<span class="w"> </span><span class="o">[</span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14<span class="o">]</span>
 <span class="w">        </span>max:<span class="w"> </span><span class="o">[</span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14<span class="o">]</span>
 
-<span class="w">        </span>gripper:
+<span class="w">    </span><span class="c1"># Gripper limits</span>
+<span class="w">    </span>gripper:
 <span class="w">        </span>min:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
 <span class="w">        </span>max:<span class="w"> </span><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span><span class="o">]</span>
 
-<span class="w">        </span>eef:
+<span class="w">    </span><span class="c1"># End-effector limits</span>
+<span class="w">    </span>eef:
 <span class="w">        </span>min:<span class="w"> </span><span class="o">[</span>-1,<span class="w"> </span>-1,<span class="w"> </span>-1,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-1,<span class="w"> </span>-1,<span class="w"> </span>-1,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14<span class="o">]</span>
 <span class="w">        </span>max:<span class="w"> </span><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14<span class="o">]</span>
 
-<span class="w">        </span>eef_relative:
+<span class="w">    </span><span class="c1"># End-effector relative limits (for delta, currently in development)</span>
+<span class="w">    </span>eef_relative:
 <span class="w">        </span>min:<span class="w"> </span><span class="o">[</span>-0.005,<span class="w"> </span>-0.0075,<span class="w"> </span>-0.004,<span class="w"> </span>-0.03,<span class="w"> </span>-0.03,<span class="w"> </span>-0.05,<span class="w"> </span>-0.005,<span class="w"> </span>-0.0075,<span class="w"> </span>-0.004,<span class="w"> </span>-0.03,<span class="w"> </span>-0.03,<span class="w"> </span>-0.05<span class="o">]</span>
 <span class="w">        </span>max:<span class="w"> </span><span class="o">[</span><span class="m">0</span>.005,<span class="w"> </span><span class="m">0</span>.0075,<span class="w"> </span><span class="m">0</span>.004,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.05,<span class="w"> </span><span class="m">0</span>.005,<span class="w"> </span><span class="m">0</span>.0075,<span class="w"> </span><span class="m">0</span>.004,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.05<span class="o">]</span>
 
-<span class="w">        </span>base:
+<span class="w">    </span><span class="c1"># Robot movement limits (x, y, yaw, move_flag)</span>
+<span class="w">    </span>base:
 <span class="w">        </span>min:<span class="w"> </span><span class="o">[</span>-2.0,<span class="w"> </span>-2.0,<span class="w"> </span>-3.14,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
 <span class="w">        </span>max:<span class="w"> </span><span class="o">[</span><span class="m">2</span>.0,<span class="w"> </span><span class="m">2</span>.0,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">1</span><span class="o">]</span>
 
-<span class="w">    </span><span class="c1"># The following environment configurations are not recommended to modify</span>
+<span class="c1"># It is NOT recommended to change these following configs</span>
 
-<span class="w">    </span>qiangnao_dof_needed:<span class="w"> </span><span class="m">1</span>
+<span class="c1"># dex_dof_needed is the dof needed for dex hand. The qiangnao dexhand has 6 dof, with fully closed being [100] * 6, fully open being [0] * 6.</span>
+<span class="c1"># 1: When precise operation or multi-finger coordinated operation is not required, it is usually set to 1, which means that only the first joint is needed as the basis for opening and closing.</span>
+<span class="c1">#    In this case, [0, 100, 0, 0, 0, 0] is used to represent the open state, and [100] * 6 represents the clenched fist state.</span>
+<span class="c1"># 2(Untested): 0,2,3,4,5 dof becomes a single dof.</span>
+<span class="c1"># 6(Untested): All 6 dof are available.</span>
+qiangnao_dof_needed:<span class="w"> </span><span class="m">1</span><span class="w">   </span><span class="c1"># default=1</span>
 
-<span class="w">    </span>is_binary:<span class="w"> </span><span class="nb">false</span>
+is_binary:<span class="w"> </span><span class="nb">false</span><span class="w">  </span><span class="c1"># Is open and close binary? default=false</span>
 
+
+<span class="c1"># =====================================================</span>
+<span class="c1"># inference config: Change here for inferencing configuration, both in sim and real-device</span>
+<span class="c1"># =====================================================</span>
 inference:
-<span class="w">    </span>go_bag_path:<span class="w"> </span>/path/to/your/go.bag<span class="w"> </span><span class="c1"># For real robot inference, the complete path of the bag file is required. Please store any original bag file of this task anywhere in the kuavo_data_challenge repository and provide the correct path.</span>
-<span class="w">    </span>policy_type:<span class="w"> </span>“act”<span class="w">  </span><span class="c1"># Policy name, supports diffusion, act, etc.</span>
-<span class="w">    </span>eval_episodes:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># Number of test episodes, real robot inference can run continuously, set to 10 or greater than 10</span>
-<span class="w">    </span>seed:<span class="w"> </span><span class="m">42</span>
-<span class="w">    </span>start_seed:<span class="w"> </span><span class="m">42</span>
-<span class="w">    </span>device:<span class="w"> </span>“cuda”
-<span class="w">    </span>task:<span class="w"> </span>“your_task”
-<span class="w">    </span>method:<span class="w"> </span>“your_method”
-<span class="w">    </span>timestamp:<span class="w"> </span>“your_timestamp”
-<span class="w">    </span>epoch:<span class="w"> </span>best<span class="w">  </span><span class="c1"># Which epoch of trained model to use, can fill 50, 100, best, etc. Note: code will load policy model parameters from outputs/train/&lt;task&gt;/&lt;method&gt;/&lt;timestamp&gt;/epoch&lt;epoch&gt;</span>
-<span class="w">    </span>max_episode_steps:<span class="w"> </span><span class="m">500</span><span class="w">  </span><span class="c1"># Maximum episode steps, set to 500 is fine</span>
+<span class="w">    </span>go_bag_path:<span class="w"> </span>/path/to/your/go.bag<span class="w">  </span><span class="c1">#! ! ! Temporarily not used in the competition emulator! ! ! , the complete path of the bag needs to be provided during real-machine inference, such as reaching the pre-grab posture, etc. You can directly copy a trained rosbag control.</span>
+<span class="w">    </span>policy_type:<span class="w"> </span><span class="s2">&quot;act&quot;</span><span class="w">  </span><span class="c1">#Strategy name, supports diffusion, act, etc.</span>
+<span class="w">    </span>pretrained_path:<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">  </span><span class="c1">#Optional: Directly specify the checkpoint / hf_ckpt path. If left blank, it will still be parsed according to outputs/train/&lt;task&gt;/&lt;method&gt;/&lt;timestamp&gt;/epoch&lt;epoch&gt;</span>
+<span class="w">    </span>eval_episodes:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1">#The number of test rounds, the default value of the game simulator is 100, used for scoring</span>
+<span class="w">    </span>seed:<span class="w"> </span><span class="m">42</span><span class="w">  </span><span class="c1">#Random seeds can be used to fix the initial state of each object in simulation to facilitate reproduction.</span>
+<span class="w">    </span>start_seed:<span class="w"> </span><span class="m">42</span><span class="w">  </span><span class="c1">#The random seed at the beginning of the round can be used to fix the initial state of each object in the simulation to facilitate reproduction.</span>
+<span class="w">    </span>device:<span class="w"> </span><span class="s2">&quot;cuda&quot;</span><span class="w">  </span><span class="c1"># or &quot;cpu&quot;</span>
+<span class="w">    </span>task:<span class="w"> </span><span class="s2">&quot;your_task&quot;</span>
+<span class="w">    </span>method:<span class="w"> </span><span class="s2">&quot;your_method&quot;</span>
+<span class="w">    </span>timestamp:<span class="w"> </span><span class="s2">&quot;your_timestamp&quot;</span><span class="w"> </span><span class="c1">#Similar runtime timestamp</span>
+<span class="w">    </span>epoch:<span class="w"> </span>best<span class="w">  </span><span class="c1">#Which epoch to use for training saving, you can fill in 50, 100, best, etc. Note: the code will load the model parameters of the policy in outputs/train/&lt;task&gt;/&lt;method&gt;/&lt;timestamp&gt;/epoch&lt;epoch&gt;</span>
+<span class="w">    </span>max_episode_steps:<span class="w"> </span><span class="m">2000</span><span class="w">  </span><span class="c1">#The maximum number of steps in a round will automatically end if exceeded and can be adjusted according to the required duration of the task.</span>
+
+<span class="w">    </span><span class="c1">#Effective when policy_type=lingbot</span>
+<span class="w">    </span>lingbot_root:<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">  </span><span class="c1">#Automatically find or read the environment variable LINGBOT_ROOT when left blank</span>
+<span class="w">    </span>task_prompt:<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">  </span><span class="c1">#If left blank, return to inference.task</span>
+<span class="w">    </span>lingbot_use_length:<span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>lingbot_chunk_ret:<span class="w"> </span><span class="nb">true</span>
+<span class="w">    </span>lingbot_norm_stats_file:<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">  </span><span class="c1">#Optional: Custom norm_stats json</span>
+<span class="w">    </span>lingbot_data_type:<span class="w"> </span><span class="s2">&quot;robotwin&quot;</span>
+<span class="w">    </span>lingbot_execute_raw_action:<span class="w"> </span><span class="nb">false</span>
 </pre></div>
 </div>
 </section>
