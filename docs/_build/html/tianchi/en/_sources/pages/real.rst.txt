@@ -185,24 +185,24 @@ tianchi分支(可能需要修改的地方有注释)
         
         limits:
             joint_q:
-            min: [-3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14]
-            max: [3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14]
+              min: [-3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14]
+              max: [3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14]
             
             gripper:
-            min: [0, 0]
-            max: [1, 1]
+              min: [0, 0]
+              max: [1, 1]
             
             eef:
-            min: [-1, -1, -1, -3.14, -3.14, -3.14, -1, -1, -1, -3.14, -3.14, -3.14]
-            max: [1, 1, 1, 3.14, 3.14, 3.14, 1, 1, 1, 3.14, 3.14, 3.14]
+              min: [-1, -1, -1, -3.14, -3.14, -3.14, -1, -1, -1, -3.14, -3.14, -3.14]
+              max: [1, 1, 1, 3.14, 3.14, 3.14, 1, 1, 1, 3.14, 3.14, 3.14]
             
             eef_relative:
-            min: [-0.005, -0.0075, -0.004, -0.03, -0.03, -0.05, -0.005, -0.0075, -0.004, -0.03, -0.03, -0.05]
-            max: [0.005, 0.0075, 0.004, 0.03, 0.03, 0.05, 0.005, 0.0075, 0.004, 0.03, 0.03, 0.05]
+              min: [-0.005, -0.0075, -0.004, -0.03, -0.03, -0.05, -0.005, -0.0075, -0.004, -0.03, -0.03, -0.05]
+              max: [0.005, 0.0075, 0.004, 0.03, 0.03, 0.05, 0.005, 0.0075, 0.004, 0.03, 0.03, 0.05]
             
             base:
-            min: [-2.0, -2.0, -3.14, 0]
-            max: [2.0, 2.0, 3.14, 1]
+              min: [-2.0, -2.0, -3.14, 0]
+              max: [2.0, 2.0, 3.14, 1]
 
         # 以下环境配置为不建议改动配置
 
@@ -221,7 +221,7 @@ tianchi分支(可能需要修改的地方有注释)
         method: "your_method"
         timestamp: "your_timestamp"
         epoch: best  # 使用训练保存的哪一个epoch，可填50，100，best等，注意：代码将在outputs/train/<task>/<method>/<timestamp>/epoch<epoch>中load policy的模型参数
-        max_episode_steps: 2000  # 最大回合步数，真机建议设置为2000即可
+        max_episode_steps: 500  # 最大回合步数，真机建议设置为500即可
 
 真机赛提交说明
 ================
@@ -279,7 +279,7 @@ tianchi分支(可能需要修改的地方有注释)
             conda-unpack && \
             pip install -e . && \
             cd ./third_party/lerobot && pip install -e . -i https://mirrors.aliyun.com/pypi/simple/ && \
-            pip install deprecated kuavo_humanoid_sdk==1.2.2 opencv-python==4.11.0.86 opencv-python-headless==4.11.0.86 numpy==1.26.4 -i https://mirrors.aliyun.com/pypi/simple/ && \
+            pip install deprecated kuavo_humanoid_sdk==1.3.3 opencv-python==4.12.0.88 opencv-python-headless==4.12.0.88 numpy==2.2.6 -i https://mirrors.aliyun.com/pypi/simple/ && \
             conda clean -afy && \
             rm -rf ./myenv/lib/python*/site-packages/*/tests ./myenv/lib/python*/site-packages/*/test ./myenv/pkgs/* \
          "
