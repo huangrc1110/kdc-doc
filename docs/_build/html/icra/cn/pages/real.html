@@ -496,22 +496,19 @@ inference:
 
 <span class="nv">IMAGE_NAME</span><span class="o">=</span><span class="s2">&quot;kdc_v0&quot;</span>
 <span class="nv">CONTAINER_NAME</span><span class="o">=</span><span class="s2">&quot;kdc_v0&quot;</span>
-<span class="nv">IMAGE_TAR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">IMAGE_NAME</span><span class="si">}</span><span class="s2">.tar&quot;</span><span class="w">   </span><span class="c1"># 镜像文件路径</span>
+<span class="nv">IMAGE_TAR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">IMAGE_NAME</span><span class="si">}</span><span class="s2">.tar&quot;</span>
 
-<span class="c1"># 如果容器存在，先删除</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>docker<span class="w"> </span>ps<span class="w"> </span>-aq<span class="w"> </span>-f<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">CONTAINER_NAME</span><span class="si">}</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Container exists. Removing...&quot;</span>
 <span class="w">    </span>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="si">${</span><span class="nv">CONTAINER_NAME</span><span class="si">}</span>
 <span class="k">fi</span>
 
-<span class="c1"># 检查镜像是否存在，如果存在则删除</span>
 <span class="nv">EXISTING_IMAGE</span><span class="o">=</span><span class="k">$(</span>docker<span class="w"> </span>images<span class="w"> </span>-q<span class="w"> </span><span class="nv">$IMAGE_NAME</span><span class="k">)</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$EXISTING_IMAGE</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Image </span><span class="nv">$IMAGE_NAME</span><span class="s2"> already exists. Removing...&quot;</span>
 <span class="w">    </span>docker<span class="w"> </span>rmi<span class="w"> </span>-f<span class="w"> </span><span class="nv">$IMAGE_NAME</span>
 <span class="k">fi</span>
 
-<span class="c1"># 直接加载镜像</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$IMAGE_TAR</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Loading image from </span><span class="nv">$IMAGE_TAR</span><span class="s2">...&quot;</span>
 <span class="w">    </span>docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$IMAGE_TAR</span><span class="s2">&quot;</span>
@@ -520,7 +517,6 @@ inference:
 <span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="k">fi</span>
 
-<span class="c1"># 创建并启动新的容器</span>
 docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--net<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-e<span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://kuavo_master:11311<span class="w"> </span><span class="se">\ </span><span class="c1"># Set ROS_MASTER_URI to connect to the master node</span>

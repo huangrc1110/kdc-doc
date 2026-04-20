@@ -320,7 +320,44 @@ tianchi分支(可能需要修改的地方有注释)
       # 默认命令
       CMD ["bash"]
 
-3. 后续步骤同仿真赛提交说明4-5，注意修改run_with_gpu.sh中的docker镜像名称为你刚刚打包的真机赛镜像名称即可。
+3. 后续步骤同仿真赛提交说明4-5，注意修改 ``run_with_gpu.sh`` 中的docker镜像名称为你刚刚打包的真机赛镜像名称即可。
+    .. code-block:: bash
+        
+        #!/bin/bash
+
+        IMAGE_NAME="kdc_v0"
+        CONTAINER_NAME="kdc_v0"
+        IMAGE_TAR="${IMAGE_NAME}.tar"   # 镜像文件路径
+
+        # 如果容器存在，先删除
+        if [ "$(docker ps -aq -f name=${CONTAINER_NAME})" ]; then
+            echo "Container exists. Removing..."
+            docker rm -f ${CONTAINER_NAME}
+        fi
+
+        # 检查镜像是否存在，如果存在则删除
+        EXISTING_IMAGE=$(docker images -q $IMAGE_NAME)
+        if [ "$EXISTING_IMAGE" ]; then
+            echo "Image $IMAGE_NAME already exists. Removing..."
+            docker rmi -f $IMAGE_NAME
+        fi
+
+        # 直接加载镜像
+        if [ -f "$IMAGE_TAR" ]; then
+            echo "Loading image from $IMAGE_TAR..."
+            docker load -i "$IMAGE_TAR"
+        else
+            echo "Error: $IMAGE_TAR not found!"
+            exit 1
+        fi
+
+        # 创建并启动新的容器
+        docker run --gpus all -it \
+            --net=host \
+            -e ROS_MASTER_URI=http://kuavo_master:11311 \ # 设置ROS_MASTER_URI
+            -e ROS_IP=192.168.26.10 \ # 设置ROS_IP为运行容器的机器的IP地址
+            --name ${CONTAINER_NAME} \
+            ${IMAGE_NAME} bash
 
 真机赛成绩说明
 ================

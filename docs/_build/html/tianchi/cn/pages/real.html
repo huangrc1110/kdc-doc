@@ -444,7 +444,47 @@ inference:
 </pre></div>
 </div>
 </li>
-<li><p>后续步骤同仿真赛提交说明4-5，注意修改run_with_gpu.sh中的docker镜像名称为你刚刚打包的真机赛镜像名称即可。</p></li>
+<li><dl>
+<dt>后续步骤同仿真赛提交说明4-5，注意修改 <code class="docutils literal notranslate"><span class="pre">run_with_gpu.sh</span></code> 中的docker镜像名称为你刚刚打包的真机赛镜像名称即可。</dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nv">IMAGE_NAME</span><span class="o">=</span><span class="s2">&quot;kdc_v0&quot;</span>
+<span class="nv">CONTAINER_NAME</span><span class="o">=</span><span class="s2">&quot;kdc_v0&quot;</span>
+<span class="nv">IMAGE_TAR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">IMAGE_NAME</span><span class="si">}</span><span class="s2">.tar&quot;</span><span class="w">   </span><span class="c1"># 镜像文件路径</span>
+
+<span class="c1"># 如果容器存在，先删除</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>docker<span class="w"> </span>ps<span class="w"> </span>-aq<span class="w"> </span>-f<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">CONTAINER_NAME</span><span class="si">}</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Container exists. Removing...&quot;</span>
+<span class="w">    </span>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="si">${</span><span class="nv">CONTAINER_NAME</span><span class="si">}</span>
+<span class="k">fi</span>
+
+<span class="c1"># 检查镜像是否存在，如果存在则删除</span>
+<span class="nv">EXISTING_IMAGE</span><span class="o">=</span><span class="k">$(</span>docker<span class="w"> </span>images<span class="w"> </span>-q<span class="w"> </span><span class="nv">$IMAGE_NAME</span><span class="k">)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$EXISTING_IMAGE</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Image </span><span class="nv">$IMAGE_NAME</span><span class="s2"> already exists. Removing...&quot;</span>
+<span class="w">    </span>docker<span class="w"> </span>rmi<span class="w"> </span>-f<span class="w"> </span><span class="nv">$IMAGE_NAME</span>
+<span class="k">fi</span>
+
+<span class="c1"># 直接加载镜像</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$IMAGE_TAR</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Loading image from </span><span class="nv">$IMAGE_TAR</span><span class="s2">...&quot;</span>
+<span class="w">    </span>docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$IMAGE_TAR</span><span class="s2">&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Error: </span><span class="nv">$IMAGE_TAR</span><span class="s2"> not found!&quot;</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
+
+<span class="c1"># 创建并启动新的容器</span>
+docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--net<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://kuavo_master:11311<span class="w"> </span><span class="se">\ </span><span class="c1"># 设置ROS_MASTER_URI</span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.26.10<span class="w"> </span><span class="se">\ </span><span class="c1"># 设置ROS_IP为运行容器的机器的IP地址</span>
+<span class="w">    </span>--name<span class="w"> </span><span class="si">${</span><span class="nv">CONTAINER_NAME</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="si">${</span><span class="nv">IMAGE_NAME</span><span class="si">}</span><span class="w"> </span>bash
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
 </ol>
 </section>
 <section id="id17">
