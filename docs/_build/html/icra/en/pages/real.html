@@ -378,7 +378,7 @@ inference:
 <span class="w">    </span>method:<span class="w"> </span><span class="s2">&quot;your_method&quot;</span>
 <span class="w">    </span>timestamp:<span class="w"> </span><span class="s2">&quot;your_timestamp&quot;</span><span class="w"> </span><span class="c1">#Similar runtime timestamp</span>
 <span class="w">    </span>epoch:<span class="w"> </span>best<span class="w">  </span><span class="c1">#Which epoch to use for training saving, you can fill in 50, 100, best, etc. Note: the code will load the model parameters of the policy in outputs/train/&lt;task&gt;/&lt;method&gt;/&lt;timestamp&gt;/epoch&lt;epoch&gt;</span>
-<span class="w">    </span>max_episode_steps:<span class="w"> </span><span class="m">2000</span><span class="w">  </span><span class="c1">#The maximum number of steps in a round will automatically end if exceeded and can be adjusted according to the required duration of the task.</span>
+<span class="w">    </span>max_episode_steps:<span class="w"> </span><span class="m">500</span><span class="w">  </span><span class="c1">#The maximum number of steps in a round will automatically end if exceeded and can be adjusted according to the required duration of the task.</span>
 
 <span class="w">    </span><span class="c1">#Effective when policy_type=lingbot</span>
 <span class="w">    </span>lingbot_root:<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">  </span><span class="c1">#Automatically find or read the environment variable LINGBOT_ROOT when left blank</span>
@@ -446,7 +446,7 @@ inference:
 <span class="w">      </span>conda-unpack<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span><span class="nb">cd</span><span class="w"> </span>./third_party/lerobot<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w"> </span>-i<span class="w"> </span>https://mirrors.aliyun.com/pypi/simple/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>pip<span class="w"> </span>install<span class="w"> </span>deprecated<span class="w"> </span><span class="nv">kuavo_humanoid_sdk</span><span class="o">==</span><span class="m">1</span>.2.2<span class="w"> </span>opencv-python<span class="o">==</span><span class="m">4</span>.11.0.86<span class="w"> </span>opencv-python-headless<span class="o">==</span><span class="m">4</span>.11.0.86<span class="w"> </span><span class="nv">numpy</span><span class="o">==</span><span class="m">1</span>.26.4<span class="w"> </span>-i<span class="w"> </span>https://mirrors.aliyun.com/pypi/simple/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>pip<span class="w"> </span>install<span class="w"> </span>deprecated<span class="w"> </span><span class="nv">kuavo_humanoid_sdk</span><span class="o">==</span><span class="m">1</span>.3.3<span class="w"> </span>opencv-python<span class="o">==</span><span class="m">4</span>.12.0.88<span class="w"> </span>opencv-python-headless<span class="o">==</span><span class="m">4</span>.12.0.88<span class="w"> </span><span class="nv">numpy</span><span class="o">==</span><span class="m">2</span>.2.6<span class="w"> </span>-i<span class="w"> </span>https://mirrors.aliyun.com/pypi/simple/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>conda<span class="w"> </span>clean<span class="w"> </span>-afy<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>rm<span class="w"> </span>-rf<span class="w"> </span>./myenv/lib/python*/site-packages/*/tests<span class="w"> </span>./myenv/lib/python*/site-packages/*/test<span class="w"> </span>./myenv/pkgs/*<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>“
@@ -489,7 +489,10 @@ inference:
 </pre></div>
 </div>
 </li>
-<li><p>Subsequent steps are the same as simulation competition submission instructions 4-5, note to modify the docker image name in run_with_gpu.sh to the real robot competition image name you just packaged.</p></li>
+<li><p>Subsequent steps are the same as simulation competition submission instructions 4-5, note to modify the docker image name in <code class="docutils literal notranslate"><span class="pre">run_with_gpu.sh</span></code> to the real robot competition image name you just packaged.</p>
+<blockquote>
+<div></div></blockquote>
+</li>
 </ol>
 </section>
 <section id="real-robot-competition-score-explanation">

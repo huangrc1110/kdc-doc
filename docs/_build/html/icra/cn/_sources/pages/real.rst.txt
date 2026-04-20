@@ -260,7 +260,7 @@ main branch (config to modify is kuavo_real_env.yaml, parts that may need modifi
         method: "your_method"
         timestamp: "your_timestamp" #Similar runtime timestamp
         epoch: best  #Which epoch to use for training saving, you can fill in 50, 100, best, etc. Note: the code will load the model parameters of the policy in outputs/train/<task>/<method>/<timestamp>/epoch<epoch>
-        max_episode_steps: 2000  #The maximum number of steps in a round will automatically end if exceeded and can be adjusted according to the required duration of the task.
+        max_episode_steps: 500  #The maximum number of steps in a round will automatically end if exceeded and can be adjusted according to the required duration of the task.
 
         #Effective when policy_type=lingbot
         lingbot_root: ""  #Automatically find or read the environment variable LINGBOT_ROOT when left blank
@@ -329,7 +329,7 @@ Similar to the simulation competition, real robot competition code submission al
             conda-unpack && \
             pip install -e . && \
             cd ./third_party/lerobot && pip install -e . -i https://mirrors.aliyun.com/pypi/simple/ && \
-            pip install deprecated kuavo_humanoid_sdk==1.2.2 opencv-python==4.11.0.86 opencv-python-headless==4.11.0.86 numpy==1.26.4 -i https://mirrors.aliyun.com/pypi/simple/ && \
+            pip install deprecated kuavo_humanoid_sdk==1.3.3 opencv-python==4.12.0.88 opencv-python-headless==4.12.0.88 numpy==2.2.6 -i https://mirrors.aliyun.com/pypi/simple/ && \
             conda clean -afy && \
             rm -rf ./myenv/lib/python*/site-packages/*/tests ./myenv/lib/python*/site-packages/*/test ./myenv/pkgs/* \
          “
@@ -370,7 +370,45 @@ Similar to the simulation competition, real robot competition code submission al
       # Default command
       CMD ["bash"]
 
-3. Subsequent steps are the same as simulation competition submission instructions 4-5, note to modify the docker image name in run_with_gpu.sh to the real robot competition image name you just packaged.
+3. Subsequent steps are the same as simulation competition submission instructions 4-5, note to modify the docker image name in ``run_with_gpu.sh`` to the real robot competition image name you just packaged.
+
+    .. code-block:: bash
+        #!/bin/bash
+
+        IMAGE_NAME="kdc_v0"
+        CONTAINER_NAME="kdc_v0"
+        IMAGE_TAR="${IMAGE_NAME}.tar"   # 镜像文件路径
+
+        # 如果容器存在，先删除
+        if [ "$(docker ps -aq -f name=${CONTAINER_NAME})" ]; then
+            echo "Container exists. Removing..."
+            docker rm -f ${CONTAINER_NAME}
+        fi
+
+        # 检查镜像是否存在，如果存在则删除
+        EXISTING_IMAGE=$(docker images -q $IMAGE_NAME)
+        if [ "$EXISTING_IMAGE" ]; then
+            echo "Image $IMAGE_NAME already exists. Removing..."
+            docker rmi -f $IMAGE_NAME
+        fi
+
+        # 直接加载镜像
+        if [ -f "$IMAGE_TAR" ]; then
+            echo "Loading image from $IMAGE_TAR..."
+            docker load -i "$IMAGE_TAR"
+        else
+            echo "Error: $IMAGE_TAR not found!"
+            exit 1
+        fi
+
+        # 创建并启动新的容器
+        docker run --gpus all -it \
+            --net=host \
+            -e ROS_MASTER_URI=http://kuavo_master:11311 \ # Set ROS_MASTER_URI to connect to the master node
+            -e ROS_IP=192.168.26.10 \ # Set ROS_IP to the IP address of the machine running the container
+            --name ${CONTAINER_NAME} \
+            ${IMAGE_NAME} bash
+
 
 Real Robot Competition Score Explanation
 ================
