@@ -8,7 +8,7 @@ Real Robot Competition Task Introduction
 
 Installing the `kuavo_data_challenge <https://github.com/LejuRobotics/kuavo_data_challenge/tree/main>`_ (Baseline code) Repository
 ======================================================================================================================================================
-This repository is used for data conversion, model training and model deployment. Use git operation to fetch the latest codebase (**icra** branch):  
+This repository is used for data conversion, model training and model deployment. Use git operation to fetch the latest codebase (**main** branch):  
 
    .. code-block:: bash
       
