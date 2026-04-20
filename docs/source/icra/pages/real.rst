@@ -373,6 +373,7 @@ Similar to the simulation competition, real robot competition code submission al
 3. Subsequent steps are the same as simulation competition submission instructions 4-5, note to modify the docker image name in ``run_with_gpu.sh`` to the real robot competition image name you just packaged.
 
     .. code-block:: bash
+        
         #!/bin/bash
 
         IMAGE_NAME="kdc_v0"
