@@ -67,7 +67,7 @@ Real-machine Task Description
 Task 1: Small Part Flipping
 ----------------------------------------------------------------------------
 
-Task Description: The robot stands beside a conveyor belt running at constant speed, picks up a small part from the conveyor belt, flips it, and places it back on the conveyor belt.
+Task Description: The robot stands next to a stationary conveyor belt, picks up a small part from the conveyor belt, flips it over, and then places it back on the conveyor belt.
 
 Key Challenges:
     - Stable grasping of ring-shaped objects;
@@ -76,10 +76,10 @@ Key Challenges:
 
 .. image:: ../_static/images/task1_real.jpg
 
-Task 2: Express Package Weighing
+Task 2: Express Package Scanning
 ----------------------------------------------------------------
 
-Task Description: The robot picks up an express package and places it on the weighing platform with the label facing up. After weighing is complete, the robot places the package on the conveyor belt.
+Task Description: The robot picks up an express package and places it on the scanning platform with the label facing up. After scanning is complete, the robot places the package on the conveyor belt.
 
 Key Challenges:
     - Stable grasping of soft packages;
