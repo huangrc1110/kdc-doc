@@ -30,22 +30,31 @@ Small Part Flipping: The robot remains stationary and sequentially flips the sta
 
 .. video:: ../_static/videos/task1_real.mp4
    :width: 100%
+.. raw:: html
+
+   <div style="clear: both;"></div>
 
 Task 2
 ^^^^^^^^^
 
-Express Fackage Weighing: The robot remains still, picks up the delivery package on the table and places it on the weighing platform, checks if the delivery label is facing up to determine if it needs to be flipped, and then places the package on the conveyor belt on the left.
+Express Fackage Scanning: The robot remains still, picks up the delivery package on the table and places it on the weighing platform, checks if the delivery label is facing up to determine if it needs to be flipped, and then places the package on the conveyor belt on the left.
 
 .. video:: ../_static/videos/task2_real.mp4
    :width: 100%
+.. raw:: html
+
+   <div style="clear: both;"></div>
 
 Task 3
 ^^^^^^^^^
 
-Unilever: 
+Bottling: The robot stands still at the table, picks up the bottle on the table, and then places it on the conveyor belt.
 
 .. video:: ../_static/videos/task3_real.mp4
    :width: 100%
+.. raw:: html
+
+   <div style="clear: both;"></div>
 
 
 Task Scoring
