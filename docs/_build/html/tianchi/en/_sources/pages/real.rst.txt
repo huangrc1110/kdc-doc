@@ -354,8 +354,8 @@ tianchi分支(可能需要修改的地方有注释)
         # 创建并启动新的容器
         docker run --gpus all -it \
             --net=host \
-            -e ROS_MASTER_URI=http://kuavo_master:11311 \ # 设置ROS_MASTER_URI
-            -e ROS_IP=192.168.26.10 \ # 设置ROS_IP为运行容器的机器的IP地址
+            -e ROS_MASTER_URI=http://kuavo_master:11311 \
+            -e ROS_IP=192.168.26.10 \
             --name ${CONTAINER_NAME} \
             ${IMAGE_NAME} bash
 

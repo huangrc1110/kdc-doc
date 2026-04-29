@@ -26,7 +26,7 @@ Task Overview
 Task 1
 ^^^^^^^^^
 
-Small Part Flipping: The robot stands still while the conveyor belt runs at medium speed to transport parts, and the robot performs flipping operations on the parts that need to be flipped.
+Small Part Flipping: The robot remains stationary and sequentially flips the static parts on the conveyor belt from left to right.
 
 .. video:: ../_static/videos/task1_real.mp4
    :width: 100%
@@ -34,7 +34,7 @@ Small Part Flipping: The robot stands still while the conveyor belt runs at medi
 Task 2
 ^^^^^^^^^
 
-Express Fackage Weighing: The robot stands still, grabs the express package on the table and places it on the weighing platform, checks whether the express label is facing up to determine if it needs to be flipped, and then places the package on the conveyor belt on the left-hand side.
+Express Fackage Weighing: The robot remains still, picks up the delivery package on the table and places it on the weighing platform, checks if the delivery label is facing up to determine if it needs to be flipped, and then places the package on the conveyor belt on the left.
 
 .. video:: ../_static/videos/task2_real.mp4
    :width: 100%
@@ -42,7 +42,7 @@ Express Fackage Weighing: The robot stands still, grabs the express package on t
 Task 3
 ^^^^^^^^^
 
-Unilever: Pick up the bottle from the table and place it on the conveyor belt.
+Unilever: 
 
 .. video:: ../_static/videos/task3_real.mp4
    :width: 100%
@@ -50,6 +50,15 @@ Unilever: Pick up the bottle from the table and place it on the conveyor belt.
 
 Task Scoring
 --------
+
+General Rules
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. There are 3 independent tasks. Each task has a maximum score of 100 points, with an additional 10 points for action trend (awarded as long as there is an action trend). The total maximum score is 300 points.
+
+2. Each task consists of exactly 5 rounds (each round has a time limit of 3 minutes; scores for completed actions after the time limit will not be counted). Each round is scored separately, and the arithmetic mean of the 5 rounds is taken as the final score for that task.
+
+3. Tiebreaker rule: For teams with the same total score, ranking will be determined by the average completion time of all rounds across all tasks, from shortest to longest.
 
 Each task will be evaluated for ten rounds, with the final score being the average of the ten rounds.
 
@@ -62,27 +71,27 @@ During evaluation, three small parts will be randomly placed on the conveyor bel
 
 *   Completion bonus: 10 points
 
-Task 2: Express Package Weighing (100 points)
+Task 2: Express Package Scanning (100 points)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 During evaluation, one express package with label facing down and one with label facing up will be placed on the right side of the robot. The express packages need to be placed on the weighing platform, determine the label position, flip the package with label facing down, and then grasp and place the packages onto the conveyor belt on the left-hand side. Scoring criteria are as follows:
 
-*   Accurate grasping of express package: 10 points per package, total 20 points
+*   Accurate grasping of express package: 20 points per package, total 40 points
 
-*   Successful identification and flipping of packages that need flipping: 30 points per package, total 60 points
+*   Successful identification and flipping of packages: 20 points
 
-*   Stable placement to designated position: 10 points per package, total 20 points
+*   Stable placement to designated position: 20 points per package, total 40 points
 
 Task 3: Bottling (100 points)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-During evaluation, two bottles will be placed in front of the robot. First pick up the bottle with the right hand, then pass the bottle in the air to the left hand, and finally place the bottle on the conveyor belt with the left hand. Scoring criteria are as follows:
+During evaluation, one bottles will be placed in front of the robot. First pick up the bottle with the right hand, then pass the bottle in the air to the left hand, and finally place the bottle on the conveyor belt with the left hand. Scoring criteria are as follows:
 
-*   Successful object handover: 30 points per bottle, total 60 points
+*   Successful object handover: 30 points
 
-*   Accurate placement to designated position: 10 points per bottle, total 20 points
+*   Accurate placement to designated position: 50 points
 
-*   Completion bonus: 20 points
+*   Stable placement to designated position: 20 points
 
 Real Robot Competition Data Introduction
 ================
@@ -401,8 +410,8 @@ Similar to the simulation competition, real robot competition code submission al
 
         docker run --gpus all -it \
             --net=host \
-            -e ROS_MASTER_URI=http://kuavo_master:11311 \ # Set ROS_MASTER_URI to connect to the master node
-            -e ROS_IP=192.168.26.10 \ # Set ROS_IP to the IP address of the machine running the container
+            -e ROS_MASTER_URI=http://kuavo_master:11311 \
+            -e ROS_IP=192.168.26.10 \
             --name ${CONTAINER_NAME} \
             ${IMAGE_NAME} bash
 

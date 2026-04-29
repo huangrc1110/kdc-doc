@@ -475,8 +475,8 @@ inference:
 <span class="c1"># 创建并启动新的容器</span>
 docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--net<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-e<span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://kuavo_master:11311<span class="w"> </span><span class="se">\ </span><span class="c1"># 设置ROS_MASTER_URI</span>
-<span class="w">    </span>-e<span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.26.10<span class="w"> </span><span class="se">\ </span><span class="c1"># 设置ROS_IP为运行容器的机器的IP地址</span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://kuavo_master:11311<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.26.10<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--name<span class="w"> </span><span class="si">${</span><span class="nv">CONTAINER_NAME</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span><span class="si">${</span><span class="nv">IMAGE_NAME</span><span class="si">}</span><span class="w"> </span>bash
 </pre></div>
