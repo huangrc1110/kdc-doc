@@ -9,7 +9,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simulator &amp; Baseline Code &mdash; Competition Manual  documentation</title>
+  <title>Vienna Offline Finals &mdash; Competition Manual  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=c773721a" />
 
@@ -23,8 +23,8 @@
     <script src="../_static/js/versions.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Submission" href="submit.html" />
-    <link rel="prev" title="Datasets" href="datasets.html" /> 
+    <link rel="next" title="FAQs" href="faq.html" />
+    <link rel="prev" title="Real Robot Competition" href="real.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,16 +42,16 @@
               <!-- <div class="switch-menus">
                 <div class="version-switch"></div>
                 <div class="language-switch">
-                  <a href=" ../../cn/pages/installation.html" style="color: #ffffff !important;">中文</a>
-                  <a href=" ../../en/pages/installation.html" style="color: #ffffff !important;">English</a>
+                  <a href=" ../../cn/pages/vienna.html" style="color: #ffffff !important;">中文</a>
+                  <a href=" ../../en/pages/vienna.html" style="color: #ffffff !important;">English</a>
                 </div>
               </div> -->
               <div class="switch-menus">
                   <div class="version-switch">
                       <select id="competitionSelect" onchange="if(this.value) window.location.href=this.value">
-                          <!-- <a href=" ../../..//cn/pages/installation.html" -->
-                          <option value=" ../../../icra/en/pages/installation.html" selected="selected">ICRA 2026 Competition</option>
-                          <option value=" ../../../tianchi/cn/pages/installation.html">Tianchi Competition</option>
+                          <!-- <a href=" ../../..//cn/pages/vienna.html" -->
+                          <option value=" ../../../icra/en/pages/vienna.html" selected="selected">ICRA 2026 Competition</option>
+                          <option value=" ../../../tianchi/cn/pages/vienna.html">Tianchi Competition</option>
                       </select>
                       
                       <!-- <select id="languageSelect">
@@ -79,15 +79,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="signup.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Simulator &amp; Baseline Code</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installing-the-kuavo-data-challenge-baseline-code-repository">1. Installing the kuavo_data_challenge (Baseline code) Repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installing-the-kuavo-ros-opensource-simulator-repository">2. Installing the kuavo-ros-opensource (Simulator) Repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#video-tutorial">3. Video Tutorial</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Simulator &amp; Baseline Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="submit.html">Submission</a></li>
 <li class="toctree-l1"><a class="reference internal" href="real.html">Real Robot Competition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vienna.html">Vienna Offline Finals</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Vienna Offline Finals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vienna-offline-competition-introduction">Vienna Offline Competition Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#official-onsite-guide-primary-reference">Official Onsite Guide (Primary Reference)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vienna-offline-workflow">Vienna Offline Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#onsite-competition-overview">Onsite Competition Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#onsite-schedule">Onsite Schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submission-and-evaluation-notes">Submission and Evaluation Notes</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul>
@@ -108,7 +111,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Simulator &amp; Baseline Code</li>
+      <li class="breadcrumb-item active">Vienna Offline Finals</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -117,43 +120,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="simulator-baseline-code">
-<span id="installation"></span><h1>Simulator &amp; Baseline Code<a class="headerlink" href="#simulator-baseline-code" title="Link to this heading"></a></h1>
-<p>To ensure a seamless development workflow, we have provided datasets, baseline codes and simulators for all competitors. Here is how to get started:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All repositories might be updated from time to time, it is recommended to always fetch the latest codebase before starting your development.</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Please use the correct branches:</p>
+  <section id="vienna-offline-finals">
+<h1>Vienna Offline Finals<a class="headerlink" href="#vienna-offline-finals" title="Link to this heading"></a></h1>
+<section id="vienna-offline-competition-introduction">
+<h2>Vienna Offline Competition Introduction<a class="headerlink" href="#vienna-offline-competition-introduction" title="Link to this heading"></a></h2>
+<p>This page introduces the Vienna offline finals workflow, onsite arrangements, and schedule reference for the ICRA real-robot stage.</p>
+</section>
+<section id="official-onsite-guide-primary-reference">
+<h2>Official Onsite Guide (Primary Reference)<a class="headerlink" href="#official-onsite-guide-primary-reference" title="Link to this heading"></a></h2>
+<p>For the complete and official onsite competition instructions, please refer to:</p>
 <ul class="simple">
-<li><p>Baseline code repo (<cite>kuavo_data_challenge</cite>): <code class="docutils literal notranslate"><span class="pre">icra</span></code></p></li>
-<li><p>Simulator repo (<cite>kuavo-ros-opensource</cite>): <code class="docutils literal notranslate"><span class="pre">opensource/kuavo-data-challenge-icra</span></code></p></li>
+<li><p><a class="reference external" href="../_static/docs/REAL-I_Competition_Guide.pdf">REAL-I Competition Guide (PDF)</a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/84edce09b1500084d81ffe3f6fab4dc5/REAL-I_Competition_Guide.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">REAL-I</span> <span class="pre">Competition</span> <span class="pre">Guide</span></code></a></p></li>
 </ul>
-</div>
-<section id="installing-the-kuavo-data-challenge-baseline-code-repository">
-<h2>1. Installing the <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/tree/icra">kuavo_data_challenge</a> (Baseline code) Repository<a class="headerlink" href="#installing-the-kuavo-data-challenge-baseline-code-repository" title="Link to this heading"></a></h2>
-<p>This repository is used for data conversion, model training and model deployment. Use git operation to fetch the latest codebase (<strong>icra</strong> branch):</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>icra<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo_data_challenge.git
-</pre></div>
-</div>
-</div></blockquote>
 </section>
-<section id="installing-the-kuavo-ros-opensource-simulator-repository">
-<h2>2. Installing the <a class="reference external" href="https://github.com/LejuRobotics/kuavo-ros-opensource/tree/opensource/kuavo-data-challenge-icra">kuavo-ros-opensource</a> (Simulator) Repository<a class="headerlink" href="#installing-the-kuavo-ros-opensource-simulator-repository" title="Link to this heading"></a></h2>
-<p>This repository contains the simulator. Use git operation to fetch the latest codebase (<strong>opensource/kuavo-data-challenge-icra</strong> branch):</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>opensource/kuavo-data-challenge-icra<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo-ros-opensource.git
-</pre></div>
-</div>
-</div></blockquote>
+<section id="vienna-offline-workflow">
+<h2>Vienna Offline Workflow<a class="headerlink" href="#vienna-offline-workflow" title="Link to this heading"></a></h2>
+<p>The main process of the Vienna onsite competition is shown below:</p>
+<a class="reference internal image-reference" href="../_images/vienna_data_flow.svg"><img alt="Vienna offline competition workflow" src="../_images/vienna_data_flow.svg" style="width: 100%;" />
+</a>
 </section>
-<section id="video-tutorial">
-<h2>3. Video Tutorial<a class="headerlink" href="#video-tutorial" title="Link to this heading"></a></h2>
-<blockquote>
-<div><div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/icra_instruction_installation.mp4" type="video/mp4"></video></div></div></blockquote>
+<section id="onsite-competition-overview">
+<h2>Onsite Competition Overview<a class="headerlink" href="#onsite-competition-overview" title="Link to this heading"></a></h2>
+<p>The Vienna offline finals follow the real-robot evaluation format and focus on end-to-end execution quality, including:</p>
+<ol class="arabic simple">
+<li><p>Task completion correctness</p></li>
+<li><p>Stability and safety of robot operation</p></li>
+<li><p>Efficiency under round-based time constraints</p></li>
+<li><p>Reproducibility across multiple evaluation rounds</p></li>
+</ol>
+<p>Teams are expected to prepare a deployable inference pipeline that can run reliably in the onsite environment.</p>
+</section>
+<section id="onsite-schedule">
+<h2>Onsite Schedule<a class="headerlink" href="#onsite-schedule" title="Link to this heading"></a></h2>
+<p>The official Vienna onsite timeline (check-in, test slot, formal evaluation, and result announcement) is maintained in the organizer document:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="../_static/docs/REAL-I_Competition_Guide.pdf">REAL-I Competition Guide (Schedule Section)</a></p></li>
+</ul>
+<p>Please use that PDF as the final source of truth for exact times and room arrangements.</p>
+</section>
+<section id="submission-and-evaluation-notes">
+<h2>Submission and Evaluation Notes<a class="headerlink" href="#submission-and-evaluation-notes" title="Link to this heading"></a></h2>
+<p>The Vienna offline stage uses the real-robot submission and execution principles consistent with the real-robot track documentation.</p>
+<p>For code packaging, deployment conventions, and scoring interpretation, refer to:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="real.html">Real Robot Competition</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -161,8 +173,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="datasets.html" class="btn btn-neutral float-left" title="Datasets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="submit.html" class="btn btn-neutral float-right" title="Submission" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="real.html" class="btn btn-neutral float-left" title="Real Robot Competition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="faq.html" class="btn btn-neutral float-right" title="FAQs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -199,10 +211,10 @@
       <dt>Competition</dt>
       
         <!-- <dd><a href="tianchi/pages.html">Tianchi</a></dd> -->
-         <dd><a href=" ../../../tianchi/cn/pages/installation.html">Tianchi</a></dd>
+         <dd><a href=" ../../../tianchi/cn/pages/vienna.html">Tianchi</a></dd>
       
         <!-- <dd><a href="icra/pages.html">ICRA</a></dd> -->
-         <dd><a href=" ../../../icra/en/pages/installation.html">ICRA</a></dd>
+         <dd><a href=" ../../../icra/en/pages/vienna.html">ICRA</a></dd>
       
     </dl>
     

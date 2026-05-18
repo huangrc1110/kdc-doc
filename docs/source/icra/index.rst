@@ -93,6 +93,7 @@ The competition consists of the following steps:
    pages/installation
    pages/submit
    pages/real
+   pages/vienna
 
 .. toctree::
    :maxdepth: 1

@@ -9,7 +9,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Competition Introduction &mdash; Competition Manual  文档</title>
+  <title>Vienna Offline Finals &mdash; Competition Manual  文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=c773721a" />
 
@@ -24,8 +24,8 @@
     <script src="../_static/js/versions.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Task Description" href="tasks.html" />
-    <link rel="prev" title="The 1st Real-world Embodied AI Learning Challenge" href="../index.html" /> 
+    <link rel="next" title="FAQs" href="faq.html" />
+    <link rel="prev" title="Real Robot Competition" href="real.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,16 +43,16 @@
               <!-- <div class="switch-menus">
                 <div class="version-switch"></div>
                 <div class="language-switch">
-                  <a href=" ../../cn/pages/introduction.html" style="color: #ffffff !important;">中文</a>
-                  <a href=" ../../en/pages/introduction.html" style="color: #ffffff !important;">English</a>
+                  <a href=" ../../cn/pages/vienna.html" style="color: #ffffff !important;">中文</a>
+                  <a href=" ../../en/pages/vienna.html" style="color: #ffffff !important;">English</a>
                 </div>
               </div> -->
               <div class="switch-menus">
                   <div class="version-switch">
                       <select id="competitionSelect" onchange="if(this.value) window.location.href=this.value">
-                          <!-- <a href=" ../../..//cn/pages/introduction.html" -->
-                          <option value=" ../../../icra/en/pages/introduction.html" selected="selected">ICRA 2026 Competition</option>
-                          <option value=" ../../../tianchi/cn/pages/introduction.html">Tianchi Competition</option>
+                          <!-- <a href=" ../../..//cn/pages/vienna.html" -->
+                          <option value=" ../../../icra/en/pages/vienna.html" selected="selected">ICRA 2026 Competition</option>
+                          <option value=" ../../../tianchi/cn/pages/vienna.html">Tianchi Competition</option>
                       </select>
                       
                       <!-- <select id="languageSelect">
@@ -72,18 +72,26 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Competition Introduction</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Competition Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tasks.html">Task Description</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Competition Overview</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="signup.html">Registration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Simulator &amp; Baseline Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="submit.html">Submission</a></li>
 <li class="toctree-l1"><a class="reference internal" href="real.html">Real Robot Competition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vienna.html">Vienna Offline Finals</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Vienna Offline Finals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vienna-offline-competition-introduction">Vienna Offline Competition Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#official-onsite-guide-primary-reference">Official Onsite Guide (Primary Reference)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vienna-offline-workflow">Vienna Offline Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#onsite-competition-overview">Onsite Competition Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#onsite-schedule">Onsite Schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submission-and-evaluation-notes">Submission and Evaluation Notes</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul>
@@ -104,7 +112,7 @@
           <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Competition Introduction</li>
+      <li class="breadcrumb-item active">Vienna Offline Finals</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -113,33 +121,61 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="competition-introduction">
-<span id="introduction"></span><h1>Competition Introduction<a class="headerlink" href="#competition-introduction" title="Link to this heading"></a></h1>
-<p>With the rapid development of the embodied intelligence sector, intellegent algorithms related to Imitation Learning (IL) , Reinforcement Learning (RL), and large-scale decision-making models have already achieved substantial advances in theoretical foundations. However, the push of evolution of algorithms towards practical usability and high robustness still requires continuous real-world interaction and feedback processes, and such process is faced with several resource-straining barriers:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>High cost of entry: High-performance robotics hardware still carry an astronomically expensive price tag, ranging from hundreds of thousands to even millions of dollars.</p></li>
-<li><p>High dataset production costs: High-quality datasets require complex synchronisation systems and manual annotations on specialised facilities, which incurs high costs and long development cycles</p></li>
-<li><p>Lack of a standardised testing platform: There lacks a standardised testing platform, which greatly increases the difficulty of comparing algorithms in a fair manner under real-world conditions.</p></li>
+  <section id="vienna-offline-finals">
+<h1>Vienna Offline Finals<a class="headerlink" href="#vienna-offline-finals" title="Link to this heading"></a></h1>
+<section id="vienna-offline-competition-introduction">
+<h2>Vienna Offline Competition Introduction<a class="headerlink" href="#vienna-offline-competition-introduction" title="Link to this heading"></a></h2>
+<p>This page introduces the Vienna offline finals workflow, onsite arrangements, and schedule reference for the ICRA real-robot stage.</p>
+</section>
+<section id="official-onsite-guide-primary-reference">
+<h2>Official Onsite Guide (Primary Reference)<a class="headerlink" href="#official-onsite-guide-primary-reference" title="Link to this heading"></a></h2>
+<p>For the complete and official onsite competition instructions, please refer to:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="../_static/docs/REAL-I_Competition_Guide.pdf">REAL-I Competition Guide (PDF)</a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/84edce09b1500084d81ffe3f6fab4dc5/REAL-I_Competition_Guide.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">REAL-I</span> <span class="pre">Competition</span> <span class="pre">Guide</span></code></a></p></li>
 </ul>
-</div></blockquote>
-<p>Being faced with these bottlenecks, this brand-new competition promises the following:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>First-in-world to release large datasets collected from our fleet of real twin-armed humanoid robots from specialised facilities</p></li>
-<li><p>Fully open-sourcing an evaluation platform with real-world robots, along with support for participant's remote deployment and evaluation of their algorithms</p></li>
-<li><p>Provides various self-testing systems developed in-house, with standardised interfaces for all the tasks, as well as a full technical support community.</p></li>
+</section>
+<section id="vienna-offline-workflow">
+<h2>Vienna Offline Workflow<a class="headerlink" href="#vienna-offline-workflow" title="Link to this heading"></a></h2>
+<p>The main process of the Vienna onsite competition is shown below:</p>
+<a class="reference internal image-reference" href="../_images/vienna_data_flow.svg"><img alt="Vienna offline competition workflow" src="../_images/vienna_data_flow.svg" style="width: 100%;" />
+</a>
+</section>
+<section id="onsite-competition-overview">
+<h2>Onsite Competition Overview<a class="headerlink" href="#onsite-competition-overview" title="Link to this heading"></a></h2>
+<p>The Vienna offline finals follow the real-robot evaluation format and focus on end-to-end execution quality, including:</p>
+<ol class="arabic simple">
+<li><p>Task completion correctness</p></li>
+<li><p>Stability and safety of robot operation</p></li>
+<li><p>Efficiency under round-based time constraints</p></li>
+<li><p>Reproducibility across multiple evaluation rounds</p></li>
+</ol>
+<p>Teams are expected to prepare a deployable inference pipeline that can run reliably in the onsite environment.</p>
+</section>
+<section id="onsite-schedule">
+<h2>Onsite Schedule<a class="headerlink" href="#onsite-schedule" title="Link to this heading"></a></h2>
+<p>The official Vienna onsite timeline (check-in, test slot, formal evaluation, and result announcement) is maintained in the organizer document:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="../_static/docs/REAL-I_Competition_Guide.pdf">REAL-I Competition Guide (Schedule Section)</a></p></li>
 </ul>
-</div></blockquote>
-<p>Our goal is to lower the technical barrier of entry, so that every participant can efficiently access their required resources, have a quick onboarding experience, and have easy access to algorithm validations.</p>
+<p>Please use that PDF as the final source of truth for exact times and room arrangements.</p>
+</section>
+<section id="submission-and-evaluation-notes">
+<h2>Submission and Evaluation Notes<a class="headerlink" href="#submission-and-evaluation-notes" title="Link to this heading"></a></h2>
+<p>The Vienna offline stage uses the real-robot submission and execution principles consistent with the real-robot track documentation.</p>
+<p>For code packaging, deployment conventions, and scoring interpretation, refer to:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="real.html">Real Robot Competition</a></p></li>
+</ul>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
-        <a href="../index.html" class="btn btn-neutral float-left" title="The 1st Real-world Embodied AI Learning Challenge" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="tasks.html" class="btn btn-neutral float-right" title="Task Description" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="real.html" class="btn btn-neutral float-left" title="Real Robot Competition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="faq.html" class="btn btn-neutral float-right" title="FAQs" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -176,10 +212,10 @@
       <dt>Competition</dt>
       
         <!-- <dd><a href="tianchi/pages.html">Tianchi</a></dd> -->
-         <dd><a href=" ../../../tianchi/cn/pages/introduction.html">Tianchi</a></dd>
+         <dd><a href=" ../../../tianchi/cn/pages/vienna.html">Tianchi</a></dd>
       
         <!-- <dd><a href="icra/pages.html">ICRA</a></dd> -->
-         <dd><a href=" ../../../icra/en/pages/introduction.html">ICRA</a></dd>
+         <dd><a href=" ../../../icra/en/pages/vienna.html">ICRA</a></dd>
       
     </dl>
     
