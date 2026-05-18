@@ -1,57 +1,51 @@
 .. _vienna::
 
-**********************
-Vienna Offline Finals
-**********************
+***************************
+Vienna On-Site Competition
+***************************
 
-Vienna Offline Competition Introduction
-=======================================
+Vienna On-Site Competition Preparation
+======================================
 
-This page introduces the Vienna offline finals workflow, onsite arrangements, and schedule reference for the ICRA real-robot stage.
+In the Vienna on-site competition, the participant workflow remains consistent with the real-robot track:
 
-Official Onsite Guide (Primary Reference)
-==========================================
+1. Use the same project codebase and runtime logic as the real-robot competition.
+2. Modify configuration files using the same principles and fields as the real-robot competition.
+3. Follow the same submission packaging process for deployment and evaluation.
 
-For the complete and official onsite competition instructions, please refer to:
+Vienna On-Site Dataset
+======================
 
-- `REAL-I Competition Guide (PDF) <../_static/docs/REAL-I_Competition_Guide.pdf>`_
-- :download:`Download REAL-I Competition Guide <../_static/docs/REAL-I_Competition_Guide.pdf>`
+Vienna on-site dataset:
+https://huggingface.co/datasets/LejuRobotics/kuavo_data_challenge_icra/tree/main/vienna
 
-Vienna Offline Workflow
-=======================
+On-Site Task Description
+========================
 
-The main process of the Vienna onsite competition is shown below:
+.. note::
+   This section is reserved for on-site task descriptions.
+   (To be filled manually.)
+
+Vienna On-Site Process Differences
+==================================
+
+Compared with the regular real-robot track process, the Vienna on-site process includes these differences:
+
+1. Submission path: teams may submit via the ICRA official website, or directly deploy/download to the on-site evaluation host for evaluation.
+2. On-site scoring: officials perform on-site scoring and present a live leaderboard.
+3. Compute resources: to accelerate iteration, each team is provided with 4 GPU server slots. Resource allocation is expected to be announced before competition start so teams can pre-configure environments.
+4. Data transfer: on-site collected data will be stored on local hard drives. Teams can upload data to training servers via on-site hard drives, or download from HuggingFace directly (on-site hard-drive quantity is limited).
+
+Vienna On-Site Workflow Diagram
+===============================
 
 .. image:: ../_static/images/vienna_data_flow.svg
    :width: 100%
-   :alt: Vienna offline competition workflow
+   :alt: Vienna on-site data and evaluation workflow
 
-Onsite Competition Overview
-===========================
+On-Site Schedule
+================
 
-The Vienna offline finals follow the real-robot evaluation format and focus on end-to-end execution quality, including:
+.. raw:: html
 
-1. Task completion correctness
-2. Stability and safety of robot operation
-3. Efficiency under round-based time constraints
-4. Reproducibility across multiple evaluation rounds
-
-Teams are expected to prepare a deployable inference pipeline that can run reliably in the onsite environment.
-
-Onsite Schedule
-===============
-
-The official Vienna onsite timeline (check-in, test slot, formal evaluation, and result announcement) is maintained in the organizer document:
-
-- `REAL-I Competition Guide (Schedule Section) <../_static/docs/REAL-I_Competition_Guide.pdf>`_
-
-Please use that PDF as the final source of truth for exact times and room arrangements.
-
-Submission and Evaluation Notes
-===============================
-
-The Vienna offline stage uses the real-robot submission and execution principles consistent with the real-robot track documentation.
-
-For code packaging, deployment conventions, and scoring interpretation, refer to:
-
-- `Real Robot Competition <real.html>`_
+   <iframe src="../_static/docs/REAL-I_Competition_Guide.pdf" width="100%" height="900px" style="border: 1px solid #ddd;"></iframe>

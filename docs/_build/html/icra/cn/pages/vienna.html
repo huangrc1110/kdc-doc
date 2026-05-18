@@ -9,7 +9,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vienna Offline Finals &mdash; Competition Manual  文档</title>
+  <title>Vienna On-Site Competition &mdash; Competition Manual  文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=c773721a" />
 
@@ -83,13 +83,13 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Simulator &amp; Baseline Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="submit.html">Submission</a></li>
 <li class="toctree-l1"><a class="reference internal" href="real.html">Real Robot Competition</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Vienna Offline Finals</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#vienna-offline-competition-introduction">Vienna Offline Competition Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#official-onsite-guide-primary-reference">Official Onsite Guide (Primary Reference)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#vienna-offline-workflow">Vienna Offline Workflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#onsite-competition-overview">Onsite Competition Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#onsite-schedule">Onsite Schedule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#submission-and-evaluation-notes">Submission and Evaluation Notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Vienna On-Site Competition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vienna-on-site-competition-preparation">Vienna On-Site Competition Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vienna-on-site-dataset">Vienna On-Site Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#on-site-task-description">On-Site Task Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vienna-on-site-process-differences">Vienna On-Site Process Differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vienna-on-site-workflow-diagram">Vienna On-Site Workflow Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#on-site-schedule">On-Site Schedule</a></li>
 </ul>
 </li>
 </ul>
@@ -112,7 +112,7 @@
           <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Vienna Offline Finals</li>
+      <li class="breadcrumb-item active">Vienna On-Site Competition</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -121,53 +121,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="vienna-offline-finals">
-<h1>Vienna Offline Finals<a class="headerlink" href="#vienna-offline-finals" title="Link to this heading"></a></h1>
-<section id="vienna-offline-competition-introduction">
-<h2>Vienna Offline Competition Introduction<a class="headerlink" href="#vienna-offline-competition-introduction" title="Link to this heading"></a></h2>
-<p>This page introduces the Vienna offline finals workflow, onsite arrangements, and schedule reference for the ICRA real-robot stage.</p>
+  <section id="vienna-on-site-competition">
+<h1>Vienna On-Site Competition<a class="headerlink" href="#vienna-on-site-competition" title="Link to this heading"></a></h1>
+<section id="vienna-on-site-competition-preparation">
+<h2>Vienna On-Site Competition Preparation<a class="headerlink" href="#vienna-on-site-competition-preparation" title="Link to this heading"></a></h2>
+<p>In the Vienna on-site competition, the participant workflow remains consistent with the real-robot track:</p>
+<ol class="arabic simple">
+<li><p>Use the same project codebase and runtime logic as the real-robot competition.</p></li>
+<li><p>Modify configuration files using the same principles and fields as the real-robot competition.</p></li>
+<li><p>Follow the same submission packaging process for deployment and evaluation.</p></li>
+</ol>
 </section>
-<section id="official-onsite-guide-primary-reference">
-<h2>Official Onsite Guide (Primary Reference)<a class="headerlink" href="#official-onsite-guide-primary-reference" title="Link to this heading"></a></h2>
-<p>For the complete and official onsite competition instructions, please refer to:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="../_static/docs/REAL-I_Competition_Guide.pdf">REAL-I Competition Guide (PDF)</a></p></li>
-<li><p><a class="reference download internal" download="" href="../_downloads/84edce09b1500084d81ffe3f6fab4dc5/REAL-I_Competition_Guide.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">REAL-I</span> <span class="pre">Competition</span> <span class="pre">Guide</span></code></a></p></li>
-</ul>
+<section id="vienna-on-site-dataset">
+<h2>Vienna On-Site Dataset<a class="headerlink" href="#vienna-on-site-dataset" title="Link to this heading"></a></h2>
+<p>Vienna on-site dataset:
+<a class="reference external" href="https://huggingface.co/datasets/LejuRobotics/kuavo_data_challenge_icra/tree/main/vienna">https://huggingface.co/datasets/LejuRobotics/kuavo_data_challenge_icra/tree/main/vienna</a></p>
 </section>
-<section id="vienna-offline-workflow">
-<h2>Vienna Offline Workflow<a class="headerlink" href="#vienna-offline-workflow" title="Link to this heading"></a></h2>
-<p>The main process of the Vienna onsite competition is shown below:</p>
-<a class="reference internal image-reference" href="../_images/vienna_data_flow.svg"><img alt="Vienna offline competition workflow" src="../_images/vienna_data_flow.svg" style="width: 100%;" />
+<section id="on-site-task-description">
+<h2>On-Site Task Description<a class="headerlink" href="#on-site-task-description" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>This section is reserved for on-site task descriptions.
+(To be filled manually.)</p>
+</div>
+</section>
+<section id="vienna-on-site-process-differences">
+<h2>Vienna On-Site Process Differences<a class="headerlink" href="#vienna-on-site-process-differences" title="Link to this heading"></a></h2>
+<p>Compared with the regular real-robot track process, the Vienna on-site process includes these differences:</p>
+<ol class="arabic simple">
+<li><p>Submission path: teams may submit via the ICRA official website, or directly deploy/download to the on-site evaluation host for evaluation.</p></li>
+<li><p>On-site scoring: officials perform on-site scoring and present a live leaderboard.</p></li>
+<li><p>Compute resources: to accelerate iteration, each team is provided with 4 GPU server slots. Resource allocation is expected to be announced before competition start so teams can pre-configure environments.</p></li>
+<li><p>Data transfer: on-site collected data will be stored on local hard drives. Teams can upload data to training servers via on-site hard drives, or download from HuggingFace directly (on-site hard-drive quantity is limited).</p></li>
+</ol>
+</section>
+<section id="vienna-on-site-workflow-diagram">
+<h2>Vienna On-Site Workflow Diagram<a class="headerlink" href="#vienna-on-site-workflow-diagram" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/vienna_data_flow.svg"><img alt="Vienna on-site data and evaluation workflow" src="../_images/vienna_data_flow.svg" style="width: 100%;" />
 </a>
 </section>
-<section id="onsite-competition-overview">
-<h2>Onsite Competition Overview<a class="headerlink" href="#onsite-competition-overview" title="Link to this heading"></a></h2>
-<p>The Vienna offline finals follow the real-robot evaluation format and focus on end-to-end execution quality, including:</p>
-<ol class="arabic simple">
-<li><p>Task completion correctness</p></li>
-<li><p>Stability and safety of robot operation</p></li>
-<li><p>Efficiency under round-based time constraints</p></li>
-<li><p>Reproducibility across multiple evaluation rounds</p></li>
-</ol>
-<p>Teams are expected to prepare a deployable inference pipeline that can run reliably in the onsite environment.</p>
-</section>
-<section id="onsite-schedule">
-<h2>Onsite Schedule<a class="headerlink" href="#onsite-schedule" title="Link to this heading"></a></h2>
-<p>The official Vienna onsite timeline (check-in, test slot, formal evaluation, and result announcement) is maintained in the organizer document:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="../_static/docs/REAL-I_Competition_Guide.pdf">REAL-I Competition Guide (Schedule Section)</a></p></li>
-</ul>
-<p>Please use that PDF as the final source of truth for exact times and room arrangements.</p>
-</section>
-<section id="submission-and-evaluation-notes">
-<h2>Submission and Evaluation Notes<a class="headerlink" href="#submission-and-evaluation-notes" title="Link to this heading"></a></h2>
-<p>The Vienna offline stage uses the real-robot submission and execution principles consistent with the real-robot track documentation.</p>
-<p>For code packaging, deployment conventions, and scoring interpretation, refer to:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="real.html">Real Robot Competition</a></p></li>
-</ul>
-</section>
+<section id="on-site-schedule">
+<h2>On-Site Schedule<a class="headerlink" href="#on-site-schedule" title="Link to this heading"></a></h2>
+<iframe src="../_static/docs/REAL-I_Competition_Guide.pdf" width="100%" height="900px" style="border: 1px solid #ddd;"></iframe></section>
 </section>
 
 
