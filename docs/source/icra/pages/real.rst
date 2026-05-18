@@ -17,6 +17,7 @@ This repository is used for data conversion, model training and model deployment
 Additional package
     Lingbot-vla(README.md has detailed installation instructions)：https://github.com/JoyJeeo/lingbot-vla
 
+Real-robot datasets are available on the `Modelscope page <https://www.modelscope.cn/datasets/lejurobot/LET-ICRA2026Competition-Data>`_.
 
 The robot used in the real robot competition is Leju Kuavo 4 Pro, with end-effectors being dexterous hands/grippers.
 

@@ -1,4 +1,4 @@
-.. _kuavo-dataset:
+﻿.. _kuavo-dataset:
 
 **********
 Datasets
@@ -8,7 +8,7 @@ For maximum preservation of the valuable information contained in the original d
 
 Downloading Datasets
 =========================================
-    Dataset downloads are all done through our `HuggingFace page <https://huggingface.co/datasets/LejuRobotics/kuavo_data_challenge_icra/tree/main>`_. This link is also found on our website's main page.
+Simulation datasets and Vienna offline datasets are available on the `HuggingFace page <https://huggingface.co/datasets/LejuRobotics/kuavo_data_challenge_icra/tree/main>`_. This link is also available on the homepage of our official website.
    
    A detailed guide is as follows:
 
@@ -19,6 +19,8 @@ Downloading Datasets
    b. Navigate to and open the ``sim`` folder, then select the folder with the task that you wish to download datasets for.
 
    c. Click the download button on each of the rosbags to download them.
+
+Real-robot datasets are available on the `Modelscope page <https://www.modelscope.cn/datasets/lejurobot/LET-ICRA2026Competition-Data>`_.
 
 .. note::
       We recommend **against** downloading all the rosbags for all the datasets at once. You are unlikely to utilise all of them at once, while they take up massive amounts of your device storage. Consider downloading only what you need.

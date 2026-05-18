@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#"C:\Program Files\Git\bin\bash.exe" ./build_doc.sh
 set -euo pipefail
 
 PYTHON_BIN=$(command -v python)
