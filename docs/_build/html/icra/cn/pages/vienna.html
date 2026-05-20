@@ -86,7 +86,22 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Vienna On-Site Competition</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#vienna-on-site-competition-preparation">Vienna On-Site Competition Preparation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#vienna-on-site-dataset">Vienna On-Site Dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#on-site-task-description">On-Site Task Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#on-site-task-description">On-Site Task Description</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#task-overview">Task Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#task-1">Task 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#task-2">Task 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#task-3">Task 3</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-scoring">Task Scoring</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-rules">General Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-1-metal-parts-righting-10-pts">Task 1: Metal Parts Righting（10 pts）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-2-daily-chemical-bottle-pick-place-15-pts">Task 2: Daily Chemical Bottle Pick &amp; Place（15 pts）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-3-express-package-scanning-25-pts">Task 3: Express Package Scanning（25 pts）</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#vienna-on-site-process-differences">Vienna On-Site Process Differences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#vienna-on-site-workflow-diagram">Vienna On-Site Workflow Diagram</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#on-site-schedule">On-Site Schedule</a></li>
@@ -139,11 +154,98 @@
 </section>
 <section id="on-site-task-description">
 <h2>On-Site Task Description<a class="headerlink" href="#on-site-task-description" title="Link to this heading"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">备注</p>
-<p>This section is reserved for on-site task descriptions.
-(To be filled manually.)</p>
-</div>
+<section id="task-overview">
+<h3>Task Overview<a class="headerlink" href="#task-overview" title="Link to this heading"></a></h3>
+<section id="task-1">
+<h4>Task 1<a class="headerlink" href="#task-1" title="Link to this heading"></a></h4>
+<p>Metal Parts Righting
+Scenario Description: Small parts are placed both face-up and face-down on a conveyor belt. The robot must grasp face-down parts with one hand, flip them, and place them face-up.</p>
+<p>Level 1</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/vienna_task1_level1.mp4" type="video/mp4"></video></div><div style="clear: both;"></div><p>Level 2</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/vienna_task1_level2.mp4" type="video/mp4"></video></div><div style="clear: both;"></div></section>
+<section id="task-2">
+<h4>Task 2<a class="headerlink" href="#task-2" title="Link to this heading"></a></h4>
+<p>Daily Chemical Bottle Pick &amp; Place
+Scenario Specification: Bottles of identical specifications are randomly placed on a tabletop within the right hand’s working radius. The right hand grasps each bottle and transfers it mid-air to the left hand, which then places it onto a conveyor belt. The conveyor belt work area falls within the field of view of the robot’s head-mounted camera.</p>
+<p>Level 1</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/vienna_task2_level1.mp4" type="video/mp4"></video></div><div style="clear: both;"></div><p>Level 2</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/vienna_task2_level2.mp4" type="video/mp4"></video></div><div style="clear: both;"></div></section>
+<section id="task-3">
+<h4>Task 3<a class="headerlink" href="#task-3" title="Link to this heading"></a></h4>
+<p>Express Package Scanning
+Scenario Description: Grasp parcel from conveyor belt with one hand, place it on the label-scanning platform;,left hand adjusts the parcel label faces up, then grasps with one hand and places on conveyor belt on the other side.</p>
+<p>Level 1</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/vienna_task3_level1.mp4" type="video/mp4"></video></div><div style="clear: both;"></div><p>Level 2</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/vienna_task3_level2.mp4" type="video/mp4"></video></div><div style="clear: both;"></div></section>
+</section>
+<section id="task-scoring">
+<h3>Task Scoring<a class="headerlink" href="#task-scoring" title="Link to this heading"></a></h3>
+<section id="general-rules">
+<h4>General Rules<a class="headerlink" href="#general-rules" title="Link to this heading"></a></h4>
+<p>The on-site competition features three scenarios. Each scenario has two difficulty levels with different scoring configurations.</p>
+<p>Evaluation Limit — Each submitted model may attempt up to 3 evaluations per scenario; the average score is taken.</p>
+<p>Data Collection — 200 data samples are collected per task: 100 for Level 1 and 100 for Level 2 scenarios.</p>
+<p>Inference Failure — If a single scoring action fails 3 consecutive attempts, the round is deemed failed. Any collision or abnormal event also results in round failure.</p>
+</section>
+</section>
+<section id="task-1-metal-parts-righting-10-pts">
+<h3>Task 1: Metal Parts Righting（10 pts）<a class="headerlink" href="#task-1-metal-parts-righting-10-pts" title="Link to this heading"></a></h3>
+<p>Difficulty Levels and Scoring Criteria:</p>
+<p>Level 1 (Total Score: 6 pts)：
+The conveyor belt is stationary. Within the robot's right-hand reach, there are 3 face-down metal parts,3 placed at random positions. The gripper grasps each part and completes the flip.</p>
+<p>Time limit per evaluation: 3 minutes.</p>
+<ul class="simple">
+<li><p>Grasping a face-down part and completing the flip scores 1.5 pts</p></li>
+<li><p>Completing all parts scores 1.5 pts</p></li>
+</ul>
+<p>Level 2 (Total Score: 4 pts)：
+The conveyor belt is moving. There are 4 small parts: face-down and face-up 2 each, placed randomly within the right hand's reach. The right hand grasps face-down parts from the moving belt; face-up parts are identified but not manipulated.</p>
+<p>Time limit: 5 minutes.</p>
+<ul class="simple">
+<li><p>1 pt for grasping a face-down part and completing the flip</p></li>
+<li><p>1 pt for identifying face-up and moving away.</p></li>
+</ul>
+</section>
+<section id="task-2-daily-chemical-bottle-pick-place-15-pts">
+<h3>Task 2: Daily Chemical Bottle Pick &amp; Place（15 pts）<a class="headerlink" href="#task-2-daily-chemical-bottle-pick-place-15-pts" title="Link to this heading"></a></h3>
+<p>Difficulty Levels and Scoring Criteria:</p>
+<p>Level 1 (5 pts)：
+The right hand grasps one bottle and performs a mid-air handoff to the left hand, which then places the bottle steadily onto the conveyor belt.</p>
+<p>Time limit per evaluation: 3 minutes.</p>
+<ul class="simple">
+<li><p>1 pt for successfully grasping the bottle without dropping</p></li>
+<li><p>bimanual handoff scores 2 pts</p></li>
+<li><p>the other hand places bottle on conveyor belt scores 2 pts</p></li>
+</ul>
+<p>Level 2 (10 pts)：
+Two bottles of identical specifications are randomly placed within the right hand’s working radius. The right hand grasps each bottle one at a time and performs a mid-air handoff to the left hand, which then places the bottles onto the conveyor belt one by one in a stable manner.</p>
+<p>Time limit per evaluation: 6 minutes.</p>
+<ul class="simple">
+<li><p>1 pt for grasping any bottle without dropping</p></li>
+<li><p>bimanual handoff scores 2 pts</p></li>
+<li><p>other hand places bottle on conveyor belt scores 2 pts.</p></li>
+</ul>
+</section>
+<section id="task-3-express-package-scanning-25-pts">
+<h3>Task 3: Express Package Scanning（25 pts）<a class="headerlink" href="#task-3-express-package-scanning-25-pts" title="Link to this heading"></a></h3>
+<p>Difficulty Levels and Scoring Criteria:</p>
+<p>Level 1 (10 pts)：
+Two parcels placed one at a time: one label-up, one label-down; Right hand grasps nearby parcel and places on scanning platform; left hand flips label-down parcel and places it on conveyor belt.</p>
+<p>Time limit per evaluation: 6 minutes.</p>
+<ul class="simple">
+<li><p>Grasping and placing parcel on scanning platform scores 1 pt</p></li>
+<li><p>successfully flipping label-down parcel and placing on scanning platform scores 4 pts</p></li>
+<li><p>placing on conveyor belt scores 2 pts.</p></li>
+</ul>
+<p>Level 2 (15 pts)：
+Three parcels placed simultaneously within the right hand's reach,1 label-up and 2 label-down；Right hand grasps nearby parcel and places on scanning platform; left hand flips label-down parcels and places on conveyor belt.</p>
+<p>Time limit: 10 minutes.</p>
+<ul class="simple">
+<li><p>1 pt for grasping and placing on scanning platform</p></li>
+<li><p>3 pts for flipping label-down parcel and placing on scanning platform</p></li>
+<li><p>2 pts for placing on conveyor belt.</p></li>
+</ul>
+</section>
 </section>
 <section id="vienna-on-site-process-differences">
 <h2>Vienna On-Site Process Differences<a class="headerlink" href="#vienna-on-site-process-differences" title="Link to this heading"></a></h2>
