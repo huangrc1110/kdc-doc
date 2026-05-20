@@ -97,9 +97,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#general-rules">General Rules</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#task-1-metal-parts-righting-10-pts">Task 1: Metal Parts Righting（10 pts）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#task-2-daily-chemical-bottle-pick-place-15-pts">Task 2: Daily Chemical Bottle Pick &amp; Place（15 pts）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#task-3-express-package-scanning-25-pts">Task 3: Express Package Scanning（25 pts）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-1-metal-parts-righting-10-pts">Task 1: Metal Parts Righting (10 pts)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-2-daily-chemical-bottle-pick-place-15-pts">Task 2: Daily Chemical Bottle Pick &amp; Place (15 pts)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-3-express-package-scanning-25-pts">Task 3: Express Package Scanning (25 pts)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#vienna-on-site-process-differences">Vienna On-Site Process Differences</a></li>
@@ -150,7 +150,7 @@
 <section id="vienna-on-site-dataset">
 <h2>Vienna On-Site Dataset<a class="headerlink" href="#vienna-on-site-dataset" title="Link to this heading"></a></h2>
 <p>Vienna on-site dataset:
-<a class="reference external" href="https://huggingface.co/datasets/LejuRobotics/kuavo_data_challenge_icra/tree/main/vienna">https://huggingface.co/datasets/LejuRobotics/kuavo_data_challenge_icra/tree/main/vienna</a></p>
+<a class="reference external" href="https://huggingface.co/datasets/LejuRobotics/kuavo_data_challenge_icra/tree/main/vienna">Vienna dataset on HuggingFace</a></p>
 </section>
 <section id="on-site-task-description">
 <h2>On-Site Task Description<a class="headerlink" href="#on-site-task-description" title="Link to this heading"></a></h2>
@@ -185,65 +185,65 @@ Scenario Description: Grasp parcel from conveyor belt with one hand, place it on
 <p>The on-site competition features three scenarios. Each scenario has two difficulty levels with different scoring configurations.</p>
 <p>Evaluation Limit — Each submitted model may attempt up to 3 evaluations per scenario; the average score is taken.</p>
 <p>Data Collection — 200 data samples are collected per task: 100 for Level 1 and 100 for Level 2 scenarios.</p>
-<p>Inference Failure — If a single scoring action fails 3 consecutive attempts, the round is deemed failed. Any collision or abnormal event also results in round failure.</p>
+<p>Inference failure: If a single scoring action fails in 3 consecutive attempts, the round is deemed failed. Any collision or abnormal event also results in round failure.</p>
 </section>
 </section>
 <section id="task-1-metal-parts-righting-10-pts">
-<h3>Task 1: Metal Parts Righting（10 pts）<a class="headerlink" href="#task-1-metal-parts-righting-10-pts" title="Link to this heading"></a></h3>
-<p>Difficulty Levels and Scoring Criteria:</p>
+<h3>Task 1: Metal Parts Righting (10 pts)<a class="headerlink" href="#task-1-metal-parts-righting-10-pts" title="Link to this heading"></a></h3>
+<p>Difficulty Levels and Scoring Criteria</p>
 <p>Level 1 (Total Score: 6 pts)：
 The conveyor belt is stationary. Within the robot's right-hand reach, there are 3 face-down metal parts,3 placed at random positions. The gripper grasps each part and completes the flip.</p>
 <p>Time limit per evaluation: 3 minutes.</p>
 <ul class="simple">
-<li><p>Grasping a face-down part and completing the flip scores 1.5 pts</p></li>
-<li><p>Completing all parts scores 1.5 pts</p></li>
+<li><p>1.5 pts per successfully grasped-and-flipped face-down part.</p></li>
+<li><p>1.5 pts completion bonus for flipping all required parts.</p></li>
 </ul>
-<p>Level 2 (Total Score: 4 pts)：
-The conveyor belt is moving. There are 4 small parts: face-down and face-up 2 each, placed randomly within the right hand's reach. The right hand grasps face-down parts from the moving belt; face-up parts are identified but not manipulated.</p>
-<p>Time limit: 5 minutes.</p>
+<p>Level 2 (4 pts):
+The conveyor belt is moving. There are 4 small parts: 2 face-down and 2 face-up, placed randomly within the right hand's reach. The right hand grasps face-down parts from the moving belt. Face-up parts should be identified but not manipulated.</p>
+<p>Time limit per evaluation: 5 minutes.</p>
 <ul class="simple">
-<li><p>1 pt for grasping a face-down part and completing the flip</p></li>
-<li><p>1 pt for identifying face-up and moving away.</p></li>
+<li><p>1 pt per successfully grasped-and-flipped face-down part.</p></li>
+<li><p>1 pt per correctly identified face-up part with correct move-away behavior.</p></li>
 </ul>
 </section>
 <section id="task-2-daily-chemical-bottle-pick-place-15-pts">
-<h3>Task 2: Daily Chemical Bottle Pick &amp; Place（15 pts）<a class="headerlink" href="#task-2-daily-chemical-bottle-pick-place-15-pts" title="Link to this heading"></a></h3>
-<p>Difficulty Levels and Scoring Criteria:</p>
-<p>Level 1 (5 pts)：
+<h3>Task 2: Daily Chemical Bottle Pick &amp; Place (15 pts)<a class="headerlink" href="#task-2-daily-chemical-bottle-pick-place-15-pts" title="Link to this heading"></a></h3>
+<p>Difficulty Levels and Scoring Criteria</p>
+<p>Level 1 (5 pts):
 The right hand grasps one bottle and performs a mid-air handoff to the left hand, which then places the bottle steadily onto the conveyor belt.</p>
 <p>Time limit per evaluation: 3 minutes.</p>
 <ul class="simple">
-<li><p>1 pt for successfully grasping the bottle without dropping</p></li>
-<li><p>bimanual handoff scores 2 pts</p></li>
-<li><p>the other hand places bottle on conveyor belt scores 2 pts</p></li>
+<li><p>1 pt for successfully grasping the bottle without dropping.</p></li>
+<li><p>2 pts for successful bimanual handoff.</p></li>
+<li><p>2 pts for stable placement on the conveyor belt.</p></li>
 </ul>
 <p>Level 2 (10 pts)：
 Two bottles of identical specifications are randomly placed within the right hand’s working radius. The right hand grasps each bottle one at a time and performs a mid-air handoff to the left hand, which then places the bottles onto the conveyor belt one by one in a stable manner.</p>
 <p>Time limit per evaluation: 6 minutes.</p>
 <ul class="simple">
-<li><p>1 pt for grasping any bottle without dropping</p></li>
-<li><p>bimanual handoff scores 2 pts</p></li>
-<li><p>other hand places bottle on conveyor belt scores 2 pts.</p></li>
+<li><p>1 pt per bottle for grasping without dropping.</p></li>
+<li><p>2 pts per bottle for successful bimanual handoff.</p></li>
+<li><p>2 pts per bottle for stable placement on the conveyor belt.</p></li>
 </ul>
 </section>
 <section id="task-3-express-package-scanning-25-pts">
-<h3>Task 3: Express Package Scanning（25 pts）<a class="headerlink" href="#task-3-express-package-scanning-25-pts" title="Link to this heading"></a></h3>
-<p>Difficulty Levels and Scoring Criteria:</p>
+<h3>Task 3: Express Package Scanning (25 pts)<a class="headerlink" href="#task-3-express-package-scanning-25-pts" title="Link to this heading"></a></h3>
+<p>Difficulty Levels and Scoring Criteria</p>
 <p>Level 1 (10 pts)：
 Two parcels placed one at a time: one label-up, one label-down; Right hand grasps nearby parcel and places on scanning platform; left hand flips label-down parcel and places it on conveyor belt.</p>
 <p>Time limit per evaluation: 6 minutes.</p>
 <ul class="simple">
-<li><p>Grasping and placing parcel on scanning platform scores 1 pt</p></li>
-<li><p>successfully flipping label-down parcel and placing on scanning platform scores 4 pts</p></li>
-<li><p>placing on conveyor belt scores 2 pts.</p></li>
+<li><p>1 pt per parcel for grasping and placing on the scanning platform.</p></li>
+<li><p>4 pts for successfully flipping a label-down parcel and placing it correctly on the scanning platform.</p></li>
+<li><p>2 pts per parcel for successful placement on the conveyor belt.</p></li>
 </ul>
 <p>Level 2 (15 pts)：
 Three parcels placed simultaneously within the right hand's reach,1 label-up and 2 label-down；Right hand grasps nearby parcel and places on scanning platform; left hand flips label-down parcels and places on conveyor belt.</p>
-<p>Time limit: 10 minutes.</p>
+<p>Time limit per evaluation: 10 minutes.</p>
 <ul class="simple">
-<li><p>1 pt for grasping and placing on scanning platform</p></li>
-<li><p>3 pts for flipping label-down parcel and placing on scanning platform</p></li>
-<li><p>2 pts for placing on conveyor belt.</p></li>
+<li><p>1 pt per parcel for grasping and placing on the scanning platform.</p></li>
+<li><p>3 pts per label-down parcel for successful flipping and correct placement on the scanning platform.</p></li>
+<li><p>2 pts per parcel for successful placement on the conveyor belt.</p></li>
 </ul>
 </section>
 </section>
@@ -251,10 +251,10 @@ Three parcels placed simultaneously within the right hand's reach,1 label-up and
 <h2>Vienna On-Site Process Differences<a class="headerlink" href="#vienna-on-site-process-differences" title="Link to this heading"></a></h2>
 <p>Compared with the regular real-robot track process, the Vienna on-site process includes these differences:</p>
 <ol class="arabic simple">
-<li><p>Submission path: teams may submit via the ICRA official website, or directly deploy/download to the on-site evaluation host for evaluation.</p></li>
-<li><p>On-site scoring: officials perform on-site scoring and present a live leaderboard.</p></li>
-<li><p>Compute resources: to accelerate iteration, each team is provided with 4 GPU server slots. Resource allocation is expected to be announced before competition start so teams can pre-configure environments.</p></li>
-<li><p>Data transfer: on-site collected data will be stored on local hard drives. Teams can upload data to training servers via on-site hard drives, or download from HuggingFace directly (on-site hard-drive quantity is limited).</p></li>
+<li><p>Submission path: Teams may submit via the ICRA official website, or directly deploy/download to the on-site evaluation host for evaluation.</p></li>
+<li><p>On-site scoring: Officials perform on-site scoring and present a live leaderboard.</p></li>
+<li><p>Compute resources: To accelerate iteration, each team is provided with 4 GPU server slots. Resource allocation is expected to be announced before the competition starts so teams can pre-configure environments.</p></li>
+<li><p>Data transfer: On-site collected data is stored on local hard drives. Teams can upload data to training servers via on-site hard drives, or download from HuggingFace directly (on-site hard-drive quantity is limited).</p></li>
 </ol>
 </section>
 <section id="vienna-on-site-workflow-diagram">
