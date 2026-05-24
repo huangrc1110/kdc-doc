@@ -29,9 +29,10 @@ Task 1
 ^^^^^^
 
 Metal Parts Righting
-Scenario Description: Small parts are placed both face-up and face-down on a conveyor belt. The robot must grasp face-down parts with one hand, flip them, and place them face-up.
+Overall Task:
+Small parts are placed both face-up and face-down on a conveyor belt. The robot must grasp face-down parts with one hand, flip them, and place them face-up.
 
-Level 1
+Level 1 Scenario Video:
 
 .. video:: ../_static/videos/vienna_task1_level1.mp4
    :width: 100%
@@ -39,7 +40,7 @@ Level 1
 
    <div style="clear: both;"></div>
 
-Level 2
+Level 2 Scenario Video:
 
 .. video:: ../_static/videos/vienna_task1_level2.mp4
    :width: 100%
@@ -51,9 +52,10 @@ Task 2
 ^^^^^^
 
 Daily Chemical Bottle Pick & Place
-Scenario Specification: Bottles of identical specifications are randomly placed on a tabletop within the right hand’s working radius. The right hand grasps each bottle and transfers it mid-air to the left hand, which then places it onto a conveyor belt. The conveyor belt work area falls within the field of view of the robot’s head-mounted camera.
+Overall Task:
+Bottles of identical specifications are randomly placed on a tabletop within the right hand's working radius. The right hand grasps each bottle and transfers it mid-air to the left hand, which then places it onto a conveyor belt. The conveyor belt work area falls within the field of view of the robot's head-mounted camera.
 
-Level 1
+Level 1 Scenario Video:
 
 .. video:: ../_static/videos/vienna_task2_level1.mp4
    :width: 100%
@@ -61,7 +63,7 @@ Level 1
 
    <div style="clear: both;"></div>
 
-Level 2
+Level 2 Scenario Video:
 
 .. video:: ../_static/videos/vienna_task2_level2.mp4
    :width: 100%
@@ -73,9 +75,10 @@ Task 3
 ^^^^^^
 
 Express Package Scanning
-Scenario Description: Grasp parcel from conveyor belt with one hand, place it on the label-scanning platform;,left hand adjusts the parcel label faces up, then grasps with one hand and places on conveyor belt on the other side.
+Overall Task:
+Grasp parcel from conveyor belt with one hand, place it on the label-scanning platform; left hand adjusts the parcel label face-up, then grasps with one hand and places on the conveyor belt on the other side.
 
-Level 1
+Level 1 Scenario Video:
 
 .. video:: ../_static/videos/vienna_task3_level1.mp4
    :width: 100%
@@ -83,7 +86,7 @@ Level 1
 
    <div style="clear: both;"></div>
 
-Level 2
+Level 2 Scenario Video:
 
 .. video:: ../_static/videos/vienna_task3_level2.mp4
    :width: 100%
@@ -109,7 +112,7 @@ Task 1: Metal Parts Righting (10 pts)
 --------------------------------------
 
 Level 1 (Total Score: 6 pts)：
-The conveyor belt is stationary. Within the robot's right-hand reach, there are 3 face-down metal parts,3 placed at random positions. The gripper grasps each part and completes the flip.
+The conveyor belt is stationary. Within the robot's right-hand reach, there are 3 face-down metal parts placed at random positions. The gripper grasps each part and completes the flip.
 
 Time limit per evaluation: 3 minutes.
 
@@ -117,7 +120,7 @@ Time limit per evaluation: 3 minutes.
 * 1.5 pts completion bonus for flipping all required parts.
 
 Level 2 (4 pts):
-The conveyor belt is moving. There are 4 small parts: 2 face-down and 2 face-up, placed randomly within the right hand's reach. The right hand grasps face-down parts from the moving belt. Face-up parts should be identified but not manipulated.
+The conveyor belt is moving. There are 4 small parts: 2 face-down and 2 face-up, placed randomly within the right hand's reach. The right hand grasps face-down parts from the moving belt; face-up parts are identified but not manipulated.
 
 Time limit per evaluation: 5 minutes.
 
@@ -137,7 +140,7 @@ Time limit per evaluation: 3 minutes.
 * 2 pts for stable placement on the conveyor belt.
 
 Level 2 (10 pts)：
-Two bottles of identical specifications are randomly placed within the right hand’s working radius. The right hand grasps each bottle one at a time and performs a mid-air handoff to the left hand, which then places the bottles onto the conveyor belt one by one in a stable manner.
+Two bottles of identical specifications are randomly placed within the right hand's working radius. The right hand grasps each bottle one at a time and performs a mid-air handoff to the left hand, which then places the bottles onto the conveyor belt one by one in a stable manner.
 
 Time limit per evaluation: 6 minutes.
 
@@ -149,7 +152,7 @@ Task 3: Express Package Scanning (25 pts)
 ------------------------------------------
 
 Level 1 (10 pts)：
-Two parcels placed one at a time: one label-up, one label-down; Right hand grasps nearby parcel and places on scanning platform; left hand flips label-down parcel and places it on conveyor belt.
+Two parcels are placed one at a time: one label-up and one label-down. The right hand grasps a nearby parcel and places it on the scanning platform; the left hand flips the label-down parcel and places it on the conveyor belt.
 
 Time limit per evaluation: 6 minutes.
 
@@ -158,7 +161,7 @@ Time limit per evaluation: 6 minutes.
 * 2 pts per parcel for successful placement on the conveyor belt.
 
 Level 2 (15 pts)：
-Three parcels placed simultaneously within the right hand's reach,1 label-up and 2 label-down；Right hand grasps nearby parcel and places on scanning platform; left hand flips label-down parcels and places on conveyor belt.
+Three parcels are placed simultaneously within the right hand's reach: 1 label-up and 2 label-down. The right hand grasps a nearby parcel and places it on the scanning platform; the left hand flips label-down parcels and places them on the conveyor belt.
 
 Time limit per evaluation: 10 minutes.
 
