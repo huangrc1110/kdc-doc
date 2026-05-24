@@ -16,7 +16,7 @@ Simulation datasets and Vienna offline datasets are available on the `HuggingFac
    
         - If you don't have an HuggingFace account already, use the Sign Up button on the top-right corner to do so now.
 
-   b. Navigate to and open the ``sim`` folder, then select the folder with the task that you wish to download datasets for.
+   b. Navigate to and open the ``sim``/ ``vienna`` folder, then select the folder with the task that you wish to download datasets for.
 
    c. Click the download button on each of the rosbags to download them.
 
