@@ -188,7 +188,6 @@
 <li><p>Each task consists of exactly 5 rounds (each round has a time limit of 3 minutes; scores for completed actions after the time limit will not be counted). Each round is scored separately, and the arithmetic mean of the 5 rounds is taken as the final score for that task.</p></li>
 <li><p>Tiebreaker rule: For teams with the same total score, ranking will be determined by the average completion time of all rounds across all tasks, from shortest to longest.</p></li>
 </ol>
-<p>Each task will be evaluated for ten rounds, with the final score being the average of the ten rounds.</p>
 </section>
 <section id="task-1-small-part-flipping-100-points">
 <h4>Task 1: Small Part Flipping (100 points)<a class="headerlink" href="#task-1-small-part-flipping-100-points" title="Link to this heading"></a></h4>
@@ -429,7 +428,7 @@ inference:
 <span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
 
 <span class="c"># Install Miniforge</span>
-<span class="k">ENV</span><span class="w"> </span><span class="nv">MINIFORGE_URL</span><span class="o">=</span>”https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Miniforge3-Linux-x86_64.sh”
+<span class="k">ENV</span><span class="w"> </span><span class="nv">MINIFORGE_URL</span><span class="o">=</span><span class="s2">&quot;https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Miniforge3-Linux-x86_64.sh&quot;</span>
 <span class="k">RUN</span><span class="w"> </span>curl<span class="w"> </span>-L<span class="w"> </span><span class="si">${</span><span class="nv">MINIFORGE_URL</span><span class="si">}</span><span class="w"> </span>-o<span class="w"> </span>/tmp/miniforge.sh<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>bash<span class="w"> </span>/tmp/miniforge.sh<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span>/opt/conda<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>/tmp/miniforge.sh
@@ -449,18 +448,18 @@ inference:
 
 <span class="c"># Extract Conda environment and install project</span>
 <span class="c"># TODO: Modify Conda environment name and package name, please ensure every myenv is fully modified</span>
-<span class="k">RUN</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>“myenv.tar.gz”<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="se">\</span>
+<span class="k">RUN</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;myenv.tar.gz&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>mkdir<span class="w"> </span>-p<span class="w"> </span>./myenv<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tar<span class="w"> </span>-xzf<span class="w"> </span>myenv.tar.gz<span class="w"> </span>-C<span class="w"> </span>./myenv<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>myenv.tar.gz<span class="p">;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">   </span><span class="k">fi</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span>“<span class="se">\</span>
-<span class="w">      </span><span class="nb">source</span><span class="w"> </span>./myenv/bin/activate<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>conda-unpack<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">      </span><span class="nb">cd</span><span class="w"> </span>./third_party/lerobot<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w"> </span>-i<span class="w"> </span>https://mirrors.aliyun.com/pypi/simple/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>pip<span class="w"> </span>install<span class="w"> </span>deprecated<span class="w"> </span><span class="nv">kuavo_humanoid_sdk</span><span class="o">==</span><span class="m">1</span>.3.3<span class="w"> </span>opencv-python<span class="o">==</span><span class="m">4</span>.12.0.88<span class="w"> </span>opencv-python-headless<span class="o">==</span><span class="m">4</span>.12.0.88<span class="w"> </span><span class="nv">numpy</span><span class="o">==</span><span class="m">2</span>.2.6<span class="w"> </span>-i<span class="w"> </span>https://mirrors.aliyun.com/pypi/simple/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>conda<span class="w"> </span>clean<span class="w"> </span>-afy<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>rm<span class="w"> </span>-rf<span class="w"> </span>./myenv/lib/python*/site-packages/*/tests<span class="w"> </span>./myenv/lib/python*/site-packages/*/test<span class="w"> </span>./myenv/pkgs/*<span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>“
+<span class="w">   </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;\</span>
+<span class="s2">      source ./myenv/bin/activate &amp;&amp; \</span>
+<span class="s2">      conda-unpack &amp;&amp; \</span>
+<span class="s2">      pip install -e . &amp;&amp; \</span>
+<span class="s2">      cd ./third_party/lerobot &amp;&amp; pip install -e . -i https://mirrors.aliyun.com/pypi/simple/ &amp;&amp; \</span>
+<span class="s2">      pip install deprecated kuavo_humanoid_sdk==1.3.3 opencv-python==4.12.0.88 opencv-python-headless==4.12.0.88 numpy==2.2.6 -i https://mirrors.aliyun.com/pypi/simple/ &amp;&amp; \</span>
+<span class="s2">      conda clean -afy &amp;&amp; \</span>
+<span class="s2">      rm -rf ./myenv/lib/python*/site-packages/*/tests ./myenv/lib/python*/site-packages/*/test ./myenv/pkgs/* \</span>
+<span class="s2">   &quot;</span>
 
 <span class="c"># =========================</span>
 <span class="c"># Stage 2: Final</span>
@@ -481,7 +480,7 @@ inference:
 
 <span class="k">RUN</span><span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g&#39;</span><span class="w"> </span>/etc/apt/sources.list<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g&#39;</span><span class="w"> </span>/etc/apt/sources.list
-<span class="c"># TODO: If other system packages need to be installed, insert here</span>
+<span class="c"># TODO: Add any additional system packages here if needed</span>
 <span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>ros-noetic-cv-bridge<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>ros-noetic-apriltag-ros<span class="w"> </span><span class="se">\</span>
@@ -489,11 +488,11 @@ inference:
 
 <span class="c"># Preserve ROS environment variables</span>
 <span class="c"># Activate Conda environment</span>
-<span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>“source<span class="w"> </span>/opt/ros/noetic/setup.bash”<span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span><span class="nb">echo</span><span class="w"> </span>“source<span class="w"> </span>/root/kuavo_data_challenge/myenv/bin/activate”<span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span><span class="nb">echo</span><span class="w"> </span>“chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>-R<span class="w"> </span>/root/kuavo_data_challenge/kuavo_deploy”<span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span><span class="nb">echo</span><span class="w"> </span>“export<span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.26.10”<span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span><span class="nb">echo</span><span class="w"> </span>“export<span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://kuavo_master:11311”<span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc
+<span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/ros/noetic/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /root/kuavo_data_challenge/myenv/bin/activate&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;chmod 777 -R /root/kuavo_data_challenge/kuavo_deploy&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export ROS_IP=192.168.26.10&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export ROS_MASTER_URI=http://kuavo_master:11311&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc
 
 <span class="c"># Default command</span>
 <span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bash&quot;</span><span class="p">]</span>

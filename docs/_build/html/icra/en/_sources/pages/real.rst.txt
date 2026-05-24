@@ -70,8 +70,6 @@ General Rules
 
 3. Tiebreaker rule: For teams with the same total score, ranking will be determined by the average completion time of all rounds across all tasks, from shortest to longest.
 
-Each task will be evaluated for ten rounds, with the final score being the average of the ten rounds.
-
 Task 1: Small Part Flipping (100 points)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -320,7 +318,7 @@ Similar to the simulation competition, real robot competition code submission al
          && rm -rf /var/lib/apt/lists/*
 
       # Install Miniforge
-      ENV MINIFORGE_URL=”https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Miniforge3-Linux-x86_64.sh”
+      ENV MINIFORGE_URL="https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Miniforge3-Linux-x86_64.sh"
       RUN curl -L ${MINIFORGE_URL} -o /tmp/miniforge.sh \
          && bash /tmp/miniforge.sh -b -p /opt/conda \
          && rm /tmp/miniforge.sh
@@ -340,10 +338,10 @@ Similar to the simulation competition, real robot competition code submission al
 
       # Extract Conda environment and install project
       # TODO: Modify Conda environment name and package name, please ensure every myenv is fully modified
-      RUN if [ -f “myenv.tar.gz” ]; then \
+      RUN if [ -f "myenv.tar.gz" ]; then \
             mkdir -p ./myenv && tar -xzf myenv.tar.gz -C ./myenv && rm myenv.tar.gz; \
          fi && \
-         /bin/bash -c “\
+         /bin/bash -c "\
             source ./myenv/bin/activate && \
             conda-unpack && \
             pip install -e . && \
@@ -351,7 +349,7 @@ Similar to the simulation competition, real robot competition code submission al
             pip install deprecated kuavo_humanoid_sdk==1.3.3 opencv-python==4.12.0.88 opencv-python-headless==4.12.0.88 numpy==2.2.6 -i https://mirrors.aliyun.com/pypi/simple/ && \
             conda clean -afy && \
             rm -rf ./myenv/lib/python*/site-packages/*/tests ./myenv/lib/python*/site-packages/*/test ./myenv/pkgs/* \
-         “
+         "
 
       # =========================
       # Stage 2: Final
@@ -372,7 +370,7 @@ Similar to the simulation competition, real robot competition code submission al
 
       RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list && \
          sed -i 's/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
-      # TODO: If other system packages need to be installed, insert here
+      # TODO: Add any additional system packages here if needed
       RUN apt-get update && apt-get install -y \
          ros-noetic-cv-bridge \
          ros-noetic-apriltag-ros \
@@ -380,11 +378,11 @@ Similar to the simulation competition, real robot competition code submission al
 
       # Preserve ROS environment variables
       # Activate Conda environment
-      RUN echo “source /opt/ros/noetic/setup.bash” >> /root/.bashrc && \
-         echo “source /root/kuavo_data_challenge/myenv/bin/activate” >> /root/.bashrc && \
-         echo “chmod 777 -R /root/kuavo_data_challenge/kuavo_deploy” >> /root/.bashrc && \
-         echo “export ROS_IP=192.168.26.10” >> /root/.bashrc && \
-         echo “export ROS_MASTER_URI=http://kuavo_master:11311” >> /root/.bashrc
+      RUN echo "source /opt/ros/noetic/setup.bash" >> /root/.bashrc && \
+         echo "source /root/kuavo_data_challenge/myenv/bin/activate" >> /root/.bashrc && \
+         echo "chmod 777 -R /root/kuavo_data_challenge/kuavo_deploy" >> /root/.bashrc && \
+         echo "export ROS_IP=192.168.26.10" >> /root/.bashrc && \
+         echo "export ROS_MASTER_URI=http://kuavo_master:11311" >> /root/.bashrc
 
       # Default command
       CMD ["bash"]
