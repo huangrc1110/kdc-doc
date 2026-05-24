@@ -99,3 +99,69 @@ Key Challenges:
     - Spatial constraint satisfaction.
 
 .. image:: ../_static/images/task3_real.jpg
+
+
+On-site Task Description
+==================================
+
+Task 1: Metal Parts Righting
+----------------------------------------------------------------------------
+
+Task Description: The robot flips small metal parts from face-down to face-up on a conveyor belt. In Level 1, the conveyor is stationary and the parts are within reach. In Level 2, the conveyor is moving and the robot must identify face-up parts and skip them correctly.
+
+Key Challenges:
+    - Stable grasping and flipping of small metal parts;
+    - Accurate face-up / face-down recognition under conveyor motion;
+    - Precise flip-and-place execution under time constraints.
+
+Level 1
+
+.. image:: ../_static/images/task1_vienna1.jpg
+   :width: 100%
+
+Level 2
+
+.. image:: ../_static/images/task1_vienna2.jpg
+   :width: 100%
+
+
+Task 2: Daily Chemical Bottle Pick & Place
+----------------------------------------------------------------
+
+Task Description: The robot grasps daily chemical bottles and performs in-air bimanual handover before placing them on a conveyor belt. In Level 1, one bottle is processed. In Level 2, two bottles are processed sequentially.
+
+Key Challenges:
+    - Stable grasping of daily chemical bottles;
+    - Coordinated in-air bimanual handover;
+    - Sequential manipulation under random placement and limited workspace.
+
+Level 1
+
+.. image:: ../_static/images/task2_vienna1.jpg
+   :width: 100%
+
+Level 2
+
+.. image:: ../_static/images/task2_vienna2.jpg
+   :width: 100%
+
+
+Task 3: Express Package Scanning
+----------------------------------------------------------------
+
+Task Description: The robot handles express parcels by placing them on a scanning table, correcting label orientation, and transferring them to the conveyor belt. In Level 1, two parcels are processed sequentially. In Level 2, three parcels are processed simultaneously.
+
+Key Challenges:
+    - Reliable grasping and transfer of soft parcels;
+    - Accurate label-orientation recognition and correction;
+    - Efficient multi-parcel workflow planning under time constraints.
+
+Level 1
+
+.. image:: ../_static/images/task3_vienna1.jpg
+   :width: 100%
+
+Level 2
+
+.. image:: ../_static/images/task3_vienna2.jpg
+   :width: 100%
