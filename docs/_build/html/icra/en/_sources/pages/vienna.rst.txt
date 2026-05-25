@@ -111,63 +111,80 @@ Inference Failure — If a single scoring action fails 3 consecutive attempts, t
 Task 1: Metal Parts Righting (10 pts)
 --------------------------------------
 
-Level 1 (Total Score: 6 pts)：
-The conveyor belt is stationary. Within the robot's right-hand reach, there are 3 face-down metal parts placed at random positions. The gripper grasps each part and completes the flip.
+Level 1 (Total Score: 6 pts):
+Task actions:The conveyor belt is stationary. Within the robot's right-hand reach, there are 3 face-down metal parts,3 placed at random positions. The gripper grasps each part and completes the flip.
+
+Scoring:
+*   Grasp face-down part and complete flip: 1.5 pts (per count)
+
+*   All parts completed: 1.5 pts (one-time)
 
 Time limit per evaluation: 3 minutes.
 
-* 1.5 pts per successfully grasped-and-flipped face-down part.
-* 1.5 pts completion bonus for flipping all required parts.
+Level 2 (Total Score: 4 pts):
+Task actions:The conveyor belt is moving. There are 4 small parts: face-down and face-up 2 each, placed randomly within the right hand's reach. The right hand grasps face-down parts from the moving belt; face-up parts are identified but not manipulated.
 
-Level 2 (4 pts):
-The conveyor belt is moving. There are 4 small parts: 2 face-down and 2 face-up, placed randomly within the right hand's reach. The right hand grasps face-down parts from the moving belt; face-up parts are identified but not manipulated.
+Scoring:
+*   Grasp face-down part and complete flip: 1 pt (per count)
+
+*   Identify face-up part and move away: 1 pt (per count)
 
 Time limit per evaluation: 5 minutes.
-
-* 1 pt per successfully grasped-and-flipped face-down part.
-* 1 pt per correctly identified face-up part with correct move-away behavior.
 
 Task 2: Daily Chemical Bottle Pick & Place (15 pts)
 ------------------------------------------------------
 
-Level 1 (5 pts):
-The right hand grasps one bottle and performs a mid-air handoff to the left hand, which then places the bottle steadily onto the conveyor belt.
+Level 1 (Total Score: 5 pts):
+Task actions:The right hand grasps one bottle and performs a mid-air handoff to the left hand, which then places the bottle steadily onto the conveyor belt.
+
+Scoring:
+*   Successfully grasp bottle: 1 pt (one-time)
+
+*   Complete bimanual handoff: 2 pts (one-time)
+
+*   Place bottle on conveyor belt: 2 pts (one-time)
 
 Time limit per evaluation: 3 minutes.
 
-* 1 pt for successfully grasping the bottle without dropping.
-* 2 pts for successful bimanual handoff.
-* 2 pts for stable placement on the conveyor belt.
+Level 2 (Total Score: 10 pts):
+Task actions:Two bottles of identical specifications are randomly placed within the right hand’s working radius. The right hand grasps each bottle one at a time and performs a mid-air handoff to the left hand, which then places the bottles onto the conveyor belt one by one in a stable manner.
 
-Level 2 (10 pts)：
-Two bottles of identical specifications are randomly placed within the right hand's working radius. The right hand grasps each bottle one at a time and performs a mid-air handoff to the left hand, which then places the bottles onto the conveyor belt one by one in a stable manner.
+Scorig:
+
+*   Successfully grasp bottle: 1 pt (per count)
+
+*   Complete bimanual handoff: 2 pts (per count)
+
+*   Place bottle on conveyor belt: 2 pts (per count)
 
 Time limit per evaluation: 6 minutes.
-
-* 1 pt per bottle for grasping without dropping.
-* 2 pts per bottle for successful bimanual handoff.
-* 2 pts per bottle for stable placement on the conveyor belt.
 
 Task 3: Express Package Scanning (25 pts)
 ------------------------------------------
 
-Level 1 (10 pts)：
-Two parcels are placed one at a time: one label-up and one label-down. The right hand grasps a nearby parcel and places it on the scanning platform; the left hand flips the label-down parcel and places it on the conveyor belt.
+Level 1 (Total Score: 10 pts):
+Task actions:Two parcels placed one at a time: one label-up, one label-down; Right hand grasps nearby parcel and places on scanning platform; left hand flips label-down parcel and places it on conveyor belt.
+
+Scoring:
+*   Grasp parcel and place: 1 pt (per count)
+
+*   Flip label-down parcel and place: 4 pts (one-time)
+
+*   Grasp and place on conveyor belt: 2 pts (per count)
 
 Time limit per evaluation: 6 minutes.
 
-* 1 pt per parcel for grasping and placing on the scanning platform.
-* 4 pts for successfully flipping a label-down parcel and placing it correctly on the scanning platform.
-* 2 pts per parcel for successful placement on the conveyor belt.
+Level 2 (Total Score: 15 pts):
+Task actions:Three parcels placed simultaneously within the right hand's reach,1 label-up and 2 label-down；Right hand grasps nearby parcel and places on scanning platform; left hand flips label-down parcels and places on conveyor belt.
 
-Level 2 (15 pts)：
-Three parcels are placed simultaneously within the right hand's reach: 1 label-up and 2 label-down. The right hand grasps a nearby parcel and places it on the scanning platform; the left hand flips label-down parcels and places them on the conveyor belt.
+Scoring:
+*   Grasp parcel and place: 1 pt (per count)
+
+*   Flip label-down parcel and place: 3 pts (per count)
+
+*   Grasp and place on conveyor belt: 2 pts (per count)
 
 Time limit per evaluation: 10 minutes.
-
-* 1 pt per parcel for grasping and placing on the scanning platform.
-* 3 pts per label-down parcel for successful flipping and correct placement on the scanning platform.
-* 2 pts per parcel for successful placement on the conveyor belt.
 
 Vienna On-Site Process Differences
 ==================================
@@ -182,7 +199,7 @@ Compared with the regular real-robot track process, the Vienna on-site process i
 Vienna On-Site Workflow Diagram
 ===============================
 
-.. image:: ../_static/images/vienna_data_flow.svg
+.. image:: ../_static/images/icra_workflow.svg
    :width: 100%
    :alt: Vienna on-site data and evaluation workflow
 
