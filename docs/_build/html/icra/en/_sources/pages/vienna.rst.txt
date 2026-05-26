@@ -246,7 +246,7 @@ On-Site Daily Schedule
 Vienna On-Site Workflow Diagram
 ===============================
 
-.. image:: ../_static/images/icra_workflow.svg
+.. image:: ../_static/images/icra_workflow.jpg
    :width: 100%
    :alt: Vienna on-site data and evaluation workflow
 
