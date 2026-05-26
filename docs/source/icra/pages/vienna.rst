@@ -15,7 +15,9 @@ In the Vienna on-site competition, the participant workflow remains consistent w
 
 .. note::
 
-   All on-site entries must be submitted through the official ICRA platform. During evaluation, models are downloaded uniformly from the platform.
+   1. All on-site entries must be submitted through the official ICRA platform. During evaluation, models are downloaded uniformly from the platform.
+   2. Both Level 1 and Level 2 datasets are open in parallel on-site. Teams may choose the evaluation group at their own discretion. 
+   3. When submitting works, teams should clearly indicate the target group in the submission name, for example: ``task1_level1&2``, ``task1_level1``, ``task1_level2``.
 
 Vienna On-Site Dataset
 ======================
@@ -25,9 +27,10 @@ Vienna on-site dataset:
 
 Dataset notes:
 
-1. Full-process competition datasets will be provided one day before each on-site match day.
+1. On-site data collection will be conducted throughout the competition. For each task, competition datasets are expected to be released one day before the match day (or earlier if available).
 2. The on-site competition dataset format is consistent with the real-robot competition dataset format.
 3. Both Level 1 and Level 2 competition datasets will be released on-site in sync.
+4. Staff members will continuously collect data to supplement the dataset during the event, and participants may also try on-site data collection.
 
 On-Site Task Description
 ========================
@@ -232,6 +235,13 @@ Compared with the regular real-robot track process, the Vienna on-site process i
 1. On-site scoring: Officials perform on-site scoring and present a live leaderboard.
 2. GPU servers: The organizer plans to provide free GPU servers. Please follow the Vienna on-site dedicated group for official updates. For daily participation and development, teams are still encouraged to prioritize their own devices.
 3. Data timing and format: Full-process competition datasets are released one day before each match day, and the dataset format remains consistent with the real-robot track.
+
+On-Site Daily Schedule
+====================================
+
+.. image:: ../_static/images/REAL-I_On-Site_Competition_Schedule.jpg
+   :width: 100%
+   :alt: REAL-I On-Site Competition Schedule
 
 Vienna On-Site Workflow Diagram
 ===============================
