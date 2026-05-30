@@ -19,6 +19,24 @@ In the Vienna on-site competition, the participant workflow remains consistent w
    2. Both Level 1 and Level 2 datasets are open in parallel on-site. Teams may choose the evaluation group at their own discretion. 
    3. When submitting works, teams should clearly indicate the target group in the submission name, for example: ``task1_level1&2``, ``task1_level1``, ``task1_level2``.
 
+Command-Line Upload to ICRA Platform
+====================================
+
+.. note::
+   Participants can upload submissions to the ICRA platform using command-line instructions.
+   Download the files below and follow the provided steps to upload your work.
+
+Upload Command Files
+--------------------
+
+.. raw:: html
+
+   <ul>
+     <li><a href="../_static/code/icra_cmd_upload.zip" download="icra_cmd_upload.zip">Download all upload command files (.zip)</a></li>
+     <li><a href="../_static/code/icra_cmd_upload/icra-upload.py" download="icra-upload.py">Download icra-upload.py (single file)</a></li>
+     <li><a href="../_static/code/icra_cmd_upload/README.md" download="README.md">Download README.md (single file)</a></li>
+   </ul>
+
 Vienna On-Site Dataset
 ======================
 
