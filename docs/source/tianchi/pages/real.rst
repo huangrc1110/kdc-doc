@@ -27,7 +27,7 @@
 
 桌面物料分拣：机器人站立不动，完成pick and place操作。 夹取安全带、线缆、pin口（三种零件）放到对应的空盒子中
 
-.. video:: ../_static/videos/task1_real.mp4
+.. video:: ../_static/videos/task1_real.mov
    :width: 100%
 
 任务二
@@ -35,7 +35,7 @@
 
 工业零件质检：将机械套管承重，根据亮灯情况判断合格与不合格，并产品分别放在指定区域
 
-.. video:: ../_static/videos/task2_real.mp4
+.. video:: ../_static/videos/task2_real.mov
    :width: 100%
 
 任务三
@@ -43,7 +43,7 @@
 
 汽车大件上料：将汽车钣金料抓取，放置到指定区域
 
-.. video:: ../_static/videos/task3_real.mp4
+.. video:: ../_static/videos/task3_real.mov
    :width: 100%
 
 
