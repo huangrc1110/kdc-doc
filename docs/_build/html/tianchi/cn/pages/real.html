@@ -91,27 +91,28 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#id8">任务评分</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id9">任务1：桌面物料分拣（100分）</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id10">任务2：工业零件质检（100分）</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id11">任务3：汽车大件上料（100分）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">通用规则</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">任务1：桌面物料分拣（100分）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">任务2：工业零件称重（100分）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">任务3：汽车大件上料（100分）</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id12">真机赛数据介绍</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id13">真机赛数据介绍</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#modelscope">真机数据下载地址(modelscope)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id13">真机赛配置文件说明(可对照修改，最好不要直接复制粘贴)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id14">数据转换（可能需要修改的地方有注释）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id15">模型推理配置文件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id14">真机赛配置文件说明(可对照修改，最好不要直接复制粘贴)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id15">数据转换（可能需要修改的地方有注释）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">模型推理配置文件</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#tianchi">tianchi分支(可能需要修改的地方有注释)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id16">真机赛提交说明</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id17">真机赛成绩说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">真机赛提交说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id18">真机赛成绩说明</a></li>
 </ul>
 </li>
 </ul>
@@ -150,7 +151,7 @@
 <h2>安装 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> （基准代码）仓库<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <p>此仓库用于数据转换、模型训练、模型部署，使用 git 获取最新的代码仓库（tianchi 分支）：</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo_data_challenge.git
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>tianchi<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo_data_challenge.git
 </pre></div>
 </div>
 <div class="admonition note">
@@ -166,39 +167,48 @@
 <p>真机赛中使用的机器人为乐聚夸父4pro（kauvo 4 pro），末端执行器为灵巧手/夹爪</p>
 <section id="id5">
 <h4>任务一<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
-<p>桌面物料分拣：机器人站立不动，完成pick and place操作。 夹取安全带、线缆、pin口（三种零件）放到对应的空盒子中</p>
+<p>桌面物料分拣：夹取安全带、线缆、pin口（三种零件）放到对应的空盒子中</p>
 <div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task1_real.mov" type=""></video></div></section>
 <section id="id6">
 <h4>任务二<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
-<p>工业零件质检：将机械套管承重，根据亮灯情况判断合格与不合格，并产品分别放在指定区域</p>
+<p>工业零件称重：将机械套管称重，并放在收纳筐中</p>
 <div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task2_real.mov" type=""></video></div></section>
 <section id="id7">
 <h4>任务三<a class="headerlink" href="#id7" title="Link to this heading"></a></h4>
-<p>汽车大件上料：将汽车钣金料抓取，放置到指定区域</p>
+<p>汽车大件上料：稳定抓取汽车钣金料，并准确放置到指定区域上</p>
 <div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task3_real.mov" type=""></video></div></section>
 </section>
 <section id="id8">
 <h3>任务评分<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
-<p>每个任务将会测评十轮，最终得分为十轮得分的平均值</p>
 <section id="id9">
-<h4>任务1：桌面物料分拣（100分）<a class="headerlink" href="#id9" title="Link to this heading"></a></h4>
-<p>测评时，会随机放置三种物料（安全带、线缆、pin口），每种物料各一个，共三个，评分标准如下：</p>
-<ul class="simple">
-<li><p>抓取成功且稳定：10分/每个物体，共30分</p></li>
-<li><p>准确放至指定位置：20分/每个物体，共60分</p></li>
-<li><p>全部完成奖励：10分</p></li>
-</ul>
+<h4>通用规则<a class="headerlink" href="#id9" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>真机赛包含 3 个独立任务。每个任务最高 100 分，并设有 10 分动作趋势评分项（只要存在动作趋势即可获得）。总最高得分为 300 分。</p></li>
+<li><p>每个任务固定进行 3 轮测评（每轮限时 3 分钟；超时后完成的动作不计分）。每轮单独评分，取 3 轮成绩的平均分作为该任务最终得分。</p></li>
+<li><p>同分排名规则：若队伍总分相同，则按所有任务全部轮次的平均完成时间从短到长排序。</p></li>
+</ol>
 </section>
 <section id="id10">
-<h4>任务2：工业零件质检（100分）<a class="headerlink" href="#id10" title="Link to this heading"></a></h4>
-<p>测评时，会在任意一排放置五个套管，需要将一排五个套管全部抓取完成，并根据“绿灯合格，红灯不合格”的规则放置，评分标准如下：</p>
+<h4>任务1：桌面物料分拣（100分）<a class="headerlink" href="#id10" title="Link to this heading"></a></h4>
+<p>测评时，会随机位置放置三种物料（安全带、线缆、pin口），每种物料各一个，共三个。夹取物品后，需要将物品放在盒子的指定空位处，顺序从左到右依次是：pin口、安全带、线缆。评分标准如下：</p>
 <ul class="simple">
-<li><p>准确放至电子称：10分/每个套管，共50分</p></li>
-<li><p>正确放至目标区域：10分/每个套管，共50分</p></li>
+<li><p>抓取成功且稳定：10分/每个物体，共30分</p></li>
+<li><p>准确放至指定位置：15分/每个物体，共45分</p></li>
+<li><p>全部完成奖励：25分</p></li>
 </ul>
 </section>
 <section id="id11">
-<h4>任务3：汽车大件上料（100分）<a class="headerlink" href="#id11" title="Link to this heading"></a></h4>
+<h4>任务2：工业零件称重（100分）<a class="headerlink" href="#id11" title="Link to this heading"></a></h4>
+<p>测评时，会在指定一排放置三个套管。机器人需要依次抓取套管，将套管放置到称重台上完成称重，再从称重台拾起并稳定放入指定收纳筐中，评分标准如下：</p>
+<ul class="simple">
+<li><p>抓取成功且稳定：10分/每个套管，共30分</p></li>
+<li><p>准确放至称重台并完成称重：10分/每个套管，共30分</p></li>
+<li><p>从称重台再次拾取成功：5分/每个套管，共15分</p></li>
+<li><p>稳定放入指定收纳筐：前两个套管各5分，最后一个套管15分，共25分</p></li>
+</ul>
+</section>
+<section id="id12">
+<h4>任务3：汽车大件上料（100分）<a class="headerlink" href="#id12" title="Link to this heading"></a></h4>
 <ul class="simple">
 <li><p>抓取成功且稳定：40分</p></li>
 <li><p>准确放至指定位置：60分</p></li>
@@ -206,8 +216,8 @@
 </section>
 </section>
 </section>
-<section id="id12">
-<h2>真机赛数据介绍<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<section id="id13">
+<h2>真机赛数据介绍<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
 <p>真机视频的size是848*480，区别于仿真数据的640*480</p>
@@ -219,137 +229,136 @@
 <p><a class="reference external" href="https://www.modelscope.cn/datasets/lejurobot/LET-Tianchi-Dataset">https://www.modelscope.cn/datasets/lejurobot/LET-Tianchi-Dataset</a></p>
 </section>
 </section>
-<section id="id13">
-<h2>真机赛配置文件说明(可对照修改，最好不要直接复制粘贴)<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
 <section id="id14">
-<h3>数据转换（可能需要修改的地方有注释）<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">########不需要修改#######</span>
-hydra:
-<span class="w">    </span>run:
-<span class="w">        </span>dir:<span class="w"> </span>./outputs/data_cvt_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
-<span class="w">    </span>sweep:
-<span class="w">        </span>dir:<span class="w"> </span>./outputs/data_cvt_hydra_save/multirun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
-<span class="w">        </span>subdir:<span class="w"> </span><span class="si">${</span><span class="nv">hydra</span><span class="p">:</span><span class="nv">job</span><span class="p">.override_dirname</span><span class="si">}</span>
+<h2>真机赛配置文件说明(可对照修改，最好不要直接复制粘贴)<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<section id="id15">
+<h3>数据转换（可能需要修改的地方有注释）<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hydra:
+<span class="w">  </span>run:
+<span class="w">    </span>dir:<span class="w"> </span>./outputs/data_cvt_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
+<span class="w">  </span>sweep:
+<span class="w">    </span>dir:<span class="w"> </span>./outputs/data_cvt_hydra_save/multirun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
+<span class="w">    </span>subdir:<span class="w"> </span><span class="si">${</span><span class="nv">hydra</span><span class="p">:</span><span class="nv">job</span><span class="p">.override_dirname</span><span class="si">}</span>
 
-<span class="c1">########根据实际目录修改#######</span>
+<span class="c1"># 将 kuavo rosbag 转换为 lerobot-parquet 格式，请使用 lerobot 0.4.2。</span>
 rosbag:
-<span class="w">    </span>rosbag_dir:<span class="w"> </span>/path/to/your/rosbag
-<span class="w">    </span>num_used:<span class="w"> </span>null
-<span class="w">    </span>lerobot_dir:<span class="w"> </span>/path/to/your/lerobot/save/file
-<span class="w">    </span>chunk_size:<span class="w"> </span><span class="m">100</span>
+<span class="w">  </span>rosbag_dir:<span class="w"> </span>/path/to/your/rosbag<span class="w">  </span><span class="c1"># rosbag目录</span>
+<span class="w">  </span>num_used:<span class="w"> </span>null<span class="w">  </span><span class="c1"># null表示使用全部rosbag</span>
+<span class="w">  </span>lerobot_dir:<span class="w"> </span>/your/path/to/your/lerobotdata/<span class="w">  </span><span class="c1"># 转换结果目录</span>
+<span class="w">  </span>chunk_size:<span class="w"> </span><span class="m">100</span><span class="w">  </span><span class="c1"># 流式读取分块大小</span>
 
 dataset:
-<span class="w">    </span>only_arm:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># 默认true, 是否只使用手臂数据</span>
-<span class="w">    </span>eef_type:<span class="w"> </span>qiangnao<span class="w"> </span><span class="c1"># 真机可选：leju_claw, qiangnao，任务一二是夹爪 leju_claw，任务三是灵巧手 qiangnao</span>
-<span class="w">    </span>which_arm:<span class="w"> </span>both<span class="w">  </span><span class="c1"># 需要哪一只手臂的数据，可选: left, right, both，注意这会同时选择对应手臂的相机，已默认包含头部相机，任务一和三是单手操作，可以选right（但不是一定选），任务二必须选both</span>
-<span class="w">    </span>use_depth:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># 是否需要深度图像数据，与上面手臂保持一致的深度数据，目前本分支只有diffusion policy支持了深度，ACT policy暂不支持深度图像，但在dev分支中已经支持</span>
-<span class="w">    </span>depth_range:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 深度图的裁剪范围，单位：毫米</span>
+<span class="w">  </span>only_arm:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># 是否只使用手臂数据</span>
+<span class="w">  </span>eef_type:<span class="w"> </span>leju_claw<span class="w">  </span><span class="c1"># 真机：leju_claw / qiangnao；仿真：rq2f85</span>
+<span class="w">  </span>which_arm:<span class="w"> </span>both<span class="w">  </span><span class="c1"># left / right / both</span>
+<span class="w">  </span>use_depth:<span class="w"> </span><span class="nb">false</span><span class="w">  </span><span class="c1"># 是否使用深度图像</span>
+<span class="w">  </span>depth_range:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 深度裁剪范围，单位毫米</span>
 
-<span class="w">    </span>task_description:<span class="w"> </span><span class="s2">&quot;Pick and Place&quot;</span>
+<span class="w">  </span>task_description:<span class="w"> </span><span class="s2">&quot;Pick and Place&quot;</span>
 
-<span class="w">    </span>train_hz:<span class="w"> </span><span class="m">10</span>
-<span class="w">    </span>main_timeline:<span class="w"> </span>head_cam_h
-<span class="w">    </span>main_timeline_fps:<span class="w"> </span><span class="m">30</span>
-<span class="w">    </span>sample_drop:<span class="w"> </span><span class="m">10</span>
+<span class="w">  </span>train_hz:<span class="w"> </span><span class="m">10</span>
+<span class="w">  </span>main_timeline:<span class="w"> </span>head_cam_h<span class="w">  </span><span class="c1"># 主相机</span>
+<span class="w">  </span>main_timeline_fps:<span class="w"> </span><span class="m">30</span>
+<span class="w">  </span>sample_drop:<span class="w"> </span><span class="m">10</span>
 
+<span class="w">  </span><span class="c1"># 强脑灵巧手自由度设置；一般非精细操作保持为1。</span>
+<span class="w">  </span>dex_dof_needed:<span class="w"> </span><span class="m">1</span>
 
-<span class="w">    </span>dex_dof_needed:<span class="w"> </span><span class="m">1</span>
+<span class="w">  </span>is_binary:<span class="w"> </span><span class="nb">false</span>
+<span class="w">  </span>delta_action:<span class="w"> </span><span class="nb">false</span>
+<span class="w">  </span>relative_start:<span class="w"> </span><span class="nb">false</span>
 
-<span class="w">    </span>is_binary:<span class="w"> </span><span class="nb">false</span>
-<span class="w">    </span>delta_action:<span class="w"> </span><span class="nb">false</span>
-<span class="w">    </span>relative_start:<span class="w"> </span><span class="nb">false</span>
-
-<span class="w">    </span>resize:
-<span class="w">        </span>width:<span class="w"> </span><span class="m">848</span>
-<span class="w">        </span>height:<span class="w"> </span><span class="m">480</span>
+<span class="w">  </span>resize:
+<span class="w">    </span>width:<span class="w"> </span><span class="m">848</span>
+<span class="w">    </span>height:<span class="w"> </span><span class="m">480</span>
 </pre></div>
 </div>
-</section>
-<section id="id15">
-<h3>模型推理配置文件<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
-<section id="tianchi">
-<h4>tianchi分支(可能需要修改的地方有注释)<a class="headerlink" href="#tianchi" title="Link to this heading"></a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hydra:
-<span class="w">    </span>run:
-<span class="w">        </span>dir:<span class="w"> </span>./outputs/kuavo_deploy_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
-<span class="w">    </span>sweep:
-<span class="w">        </span>dir:<span class="w"> </span>./outputs/kuavo_deploy_hydra_save/multirun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
-<span class="w">        </span>subdir:<span class="w"> </span><span class="si">${</span><span class="nv">hydra</span><span class="p">:</span><span class="nv">job</span><span class="p">.override_dirname</span><span class="si">}</span>
-
-env:
-<span class="w">    </span>env_name:<span class="w"> </span>Kuavo-Real<span class="w">  </span><span class="c1"># kuavo环境名称，仿真Kuavo-Sim，真机Kuavo-Real</span>
-<span class="w">    </span>control_mode:<span class="w"> </span>joint<span class="w"> </span><span class="c1"># joint 或 eef （正在开发中）</span>
-<span class="w">    </span>eef_type:<span class="w"> </span>qiangnao<span class="w">  </span><span class="c1"># 末端执行器类型，真机可选leju_claw或qiangnao: 根据任务使用的eef选择，任务一和二都是夹爪 leju_claw，任务三是灵巧手 qiangnao</span>
-<span class="w">    </span>which_arm:<span class="w"> </span>both<span class="w">  </span><span class="c1"># 需要哪一只手臂的数据，可选: left, right, both，注意这会同时选择对应手臂的相机，已默认包含头部相机；任务一和三是单手操作，可以选right（但不是一定选），任务二必须选both</span>
-<span class="w">    </span>head_init:<span class="w"> </span>null<span class="w">  </span><span class="c1"># 机器人头部初始位置，仿真请默认使用这个值，保持观测统一, 真机可根据需要调整，一般为null！！！</span>
-<span class="w">    </span>ros_rate:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># 推理控制频率，单位Hz</span>
-
-<span class="w">    </span>only_arm:<span class="w"> </span><span class="nb">true</span><span class="w">  </span><span class="c1"># 默认true, 是否只使用手臂数据</span>
-
-<span class="w">    </span>image_size:<span class="w"> </span><span class="p">&amp;</span>IMGSIZE<span class="w"> </span><span class="o">[</span><span class="m">848</span>,<span class="w"> </span><span class="m">480</span><span class="o">]</span><span class="w">  </span><span class="c1"># 图像大小：宽，高</span>
-<span class="w">    </span>depth_range:<span class="w"> </span><span class="p">&amp;</span>DEPTHRANGE<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 深度图范围设置，单位mm，default=[0,1500]</span>
-<span class="w">    </span>obs_key_map:<span class="w">  </span><span class="c1"># 话题、消息类型、频率、图像尺寸、深度裁剪等配置，深度图范围设置，单位mm，default=[0,1500]，请注意需要与训练保持一致！</span>
-<span class="w">        </span>head_cam_h:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_h/color/image_raw/compressed&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span><span class="w">  </span><span class="c1"># 头部RGB相机话题，必选</span>
-<span class="w">        </span>wrist_cam_l:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_l/color/image_raw/compressed&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span><span class="w">  </span><span class="c1"># 左手腕RGB相机话题，请对应选择，与下至少选择一个</span>
-<span class="w">        </span>wrist_cam_r:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_r/color/image_raw/compressed&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span><span class="w">  </span><span class="c1"># 右手腕RGB相机话题，请对应选择，与上至少选择一个</span>
-<span class="w">        </span>depth_h:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_h/depth/image_raw/compressedDepth&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span><span class="w">  </span><span class="c1"># 头部相机深度图话题，可与上述对应选</span>
-<span class="w">        </span>depth_l:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_l/depth/image_rect_raw/compressedDepth&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span><span class="w">  </span><span class="c1"># 左手腕相机深度图话题，可与上述对应选</span>
-<span class="w">        </span>depth_r:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_r/depth/image_rect_raw/compressedDepth&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span><span class="w">  </span><span class="c1"># 右手腕相机深度图话题，可与上述对应选</span>
-<span class="w">        </span>joint_q:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/sensors_data_raw&quot;</span>,<span class="w"> </span><span class="s2">&quot;sensorsData&quot;</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 关节角度话题，必选</span>
-<span class="w">        </span>qiangnao:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/dexhand/state&quot;</span>,<span class="w"> </span><span class="s2">&quot;JointState&quot;</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 末端执行器的话题，灵巧手</span>
-<span class="w">        </span><span class="c1">#leju_claw: [&quot;/leju_claw_state&quot;, &quot;lejuClawState&quot;, 500]  # 末端执行器的话题，夹爪</span>
-<span class="w">        </span><span class="c1">#rq2f85: [&quot;/gripper/state&quot;, &quot;JointState&quot;, 500]  # 末端执行器的话题，仿真中夹爪 # 根据选择的末端执行器类型，选择对应的话题，并确保与训练时一致</span>
-
-<span class="w">    </span>arm_state_keys:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;joint_q&quot;</span>,<span class="s2">&quot;gripper&quot;</span><span class="o">]</span><span class="w">  </span><span class="c1"># 默认不动，模型观测输入的手臂状态包含关节角度和夹爪开合状态</span>
-<span class="w">    </span>frame_alignment:<span class="w"> </span><span class="nb">false</span><span class="w">  </span><span class="c1"># 是否启用帧对齐，default=false</span>
-<span class="w">    </span>ratio:<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span><span class="c1"># 使用帧对齐时，获取最近观测占所有历史观测的比例，default=1.0</span>
-
-<span class="w">    </span>limits:
-<span class="w">        </span>joint_q:
-<span class="w">          </span>min:<span class="w"> </span><span class="o">[</span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14<span class="o">]</span>
-<span class="w">          </span>max:<span class="w"> </span><span class="o">[</span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14<span class="o">]</span>
-
-<span class="w">        </span>gripper:
-<span class="w">          </span>min:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
-<span class="w">          </span>max:<span class="w"> </span><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span><span class="o">]</span>
-
-<span class="w">        </span>eef:
-<span class="w">          </span>min:<span class="w"> </span><span class="o">[</span>-1,<span class="w"> </span>-1,<span class="w"> </span>-1,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-1,<span class="w"> </span>-1,<span class="w"> </span>-1,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14<span class="o">]</span>
-<span class="w">          </span>max:<span class="w"> </span><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14<span class="o">]</span>
-
-<span class="w">        </span>eef_relative:
-<span class="w">          </span>min:<span class="w"> </span><span class="o">[</span>-0.005,<span class="w"> </span>-0.0075,<span class="w"> </span>-0.004,<span class="w"> </span>-0.03,<span class="w"> </span>-0.03,<span class="w"> </span>-0.05,<span class="w"> </span>-0.005,<span class="w"> </span>-0.0075,<span class="w"> </span>-0.004,<span class="w"> </span>-0.03,<span class="w"> </span>-0.03,<span class="w"> </span>-0.05<span class="o">]</span>
-<span class="w">          </span>max:<span class="w"> </span><span class="o">[</span><span class="m">0</span>.005,<span class="w"> </span><span class="m">0</span>.0075,<span class="w"> </span><span class="m">0</span>.004,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.05,<span class="w"> </span><span class="m">0</span>.005,<span class="w"> </span><span class="m">0</span>.0075,<span class="w"> </span><span class="m">0</span>.004,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.05<span class="o">]</span>
-
-<span class="w">        </span>base:
-<span class="w">          </span>min:<span class="w"> </span><span class="o">[</span>-2.0,<span class="w"> </span>-2.0,<span class="w"> </span>-3.14,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
-<span class="w">          </span>max:<span class="w"> </span><span class="o">[</span><span class="m">2</span>.0,<span class="w"> </span><span class="m">2</span>.0,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">1</span><span class="o">]</span>
-
-<span class="w">    </span><span class="c1"># 以下环境配置为不建议改动配置</span>
-
-<span class="w">    </span>qiangnao_dof_needed:<span class="w"> </span><span class="m">1</span>
-
-<span class="w">    </span>is_binary:<span class="w"> </span><span class="nb">false</span>
-
-inference:
-<span class="w">    </span>go_bag_path:<span class="w"> </span>/path/to/your/go.bag<span class="w"> </span><span class="c1"># go_bag文件由主办方提供，选手不需要修改该参数</span>
-<span class="w">    </span>policy_type:<span class="w"> </span><span class="s2">&quot;act&quot;</span><span class="w">  </span><span class="c1"># 策略名字，支持diffusion，act等</span>
-<span class="w">    </span>eval_episodes:<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c1"># 测试回合数，真机推理可以连续推理，设置为10或者大于10数值均可</span>
-<span class="w">    </span>seed:<span class="w"> </span><span class="m">42</span>
-<span class="w">    </span>start_seed:<span class="w"> </span><span class="m">42</span>
-<span class="w">    </span>device:<span class="w"> </span><span class="s2">&quot;cuda&quot;</span>
-<span class="w">    </span>task:<span class="w"> </span><span class="s2">&quot;your_task&quot;</span>
-<span class="w">    </span>method:<span class="w"> </span><span class="s2">&quot;your_method&quot;</span>
-<span class="w">    </span>timestamp:<span class="w"> </span><span class="s2">&quot;your_timestamp&quot;</span>
-<span class="w">    </span>epoch:<span class="w"> </span>best<span class="w">  </span><span class="c1"># 使用训练保存的哪一个epoch，可填50，100，best等，注意：代码将在outputs/train/&lt;task&gt;/&lt;method&gt;/&lt;timestamp&gt;/epoch&lt;epoch&gt;中load policy的模型参数</span>
-<span class="w">    </span>max_episode_steps:<span class="w"> </span><span class="m">500</span><span class="w">  </span><span class="c1"># 最大回合步数，真机建议设置为500即可</span>
-</pre></div>
-</div>
-</section>
-</section>
 </section>
 <section id="id16">
-<h2>真机赛提交说明<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<h3>模型推理配置文件<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<section id="tianchi">
+<h4>tianchi分支(可能需要修改的地方有注释)<a class="headerlink" href="#tianchi" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kuavo 统一推理配置</span>
+hydra:
+<span class="w">  </span>run:
+<span class="w">    </span>dir:<span class="w"> </span>./outputs/kuavo_deploy_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
+<span class="w">  </span>sweep:
+<span class="w">    </span>dir:<span class="w"> </span>./outputs/kuavo_deploy_hydra_save/multirun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span>
+<span class="w">    </span>subdir:<span class="w"> </span><span class="si">${</span><span class="nv">hydra</span><span class="p">:</span><span class="nv">job</span><span class="p">.override_dirname</span><span class="si">}</span>
+
+<span class="c1"># 环境配置</span>
+env:
+<span class="w">  </span>env_name:<span class="w"> </span>Kuavo-Real<span class="w">  </span><span class="c1"># 真机 Kuavo-Real，仿真 Kuavo-Sim</span>
+<span class="w">  </span>control_mode:<span class="w"> </span>joint<span class="w">  </span><span class="c1"># joint / eef</span>
+<span class="w">  </span>eef_type:<span class="w"> </span>leju_claw<span class="w">  </span><span class="c1"># 真机 leju_claw / qiangnao；仿真 rq2f85</span>
+<span class="w">  </span>which_arm:<span class="w"> </span>both<span class="w">  </span><span class="c1"># left / right / both</span>
+<span class="w">  </span>head_init:<span class="w"> </span>null<span class="w">  </span><span class="c1"># 真机一般设为 null</span>
+<span class="w">  </span>ros_rate:<span class="w"> </span><span class="m">10</span>
+
+<span class="w">  </span>only_arm:<span class="w"> </span><span class="nb">true</span>
+
+<span class="w">  </span>image_size:<span class="w"> </span><span class="p">&amp;</span>IMGSIZE<span class="w"> </span><span class="o">[</span><span class="m">848</span>,<span class="w"> </span><span class="m">480</span><span class="o">]</span>
+<span class="w">  </span>depth_range:<span class="w"> </span><span class="p">&amp;</span>DEPTHRANGE<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">1500</span><span class="o">]</span><span class="w">  </span><span class="c1"># 单位 mm</span>
+<span class="w">  </span>obs_key_map:<span class="w">  </span><span class="c1"># 需与训练配置保持一致；末端部分需要与本配置中eef_type类型保持一致，其余末端建议暂时注释</span>
+<span class="w">    </span>head_cam_h:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_h/color/image_raw/compressed&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span>
+<span class="w">    </span>wrist_cam_l:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_l/color/image_raw/compressed&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span>
+<span class="w">    </span>wrist_cam_r:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_r/color/image_raw/compressed&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE<span class="o">]</span>
+<span class="w">    </span>depth_h:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_h/depth/image_raw/compressedDepth&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span>
+<span class="w">    </span>depth_l:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_l/depth/image_rect_raw/compressedDepth&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span>
+<span class="w">    </span>depth_r:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/cam_r/depth/image_rect_raw/compressedDepth&quot;</span>,<span class="w"> </span><span class="s2">&quot;CompressedImage&quot;</span>,<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>*IMGSIZE,<span class="w"> </span>*DEPTHRANGE<span class="o">]</span>
+<span class="w">    </span>joint_q:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/sensors_data_raw&quot;</span>,<span class="w"> </span><span class="s2">&quot;sensorsData&quot;</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span>
+<span class="w">    </span><span class="c1"># qiangnao: [&quot;/dexhand/state&quot;, &quot;JointState&quot;, 500]</span>
+<span class="w">    </span>leju_claw:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/leju_claw_state&quot;</span>,<span class="w"> </span><span class="s2">&quot;lejuClawState&quot;</span>,<span class="w"> </span><span class="m">500</span><span class="o">]</span>
+<span class="w">    </span><span class="c1"># rq2f85: [&quot;/gripper/state&quot;, &quot;JointState&quot;, 500]</span>
+
+<span class="w">  </span>arm_state_keys:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;joint_q&quot;</span>,<span class="s2">&quot;gripper&quot;</span><span class="o">]</span>
+<span class="w">  </span>frame_alignment:<span class="w"> </span><span class="nb">false</span>
+<span class="w">  </span>ratio:<span class="w"> </span><span class="m">1</span>.0
+
+<span class="w">  </span>limits:<span class="w">  </span><span class="c1"># 一般不建议修改</span>
+<span class="w">    </span>joint_q:
+<span class="w">      </span>min:<span class="w"> </span><span class="o">[</span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14<span class="o">]</span>
+<span class="w">      </span>max:<span class="w"> </span><span class="o">[</span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14<span class="o">]</span>
+
+<span class="w">    </span>gripper:
+<span class="w">      </span>min:<span class="w"> </span><span class="o">[</span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
+<span class="w">      </span>max:<span class="w"> </span><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span><span class="o">]</span>
+
+<span class="w">    </span>eef:
+<span class="w">      </span>min:<span class="w"> </span><span class="o">[</span>-1,<span class="w"> </span>-1,<span class="w"> </span>-1,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-1,<span class="w"> </span>-1,<span class="w"> </span>-1,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14,<span class="w"> </span>-3.14<span class="o">]</span>
+<span class="w">      </span>max:<span class="w"> </span><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">3</span>.14<span class="o">]</span>
+
+<span class="w">    </span>eef_relative:
+<span class="w">      </span>min:<span class="w"> </span><span class="o">[</span>-0.005,<span class="w"> </span>-0.0075,<span class="w"> </span>-0.004,<span class="w"> </span>-0.03,<span class="w"> </span>-0.03,<span class="w"> </span>-0.05,<span class="w"> </span>-0.005,<span class="w"> </span>-0.0075,<span class="w"> </span>-0.004,<span class="w"> </span>-0.03,<span class="w"> </span>-0.03,<span class="w"> </span>-0.05<span class="o">]</span>
+<span class="w">      </span>max:<span class="w"> </span><span class="o">[</span><span class="m">0</span>.005,<span class="w"> </span><span class="m">0</span>.0075,<span class="w"> </span><span class="m">0</span>.004,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.05,<span class="w"> </span><span class="m">0</span>.005,<span class="w"> </span><span class="m">0</span>.0075,<span class="w"> </span><span class="m">0</span>.004,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.03,<span class="w"> </span><span class="m">0</span>.05<span class="o">]</span>
+
+<span class="w">    </span>base:
+<span class="w">      </span>min:<span class="w"> </span><span class="o">[</span>-2.0,<span class="w"> </span>-2.0,<span class="w"> </span>-3.14,<span class="w"> </span><span class="m">0</span><span class="o">]</span>
+<span class="w">      </span>max:<span class="w"> </span><span class="o">[</span><span class="m">2</span>.0,<span class="w"> </span><span class="m">2</span>.0,<span class="w"> </span><span class="m">3</span>.14,<span class="w"> </span><span class="m">1</span><span class="o">]</span>
+
+<span class="w">  </span>qiangnao_dof_needed:<span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c1"># 强脑手自由度，一般保持默认</span>
+<span class="w">  </span>is_binary:<span class="w"> </span><span class="nb">false</span>
+
+<span class="c1"># 模型推理配置</span>
+inference:
+<span class="w">  </span>go_bag_path:<span class="w"> </span>/path/to/your/go.bag<span class="w">  </span><span class="c1"># 初始包由官方统一提供，选手不需要修改或引用</span>
+<span class="w">  </span>policy_type:<span class="w"> </span><span class="s2">&quot;act&quot;</span><span class="w">  </span><span class="c1"># 支持 diffusion / act 等</span>
+<span class="w">  </span>eval_episodes:<span class="w"> </span><span class="m">3</span>
+<span class="w">  </span>seed:<span class="w"> </span><span class="m">42</span>
+<span class="w">  </span>start_seed:<span class="w"> </span><span class="m">42</span>
+<span class="w">  </span>device:<span class="w"> </span><span class="s2">&quot;cuda&quot;</span>
+<span class="w">  </span>task:<span class="w"> </span><span class="s2">&quot;your_task&quot;</span>
+<span class="w">  </span>method:<span class="w"> </span><span class="s2">&quot;your_method&quot;</span>
+<span class="w">  </span>timestamp:<span class="w"> </span><span class="s2">&quot;your_timestamp&quot;</span>
+<span class="w">  </span>epoch:<span class="w"> </span>best
+<span class="w">  </span>max_episode_steps:<span class="w"> </span><span class="m">2000</span><span class="w"> </span><span class="c1"># 测试后建议2000轮</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="id17">
+<h2>真机赛提交说明<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
 <p>跟仿真赛同理，真机赛代码提交也是环境和代码打包为 docker 镜像。具体步骤如下：
 1. 配置docker加速，打包环境：可参考仿真赛 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md">提交说明 docker/readme</a> 步骤1-2</p>
 <ol class="arabic" start="2">
@@ -487,11 +496,11 @@ docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> 
 </li>
 </ol>
 </section>
-<section id="id17">
-<h2>真机赛成绩说明<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
+<section id="id18">
+<h2>真机赛成绩说明<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
 <p>真机赛的返回结果将包含以下内容：</p>
 <ol class="arabic simple">
-<li><p>任务平均得分：十轮测试的平均总得分与小分</p></li>
+<li><p>任务平均得分：三轮测试的平均总得分与小分</p></li>
 <li><p>每轮评测得分：每轮测试的总得分与小分</p></li>
 <li><p>每轮评测视频：每轮测试的机器人操作视频（第三视角）</p></li>
 <li><p>log文件：每轮测试的详细log文件，来源 <code class="docutils literal notranslate"><span class="pre">log/kuavo_deploy/kauavo_deploy.log</span></code></p></li>

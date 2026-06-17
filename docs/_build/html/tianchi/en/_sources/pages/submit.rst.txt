@@ -47,6 +47,10 @@
 
 跟仿真赛同理，真机赛代码提交也是环境和代码打包为 docker 镜像，之后提交至 `比赛官网 <https://tianchi.aliyun.com/competition/entrance/532415>`_ 。具体步骤如下：
 
+.. note::
+
+   如果提交或评测过程中遇到任何问题，请先查看 :ref:`faq` 部分；若仍无法解决，请与我们的工作人员联系。
+
 1. 配置docker加速，打包环境：可参考仿真赛 `提交说明 docker/readme <https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md>`_ 步骤1-2
 
 2. 复制以下Dockerfile模板（专为真机赛的定制版），修改必要参数，例如Conda环境名、Conda环境包名、添加额外必要系统、python包等，保存为项目根目录下的 ``Dockerfile``
@@ -100,7 +104,7 @@
             conda-unpack && \
             pip install -e . && \
             cd ./third_party/lerobot && pip install -e . -i https://mirrors.aliyun.com/pypi/simple/ && \
-            pip install deprecated kuavo_humanoid_sdk==1.2.2 opencv-python==4.11.0.86 opencv-python-headless==4.11.0.86 numpy==1.26.4 -i https://mirrors.aliyun.com/pypi/simple/ && \
+            pip install deprecated kuavo_humanoid_sdk==1.3.3 opencv-python==4.12.0.88 opencv-python-headless==4.12.0.88 numpy==2.2.6 -i https://mirrors.aliyun.com/pypi/simple/ && \
             conda clean -afy && \
             rm -rf ./myenv/lib/python*/site-packages/*/tests ./myenv/lib/python*/site-packages/*/test ./myenv/pkgs/* \
          "

@@ -9,7 +9,7 @@
 
    .. code-block:: bash
       
-      git clone --depth=1 https://github.com/LejuRobotics/kuavo_data_challenge.git  
+      git clone -b tianchi --depth=1 https://github.com/LejuRobotics/kuavo_data_challenge.git  
 
    .. note::
       详细安装及使用步骤请参阅其在 GitHub 上的对应 `README <https://github.com/LejuRobotics/kuavo_data_challenge/blob/tianchi/README.md>`_ 文档。
@@ -25,7 +25,7 @@
 任务一
 ^^^^^^^^^
 
-桌面物料分拣：机器人站立不动，完成pick and place操作。 夹取安全带、线缆、pin口（三种零件）放到对应的空盒子中
+桌面物料分拣：夹取安全带、线缆、pin口（三种零件）放到对应的空盒子中
 
 .. video:: ../_static/videos/task1_real.mov
    :width: 100%
@@ -33,7 +33,7 @@
 任务二
 ^^^^^^^^^
 
-工业零件质检：将机械套管承重，根据亮灯情况判断合格与不合格，并产品分别放在指定区域
+工业零件称重：将机械套管称重，并放在收纳筐中
 
 .. video:: ../_static/videos/task2_real.mov
    :width: 100%
@@ -41,7 +41,7 @@
 任务三
 ^^^^^^^^^
 
-汽车大件上料：将汽车钣金料抓取，放置到指定区域
+汽车大件上料：稳定抓取汽车钣金料，并准确放置到指定区域上
 
 .. video:: ../_static/videos/task3_real.mov
    :width: 100%
@@ -50,27 +50,39 @@
 任务评分
 --------
 
-每个任务将会测评十轮，最终得分为十轮得分的平均值
+通用规则
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. 真机赛包含 3 个独立任务。每个任务最高 100 分，并设有 10 分动作趋势评分项（只要存在动作趋势即可获得）。总最高得分为 300 分。
+
+2. 每个任务固定进行 3 轮测评（每轮限时 3 分钟；超时后完成的动作不计分）。每轮单独评分，取 3 轮成绩的平均分作为该任务最终得分。
+
+3. 同分排名规则：若队伍总分相同，则按所有任务全部轮次的平均完成时间从短到长排序。
+
 
 任务1：桌面物料分拣（100分）
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-测评时，会随机放置三种物料（安全带、线缆、pin口），每种物料各一个，共三个，评分标准如下：
+测评时，会随机位置放置三种物料（安全带、线缆、pin口），每种物料各一个，共三个。夹取物品后，需要将物品放在盒子的指定空位处，顺序从左到右依次是：pin口、安全带、线缆。评分标准如下：
 
 *   抓取成功且稳定：10分/每个物体，共30分
     
-*   准确放至指定位置：20分/每个物体，共60分
+*   准确放至指定位置：15分/每个物体，共45分
     
-*   全部完成奖励：10分
+*   全部完成奖励：25分
 
-任务2：工业零件质检（100分）
+任务2：工业零件称重（100分）
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-测评时，会在任意一排放置五个套管，需要将一排五个套管全部抓取完成，并根据“绿灯合格，红灯不合格”的规则放置，评分标准如下：
+测评时，会在指定一排放置三个套管。机器人需要依次抓取套管，将套管放置到称重台上完成称重，再从称重台拾起并稳定放入指定收纳筐中，评分标准如下：
 
-*   准确放至电子称：10分/每个套管，共50分
+*   抓取成功且稳定：10分/每个套管，共30分
 
-*   正确放至目标区域：10分/每个套管，共50分
+*   准确放至称重台并完成称重：10分/每个套管，共30分
+
+*   从称重台再次拾取成功：5分/每个套管，共15分
+
+*   稳定放入指定收纳筐：前两个套管各5分，最后一个套管15分，共25分
     
     
 任务3：汽车大件上料（100分）
@@ -101,45 +113,44 @@ https://www.modelscope.cn/datasets/lejurobot/LET-Tianchi-Dataset
 --------------------------
 .. code-block:: bash
 
-    ########不需要修改#######
     hydra:
-        run:
-            dir: ./outputs/data_cvt_hydra_save/singlerun/${now:%Y%m%d_%H%M%S}
-        sweep:
-            dir: ./outputs/data_cvt_hydra_save/multirun/${now:%Y%m%d_%H%M%S}
-            subdir: ${hydra:job.override_dirname}
+      run:
+        dir: ./outputs/data_cvt_hydra_save/singlerun/${now:%Y%m%d_%H%M%S}
+      sweep:
+        dir: ./outputs/data_cvt_hydra_save/multirun/${now:%Y%m%d_%H%M%S}
+        subdir: ${hydra:job.override_dirname}
 
-    ########根据实际目录修改#######
+    # 将 kuavo rosbag 转换为 lerobot-parquet 格式，请使用 lerobot 0.4.2。
     rosbag:
-        rosbag_dir: /path/to/your/rosbag
-        num_used: null 
-        lerobot_dir: /path/to/your/lerobot/save/file
-        chunk_size: 100
+      rosbag_dir: /path/to/your/rosbag  # rosbag目录
+      num_used: null  # null表示使用全部rosbag
+      lerobot_dir: /your/path/to/your/lerobotdata/  # 转换结果目录
+      chunk_size: 100  # 流式读取分块大小
 
     dataset:
-        only_arm: true  # 默认true, 是否只使用手臂数据
-        eef_type: qiangnao # 真机可选：leju_claw, qiangnao，任务一二是夹爪 leju_claw，任务三是灵巧手 qiangnao
-        which_arm: both  # 需要哪一只手臂的数据，可选: left, right, both，注意这会同时选择对应手臂的相机，已默认包含头部相机，任务一和三是单手操作，可以选right（但不是一定选），任务二必须选both
-        use_depth: true  # 是否需要深度图像数据，与上面手臂保持一致的深度数据，目前本分支只有diffusion policy支持了深度，ACT policy暂不支持深度图像，但在dev分支中已经支持
-        depth_range: [0, 1500]  # 深度图的裁剪范围，单位：毫米
+      only_arm: true  # 是否只使用手臂数据
+      eef_type: leju_claw  # 真机：leju_claw / qiangnao；仿真：rq2f85
+      which_arm: both  # left / right / both
+      use_depth: false  # 是否使用深度图像
+      depth_range: [0, 1500]  # 深度裁剪范围，单位毫米
 
-        task_description: "Pick and Place"
+      task_description: "Pick and Place"
 
-        train_hz: 10
-        main_timeline: head_cam_h 
-        main_timeline_fps: 30
-        sample_drop: 10
+      train_hz: 10
+      main_timeline: head_cam_h  # 主相机
+      main_timeline_fps: 30
+      sample_drop: 10
 
+      # 强脑灵巧手自由度设置；一般非精细操作保持为1。
+      dex_dof_needed: 1
 
-        dex_dof_needed: 1
+      is_binary: false
+      delta_action: false
+      relative_start: false
 
-        is_binary: false
-        delta_action: false
-        relative_start: false 
-
-        resize:
-            width: 848
-            height: 480
+      resize:
+        width: 848
+        height: 480
 
 
 模型推理配置文件
@@ -148,80 +159,80 @@ tianchi分支(可能需要修改的地方有注释)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: bash
 
+    # Kuavo 统一推理配置
     hydra:
-        run:
-            dir: ./outputs/kuavo_deploy_hydra_save/singlerun/${now:%Y%m%d_%H%M%S} 
-        sweep:
-            dir: ./outputs/kuavo_deploy_hydra_save/multirun/${now:%Y%m%d_%H%M%S}
-            subdir: ${hydra:job.override_dirname}
+      run:
+        dir: ./outputs/kuavo_deploy_hydra_save/singlerun/${now:%Y%m%d_%H%M%S}
+      sweep:
+        dir: ./outputs/kuavo_deploy_hydra_save/multirun/${now:%Y%m%d_%H%M%S}
+        subdir: ${hydra:job.override_dirname}
 
+    # 环境配置
     env:
-        env_name: Kuavo-Real  # kuavo环境名称，仿真Kuavo-Sim，真机Kuavo-Real
-        control_mode: joint # joint 或 eef （正在开发中）
-        eef_type: qiangnao  # 末端执行器类型，真机可选leju_claw或qiangnao: 根据任务使用的eef选择，任务一和二都是夹爪 leju_claw，任务三是灵巧手 qiangnao
-        which_arm: both  # 需要哪一只手臂的数据，可选: left, right, both，注意这会同时选择对应手臂的相机，已默认包含头部相机；任务一和三是单手操作，可以选right（但不是一定选），任务二必须选both
-        head_init: null  # 机器人头部初始位置，仿真请默认使用这个值，保持观测统一, 真机可根据需要调整，一般为null！！！
-        ros_rate: 10  # 推理控制频率，单位Hz
+      env_name: Kuavo-Real  # 真机 Kuavo-Real，仿真 Kuavo-Sim
+      control_mode: joint  # joint / eef
+      eef_type: leju_claw  # 真机 leju_claw / qiangnao；仿真 rq2f85
+      which_arm: both  # left / right / both
+      head_init: null  # 真机一般设为 null
+      ros_rate: 10
 
-        only_arm: true  # 默认true, 是否只使用手臂数据
+      only_arm: true
 
-        image_size: &IMGSIZE [848, 480]  # 图像大小：宽，高
-        depth_range: &DEPTHRANGE [0, 1500]  # 深度图范围设置，单位mm，default=[0,1500]
-        obs_key_map:  # 话题、消息类型、频率、图像尺寸、深度裁剪等配置，深度图范围设置，单位mm，default=[0,1500]，请注意需要与训练保持一致！
-            head_cam_h: ["/cam_h/color/image_raw/compressed", "CompressedImage", 30, *IMGSIZE]  # 头部RGB相机话题，必选
-            wrist_cam_l: ["/cam_l/color/image_raw/compressed", "CompressedImage", 30, *IMGSIZE]  # 左手腕RGB相机话题，请对应选择，与下至少选择一个
-            wrist_cam_r: ["/cam_r/color/image_raw/compressed", "CompressedImage", 30, *IMGSIZE]  # 右手腕RGB相机话题，请对应选择，与上至少选择一个
-            depth_h: ["/cam_h/depth/image_raw/compressedDepth", "CompressedImage", 30, *IMGSIZE, *DEPTHRANGE]  # 头部相机深度图话题，可与上述对应选
-            depth_l: ["/cam_l/depth/image_rect_raw/compressedDepth", "CompressedImage", 30, *IMGSIZE, *DEPTHRANGE]  # 左手腕相机深度图话题，可与上述对应选
-            depth_r: ["/cam_r/depth/image_rect_raw/compressedDepth", "CompressedImage", 30, *IMGSIZE, *DEPTHRANGE]  # 右手腕相机深度图话题，可与上述对应选
-            joint_q: ["/sensors_data_raw", "sensorsData", 500]  # 关节角度话题，必选
-            qiangnao: ["/dexhand/state", "JointState", 500]  # 末端执行器的话题，灵巧手
-            #leju_claw: ["/leju_claw_state", "lejuClawState", 500]  # 末端执行器的话题，夹爪
-            #rq2f85: ["/gripper/state", "JointState", 500]  # 末端执行器的话题，仿真中夹爪 # 根据选择的末端执行器类型，选择对应的话题，并确保与训练时一致
-        
-        arm_state_keys: ["joint_q","gripper"]  # 默认不动，模型观测输入的手臂状态包含关节角度和夹爪开合状态
-        frame_alignment: false  # 是否启用帧对齐，default=false
-        ratio: 1.0 # 使用帧对齐时，获取最近观测占所有历史观测的比例，default=1.0
-        
-        limits:
-            joint_q:
-              min: [-3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14]
-              max: [3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14]
-            
-            gripper:
-              min: [0, 0]
-              max: [1, 1]
-            
-            eef:
-              min: [-1, -1, -1, -3.14, -3.14, -3.14, -1, -1, -1, -3.14, -3.14, -3.14]
-              max: [1, 1, 1, 3.14, 3.14, 3.14, 1, 1, 1, 3.14, 3.14, 3.14]
-            
-            eef_relative:
-              min: [-0.005, -0.0075, -0.004, -0.03, -0.03, -0.05, -0.005, -0.0075, -0.004, -0.03, -0.03, -0.05]
-              max: [0.005, 0.0075, 0.004, 0.03, 0.03, 0.05, 0.005, 0.0075, 0.004, 0.03, 0.03, 0.05]
-            
-            base:
-              min: [-2.0, -2.0, -3.14, 0]
-              max: [2.0, 2.0, 3.14, 1]
+      image_size: &IMGSIZE [848, 480]
+      depth_range: &DEPTHRANGE [0, 1500]  # 单位 mm
+      obs_key_map:  # 需与训练配置保持一致；末端部分需要与本配置中eef_type类型保持一致，其余末端建议暂时注释
+        head_cam_h: ["/cam_h/color/image_raw/compressed", "CompressedImage", 30, *IMGSIZE]
+        wrist_cam_l: ["/cam_l/color/image_raw/compressed", "CompressedImage", 30, *IMGSIZE]
+        wrist_cam_r: ["/cam_r/color/image_raw/compressed", "CompressedImage", 30, *IMGSIZE]
+        depth_h: ["/cam_h/depth/image_raw/compressedDepth", "CompressedImage", 30, *IMGSIZE, *DEPTHRANGE]
+        depth_l: ["/cam_l/depth/image_rect_raw/compressedDepth", "CompressedImage", 30, *IMGSIZE, *DEPTHRANGE]
+        depth_r: ["/cam_r/depth/image_rect_raw/compressedDepth", "CompressedImage", 30, *IMGSIZE, *DEPTHRANGE]
+        joint_q: ["/sensors_data_raw", "sensorsData", 500]
+        # qiangnao: ["/dexhand/state", "JointState", 500] 
+        leju_claw: ["/leju_claw_state", "lejuClawState", 500]
+        # rq2f85: ["/gripper/state", "JointState", 500]
 
-        # 以下环境配置为不建议改动配置
+      arm_state_keys: ["joint_q","gripper"]
+      frame_alignment: false
+      ratio: 1.0
 
-        qiangnao_dof_needed: 1 
+      limits:  # 一般不建议修改
+        joint_q:
+          min: [-3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14, -3.14]
+          max: [3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14, 3.14]
 
-        is_binary: false 
+        gripper:
+          min: [0, 0]
+          max: [1, 1]
 
+        eef:
+          min: [-1, -1, -1, -3.14, -3.14, -3.14, -1, -1, -1, -3.14, -3.14, -3.14]
+          max: [1, 1, 1, 3.14, 3.14, 3.14, 1, 1, 1, 3.14, 3.14, 3.14]
+
+        eef_relative:
+          min: [-0.005, -0.0075, -0.004, -0.03, -0.03, -0.05, -0.005, -0.0075, -0.004, -0.03, -0.03, -0.05]
+          max: [0.005, 0.0075, 0.004, 0.03, 0.03, 0.05, 0.005, 0.0075, 0.004, 0.03, 0.03, 0.05]
+
+        base:
+          min: [-2.0, -2.0, -3.14, 0]
+          max: [2.0, 2.0, 3.14, 1]
+
+      qiangnao_dof_needed: 1  # 强脑手自由度，一般保持默认
+      is_binary: false
+
+    # 模型推理配置
     inference:
-        go_bag_path: /path/to/your/go.bag # go_bag文件由主办方提供，选手不需要修改该参数
-        policy_type: "act"  # 策略名字，支持diffusion，act等
-        eval_episodes: 10  # 测试回合数，真机推理可以连续推理，设置为10或者大于10数值均可
-        seed: 42 
-        start_seed: 42  
-        device: "cuda"
-        task: "your_task"
-        method: "your_method"
-        timestamp: "your_timestamp"
-        epoch: best  # 使用训练保存的哪一个epoch，可填50，100，best等，注意：代码将在outputs/train/<task>/<method>/<timestamp>/epoch<epoch>中load policy的模型参数
-        max_episode_steps: 500  # 最大回合步数，真机建议设置为500即可
+      go_bag_path: /path/to/your/go.bag  # 初始包由官方统一提供，选手不需要修改或引用
+      policy_type: "act"  # 支持 diffusion / act 等
+      eval_episodes: 3
+      seed: 42
+      start_seed: 42
+      device: "cuda"
+      task: "your_task"
+      method: "your_method"
+      timestamp: "your_timestamp"
+      epoch: best
+      max_episode_steps: 2000 # 测试后建议2000轮
 
 真机赛提交说明
 ================
@@ -363,7 +374,7 @@ tianchi分支(可能需要修改的地方有注释)
 ================
 真机赛的返回结果将包含以下内容：
 
-1. 任务平均得分：十轮测试的平均总得分与小分
+1. 任务平均得分：三轮测试的平均总得分与小分
 2. 每轮评测得分：每轮测试的总得分与小分
 3. 每轮评测视频：每轮测试的机器人操作视频（第三视角）
 4. log文件：每轮测试的详细log文件，来源 ``log/kuavo_deploy/kauavo_deploy.log``
