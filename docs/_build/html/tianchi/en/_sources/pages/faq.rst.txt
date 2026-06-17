@@ -70,3 +70,82 @@ Q：仿真器很卡
 
 Q：仿真器运行 ``deploy.py`` 完全没有仿真页面
 	A：确认没有残骸没完全杀死的ROS进程，可重启电脑试试
+
+真机部署常见问题
+=========================================
+
+**Q：为什么镜像在真机部署时 SDK 或接口报错？**
+    A：常见原因是使用了仿真赛阶段的旧版 KDC 代码，或没有基于真机赛官网提供的最新代码构建镜像。请使用 `真机赛文档 <https://kdc-doc.netlify.app/tianchi/cn/pages/real>`_ 中的最新仓库和部署说明重新构建，并确认镜像内 ``kuavo-humanoid-sdk`` 版本符合要求。
+
+**Q：为什么容器里运行模型时提示缺少 Python 包？**
+    A：通常是本地环境额外安装了依赖，但打包 Docker 镜像时没有带进去。建议先打包自己的 conda 环境，再按官网 Dockerfile 构建镜像：
+
+    .. code-block:: bash
+
+       conda install -c conda-forge conda-pack
+       conda activate kdc
+       conda pack -n kdc -o myenv.tar.gz
+
+    构建镜像前，请确认推理所需依赖都已安装在该环境中。
+
+**Q：为什么部署推理时提示缺少 ``pyaudio`` 或相关音频依赖？**
+    A：KDC 在部署推理时通常需要 ``pyaudio`` 包，否则运行时容易报错。建议提前在 conda 环境中执行以下指令完成环境适配：
+
+    .. code-block:: bash
+
+       sudo apt update
+       sudo apt install build-essential python3-dev portaudio19-dev
+       pip install pyaudio
+
+**Q：为什么 ``run_with_gpu.sh`` 启动后无法连接 ROS？**
+    A：常见原因是启动脚本没有按真机部署通知更新，尤其是 ROS 网络配置写错。请确认 ``run_with_gpu.sh`` 的 ``docker run`` 中包含：
+
+    .. code-block:: bash
+
+       -e ROS_MASTER_URI=http://kuavo_master:11311
+       -e ROS_IP=192.168.26.10
+
+**Q：为什么配置了模型，但部署时找不到权重？**
+    A：通常是 ``configs/deploy/kuavo_env.yaml`` 中的路径信息没有填对。请检查 ``inference`` 字段是否能对应到镜像内模型路径。
+
+    .. code-block:: yaml
+
+       inference:
+         task: "your_task"
+         method: "your_method"
+         timestamp: "run_xxxxxxxx_xxxxxx"
+         epoch: best
+
+    对应路径格式：
+
+    .. code-block:: text
+
+       /root/kuavo_data_challenge/outputs/train/<task>/<method>/<timestamp>/epoch<epoch>
+
+    例如 ``task: "small"``、``method: "act"``、``timestamp: "run_20260429_002926"``、``epoch: best`` 对应：
+
+    .. code-block:: text
+
+       /root/kuavo_data_challenge/outputs/train/small/act/run_20260429_002926/epochbest
+
+    如果使用 ``pretrained_path``，请确认该路径在容器内真实存在。
+
+**Q：为什么模型首次推理时尝试联网下载文件？**
+    A：有些模型会在首次运行时下载缓存文件，例如 ACT 可能需要 ResNet18 相关缓存。如果比赛现场无网络，推理会失败。请提前在镜像中准备好所有缓存文件，或在构建镜像前完成一次模型加载测试，确保缓存已写入镜像。
+
+**Q：如何提交前快速自检？**
+    A：下载自检脚本并放在镜像 ``tar`` 和 ``run_with_gpu.sh`` 同级目录下：
+
+    .. raw:: html
+
+       <p><a href="../_static/code/check_docker_python_deps.sh" download="check_docker_python_deps.sh">下载 check_docker_python_deps.sh</a></p>
+
+    .. code-block:: bash
+
+       ./check_docker_python_deps.sh your_image.tar
+
+    脚本会检查：
+
+    - ``run_with_gpu.sh`` 中的 ROS 配置
+    - Docker 镜像内 Python 依赖版本
+    - ``kuavo_env.yaml`` 是否能对应到 ``outputs/train/...`` 模型路径

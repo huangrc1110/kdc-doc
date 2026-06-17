@@ -17,9 +17,9 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=7d86a446"></script>
-      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
-      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
-      <script src="../_static/translations.js?v=540d3cec"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
     <script src="../_static/js/theme.js"></script>
     <script src="../_static/js/versions.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
@@ -88,6 +88,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">常见问题&amp;回答</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">赛事流程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">基准代码/环境常见问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">真机部署常见问题</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="forums.html">赛事论坛</a></li>
@@ -117,9 +118,9 @@
            <div itemprop="articleBody">
              
   <section id="faq">
-<span id="id1"></span><h1>常见问题&amp;回答<a class="headerlink" href="#faq" title="链接到此标题。"></a></h1>
+<span id="id1"></span><h1>常见问题&amp;回答<a class="headerlink" href="#faq" title="Link to this heading"></a></h1>
 <section id="id2">
-<h2>赛事流程<a class="headerlink" href="#id2" title="链接到此标题。"></a></h2>
+<h2>赛事流程<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <dl class="simple">
 <dt>Q：我想报名参赛，该如何报名呢？有报名费吗？</dt><dd><p>A：报名不需要报名费。进入 阿里云天池-天池大赛-工程开发赛-乐聚机器人第一届具身智能操作任务挑战赛&amp;创业启航营，点击报名参赛，填写个人信息即可报名参赛（Note：若个人参赛，学校/公司可填写无， 报名信息里的团队并不计入统计，创建/加入团队请在报名后操作）</p>
 </dd>
@@ -140,7 +141,7 @@
 </dl>
 </section>
 <section id="id3">
-<h2>基准代码/环境常见问题<a class="headerlink" href="#id3" title="链接到此标题。"></a></h2>
+<h2>基准代码/环境常见问题<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <dl>
 <dt>Q：打开仿真器（例如 <code class="docutils literal notranslate"><span class="pre">deploy.py</span></code> 脚本）的时候，仿真器打开然后闪退</dt><dd><p>A：确认 <code class="docutils literal notranslate"><span class="pre">ROBOT_VERSION</span></code> 是45；确认 <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$ROBOT_VERSION</span></code> 是否打印45</p>
 <blockquote>
@@ -181,6 +182,65 @@
 </ul>
 </dd>
 <dt>Q：仿真器运行 <code class="docutils literal notranslate"><span class="pre">deploy.py</span></code> 完全没有仿真页面</dt><dd><p>A：确认没有残骸没完全杀死的ROS进程，可重启电脑试试</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>真机部署常见问题<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<dl>
+<dt><strong>Q：为什么镜像在真机部署时 SDK 或接口报错？</strong></dt><dd><p>A：常见原因是使用了仿真赛阶段的旧版 KDC 代码，或没有基于真机赛官网提供的最新代码构建镜像。请使用 <a class="reference external" href="https://kdc-doc.netlify.app/tianchi/cn/pages/real">真机赛文档</a> 中的最新仓库和部署说明重新构建，并确认镜像内 <code class="docutils literal notranslate"><span class="pre">kuavo-humanoid-sdk</span></code> 版本符合要求。</p>
+</dd>
+<dt><strong>Q：为什么容器里运行模型时提示缺少 Python 包？</strong></dt><dd><p>A：通常是本地环境额外安装了依赖，但打包 Docker 镜像时没有带进去。建议先打包自己的 conda 环境，再按官网 Dockerfile 构建镜像：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>conda-pack
+conda<span class="w"> </span>activate<span class="w"> </span>kdc
+conda<span class="w"> </span>pack<span class="w"> </span>-n<span class="w"> </span>kdc<span class="w"> </span>-o<span class="w"> </span>myenv.tar.gz
+</pre></div>
+</div>
+<p>构建镜像前，请确认推理所需依赖都已安装在该环境中。</p>
+</dd>
+<dt><strong>Q：为什么部署推理时提示缺少 ``pyaudio`` 或相关音频依赖？</strong></dt><dd><p>A：KDC 在部署推理时通常需要 <code class="docutils literal notranslate"><span class="pre">pyaudio</span></code> 包，否则运行时容易报错。建议提前在 conda 环境中执行以下指令完成环境适配：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>python3-dev<span class="w"> </span>portaudio19-dev
+pip<span class="w"> </span>install<span class="w"> </span>pyaudio
+</pre></div>
+</div>
+</dd>
+<dt><strong>Q：为什么 ``run_with_gpu.sh`` 启动后无法连接 ROS？</strong></dt><dd><p>A：常见原因是启动脚本没有按真机部署通知更新，尤其是 ROS 网络配置写错。请确认 <code class="docutils literal notranslate"><span class="pre">run_with_gpu.sh</span></code> 的 <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> 中包含：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-e<span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://kuavo_master:11311
+-e<span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span><span class="m">192</span>.168.26.10
+</pre></div>
+</div>
+</dd>
+<dt><strong>Q：为什么配置了模型，但部署时找不到权重？</strong></dt><dd><p>A：通常是 <code class="docutils literal notranslate"><span class="pre">configs/deploy/kuavo_env.yaml</span></code> 中的路径信息没有填对。请检查 <code class="docutils literal notranslate"><span class="pre">inference</span></code> 字段是否能对应到镜像内模型路径。</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">inference</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your_task&quot;</span>
+<span class="w">  </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your_method&quot;</span>
+<span class="w">  </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;run_xxxxxxxx_xxxxxx&quot;</span>
+<span class="w">  </span><span class="nt">epoch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">best</span>
+</pre></div>
+</div>
+<p>对应路径格式：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/root/kuavo_data_challenge/outputs/train/&lt;task&gt;/&lt;method&gt;/&lt;timestamp&gt;/epoch&lt;epoch&gt;
+</pre></div>
+</div>
+<p>例如 <code class="docutils literal notranslate"><span class="pre">task:</span> <span class="pre">&quot;small&quot;</span></code>、<code class="docutils literal notranslate"><span class="pre">method:</span> <span class="pre">&quot;act&quot;</span></code>、<code class="docutils literal notranslate"><span class="pre">timestamp:</span> <span class="pre">&quot;run_20260429_002926&quot;</span></code>、<code class="docutils literal notranslate"><span class="pre">epoch:</span> <span class="pre">best</span></code> 对应：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/root/kuavo_data_challenge/outputs/train/small/act/run_20260429_002926/epochbest
+</pre></div>
+</div>
+<p>如果使用 <code class="docutils literal notranslate"><span class="pre">pretrained_path</span></code>，请确认该路径在容器内真实存在。</p>
+</dd>
+<dt><strong>Q：为什么模型首次推理时尝试联网下载文件？</strong></dt><dd><p>A：有些模型会在首次运行时下载缓存文件，例如 ACT 可能需要 ResNet18 相关缓存。如果比赛现场无网络，推理会失败。请提前在镜像中准备好所有缓存文件，或在构建镜像前完成一次模型加载测试，确保缓存已写入镜像。</p>
+</dd>
+<dt><strong>Q：如何提交前快速自检？</strong></dt><dd><p>A：下载自检脚本并放在镜像 <code class="docutils literal notranslate"><span class="pre">tar</span></code> 和 <code class="docutils literal notranslate"><span class="pre">run_with_gpu.sh</span></code> 同级目录下：</p>
+<p><a href="../_static/code/check_docker_python_deps.sh" download="check_docker_python_deps.sh">下载 check_docker_python_deps.sh</a></p><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./check_docker_python_deps.sh<span class="w"> </span>your_image.tar
+</pre></div>
+</div>
+<p>脚本会检查：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">run_with_gpu.sh</span></code> 中的 ROS 配置</p></li>
+<li><p>Docker 镜像内 Python 依赖版本</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kuavo_env.yaml</span></code> 是否能对应到 <code class="docutils literal notranslate"><span class="pre">outputs/train/...</span></code> 模型路径</p></li>
+</ul>
 </dd>
 </dl>
 </section>

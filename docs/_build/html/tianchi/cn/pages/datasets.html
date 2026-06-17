@@ -17,9 +17,9 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=7d86a446"></script>
-      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
-      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
-      <script src="../_static/translations.js?v=540d3cec"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
     <script src="../_static/js/theme.js"></script>
     <script src="../_static/js/versions.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
@@ -140,10 +140,10 @@
            <div itemprop="articleBody">
              
   <section id="kuavo-dataset">
-<span id="id1"></span><h1>赛事数据<a class="headerlink" href="#kuavo-dataset" title="链接到此标题。"></a></h1>
+<span id="id1"></span><h1>赛事数据<a class="headerlink" href="#kuavo-dataset" title="Link to this heading"></a></h1>
 <p>为最大程度保留原始数据中的信息，本次赛事统一采用 <strong>rosbag</strong> 包作为数据格式。参赛者可自由利用 rosbag 中提供的多源传感器数据进行模型训练。</p>
 <section id="id2">
-<h2>数据集下载<a class="headerlink" href="#id2" title="链接到此标题。"></a></h2>
+<h2>数据集下载<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <blockquote>
 <div><p>数据集下载需要使用阿里云对象存储 OSS，说明如下。</p>
 <ol class="loweralpha">
@@ -316,12 +316,12 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="rosbag">
-<h2>rosbag 数据<a class="headerlink" href="#rosbag" title="链接到此标题。"></a></h2>
+<h2>rosbag 数据<a class="headerlink" href="#rosbag" title="Link to this heading"></a></h2>
 <p>参考 HuggingFace 开源的 <a class="reference external" href="https://github.com/huggingface/lerobot">lerobot</a> 项目，赛事方同时提供了将 Kuavo 机器人 rosbag 数据转换为 Lerobot 数据集格式的工具，其中包含 <em>深度相机</em> 等多模态数据。具体实现可参阅赛事主办方发布的 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> 仓库中的数据转换脚本。数据格式的具体细节如下：</p>
 <section id="id3">
-<h3>rosbag 话题说明<a class="headerlink" href="#id3" title="链接到此标题。"></a></h3>
+<h3>rosbag 话题说明<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <section id="cam-x-color-image-raw-compressed">
-<h4>/cam_x/color/image_raw/compressed 相机彩色图像数据<a class="headerlink" href="#cam-x-color-image-raw-compressed" title="链接到此标题。"></a></h4>
+<h4>/cam_x/color/image_raw/compressed 相机彩色图像数据<a class="headerlink" href="#cam-x-color-image-raw-compressed" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -347,7 +347,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="cam-h-depth-image-raw-compressed">
-<h4>/cam_h/depth/image_raw/compressed 头部相机深度图像数据<a class="headerlink" href="#cam-h-depth-image-raw-compressed" title="链接到此标题。"></a></h4>
+<h4>/cam_h/depth/image_raw/compressed 头部相机深度图像数据<a class="headerlink" href="#cam-h-depth-image-raw-compressed" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -373,7 +373,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="cam-x-depth-image-rect-raw-compressed">
-<h4>/cam_x/depth/image_rect_raw/compressed 左腕、右腕相机深度图像数据<a class="headerlink" href="#cam-x-depth-image-rect-raw-compressed" title="链接到此标题。"></a></h4>
+<h4>/cam_x/depth/image_rect_raw/compressed 左腕、右腕相机深度图像数据<a class="headerlink" href="#cam-x-depth-image-rect-raw-compressed" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -399,7 +399,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="kuavo-arm-traj">
-<h4>/kuavo_arm_traj 手臂运动控制<a class="headerlink" href="#kuavo-arm-traj" title="链接到此标题。"></a></h4>
+<h4>/kuavo_arm_traj 手臂运动控制<a class="headerlink" href="#kuavo-arm-traj" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -425,7 +425,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="gripper-command">
-<h4>/gripper/command 夹抓控制（仅限仿真数据）<a class="headerlink" href="#gripper-command" title="链接到此标题。"></a></h4>
+<h4>/gripper/command 夹抓控制（仅限仿真数据）<a class="headerlink" href="#gripper-command" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -450,7 +450,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="gripper-state">
-<h4>/gripper/state 夹抓状态（仅限仿真数据）<a class="headerlink" href="#gripper-state" title="链接到此标题。"></a></h4>
+<h4>/gripper/state 夹抓状态（仅限仿真数据）<a class="headerlink" href="#gripper-state" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -475,7 +475,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="control-robot-hand-position">
-<h4>/control_robot_hand_position 灵巧手控制（仅限真机数据）<a class="headerlink" href="#control-robot-hand-position" title="链接到此标题。"></a></h4>
+<h4>/control_robot_hand_position 灵巧手控制（仅限真机数据）<a class="headerlink" href="#control-robot-hand-position" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -500,7 +500,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="dexhand-state">
-<h4>/dexhand/state 灵巧手的状态（仅限真机数据）<a class="headerlink" href="#dexhand-state" title="链接到此标题。"></a></h4>
+<h4>/dexhand/state 灵巧手的状态（仅限真机数据）<a class="headerlink" href="#dexhand-state" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -527,7 +527,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="control-robot-leju-claw">
-<h4>/control_robot_leju_claw 夹抓控制（仅限真机数据）<a class="headerlink" href="#control-robot-leju-claw" title="链接到此标题。"></a></h4>
+<h4>/control_robot_leju_claw 夹抓控制（仅限真机数据）<a class="headerlink" href="#control-robot-leju-claw" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -554,7 +554,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="leju-claw-state">
-<h4>/leju_claw_state 获取机器人夹爪（二指爪）状态（仅限真机数据）<a class="headerlink" href="#leju-claw-state" title="链接到此标题。"></a></h4>
+<h4>/leju_claw_state 获取机器人夹爪（二指爪）状态（仅限真机数据）<a class="headerlink" href="#leju-claw-state" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic">
 <li><dl class="simple">
@@ -591,7 +591,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="sensors-data-raw">
-<h4>/sensors_data_raw 传感器数据<a class="headerlink" href="#sensors-data-raw" title="链接到此标题。"></a></h4>
+<h4>/sensors_data_raw 传感器数据<a class="headerlink" href="#sensors-data-raw" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic">
 <li><dl class="simple">
@@ -666,7 +666,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="joint-cmd">
-<h4>/joint_cmd 所有关节的控制指令<a class="headerlink" href="#joint-cmd" title="链接到此标题。"></a></h4>
+<h4>/joint_cmd 所有关节的控制指令<a class="headerlink" href="#joint-cmd" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -698,7 +698,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="cmd-pose-world-4">
-<h4>/cmd_pose_world 机器人位置指令（仅限任务4）<a class="headerlink" href="#cmd-pose-world-4" title="链接到此标题。"></a></h4>
+<h4>/cmd_pose_world 机器人位置指令（仅限任务4）<a class="headerlink" href="#cmd-pose-world-4" title="Link to this heading"></a></h4>
 <blockquote>
 <div><ol class="arabic simple">
 <li><dl class="simple">
@@ -729,9 +729,9 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </section>
 </section>
 <section id="id4">
-<h2>lerobot 数据<a class="headerlink" href="#id4" title="链接到此标题。"></a></h2>
+<h2>lerobot 数据<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
 <section id="rosbag-lerobot">
-<h3>rosbag 转 Lerobot 格式<a class="headerlink" href="#rosbag-lerobot" title="链接到此标题。"></a></h3>
+<h3>rosbag 转 Lerobot 格式<a class="headerlink" href="#rosbag-lerobot" title="Link to this heading"></a></h3>
 <p>请先完成安装指南，并参考 <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge">kuavo_data_challenge</a> 仓库的教程将 Kuavo 原生 rosbag 数据转换为 Lerobot 框架可用的 parquet 格式：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>kuavo_data/CvtRosbag2Lerobot.py<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--config-path<span class="o">=</span>../configs/data/<span class="w"> </span><span class="se">\</span>
@@ -750,7 +750,7 @@ ossutil<span class="w"> </span>cp<span class="w"> </span>oss://kuavo-data-challe
 </div></blockquote>
 </section>
 <section id="id6">
-<h3>lerobot数据目录结构说明<a class="headerlink" href="#id6" title="链接到此标题。"></a></h3>
+<h3>lerobot数据目录结构说明<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>执行脚本后，会生成标准lerobot格式数据集。目录结构如下：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>output_dir/
     ├── data/

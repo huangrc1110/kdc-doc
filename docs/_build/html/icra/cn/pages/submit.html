@@ -17,9 +17,9 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=7d86a446"></script>
-      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
-      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
-      <script src="../_static/translations.js?v=540d3cec"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
     <script src="../_static/js/theme.js"></script>
     <script src="../_static/js/versions.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
@@ -122,13 +122,13 @@
            <div itemprop="articleBody">
              
   <section id="submission">
-<span id="submit"></span><h1>Submission<a class="headerlink" href="#submission" title="链接到此标题。"></a></h1>
+<span id="submit"></span><h1>Submission<a class="headerlink" href="#submission" title="Link to this heading"></a></h1>
 <section id="code-submission-and-evaluation">
-<h2>Code Submission and Evaluation<a class="headerlink" href="#code-submission-and-evaluation" title="链接到此标题。"></a></h2>
+<h2>Code Submission and Evaluation<a class="headerlink" href="#code-submission-and-evaluation" title="Link to this heading"></a></h2>
 <p>Refer to the <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/tree/main/docker/readme.md">kuavo_data_challenge repository icra branch docker/readme</a> to package your environment and code into a Docker image and submit it to the <a class="reference external" href="https://www.kdc.icra.lejurobot.com/home">competition website</a>.</p>
 <p>Evaluation results and the leaderboard will be published on the competition website.</p>
 <section id="important-notes">
-<h3>Important Notes<a class="headerlink" href="#important-notes" title="链接到此标题。"></a></h3>
+<h3>Important Notes<a class="headerlink" href="#important-notes" title="Link to this heading"></a></h3>
 <p>1. The final submission must be a ZIP archive containing two files: a Docker image TAR file and <cite>run_with_gpu.sh</cite>
 .</p>
 <p>2. Please name both the TAR file and the ZIP archive as <cite>team_or_individual_name_task{i}</cite>. If your team name is in Chinese, you may use initials or your personal name instead. For example, if your team name is “Leju Zhandui” and your name is “kuavo”, and you are submitting for Task 2, your TAR file should be named either <cite>lejuzhandui_task2.tar</cite> or <cite>kuavo_task2.tar</cite>. The final ZIP file should have the same name. Also, ensure that <cite>IMAGE_NAME</cite> and <cite>CONTAINER_NAME</cite> inside <cite>run_with_gpu.sh</cite> are updated accordingly to match this naming convention; otherwise, the container may fail to run
@@ -146,7 +146,7 @@
 </section>
 </section>
 <section id="video-tutorial-you-may-fast-forward-through-the-packaging-process">
-<h2>Video Tutorial (You may fast-forward through the packaging process)<a class="headerlink" href="#video-tutorial-you-may-fast-forward-through-the-packaging-process" title="链接到此标题。"></a></h2>
+<h2>Video Tutorial (You may fast-forward through the packaging process)<a class="headerlink" href="#video-tutorial-you-may-fast-forward-through-the-packaging-process" title="Link to this heading"></a></h2>
 <blockquote>
 <div><div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/submit_instruction.mp4" type="video/mp4"></video></div></div></blockquote>
 <p>Copy the following Dockerfile template (customized for the simulation track), modify necessary parameters such as the Conda environment name, Conda environment package name, and add any additional required system or Python packages. Save it as <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> in your project root directory.</p>
@@ -229,7 +229,7 @@
 </div></blockquote>
 </section>
 <section id="real-robot-competition-code-submission-and-evaluation">
-<h2>Real-Robot Competition Code Submission and Evaluation<a class="headerlink" href="#real-robot-competition-code-submission-and-evaluation" title="链接到此标题。"></a></h2>
+<h2>Real-Robot Competition Code Submission and Evaluation<a class="headerlink" href="#real-robot-competition-code-submission-and-evaluation" title="Link to this heading"></a></h2>
 <p>Similar to the simulation track, submissions for the real-robot track also require packaging your environment and code into a Docker image and uploading it to the <a class="reference external" href="https://www.kdc.icra.lejurobot.com/home">competition website</a>. The specific steps are as follows:</p>
 <ol class="arabic">
 <li><p>Configure Docker acceleration and package the environment: refer to Steps 1–2 in the simulation track’s <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md">submission instructions (docker/readme)</a>.</p></li>

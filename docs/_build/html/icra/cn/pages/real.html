@@ -17,9 +17,9 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=7d86a446"></script>
-      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
-      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
-      <script src="../_static/translations.js?v=540d3cec"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
     <script src="../_static/js/theme.js"></script>
     <script src="../_static/js/versions.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
@@ -147,12 +147,12 @@
            <div itemprop="articleBody">
              
   <section id="real-robot-competition">
-<h1>Real Robot Competition<a class="headerlink" href="#real-robot-competition" title="链接到此标题。"></a></h1>
+<h1>Real Robot Competition<a class="headerlink" href="#real-robot-competition" title="Link to this heading"></a></h1>
 <section id="real-robot-competition-task-introduction">
-<h2>Real Robot Competition Task Introduction<a class="headerlink" href="#real-robot-competition-task-introduction" title="链接到此标题。"></a></h2>
+<h2>Real Robot Competition Task Introduction<a class="headerlink" href="#real-robot-competition-task-introduction" title="Link to this heading"></a></h2>
 </section>
 <section id="installing-the-kuavo-data-challenge-baseline-code-repository">
-<h2>Installing the <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/tree/main">kuavo_data_challenge</a> (Baseline code) Repository<a class="headerlink" href="#installing-the-kuavo-data-challenge-baseline-code-repository" title="链接到此标题。"></a></h2>
+<h2>Installing the <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/tree/main">kuavo_data_challenge</a> (Baseline code) Repository<a class="headerlink" href="#installing-the-kuavo-data-challenge-baseline-code-repository" title="Link to this heading"></a></h2>
 <p>This repository is used for data conversion, model training and model deployment. Use git operation to fetch the latest codebase (<strong>main</strong> branch):</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>main<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/LejuRobotics/kuavo_data_challenge.git
@@ -166,24 +166,24 @@
 <p>Real-robot datasets are available on the <a class="reference external" href="https://www.modelscope.cn/datasets/lejurobot/LET-ICRA2026Competition-Data">Modelscope page</a>.</p>
 <p>The robot used in the real robot competition is Leju Kuavo 4 Pro, with end-effectors being dexterous hands/grippers.</p>
 <section id="task-overview">
-<h3>Task Overview<a class="headerlink" href="#task-overview" title="链接到此标题。"></a></h3>
+<h3>Task Overview<a class="headerlink" href="#task-overview" title="Link to this heading"></a></h3>
 <section id="task-1">
-<h4>Task 1<a class="headerlink" href="#task-1" title="链接到此标题。"></a></h4>
+<h4>Task 1<a class="headerlink" href="#task-1" title="Link to this heading"></a></h4>
 <p>Small Part Flipping: The robot remains stationary and sequentially flips the static parts on the conveyor belt from left to right.</p>
 <div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task1_real.mp4" type="video/mp4"></video></div><div style="clear: both;"></div></section>
 <section id="task-2">
-<h4>Task 2<a class="headerlink" href="#task-2" title="链接到此标题。"></a></h4>
+<h4>Task 2<a class="headerlink" href="#task-2" title="Link to this heading"></a></h4>
 <p>Express Fackage Scanning: The robot remains still, picks up the delivery package on the table and places it on the weighing platform, checks if the delivery label is facing up to determine if it needs to be flipped, and then places the package on the conveyor belt on the left.</p>
 <div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task2_real.mp4" type="video/mp4"></video></div><div style="clear: both;"></div></section>
 <section id="task-3">
-<h4>Task 3<a class="headerlink" href="#task-3" title="链接到此标题。"></a></h4>
+<h4>Task 3<a class="headerlink" href="#task-3" title="Link to this heading"></a></h4>
 <p>Bottling: The robot stands still at the table, picks up the bottle on the table, and then places it on the conveyor belt.</p>
 <div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task3_real.mp4" type="video/mp4"></video></div><div style="clear: both;"></div></section>
 </section>
 <section id="task-scoring">
-<h3>Task Scoring<a class="headerlink" href="#task-scoring" title="链接到此标题。"></a></h3>
+<h3>Task Scoring<a class="headerlink" href="#task-scoring" title="Link to this heading"></a></h3>
 <section id="general-rules">
-<h4>General Rules<a class="headerlink" href="#general-rules" title="链接到此标题。"></a></h4>
+<h4>General Rules<a class="headerlink" href="#general-rules" title="Link to this heading"></a></h4>
 <ol class="arabic simple">
 <li><p>There are 3 independent tasks. Each task has a maximum score of 100 points, with an additional 10 points for action trend (awarded as long as there is an action trend). The total maximum score is 300 points.</p></li>
 <li><p>Each task consists of exactly 5 rounds (each round has a time limit of 3 minutes; scores for completed actions after the time limit will not be counted). Each round is scored separately, and the arithmetic mean of the 5 rounds is taken as the final score for that task.</p></li>
@@ -191,7 +191,7 @@
 </ol>
 </section>
 <section id="task-1-small-part-flipping-100-points">
-<h4>Task 1: Small Part Flipping (100 points)<a class="headerlink" href="#task-1-small-part-flipping-100-points" title="链接到此标题。"></a></h4>
+<h4>Task 1: Small Part Flipping (100 points)<a class="headerlink" href="#task-1-small-part-flipping-100-points" title="Link to this heading"></a></h4>
 <p>During evaluation, three small parts will be randomly placed on the conveyor belt, and each small part needs to be flipped in sequence. Scoring criteria are as follows:</p>
 <ul class="simple">
 <li><p>Successful grasping and flipping: 30 points per object, total 90 points</p></li>
@@ -199,7 +199,7 @@
 </ul>
 </section>
 <section id="task-2-express-package-scanning-100-points">
-<h4>Task 2: Express Package Scanning (100 points)<a class="headerlink" href="#task-2-express-package-scanning-100-points" title="链接到此标题。"></a></h4>
+<h4>Task 2: Express Package Scanning (100 points)<a class="headerlink" href="#task-2-express-package-scanning-100-points" title="Link to this heading"></a></h4>
 <p>During evaluation, one express package with label facing down and one with label facing up will be placed on the right side of the robot. The express packages need to be placed on the weighing platform, determine the label position, flip the package with label facing down, and then grasp and place the packages onto the conveyor belt on the left-hand side. Scoring criteria are as follows:</p>
 <ul class="simple">
 <li><p>Accurate grasping of express package: 20 points per package, total 40 points</p></li>
@@ -208,7 +208,7 @@
 </ul>
 </section>
 <section id="task-3-bottling-100-points">
-<h4>Task 3: Bottling (100 points)<a class="headerlink" href="#task-3-bottling-100-points" title="链接到此标题。"></a></h4>
+<h4>Task 3: Bottling (100 points)<a class="headerlink" href="#task-3-bottling-100-points" title="Link to this heading"></a></h4>
 <p>During evaluation, one bottles will be placed in front of the robot. First pick up the bottle with the right hand, then pass the bottle in the air to the left hand, and finally place the bottle on the conveyor belt with the left hand. Scoring criteria are as follows:</p>
 <ul class="simple">
 <li><p>Successful object handover: 30 points</p></li>
@@ -219,7 +219,7 @@
 </section>
 </section>
 <section id="real-robot-competition-data-introduction">
-<h2>Real Robot Competition Data Introduction<a class="headerlink" href="#real-robot-competition-data-introduction" title="链接到此标题。"></a></h2>
+<h2>Real Robot Competition Data Introduction<a class="headerlink" href="#real-robot-competition-data-introduction" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
 <p>Real robot video size is 848*480, different from simulation data's 640*480.</p>
@@ -227,14 +227,14 @@
 <p>Similar to the simulation competition, the real robot data we provide is native rosbag. Participants can process it according to their needs. The topic names, content, data formats, etc. of real robot data are the same as simulation data (except for video image dimensions). If still using the kuavo_data_challenge baseline code framework, you can completely follow the previous simulation data conversion, training, and inference processes. The parts that need modification are some configurations in the config file.</p>
 <p>Considering computational power issues during the simulation competition phase, the first batch of real robot data is 1000 entries per task. If subsequent testing diagnoses insufficient data volume leading to poor model performance, participants can contact the organizers to supplement data.</p>
 <section id="real-robot-data-download-address-modelscope">
-<h3>Real Robot Data Download Address (modelscope)<a class="headerlink" href="#real-robot-data-download-address-modelscope" title="链接到此标题。"></a></h3>
+<h3>Real Robot Data Download Address (modelscope)<a class="headerlink" href="#real-robot-data-download-address-modelscope" title="Link to this heading"></a></h3>
 <p><a class="reference external" href="https://www.modelscope.cn/datasets/lejurobot/LET-ICRA2026Competition-Data">https://www.modelscope.cn/datasets/lejurobot/LET-ICRA2026Competition-Data</a></p>
 </section>
 </section>
 <section id="real-robot-competition-configuration-file-instructions-modify-by-reference-do-not-copy-paste-directly">
-<h2>Real Robot Competition Configuration File Instructions (modify by reference, do not copy-paste directly)<a class="headerlink" href="#real-robot-competition-configuration-file-instructions-modify-by-reference-do-not-copy-paste-directly" title="链接到此标题。"></a></h2>
+<h2>Real Robot Competition Configuration File Instructions (modify by reference, do not copy-paste directly)<a class="headerlink" href="#real-robot-competition-configuration-file-instructions-modify-by-reference-do-not-copy-paste-directly" title="Link to this heading"></a></h2>
 <section id="data-conversion-parts-that-may-need-modification-are-commented">
-<h3>Data Conversion (parts that may need modification are commented)<a class="headerlink" href="#data-conversion-parts-that-may-need-modification-are-commented" title="链接到此标题。"></a></h3>
+<h3>Data Conversion (parts that may need modification are commented)<a class="headerlink" href="#data-conversion-parts-that-may-need-modification-are-commented" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hydra:<span class="w">  </span><span class="c1"># Hydra config directory, for parameter checking only</span>
 run:
 <span class="w">    </span>dir:<span class="w"> </span>./outputs/data_cvt_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span><span class="w">  </span><span class="c1"># Single run root dir</span>
@@ -291,9 +291,9 @@ resize:
 </div>
 </section>
 <section id="model-inference-configuration-file">
-<h3>Model Inference Configuration File<a class="headerlink" href="#model-inference-configuration-file" title="链接到此标题。"></a></h3>
+<h3>Model Inference Configuration File<a class="headerlink" href="#model-inference-configuration-file" title="Link to this heading"></a></h3>
 <section id="main-branch-config-to-modify-is-kuavo-real-env-yaml-parts-that-may-need-modification-are-commented">
-<h4>main branch (config to modify is kuavo_real_env.yaml, parts that may need modification are commented)<a class="headerlink" href="#main-branch-config-to-modify-is-kuavo-real-env-yaml-parts-that-may-need-modification-are-commented" title="链接到此标题。"></a></h4>
+<h4>main branch (config to modify is kuavo_real_env.yaml, parts that may need modification are commented)<a class="headerlink" href="#main-branch-config-to-modify-is-kuavo-real-env-yaml-parts-that-may-need-modification-are-commented" title="Link to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hydra:<span class="w">  </span><span class="c1"># Hydra config directory, for parameter checking only</span>
 run:
 <span class="w">    </span>dir:<span class="w"> </span>./outputs/kuavo_deploy_hydra_save/singlerun/<span class="si">${</span><span class="nv">now</span><span class="p">:%Y%m%d_%H%M%S</span><span class="si">}</span><span class="w">  </span><span class="c1"># Single run root dir</span>
@@ -405,7 +405,7 @@ inference:
 </section>
 </section>
 <section id="real-robot-competition-submission-instructions">
-<h2>Real Robot Competition Submission Instructions<a class="headerlink" href="#real-robot-competition-submission-instructions" title="链接到此标题。"></a></h2>
+<h2>Real Robot Competition Submission Instructions<a class="headerlink" href="#real-robot-competition-submission-instructions" title="Link to this heading"></a></h2>
 <p>Similar to the simulation competition, real robot competition code submission also packages the environment and code into a docker image. Specific steps are as follows:</p>
 <ol class="arabic">
 <li><p>Configure docker acceleration and package environment: refer to simulation competition <a class="reference external" href="https://github.com/LejuRobotics/kuavo_data_challenge/blob/main/docker/readme.md">submission instructions docker/readme</a> steps 1-2</p></li>
@@ -540,7 +540,7 @@ docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> 
 </ol>
 </section>
 <section id="real-robot-competition-score-explanation">
-<h2>Real Robot Competition Score Explanation<a class="headerlink" href="#real-robot-competition-score-explanation" title="链接到此标题。"></a></h2>
+<h2>Real Robot Competition Score Explanation<a class="headerlink" href="#real-robot-competition-score-explanation" title="Link to this heading"></a></h2>
 <p>The real robot competition return results will include the following content:</p>
 <ol class="arabic simple">
 <li><p>Task average score: average total score and sub-scores of ten rounds of testing</p></li>
