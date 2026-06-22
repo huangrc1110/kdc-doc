@@ -90,6 +90,7 @@
    pages/installation
    pages/submit
    pages/real
+   pages/beijing
 
 .. toctree::
    :maxdepth: 1
