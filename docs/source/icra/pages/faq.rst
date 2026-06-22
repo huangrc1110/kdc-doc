@@ -44,7 +44,7 @@ Common causes are using an old KDC codebase from the simulation stage, or not bu
 
 Please rebuild using the latest repository and deployment instructions in the real-robot competition documentation:
 
-	.. code-block:: Plain Text
+	.. code-block:: text
 
 		https://kdc-doc.netlify.app/icra/en/pages/real
 
@@ -91,7 +91,7 @@ Please check:
 
 These fields should map to the following path inside the image:
 
-	.. code-block:: Plain Text
+	.. code-block:: text
 		
 		/root/kuavo_data_challenge/outputs/train/<task>/<method>/<timestamp>/epoch<epoch>
 
@@ -106,7 +106,7 @@ For example:
 
 Corresponding path:
 
-	.. code-block:: Plain Text
+	.. code-block:: text
 
 		/root/kuavo_data_challenge/outputs/train/small/act/run_20260429_002926/epochbest
 

@@ -149,7 +149,10 @@ Instructions on how to submit your code (for two stages) will be updated soon in
 <p>Common causes are using an old KDC codebase from the simulation stage, or not building the image from the latest official real-robot competition code.</p>
 <p>Please rebuild using the latest repository and deployment instructions in the real-robot competition documentation:</p>
 <blockquote>
-<div></div></blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://kdc-doc.netlify.app/icra/en/pages/real
+</pre></div>
+</div>
+</div></blockquote>
 <p>It is recommended to verify that the <cite>kuavo-humanoid-sdk</cite> version inside the image meets the required version.</p>
 <p><strong>Q: Why does the container report missing Python packages when running the model?</strong></p>
 <p>This is usually because additional dependencies were installed in the local environment but were not included when packaging the Docker image.</p>
@@ -185,7 +188,10 @@ conda<span class="w"> </span>pack<span class="w"> </span>-n<span class="w"> </sp
 </div></blockquote>
 <p>These fields should map to the following path inside the image:</p>
 <blockquote>
-<div></div></blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/root/kuavo_data_challenge/outputs/train/&lt;task&gt;/&lt;method&gt;/&lt;timestamp&gt;/epoch&lt;epoch&gt;
+</pre></div>
+</div>
+</div></blockquote>
 <p>For example:</p>
 <blockquote>
 <div><div class="highlight-YAML notranslate"><div class="highlight"><pre><span></span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;small&quot;</span>
@@ -197,7 +203,10 @@ conda<span class="w"> </span>pack<span class="w"> </span>-n<span class="w"> </sp
 </div></blockquote>
 <p>Corresponding path:</p>
 <blockquote>
-<div></div></blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/root/kuavo_data_challenge/outputs/train/small/act/run_20260429_002926/epochbest
+</pre></div>
+</div>
+</div></blockquote>
 <p>If using <cite>pretrained_path</cite>, make sure that path actually exists inside the container.</p>
 <p><strong>Q: Why does the model try to download files from the internet on first inference?</strong></p>
 <p>Some models download cache files on first run. For example, ACT may require ResNet18-related caches. If there is no internet at the competition site, inference may fail.</p>
