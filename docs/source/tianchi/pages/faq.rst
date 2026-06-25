@@ -97,6 +97,20 @@ Q：仿真器运行 ``deploy.py`` 完全没有仿真页面
        sudo apt install build-essential python3-dev portaudio19-dev
        pip install pyaudio
 
+**Q：为什么部署推理时提示缺少 ``zmq``？**
+    A：通常是当前 Python 环境没有安装 ``pyzmq`` 包。请在打包 Docker 镜像前，先进入用于推理的 conda 环境并安装依赖：
+
+    .. code-block:: bash
+
+       conda activate kdc
+       pip install pyzmq
+
+    安装后可执行以下命令确认 ``zmq`` 能正常导入：
+
+    .. code-block:: bash
+
+       python -c "import zmq; print(zmq.__version__)"
+
 **Q：为什么 ``run_with_gpu.sh`` 启动后无法连接 ROS？**
     A：常见原因是启动脚本没有按真机部署通知更新，尤其是 ROS 网络配置写错。请确认 ``run_with_gpu.sh`` 的 ``docker run`` 中包含：
 
