@@ -84,22 +84,23 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">北京线下赛</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">北京线下赛说明</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id3">参赛资格</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">成绩组成</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">现场资源</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">成绩组成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">现场资源</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">线下赛数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">线下赛过程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">线下赛任务说明</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id9">任务1：汽车大件上料（10分）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">任务2：桌面零件分拣（15分）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">任务3：工业零件称重（25分）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">线下赛数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">线下赛过程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">线下赛任务说明</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">任务1：汽车大件上料（10分）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">任务2：桌面零件分拣（15分）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">任务3：工业零件称重（25分）</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id12">线下赛定位与实施说明</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id13">参赛注意事项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id14">线下赛日程安排</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id15">线下赛选手工作流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">线下赛定位与实施说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">参赛注意事项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">线下赛日程安排</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">线下赛选手工作流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">线下赛选手手册</a></li>
 </ul>
 </li>
 </ul>
@@ -147,9 +148,16 @@
 <li><p>采用 Docker 镜像作为提交和评测载体，由组织方完成现场部署与评测。</p></li>
 <li><p>线下赛比赛内容与真机赛保持一致，不新增额外任务类型。</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>线下赛通过 <a class="reference external" href="https://tianchi.aliyun.com/competition/entrance/532415">天池平台</a> 统一提交，每个任务最多 5 次有效提交。</p></li>
+<li><p>线下赛期间，官方预计提供有限 GPU 资源，待后续官方通知。参赛队伍需优先使用自有 GPU 服务器完成模型训练、调试和镜像准备。</p></li>
+</ol>
+</div>
 </section>
-<section id="id4">
-<h3>成绩组成<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<section id="id5">
+<h3>成绩组成<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <p>总成绩满分为 100 分，由仿真赛、真机赛和现场赛三部分组成：</p>
 <table class="docutils align-default">
 <colgroup>
@@ -207,24 +215,24 @@
 </tbody>
 </table>
 </section>
-<section id="id5">
-<h3>现场资源<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<section id="id6">
+<h3>现场资源<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>线下赛现场将配置 6 台 Kuavo 4pro 机器人，每个任务设置一台评测机和一台备用机，并配置 2 套 4090 电脑主机用于现场部署与评测。</p>
 </section>
 </section>
-<section id="id6">
-<h2>线下赛数据<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<section id="id7">
+<h2>线下赛数据<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
 <p>线下赛任务与真机赛任务保持一致，因此数据格式、话题名称、数据转换方式和推理配置原则均参考 <a class="reference internal" href="real.html"><span class="doc">真机赛</span></a> 页面。</p>
 <p>现场队伍可以选择性使用官方提供的线下赛数据集，以及真机赛阶段已公布的数据集。线下赛预计为每个任务补充 200 条现场数据，6 台 Kuavo 4pro 总计采集约 1200 条数据。</p>
 <p>数据集地址：
 <a class="reference external" href="https://www.modelscope.cn/datasets/lejurobot/LET-Tianchi-Dataset">LET-Tianchi-Dataset on ModelScope</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>线下赛数据的具体目录、发布时间和可用范围以后续官方通知为准。</p>
+<p>线下赛数据预计发布在 ModelScope 数据集的 <code class="docutils literal notranslate"><span class="pre">beijing</span></code> 目录中。当前该目录尚未上传，待官方完成上传后将另行通知。</p>
 </div>
 </section>
-<section id="id7">
-<h2>线下赛过程<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<section id="id8">
+<h2>线下赛过程<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
 <p>现场队伍可基于官方提供的数据集和真机赛数据自主修改模型，并由组织方部署评测。模型评测排队间隔至少 1 小时，现场将展示实时成绩排名榜。</p>
 <p>评测限制如下：</p>
 <ol class="arabic simple">
@@ -232,15 +240,19 @@
 <li><p>单个得分点动作连续 3 次没有成功，则认定本轮失败。</p></li>
 <li><p>出现碰撞或其他异常事件时，认定本轮失败。</p></li>
 <li><p>本轮失败时，以当前已获得分数计分，后续操作不再计分。</p></li>
+<li><p>每项任务超过时间限制后，完成的动作不计入成绩。</p></li>
+<li><p>若队伍总分相同，则按所有任务全部轮次的平均完成时间从短到长排序。</p></li>
 </ol>
 </section>
-<section id="id8">
-<h2>线下赛任务说明<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
-<p>北京线下赛比赛内容与真机赛保持一致，包含 3 个独立任务。三个任务现场赛总分为 50 分。</p>
 <section id="id9">
-<h3>任务1：汽车大件上料（10分）<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<h2>线下赛任务说明<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p>北京线下赛比赛内容与真机赛保持一致，包含 3 个独立任务。三个任务现场赛总分为 50 分。</p>
+<section id="id10">
+<h3>任务1：汽车大件上料（10分）<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
 <p>场景规范：机器人将汽车大件从脚撑上拾取，手臂转动一定角度后放置到旁边的目标脚撑上。</p>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task3_real.mov" type=""></video></div><div style="clear: both;"></div><p>评分标准如下，每次测评时间不超过 3 分钟：</p>
+<a class="reference internal image-reference" href="../_images/task1_beijing.png"><img alt="汽车大件上料场景" src="../_images/task1_beijing.png" style="width: 100%;" />
+</a>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task1_beijing.mp4" type="video/mp4"></video></div><div style="clear: both;"></div><p>评分标准如下，每次测评时间不超过 3 分钟：</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 55.0%" />
@@ -273,8 +285,8 @@
 </tbody>
 </table>
 </section>
-<section id="id10">
-<h3>任务2：桌面零件分拣（15分）<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<section id="id11">
+<h3>任务2：桌面零件分拣（15分）<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
 <p>场景规范：机器人站立不动，夹取桌面上的安全带、pin 口或线缆，将其放至指定的空箱子中。</p>
 <p>现场将放置安全带、线缆、pin 口三种物料，每种物料各一个，共三个。三种物料按照以下顺序分别摆放三轮：</p>
 <ol class="arabic simple">
@@ -283,7 +295,9 @@
 <li><p>线缆、pin 口、安全带</p></li>
 </ol>
 <p>机器人夹取物品后，需要将其放置到盒子的指定空位处，目标顺序从左到右依次为：pin 口、安全带、线缆。</p>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task1_real.mov" type=""></video></div><div style="clear: both;"></div><p>评分标准如下，每次测评时间不超过 4 分钟：</p>
+<a class="reference internal image-reference" href="../_images/task2_beijing.jpg"><img alt="桌面零件分拣场景" src="../_images/task2_beijing.jpg" style="width: 100%;" />
+</a>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task2_beijing.mp4" type="video/mp4"></video></div><div style="clear: both;"></div><p>评分标准如下，每次测评时间不超过 4 分钟：</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 55.0%" />
@@ -312,11 +326,13 @@
 </tbody>
 </table>
 </section>
-<section id="id11">
-<h3>任务3：工业零件称重（25分）<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<section id="id12">
+<h3>任务3：工业零件称重（25分）<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
 <p>场景规范：机器人从桌面上拾取机械套管，放置在电子秤上完成称重，再拾起并放入收纳筐中。</p>
 <p>现场将在指定位置成排放置三个机械套管。机器人需要抓取套管，将其放置到称重台上完成称重，再从称重台拾起并稳定放入指定收纳筐中。</p>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task2_real.mov" type=""></video></div><div style="clear: both;"></div><p>评分标准如下，每次测评时间不超过 4 分钟：</p>
+<a class="reference internal image-reference" href="../_images/task3_beijing.jpg"><img alt="工业零件称重场景" src="../_images/task3_beijing.jpg" style="width: 100%;" />
+</a>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task3_beijing.mp4" type="video/mp4"></video></div><div style="clear: both;"></div><p>评分标准如下，每次测评时间不超过 4 分钟：</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 55.0%" />
@@ -354,8 +370,8 @@
 </table>
 </section>
 </section>
-<section id="id12">
-<h2>线下赛定位与实施说明<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<section id="id13">
+<h2>线下赛定位与实施说明<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
 <p>相比常规真机赛远程评测流程，北京线下赛主要存在以下差异：</p>
 <ol class="arabic simple">
 <li><p>线下赛比拼：参赛队伍需基于真机赛阶段形成的任务模型，结合线下赛数据进行后训练与优化，重点比拼模型在现场任务数据上的适应能力、泛化能力和稳定部署能力。</p></li>
@@ -364,8 +380,8 @@
 <li><p>实时排名：线下赛现场将设置实时排行榜，用于展示评测进展和阶段性成绩。</p></li>
 </ol>
 </section>
-<section id="id13">
-<h2>参赛注意事项<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<section id="id14">
+<h2>参赛注意事项<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>参赛选手当天需要自备电脑转接口（网口转 USB/Type-C）及 5 至 10 米网线。</p></li>
 <li><p>由于现场参赛选手较多，现场网络负载可能较大，建议自备移动网络。</p></li>
@@ -373,85 +389,19 @@
 <li><p>从比赛开始至结束，只有操作员及评测人员可以按规定操作机器人。</p></li>
 </ol>
 </section>
-<section id="id14">
-<h2>线下赛日程安排<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 18.0%" />
-<col style="width: 18.0%" />
-<col style="width: 32.0%" />
-<col style="width: 32.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>日期</p></th>
-<th class="head"><p>时间</p></th>
-<th class="head"><p>流程</p></th>
-<th class="head"><p>备注</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>7 月 27 日 - 7 月 30 日</p></td>
-<td><p>9:30-18:30</p></td>
-<td><p>场景搭建、数据采集</p></td>
-<td><p>现场网络确认、现场流程彩排；每台采集 200 条数据，6 台 Kuavo 4pro 总共约 1200 条数据</p></td>
-</tr>
-<tr class="row-odd"><td><p>7 月 31 日</p></td>
-<td><p>9:30-10:00</p></td>
-<td><p>选手报到</p></td>
-<td><p>主背景板签字打卡</p></td>
-</tr>
-<tr class="row-even"><td><p>7 月 31 日</p></td>
-<td><p>10:00-10:30</p></td>
-<td><p>比赛开幕</p></td>
-<td><p>开幕宣讲</p></td>
-</tr>
-<tr class="row-odd"><td><p>7 月 31 日</p></td>
-<td><p>10:30-18:00</p></td>
-<td><p>任务一：汽车大件上料；任务二：桌面零件分拣</p></td>
-<td><p>2 台 Kuavo 4pro 评测机</p></td>
-</tr>
-<tr class="row-even"><td><p>7 月 31 日</p></td>
-<td><p>18:00-18:30</p></td>
-<td><p>当日成绩公布、专家点评</p></td>
-<td><p>现场队伍采访</p></td>
-</tr>
-<tr class="row-odd"><td><p>8 月 1 日</p></td>
-<td><p>9:30-16:00</p></td>
-<td><p>任务三：工业零件称重</p></td>
-<td><p>1 台 Kuavo 4pro 评测机</p></td>
-</tr>
-<tr class="row-even"><td><p>8 月 1 日</p></td>
-<td><p>16:00-16:30</p></td>
-<td><p>当日成绩公布、专家点评</p></td>
-<td><p>现场队伍采访</p></td>
-</tr>
-<tr class="row-odd"><td><p>8 月 1 日</p></td>
-<td><p>16:30-17:00</p></td>
-<td><p>比赛成绩确认、公布</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>8 月 1 日</p></td>
-<td><p>17:00-17:30</p></td>
-<td><p>颁奖仪式</p></td>
-<td><p>石景山人形机器人训练中心一层大厅；组委会代表致词、结果宣布、颁奖、合影</p></td>
-</tr>
-<tr class="row-odd"><td><p>8 月 1 日</p></td>
-<td><p>17:30-18:00</p></td>
-<td><p>现场队伍采访、现场恢复</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>8 月 2 日</p></td>
-<td><p>9:30-18:30</p></td>
-<td><p>现场恢复、物料入库</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</section>
 <section id="id15">
-<h2>线下赛选手工作流<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<h2>线下赛日程安排<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/beijing_daily.png"><img alt="北京线下赛日程安排" src="../_images/beijing_daily.png" style="width: 100%;" />
+</a>
+</section>
+<section id="id16">
+<h2>线下赛选手工作流<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
 <a class="reference internal image-reference" href="../_images/beijing_competition.png"><img alt="北京线下赛选手工作流" src="../_images/beijing_competition.png" style="width: 100%;" />
 </a>
+</section>
+<section id="id17">
+<h2>线下赛选手手册<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
+<p>请下载并阅读 <a class="reference external" href="../_static/docs/天池现场赛指导手册.pdf">天池现场赛指导手册</a> 。</p>
 </section>
 </section>
 
