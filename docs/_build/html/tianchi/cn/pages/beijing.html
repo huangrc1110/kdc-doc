@@ -83,28 +83,24 @@
 <li class="toctree-l1"><a class="reference internal" href="submit.html">提交说明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="real.html">真机赛</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">北京线下赛</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">北京线下赛说明</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">线下赛数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">线下赛任务说明</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id6">任务概览</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id7">任务1：桌面物料分拣</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id8">任务2：工业零件称重</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id9">任务3：汽车大件上料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">北京线下赛说明</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">参赛资格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">成绩组成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">现场资源</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">线下赛数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">线下赛过程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">线下赛任务说明</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">任务1：汽车大件上料（10分）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">任务2：桌面零件分拣（15分）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">任务3：工业零件称重（25分）</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id10">任务评分</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id11">通用规则</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id12">任务1：桌面物料分拣（100分）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">任务2：工业零件称重（100分）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">任务3：汽车大件上料（100分）</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id15">线下赛定位与实施说明</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id16">线下赛日程安排</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id17">线下赛选手工作流</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id18">线下赛选手手册</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">线下赛定位与实施说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">参赛注意事项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">线下赛日程安排</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">线下赛选手工作流</a></li>
 </ul>
 </li>
 </ul>
@@ -141,124 +137,322 @@
 <span id="id1"></span><h1>北京线下赛<a class="headerlink" href="#beijing" title="链接到此标题。"></a></h1>
 <section id="id2">
 <h2>北京线下赛说明<a class="headerlink" href="#id2" title="链接到此标题。"></a></h2>
-<p>天池线下赛将在北京举办。线下赛阶段延续真机赛的技术路线、任务设置与评测方式，参赛队伍应基于真机赛阶段的代码、模型和部署流程完成现场准备与评测。</p>
+<p>天池线下赛将在北京举办。线下赛阶段延续真机赛的技术路线、任务设置与部署方式，参赛队伍应基于真机赛阶段的代码、模型和部署流程完成现场准备与评测。</p>
+<section id="id3">
+<h3>参赛资格<a class="headerlink" href="#id3" title="链接到此标题。"></a></h3>
+<p>参赛队伍需在 7 月 30 日前完成工作人员处的现场赛报名。完成报名后，参赛队伍可在现场修正模型，并更新现场赛成绩。</p>
 <p>参赛队伍需重点关注以下事项：</p>
 <ol class="arabic simple">
 <li><p>使用与真机赛一致的项目代码仓库、运行逻辑和模型部署方式。</p></li>
 <li><p>按照真机赛配置要求，完成数据转换、模型训练、模型推理和部署配置。</p></li>
-<li><p>采用 Docker 镜像作为提交和评测载体。</p></li>
+<li><p>采用 Docker 镜像作为提交和评测载体，由组织方完成现场部署与评测。</p></li>
 <li><p>线下赛比赛内容与真机赛保持一致，不新增额外任务类型。</p></li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">备注</p>
-<ol class="arabic simple">
-<li><p>线下赛具体场地、报到时间等现场安排暂未明确，请以后续官方通知为准。</p></li>
-<li><p>线下赛通过 <a class="reference external" href="https://tianchi.aliyun.com/competition/entrance/532415">天池平台</a> 统一提交，每个任务最多 3 次有效提交。</p></li>
-<li><p>线下赛期间，参赛队伍需使用自有 GPU 服务器完成模型训练、调试和镜像准备。</p></li>
-</ol>
-</div>
 </section>
 <section id="id4">
-<h2>线下赛数据<a class="headerlink" href="#id4" title="链接到此标题。"></a></h2>
+<h3>成绩组成<a class="headerlink" href="#id4" title="链接到此标题。"></a></h3>
+<p>总成绩满分为 100 分，由仿真赛、真机赛和现场赛三部分组成：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 20.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>成绩项</p></th>
+<th class="head"><p>分值</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>仿真赛</p></td>
+<td><p>20 分</p></td>
+<td><p>采用仿真赛阶段成绩</p></td>
+</tr>
+<tr class="row-odd"><td><p>真机赛</p></td>
+<td><p>30 分</p></td>
+<td><p>采用真机赛阶段成绩</p></td>
+</tr>
+<tr class="row-even"><td><p>现场赛</p></td>
+<td><p>50 分</p></td>
+<td><p>由北京线下赛三个现场任务组成</p></td>
+</tr>
+</tbody>
+</table>
+<p>现场赛 50 分由三个任务组成：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 20.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>现场赛任务</p></th>
+<th class="head"><p>分值</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>汽车大件上料</p></td>
+<td><p>10 分</p></td>
+<td><p>抓取汽车钣金料并放置到目标脚撑</p></td>
+</tr>
+<tr class="row-odd"><td><p>桌面零件分拣</p></td>
+<td><p>15 分</p></td>
+<td><p>分拣安全带、线缆、pin 口三类物料</p></td>
+</tr>
+<tr class="row-even"><td><p>工业零件称重</p></td>
+<td><p>25 分</p></td>
+<td><p>完成机械套管称重与收纳</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id5">
+<h3>现场资源<a class="headerlink" href="#id5" title="链接到此标题。"></a></h3>
+<p>线下赛现场将配置 6 台 Kuavo 4pro 机器人，每个任务设置一台评测机和一台备用机，并配置 2 套 4090 电脑主机用于现场部署与评测。</p>
+</section>
+</section>
+<section id="id6">
+<h2>线下赛数据<a class="headerlink" href="#id6" title="链接到此标题。"></a></h2>
 <p>线下赛任务与真机赛任务保持一致，因此数据格式、话题名称、数据转换方式和推理配置原则均参考 <a class="reference internal" href="real.html"><span class="doc">真机赛</span></a> 页面。</p>
-<p>线下赛数据预计发布在 ModelScope 数据集的 <code class="docutils literal notranslate"><span class="pre">beijing</span></code> 目录中。当前该目录尚未上传，待官方完成上传后将另行通知。</p>
+<p>现场队伍可以选择性使用官方提供的线下赛数据集，以及真机赛阶段已公布的数据集。线下赛预计为每个任务补充 200 条现场数据，6 台 Kuavo 4pro 总计采集约 1200 条数据。</p>
 <p>数据集地址：
 <a class="reference external" href="https://www.modelscope.cn/datasets/lejurobot/LET-Tianchi-Dataset">LET-Tianchi-Dataset on ModelScope</a></p>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p>线下赛预计为每个任务补充 200 条现场数据，并计划在赛前提供。具体发布时间以后续官方通知为准。</p>
+<p>线下赛数据的具体目录、发布时间和可用范围以后续官方通知为准。</p>
 </div>
 </section>
-<section id="id5">
-<h2>线下赛任务说明<a class="headerlink" href="#id5" title="链接到此标题。"></a></h2>
-<p>北京线下赛比赛内容与真机赛保持一致，包含 3 个独立任务。每个任务最高 100 分，三项任务总分最高为 300 分。</p>
-<section id="id6">
-<h3>任务概览<a class="headerlink" href="#id6" title="链接到此标题。"></a></h3>
 <section id="id7">
-<h4>任务1：桌面物料分拣<a class="headerlink" href="#id7" title="链接到此标题。"></a></h4>
-<p>机器人保持站立姿态，夹取桌面上的安全带、线缆、pin口三类物料，并将其放入对应的空盒位置中。</p>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task1_real.mov" type=""></video></div><div style="clear: both;"></div></section>
-<section id="id8">
-<h4>任务2：工业零件称重<a class="headerlink" href="#id8" title="链接到此标题。"></a></h4>
-<p>机器人依次抓取机械套管，将套管放置到称重台上完成称重，再从称重台拾起并稳定放入指定收纳筐中。</p>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task2_real.mov" type=""></video></div><div style="clear: both;"></div></section>
-<section id="id9">
-<h4>任务3：汽车大件上料<a class="headerlink" href="#id9" title="链接到此标题。"></a></h4>
-<p>机器人稳定抓取汽车钣金料，并将其准确放置到指定区域。</p>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task3_real.mov" type=""></video></div><div style="clear: both;"></div></section>
-</section>
-</section>
-<section id="id10">
-<h2>任务评分<a class="headerlink" href="#id10" title="链接到此标题。"></a></h2>
-<section id="id11">
-<h3>通用规则<a class="headerlink" href="#id11" title="链接到此标题。"></a></h3>
+<h2>线下赛过程<a class="headerlink" href="#id7" title="链接到此标题。"></a></h2>
+<p>现场队伍可基于官方提供的数据集和真机赛数据自主修改模型，并由组织方部署评测。模型评测排队间隔至少 1 小时，现场将展示实时成绩排名榜。</p>
+<p>评测限制如下：</p>
 <ol class="arabic simple">
-<li><p>线下赛包含 3 个独立任务，每个任务最高 100 分。</p></li>
-<li><p>每个任务固定进行 3 轮测评，每轮限时 3 分钟；超时后完成的动作不计入成绩。</p></li>
-<li><p>每轮单独评分，取 3 轮成绩的平均分作为该任务最终得分。</p></li>
-<li><p>若队伍总分相同，则按所有任务全部轮次的平均完成时间从短到长排序。</p></li>
-<li><p>推理失败判定：若单次计分操作连续 3 次尝试失败，则该轮判定为失败；出现碰撞或其他异常事件时，该轮同样判定为失败。</p></li>
+<li><p>每个场景每次提交的模型可尝试 3 次测评，取平均得分。</p></li>
+<li><p>单个得分点动作连续 3 次没有成功，则认定本轮失败。</p></li>
+<li><p>出现碰撞或其他异常事件时，认定本轮失败。</p></li>
+<li><p>本轮失败时，以当前已获得分数计分，后续操作不再计分。</p></li>
 </ol>
 </section>
+<section id="id8">
+<h2>线下赛任务说明<a class="headerlink" href="#id8" title="链接到此标题。"></a></h2>
+<p>北京线下赛比赛内容与真机赛保持一致，包含 3 个独立任务。三个任务现场赛总分为 50 分。</p>
+<section id="id9">
+<h3>任务1：汽车大件上料（10分）<a class="headerlink" href="#id9" title="链接到此标题。"></a></h3>
+<p>场景规范：机器人将汽车大件从脚撑上拾取，手臂转动一定角度后放置到旁边的目标脚撑上。</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task3_real.mov" type=""></video></div><div style="clear: both;"></div><p>评分标准如下，每次测评时间不超过 3 分钟：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55.0%" />
+<col style="width: 20.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>评分点</p></th>
+<th class="head"><p>分值</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>手臂移至钣金正下方</p></td>
+<td><p>0.5 分</p></td>
+<td><p>单次计分</p></td>
+</tr>
+<tr class="row-odd"><td><p>抓取成功且稳定</p></td>
+<td><p>1.5 分</p></td>
+<td><p>单次计分</p></td>
+</tr>
+<tr class="row-even"><td><p>准确移至脚托正上方位置</p></td>
+<td><p>2 分</p></td>
+<td><p>单次计分</p></td>
+</tr>
+<tr class="row-odd"><td><p>钣金与脚托限位处稳定接触</p></td>
+<td><p>1.5 分/脚托</p></td>
+<td><p>共 4 个脚托</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id10">
+<h3>任务2：桌面零件分拣（15分）<a class="headerlink" href="#id10" title="链接到此标题。"></a></h3>
+<p>场景规范：机器人站立不动，夹取桌面上的安全带、pin 口或线缆，将其放至指定的空箱子中。</p>
+<p>现场将放置安全带、线缆、pin 口三种物料，每种物料各一个，共三个。三种物料按照以下顺序分别摆放三轮：</p>
+<ol class="arabic simple">
+<li><p>pin 口、安全带、线缆</p></li>
+<li><p>安全带、线缆、pin 口</p></li>
+<li><p>线缆、pin 口、安全带</p></li>
+</ol>
+<p>机器人夹取物品后，需要将其放置到盒子的指定空位处，目标顺序从左到右依次为：pin 口、安全带、线缆。</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task1_real.mov" type=""></video></div><div style="clear: both;"></div><p>评分标准如下，每次测评时间不超过 4 分钟：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55.0%" />
+<col style="width: 20.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>评分点</p></th>
+<th class="head"><p>分值</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>抓取成功且稳定</p></td>
+<td><p>1 分/物体</p></td>
+<td><p>共 3 个物体</p></td>
+</tr>
+<tr class="row-odd"><td><p>准确放至指定位置</p></td>
+<td><p>3 分/物体</p></td>
+<td><p>共 3 个物体</p></td>
+</tr>
+<tr class="row-even"><td><p>全部完成</p></td>
+<td><p>3 分</p></td>
+<td><p>完成全部物体后获得</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id11">
+<h3>任务3：工业零件称重（25分）<a class="headerlink" href="#id11" title="链接到此标题。"></a></h3>
+<p>场景规范：机器人从桌面上拾取机械套管，放置在电子秤上完成称重，再拾起并放入收纳筐中。</p>
+<p>现场将在指定位置成排放置三个机械套管。机器人需要抓取套管，将其放置到称重台上完成称重，再从称重台拾起并稳定放入指定收纳筐中。</p>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" preload="auto" width="100%"><source src="../_images/task2_real.mov" type=""></video></div><div style="clear: both;"></div><p>评分标准如下，每次测评时间不超过 4 分钟：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55.0%" />
+<col style="width: 20.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>评分点</p></th>
+<th class="head"><p>分值</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>抓取成功且稳定</p></td>
+<td><p>2 分/套管</p></td>
+<td><p>共 3 个套管</p></td>
+</tr>
+<tr class="row-odd"><td><p>准确放至称重台并完成称重</p></td>
+<td><p>1 分/套管</p></td>
+<td><p>共 3 个套管</p></td>
+</tr>
+<tr class="row-even"><td><p>从称重台再次拾取成功</p></td>
+<td><p>3 分/套管</p></td>
+<td><p>共 3 个套管</p></td>
+</tr>
+<tr class="row-odd"><td><p>稳定放入指定收纳筐中</p></td>
+<td><p>1.5 分/套管</p></td>
+<td><p>共 3 个套管</p></td>
+</tr>
+<tr class="row-even"><td><p>全部完成</p></td>
+<td><p>2.5 分</p></td>
+<td><p>完成全部套管后获得</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
 <section id="id12">
-<h3>任务1：桌面物料分拣（100分）<a class="headerlink" href="#id12" title="链接到此标题。"></a></h3>
-<p>测评时，现场将随机放置安全带、线缆、pin口三种物料，每种物料各一个，共三个。机器人夹取物品后，需要将其放置到盒子的指定空位处，目标顺序从左到右依次为：pin口、安全带、线缆。</p>
-<p>评分标准如下：</p>
-<ul class="simple">
-<li><p>抓取成功且稳定：10 分/每个物体，共 30 分</p></li>
-<li><p>准确放至指定位置：15 分/每个物体，共 45 分</p></li>
-<li><p>全部完成奖励：25 分</p></li>
-</ul>
-</section>
-<section id="id13">
-<h3>任务2：工业零件称重（100分）<a class="headerlink" href="#id13" title="链接到此标题。"></a></h3>
-<p>测评时，现场将在指定位置成排放置三个机械套管。机器人需要依次抓取套管，将其放置到称重台上完成称重，再从称重台拾起并稳定放入指定收纳筐中。</p>
-<p>评分标准如下：</p>
-<ul class="simple">
-<li><p>抓取成功且稳定：10 分/每个套管，共 30 分</p></li>
-<li><p>准确放至称重台并完成称重：10 分/每个套管，共 30 分</p></li>
-<li><p>从称重台再次拾取成功：5 分/每个套管，共 15 分</p></li>
-<li><p>稳定放入指定收纳筐：前两个套管各 5 分，最后一个套管 15 分，共 25 分</p></li>
-</ul>
-</section>
-<section id="id14">
-<h3>任务3：汽车大件上料（100分）<a class="headerlink" href="#id14" title="链接到此标题。"></a></h3>
-<p>测评时，机器人需要稳定抓取汽车钣金料，并将其准确放置到指定区域。</p>
-<p>评分标准如下：</p>
-<ul class="simple">
-<li><p>抓取成功且稳定：40 分</p></li>
-<li><p>准确放至指定位置：60 分</p></li>
-</ul>
-</section>
-</section>
-<section id="id15">
-<h2>线下赛定位与实施说明<a class="headerlink" href="#id15" title="链接到此标题。"></a></h2>
+<h2>线下赛定位与实施说明<a class="headerlink" href="#id12" title="链接到此标题。"></a></h2>
 <p>相比常规真机赛远程评测流程，北京线下赛主要存在以下差异：</p>
 <ol class="arabic simple">
 <li><p>线下赛比拼：参赛队伍需基于真机赛阶段形成的任务模型，结合线下赛数据进行后训练与优化，重点比拼模型在现场任务数据上的适应能力、泛化能力和稳定部署能力。</p></li>
-<li><p>现场评测：参赛队伍需在北京线下赛现场完成模型部署和评测确认。</p></li>
+<li><p>现场评测：参赛队伍需在北京线下赛现场完成模型调试、提交确认和评测确认。</p></li>
 <li><p>现场沟通：若出现设备异常、网络异常或镜像运行异常，参赛队伍需按照现场工作人员安排处理。</p></li>
 <li><p>实时排名：线下赛现场将设置实时排行榜，用于展示评测进展和阶段性成绩。</p></li>
 </ol>
 </section>
-<section id="id16">
-<h2>线下赛日程安排<a class="headerlink" href="#id16" title="链接到此标题。"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">备注</p>
-<p>北京线下赛的详细日程、每日开放时间、提交截止时间和颁奖安排暂未明确，请以后续官方通知为准。</p>
-</div>
+<section id="id13">
+<h2>参赛注意事项<a class="headerlink" href="#id13" title="链接到此标题。"></a></h2>
+<ol class="arabic simple">
+<li><p>参赛选手当天需要自备电脑转接口（网口转 USB/Type-C）及 5 至 10 米网线。</p></li>
+<li><p>由于现场参赛选手较多，现场网络负载可能较大，建议自备移动网络。</p></li>
+<li><p>现场参赛选手可以自带移动硬盘，将提交作品转入评测设备进行评测。</p></li>
+<li><p>从比赛开始至结束，只有操作员及评测人员可以按规定操作机器人。</p></li>
+</ol>
 </section>
-<section id="id17">
-<h2>线下赛选手工作流<a class="headerlink" href="#id17" title="链接到此标题。"></a></h2>
+<section id="id14">
+<h2>线下赛日程安排<a class="headerlink" href="#id14" title="链接到此标题。"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18.0%" />
+<col style="width: 18.0%" />
+<col style="width: 32.0%" />
+<col style="width: 32.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>日期</p></th>
+<th class="head"><p>时间</p></th>
+<th class="head"><p>流程</p></th>
+<th class="head"><p>备注</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>7 月 27 日 - 7 月 30 日</p></td>
+<td><p>9:30-18:30</p></td>
+<td><p>场景搭建、数据采集</p></td>
+<td><p>现场网络确认、现场流程彩排；每台采集 200 条数据，6 台 Kuavo 4pro 总共约 1200 条数据</p></td>
+</tr>
+<tr class="row-odd"><td><p>7 月 31 日</p></td>
+<td><p>9:30-10:00</p></td>
+<td><p>选手报到</p></td>
+<td><p>主背景板签字打卡</p></td>
+</tr>
+<tr class="row-even"><td><p>7 月 31 日</p></td>
+<td><p>10:00-10:30</p></td>
+<td><p>比赛开幕</p></td>
+<td><p>开幕宣讲</p></td>
+</tr>
+<tr class="row-odd"><td><p>7 月 31 日</p></td>
+<td><p>10:30-18:00</p></td>
+<td><p>任务一：汽车大件上料；任务二：桌面零件分拣</p></td>
+<td><p>2 台 Kuavo 4pro 评测机</p></td>
+</tr>
+<tr class="row-even"><td><p>7 月 31 日</p></td>
+<td><p>18:00-18:30</p></td>
+<td><p>当日成绩公布、专家点评</p></td>
+<td><p>现场队伍采访</p></td>
+</tr>
+<tr class="row-odd"><td><p>8 月 1 日</p></td>
+<td><p>9:30-16:00</p></td>
+<td><p>任务三：工业零件称重</p></td>
+<td><p>1 台 Kuavo 4pro 评测机</p></td>
+</tr>
+<tr class="row-even"><td><p>8 月 1 日</p></td>
+<td><p>16:00-16:30</p></td>
+<td><p>当日成绩公布、专家点评</p></td>
+<td><p>现场队伍采访</p></td>
+</tr>
+<tr class="row-odd"><td><p>8 月 1 日</p></td>
+<td><p>16:30-17:00</p></td>
+<td><p>比赛成绩确认、公布</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>8 月 1 日</p></td>
+<td><p>17:00-17:30</p></td>
+<td><p>颁奖仪式</p></td>
+<td><p>石景山人形机器人训练中心一层大厅；组委会代表致词、结果宣布、颁奖、合影</p></td>
+</tr>
+<tr class="row-odd"><td><p>8 月 1 日</p></td>
+<td><p>17:30-18:00</p></td>
+<td><p>现场队伍采访、现场恢复</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>8 月 2 日</p></td>
+<td><p>9:30-18:30</p></td>
+<td><p>现场恢复、物料入库</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id15">
+<h2>线下赛选手工作流<a class="headerlink" href="#id15" title="链接到此标题。"></a></h2>
 <a class="reference internal image-reference" href="../_images/beijing_competition.png"><img alt="北京线下赛选手工作流" src="../_images/beijing_competition.png" style="width: 100%;" />
 </a>
-</section>
-<section id="id18">
-<h2>线下赛选手手册<a class="headerlink" href="#id18" title="链接到此标题。"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">备注</p>
-<p>北京线下赛选手手册将后续补充说明。</p>
-</div>
 </section>
 </section>
 
